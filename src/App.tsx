@@ -7,6 +7,7 @@ import AuthLayout from '@/components/layout/AuthLayout'
 
 // Pages
 import HomePage from '@/pages/HomePage'
+import RealEstatePage from '@/pages/RealEstatePage'
 import LoginPage from '@/pages/LoginPage'
 import RegisterPage from '@/pages/RegisterPage'
 import DashboardPage from '@/pages/DashboardPage'
@@ -32,6 +33,7 @@ export default function App() {
         {/* Public routes */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/real-estate" element={<RealEstatePage />} />
           <Route path="/courses/:slug" element={<CourseDetailPage />} />
         </Route>
 

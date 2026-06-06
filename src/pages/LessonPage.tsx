@@ -19,7 +19,7 @@ export default function LessonPage() {
   })
 
   const completeMutation = useMutation({
-    mutationFn: () => progressApi.completeModule(lesson!.module_id),
+    mutationFn: () => progressApi.completeLesson(lesson!.module_id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['progress'] })
     },

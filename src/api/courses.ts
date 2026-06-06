@@ -4,28 +4,28 @@ import type { ApiResponse, PaginatedResponse, Course, Module, Lesson } from '@/t
 export const coursesApi = {
   list: async (page = 1, pageSize = 20) => {
     const res = await apiClient.get<ApiResponse<PaginatedResponse<Course>>>(
-      `/courses/?page=${page}&page_size=${pageSize}`
+      `/student/courses/?page=${page}&page_size=${pageSize}`
     )
     return res.data.data
   },
 
   detail: async (slug: string) => {
-    const res = await apiClient.get<ApiResponse<Course>>(`/courses/${slug}/`)
+    const res = await apiClient.get<ApiResponse<Course>>(`/student/courses/${slug}/`)
     return res.data.data
   },
 
   modules: async (slug: string) => {
-    const res = await apiClient.get<ApiResponse<PaginatedResponse<Module>>>(`/courses/${slug}/modules/`)
+    const res = await apiClient.get<ApiResponse<PaginatedResponse<Module>>>(`/student/courses/${slug}/modules/`)
     return res.data.data.results
   },
 
   lessons: async (moduleId: number) => {
-    const res = await apiClient.get<ApiResponse<PaginatedResponse<Lesson>>>(`/modules/${moduleId}/lessons/`)
+    const res = await apiClient.get<ApiResponse<PaginatedResponse<Lesson>>>(`/student/modules/${moduleId}/lessons/`)
     return res.data.data.results
   },
 
   lesson: async (lessonId: number) => {
-    const res = await apiClient.get<ApiResponse<Lesson>>(`/lessons/${lessonId}/`)
+    const res = await apiClient.get<ApiResponse<Lesson>>(`/student/lessons/${lessonId}/`)
     return res.data.data
   },
 }

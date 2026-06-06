@@ -23,8 +23,7 @@ export default function RegisterPage() {
     setLoading(true)
     setError('')
     try {
-      await authApi.register({ name: form.name, email: form.email, password: form.password })
-      const data = await authApi.login({ email: form.email, password: form.password })
+      const data = await authApi.register({ name: form.name, email: form.email, password: form.password })
       setAuth(data.user, data.token, data.refresh_token)
 
       // Handle free enrollment redirect

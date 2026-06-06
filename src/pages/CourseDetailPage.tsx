@@ -187,7 +187,7 @@ export default function CourseDetailPage() {
                   <div className="font-display text-3xl font-bold text-navy-900 mb-1">
                     ${course.price}
                   </div>
-                  <p className="text-surface-400 text-sm font-body mb-5">One-time payment · Lifetime access</p>
+                  <p className="text-surface-400 text-sm font-body mb-5">One-time payment · 3 months access</p>
 
                   <button
                     onClick={handleEnroll}
@@ -210,7 +210,7 @@ export default function CourseDetailPage() {
                       `${course.quiz_count} practice questions`,
                       `${course.glossary_terms_count} glossary terms`,
                       'Certificate of completion',
-                      'Lifetime access',
+                      '3 months access',
                     ].map(item => (
                       <div key={item} className="flex items-center gap-2">
                         <CheckCircle size={14} className="text-emerald-500 flex-shrink-0" />

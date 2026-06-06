@@ -39,7 +39,7 @@ const TRACKS = [
     license: false, noLicense: false,
   },
   {
-    slug: 'apartment-leasing',
+    slug: 'real-estate-leasing',
     emoji: '🏠', short: 'Apt Leasing',
     tagline: 'Lease, retain & build resident communities',
     desc: 'Leasing consultants are the front door of every apartment community — converting prospects into residents, guiding move-ins, and building long-term occupancy. No license required to start.',
@@ -323,7 +323,7 @@ export default function RealEstatePage() {
                 <div className="font-display text-3xl font-bold text-[#1A2433] mb-1">
                   ${courseData?.price ?? '—'}
                 </div>
-                <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time · Lifetime access</p>
+                <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time · 3 months access</p>
 
                 <Link
                   to={`/courses/${activeTrack.slug}`}
@@ -347,7 +347,7 @@ export default function RealEstatePage() {
                     `${courseData?.quiz_count ?? '—'} practice questions`,
                     `${courseData?.glossary_terms_count ?? '—'} glossary terms`,
                     'Certificate of completion',
-                    'Lifetime access',
+                    '3 months access',
                     'Module 1 always free',
                   ].map(item => (
                     <div key={item} className="flex items-center gap-2">

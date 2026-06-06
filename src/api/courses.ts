@@ -53,8 +53,25 @@ export const coursesApi = {
     return res.data.data.results
   },
 
-  lesson: async (lessonId: string | number) => {
-    const res = await apiClient.get<ApiResponse<Lesson>>(`/student/lessons/${lessonId}/`)
-    return res.data.data
+  lesson: async (lessonId: string | number): Promise<Lesson> => {
+    const res = await apiClient.get<ApiResponse<Record<string, unknown>>>(`/student/lessons/${lessonId}/`)
+    const raw = res.data.data
+    // Normalize backend response shape to frontend Lesson type
+    const nav = (raw.navigation as Record<string, unknown>) ?? {}
+    const prevNav = nav.prev as Record<string, unknown> | null
+    const nextNav = nav.next as Record<string, unknown> | null
+    const moduleObj = raw.module as Record<string, unknown> | null
+    const progress = (raw.progress as Record<string, unknown>) ?? {}
+    return {
+      id: raw.id as string,
+      title: raw.title as string,
+      sequence_order: raw.sequence_order as number,
+      body: (raw.body as string) ?? '',
+      youtube_url: (raw.youtube_url as string | null) ?? null,
+      module_id: moduleObj ? (moduleObj.id as string) : (raw.module_id as string),
+      is_completed: !!(progress.completed ?? raw.is_completed),
+      prev_lesson_id: prevNav ? (prevNav.id as string) : (raw.prev_lesson_id as string | null) ?? null,
+      next_lesson_id: nextNav ? (nextNav.id as string) : (raw.next_lesson_id as string | null) ?? null,
+    }
   },
 }

@@ -60,10 +60,9 @@ apiClient.interceptors.response.use(
       const refreshToken = localStorage.getItem('refreshToken')
 
       if (!refreshToken) {
-        // No refresh token — clear auth and redirect to login
-        localStorage.removeItem('authToken')
-        localStorage.removeItem('refreshToken')
-        window.location.href = '/login'
+        // No refresh token — user is not logged in. Don't redirect to login
+        // for public endpoints (they return 401 only for protected resources).
+        // Just reject the error and let the component handle it.
         return Promise.reject(error)
       }
 

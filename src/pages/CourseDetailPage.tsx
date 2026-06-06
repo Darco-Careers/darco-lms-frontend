@@ -19,11 +19,9 @@ export default function CourseDetailPage() {
     enabled: !!slug,
   })
 
-  const { data: modules } = useQuery({
-    queryKey: ['modules', slug],
-    queryFn: () => coursesApi.modules(slug!),
-    enabled: !!slug,
-  })
+  // Use modules embedded in the course detail response (available to all users).
+  // Only fall back to the separate modules endpoint if the course detail didn't include them.
+  const modules = course?.modules ?? []
 
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
   const isLight = slug === 'construction-painting'

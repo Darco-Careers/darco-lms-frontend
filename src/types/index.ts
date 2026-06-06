@@ -46,6 +46,7 @@ export interface Course {
   glossary_terms_count: number
   price: number
   is_enrolled: boolean
+  modules?: Module[]    // embedded in course_detail response for public catalog browsing
   color?: string        // track color identity from original HTML courses
   category?: string     // 'real-estate' | 'construction' | 'trades'
 }

@@ -3,18 +3,18 @@ import type { ApiResponse, PaginatedResponse, CourseProgress, DetailedProgress, 
 
 export const progressApi = {
   list: async () => {
-    const res = await apiClient.get<ApiResponse<{ enrollments: CourseProgress[] }>>('/student/enrollments/')
-    return res.data.data.enrollments
+    const res = await apiClient.get<ApiResponse<PaginatedResponse<CourseProgress>>>('/progress/')
+    return res.data.data.results
   },
 
-  detail: async (enrollmentId: string) => {
-    const res = await apiClient.get<ApiResponse<DetailedProgress>>(`/student/progress/${enrollmentId}/`)
+  detail: async (courseSlug: string) => {
+    const res = await apiClient.get<ApiResponse<DetailedProgress>>(`/progress/${courseSlug}/`)
     return res.data.data
   },
 
-  completeLesson: async (lessonId: number) => {
-    const res = await apiClient.post<ApiResponse<{ lesson_id: number; is_completed: boolean }>>(
-      `/student/lessons/${lessonId}/complete/`
+  completeModule: async (moduleId: number) => {
+    const res = await apiClient.post<ApiResponse<{ module_id: number; is_completed: boolean }>>(
+      `/progress/${moduleId}/complete/`
     )
     return res.data.data
   },
@@ -22,19 +22,35 @@ export const progressApi = {
 
 export const enrollmentApi = {
   list: async () => {
-    const res = await apiClient.get<ApiResponse<{ enrollments: Enrollment[] }>>('/student/enrollments/')
-    return res.data.data.enrollments
+    const res = await apiClient.get<ApiResponse<PaginatedResponse<Enrollment>>>('/enrollment/')
+    return res.data.data.results
   },
 
   create: async (courseSlug: string) => {
-    const res = await apiClient.post<ApiResponse<Enrollment>>('/student/enrollments/', { course_slug: courseSlug })
+    const res = await apiClient.post<ApiResponse<Enrollment>>('/enrollment/', { course_slug: courseSlug })
     return res.data.data
   },
 
   createCheckout: async (courseSlug: string) => {
-    const res = await apiClient.post<ApiResponse<CheckoutSession>>('/student/enrollments/checkout/', {
+    const res = await apiClient.post<ApiResponse<CheckoutSession>>('/payments/create-checkout/', {
       course_slug: courseSlug,
     })
+    return res.data.data
+  },
+}
+
+export const freeEnrollmentApi = {
+  enroll: async (courseSlug: string) => {
+    const res = await apiClient.post<{
+      success: boolean
+      data: {
+        enrollment_id: number
+        course_slug: string
+        status: 'free_preview' | 'active'
+        first_lesson_id: number
+        already_enrolled?: boolean
+      }
+    }>('/v1/student/enrollments/free/', { course_slug: courseSlug })
     return res.data.data
   },
 }

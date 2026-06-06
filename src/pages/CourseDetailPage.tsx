@@ -1,8 +1,8 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
-import { BookOpen, Award, FileText, ChevronRight, Lock, CheckCircle, ArrowLeft } from 'lucide-react'
+import { useQuery, useMutation } from '@tanstack/react-query'
+import { BookOpen, Award, FileText, Lock, CheckCircle, ArrowLeft, Clock } from 'lucide-react'
 import { coursesApi } from '@/api/courses'
-import { enrollmentApi } from '@/api/progress'
+import { enrollmentApi, freeEnrollmentApi } from '@/api/progress'
 import { COURSE_COLORS } from '@/types'
 import { useAuthStore } from '@/store/authStore'
 import { useState } from 'react'
@@ -28,9 +28,25 @@ export default function CourseDetailPage() {
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
   const isLight = slug === 'construction-painting'
 
+  // Free enrollment mutation
+  const freeMutation = useMutation({
+    mutationFn: () => freeEnrollmentApi.enroll(slug!),
+    onSuccess: (data) => {
+      navigate(`/courses/${slug}/lesson/${data.first_lesson_id}`)
+    },
+  })
+
+  const handleFreePreview = () => {
+    if (!isAuthenticated) {
+      navigate(`/register?next=/courses/${slug}/free`)
+      return
+    }
+    freeMutation.mutate()
+  }
+
   const handleEnroll = async () => {
     if (!isAuthenticated) {
-      navigate('/register', { state: { from: { pathname: `/courses/${slug}` } } })
+      navigate(`/register?next=/courses/${slug}`)
       return
     }
     setEnrolling(true)
@@ -46,9 +62,9 @@ export default function CourseDetailPage() {
     return (
       <div className="page-container py-16">
         <div className="animate-pulse space-y-4">
-          <div className="h-48 bg-surface-200 rounded-xl" />
-          <div className="h-6 bg-surface-200 rounded w-1/2" />
-          <div className="h-4 bg-surface-100 rounded w-3/4" />
+          <div className="h-48 bg-[#BCCAD8] rounded-xl" />
+          <div className="h-6 bg-[#BCCAD8] rounded w-1/2" />
+          <div className="h-4 bg-[#EEF2F6] rounded w-3/4" />
         </div>
       </div>
     )
@@ -57,19 +73,26 @@ export default function CourseDetailPage() {
   if (!course) return null
 
   return (
-    <div>
-      {/* ── Hero banner ── */}
+    <div className="bg-[#C8D4E0]">
+      {/* ── Hero ── */}
       <div
         className="py-14 px-4 relative overflow-hidden"
-        style={{ background: theme.heroGradient }}
+        style={{
+          background: isLight
+            ? 'linear-gradient(135deg, #f8f7f4 0%, #f0ede8 100%)'
+            : `linear-gradient(135deg, ${theme.primary} 0%, ${theme.mid} 100%)`
+        }}
       >
         <div className="page-container relative">
           <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white/90 text-sm font-body mb-6 transition-colors"
+            to={slug?.startsWith('real-estate') || slug === 'real-estate-leasing' ? '/real-estate' : '/'}
+            className="inline-flex items-center gap-2 text-sm font-body mb-6 transition-colors"
+            style={{ color: isLight ? theme.mid : 'rgba(255,255,255,0.6)' }}
           >
             <ArrowLeft size={15} />
-            All courses
+            {slug?.startsWith('real-estate') || slug === 'real-estate-leasing'
+              ? 'Real Estate tracks'
+              : 'All paths'}
           </Link>
 
           <div
@@ -77,7 +100,7 @@ export default function CourseDetailPage() {
             style={{
               background: 'rgba(255,255,255,0.12)',
               border: '1px solid rgba(255,255,255,0.2)',
-              color: 'rgba(255,255,255,0.9)',
+              color: isLight ? theme.primary : 'rgba(255,255,255,0.9)',
             }}
           >
             Career Track
@@ -97,19 +120,15 @@ export default function CourseDetailPage() {
             {course.description}
           </p>
 
-          {/* Stats row */}
           <div className="flex flex-wrap gap-6">
             {[
               { icon: BookOpen, label: `${course.modules_count} modules` },
-              { icon: Award, label: `${course.quiz_count} quiz questions` },
+              { icon: Award,    label: `${course.quiz_count} quiz questions` },
               { icon: FileText, label: `${course.glossary_terms_count} glossary terms` },
             ].map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2">
                 <Icon size={15} style={{ color: isLight ? theme.light : 'rgba(255,255,255,0.6)' }} />
-                <span
-                  className="text-sm font-body"
-                  style={{ color: isLight ? theme.mid : 'rgba(255,255,255,0.7)' }}
-                >
+                <span className="text-sm font-body" style={{ color: isLight ? theme.mid : 'rgba(255,255,255,0.7)' }}>
                   {label}
                 </span>
               </div>
@@ -119,38 +138,47 @@ export default function CourseDetailPage() {
       </div>
 
       {/* ── Body ── */}
-      <div className="page-container py-10">
+      <div className="page-container py-10 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
           {/* Module list */}
           <div className="lg:col-span-2">
-            <h2 className="font-display text-xl font-bold text-navy-900 mb-5">Course modules</h2>
+            <h2 className="font-display text-xl font-bold text-[#1A2433] mb-5">Course modules</h2>
             <div className="space-y-2">
               {(modules ?? []).map((mod, idx) => (
                 <div
                   key={mod.id}
-                  className="flex items-center gap-4 p-4 bg-white rounded-xl border border-surface-200 hover:border-surface-300 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-white rounded-xl border border-[#BCCAD8] transition-colors"
+                  style={idx === 0 ? { borderColor: `${theme.primary}40` } : {}}
                 >
                   <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center font-display font-bold text-sm flex-shrink-0 text-white"
-                    style={{ background: theme.primary }}
+                    className="w-9 h-9 rounded-full flex items-center justify-center font-display font-bold text-sm flex-shrink-0"
+                    style={idx === 0
+                      ? { background: theme.primary, color: 'white' }
+                      : { background: '#EEF2F6', color: '#8A9AAA' }
+                    }
                   >
-                    {idx + 1}
+                    {idx === 0 ? <BookOpen size={15} /> : idx + 1}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-body font-semibold text-navy-900 text-sm truncate">{mod.title}</p>
-                    <p className="text-surface-400 text-xs font-body mt-0.5">
+                    <p className="font-body font-semibold text-[#1A2433] text-sm truncate">{mod.title}</p>
+                    <p className="text-[#8A9AAA] text-xs font-body mt-0.5">
                       {mod.lessons_count} lessons · 10 quiz questions
                     </p>
                   </div>
                   {course.is_enrolled ? (
-                    mod.is_completed ? (
-                      <CheckCircle size={17} className="text-emerald-500 flex-shrink-0" />
-                    ) : (
-                      <ChevronRight size={17} className="text-surface-300 flex-shrink-0" />
-                    )
+                    mod.is_completed
+                      ? <CheckCircle size={17} className="text-emerald-500 flex-shrink-0" />
+                      : <span className="text-xs font-body text-[#4A5A6A] flex-shrink-0">Continue</span>
+                  ) : idx === 0 ? (
+                    <span
+                      className="text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0 font-body whitespace-nowrap"
+                      style={{ background: `${theme.pale}`, color: theme.primary, border: `1px solid ${theme.primary}30` }}
+                    >
+                      Free preview
+                    </span>
                   ) : (
-                    <Lock size={15} className="text-surface-300 flex-shrink-0" />
+                    <Lock size={14} className="text-[#8A9AAA] flex-shrink-0" />
                   )}
                 </div>
               ))}
@@ -159,10 +187,9 @@ export default function CourseDetailPage() {
 
           {/* Enrollment card */}
           <div className="lg:col-span-1">
-            <div className="card p-6 sticky top-24">
-              <div
-                className="h-1 w-full rounded-full mb-5"
-                style={{ background: theme.heroGradient }}
+            <div className="bg-white rounded-2xl border border-[#BCCAD8] p-6 sticky top-24 shadow-sm">
+              <div className="h-1 w-full rounded-full mb-5"
+                style={{ background: `linear-gradient(90deg, ${theme.primary}, ${theme.mid})` }}
               />
 
               {course.is_enrolled ? (
@@ -173,44 +200,75 @@ export default function CourseDetailPage() {
                   </div>
                   <Link
                     to={`/courses/${slug}/progress`}
-                    className="btn-primary w-full mb-3"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg font-body font-semibold text-white text-sm mb-3 transition-all hover:brightness-110"
                     style={{ background: theme.primary }}
                   >
                     Continue learning
                   </Link>
-                  <Link to={`/courses/${slug}/glossary`} className="btn-secondary w-full text-sm">
+                  <Link
+                    to={`/courses/${slug}/glossary`}
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg font-body font-semibold text-sm border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                  >
                     View glossary
                   </Link>
                 </>
               ) : (
                 <>
-                  <div className="font-display text-3xl font-bold text-navy-900 mb-1">
+                  <div className="font-display text-3xl font-bold text-[#1A2433] mb-1">
                     ${course.price}
                   </div>
-                  <p className="text-surface-400 text-sm font-body mb-5">One-time payment · 3 months access</p>
+                  <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time payment</p>
 
                   <button
                     onClick={handleEnroll}
                     disabled={enrolling}
-                    className="btn-primary w-full mb-3 text-base py-3.5"
+                    className="w-full py-3.5 rounded-lg font-body font-semibold text-white text-base mb-3 transition-all hover:brightness-110"
                     style={{ background: theme.primary }}
                   >
                     {enrolling ? 'Redirecting...' : 'Enroll now'}
                   </button>
 
+                  <button
+                    onClick={handleFreePreview}
+                    disabled={freeMutation.isPending}
+                    className="w-full py-3 rounded-lg font-body font-semibold text-sm mb-5 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all flex items-center justify-center gap-2"
+                  >
+                    <BookOpen size={14} />
+                    {freeMutation.isPending ? 'Loading...' : 'Explore free — Module 1'}
+                  </button>
+
                   {!isAuthenticated && (
-                    <p className="text-center text-xs text-surface-400 font-body">
-                      You'll be asked to create a free account first
+                    <p className="text-center text-xs text-[#8A9AAA] font-body mb-5">
+                      Free account required — takes 30 seconds
                     </p>
                   )}
 
-                  <div className="mt-5 space-y-2 text-sm font-body text-surface-500">
+                  {freeMutation.isError && (
+                    <p className="text-center text-xs text-red-500 font-body mb-3">
+                      Something went wrong. Please try again.
+                    </p>
+                  )}
+
+                  {/* Access policy */}
+                  <div className="bg-[#EEF2F6] rounded-xl p-4 mb-5 border border-[#BCCAD8]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Clock size={14} className="text-[#C9A84C] flex-shrink-0" />
+                      <span className="text-xs font-body font-semibold text-[#1A2433]">Access policy</span>
+                    </div>
+                    <ul className="text-xs font-body text-[#4A5A6A] space-y-1">
+                      <li>• 3 months access after enrollment</li>
+                      <li>• 1-click +2 month extension (free)</li>
+                      <li>• Final +2 month extension on request</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-2 text-sm font-body text-[#4A5A6A]">
                     {[
                       `${course.modules_count} self-paced modules`,
                       `${course.quiz_count} practice questions`,
                       `${course.glossary_terms_count} glossary terms`,
                       'Certificate of completion',
-                      '3 months access',
+                      'Module 1 always free',
                     ].map(item => (
                       <div key={item} className="flex items-center gap-2">
                         <CheckCircle size={14} className="text-emerald-500 flex-shrink-0" />

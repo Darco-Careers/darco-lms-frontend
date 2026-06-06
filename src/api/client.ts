@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://darco-lms-production.up.railway.app/api/v1'
+// Use absolute backend URL — the Vite proxy only works in dev; in production the
+// frontend and backend are separate Railway services so we need the full URL.
+const BASE_URL = import.meta.env.DEV
+  ? '/api/v1'  // dev: use Vite proxy (vite.config.ts forwards /api → backend)
+  : 'https://darco-lms-production.up.railway.app/api/v1'  // prod: direct backend URL
 
 export const apiClient = axios.create({
   baseURL: BASE_URL,

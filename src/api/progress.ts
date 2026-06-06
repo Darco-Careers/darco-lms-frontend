@@ -50,7 +50,7 @@ export const freeEnrollmentApi = {
         first_lesson_id: number
         already_enrolled?: boolean
       }
-    }>('/v1/student/enrollments/free/', { course_slug: courseSlug })
+    }>('/student/enrollments/free/', { course_slug: courseSlug })
     return res.data.data
   },
 }

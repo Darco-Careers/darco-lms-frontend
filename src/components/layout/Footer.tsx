@@ -32,7 +32,7 @@ export default function Footer() {
                 ['Real Estate Foundation', '/courses/real-estate-foundation'],
                 ['Residential Agent', '/courses/real-estate-residential-agent'],
                 ['Property Management', '/courses/real-estate-property-management'],
-                ['Apartment Leasing', '/courses/apartment-leasing'],
+                ['Apartment Leasing', '/courses/real-estate-leasing'],
                 ['Electrician', '/courses/electrician'],
                 ['Construction Painting', '/courses/construction-painting'],
               ].map(([label, href]) => (

@@ -332,7 +332,7 @@ export default function RealEstatePage() {
                           <Lock size={11} className="text-[#8A9AAA]" />
                         </div>
                         <p className="text-[#8A9AAA] font-body text-xs">
-                          + {modules.length - 4} more modules — unlock with enrollment
+                          + {modules.length - 4} more {modules.length - 4 === 1 ? 'module' : 'modules'} — unlock with enrollment
                         </p>
                       </div>
                     )}

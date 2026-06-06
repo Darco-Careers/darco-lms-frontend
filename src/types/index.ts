@@ -61,15 +61,15 @@ export interface Module {
 }
 
 export interface Lesson {
-  id: number
+  id: string
   title: string
   sequence_order: number
   body: string
   youtube_url: string | null
-  module_id: number
+  module_id: string
   is_completed: boolean
-  prev_lesson_id: number | null
-  next_lesson_id: number | null
+  prev_lesson_id: string | null
+  next_lesson_id: string | null
 }
 
 // ─── Quiz ─────────────────────────────────────────────────────────────────────

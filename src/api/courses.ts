@@ -53,7 +53,7 @@ export const coursesApi = {
     return res.data.data.results
   },
 
-  lesson: async (lessonId: number) => {
+  lesson: async (lessonId: string | number) => {
     const res = await apiClient.get<ApiResponse<Lesson>>(`/student/lessons/${lessonId}/`)
     return res.data.data
   },

@@ -16,7 +16,7 @@ export default function LessonPage() {
 
   const { data: lesson, isLoading, isError, error } = useQuery({
     queryKey: ['lesson', lessonId],
-    queryFn: () => coursesApi.lesson(Number(lessonId)),
+    queryFn: () => coursesApi.lesson(lessonId!),
     enabled: !!lessonId,
     retry: (failureCount, err: any) => {
       // Don't retry on 403 upgrade_required

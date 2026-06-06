@@ -12,8 +12,8 @@ export const progressApi = {
     return res.data.data
   },
 
-  completeModule: async (moduleId: number) => {
-    const res = await apiClient.post<ApiResponse<{ module_id: number; is_completed: boolean }>>(
+  completeModule: async (moduleId: string | number) => {
+    const res = await apiClient.post<ApiResponse<{ module_id: string | number; is_completed: boolean }>>(
       `/progress/${moduleId}/complete/`
     )
     return res.data.data
@@ -44,10 +44,10 @@ export const freeEnrollmentApi = {
     const res = await apiClient.post<{
       success: boolean
       data: {
-        enrollment_id: number
+        enrollment_id: string
         course_slug: string
         status: 'free_preview' | 'active'
-        first_lesson_id: number
+        first_lesson_id: string
         already_enrolled?: boolean
       }
     }>('/student/enrollments/free/', { course_slug: courseSlug })

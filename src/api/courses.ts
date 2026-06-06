@@ -43,9 +43,28 @@ export const coursesApi = {
     }
   },
 
-  modules: async (slug: string) => {
-    const res = await apiClient.get<ApiResponse<PaginatedResponse<Module>>>(`/student/courses/${slug}/modules/`)
-    return res.data.data.results
+  modules: async (slug: string): Promise<Module[]> => {
+    const res = await apiClient.get<Record<string, unknown>>(`/student/courses/${slug}/modules/`)
+    const raw = res.data as Record<string, unknown>
+    // Backend returns {modules: [...]} not the standard {data: {results: [...]}}
+    const rawModules = (raw.modules ?? (raw.data as Record<string, unknown>)?.results ?? []) as Array<Record<string, unknown>>
+    return rawModules.map((m) => {
+      const rawLessons = (m.lessons as Array<Record<string, unknown>>) ?? []
+      return {
+        id: m.id as number,
+        title: m.title as string,
+        sequence_order: m.sequence_order as number,
+        lessons_count: rawLessons.length ?? (m.lessons_total as number) ?? (m.lessons_count as number) ?? 0,
+        is_completed: !!(m.quiz_passed),
+        quiz_score: (m.quiz_passed ? 100 : null) as number | null,
+        lessons: rawLessons.map((l) => ({
+          id: l.id as string,
+          title: l.title as string,
+          sequence_order: l.sequence_order as number,
+          is_completed: !!(l.completed),
+        })),
+      }
+    })
   },
 
   lessons: async (moduleId: number) => {

@@ -51,6 +51,13 @@ export interface Course {
   category?: string     // 'real-estate' | 'construction' | 'trades'
 }
 
+export interface ModuleLesson {
+  id: string
+  title: string
+  sequence_order: number
+  is_completed: boolean
+}
+
 export interface Module {
   id: number
   title: string
@@ -58,6 +65,7 @@ export interface Module {
   is_completed: boolean
   quiz_score: number | null
   lessons_count: number
+  lessons?: ModuleLesson[]  // populated by coursesApi.modules()
 }
 
 export interface Lesson {

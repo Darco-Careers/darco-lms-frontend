@@ -89,7 +89,8 @@ export default function ProgressPage() {
           const progressMod = progress.modules.find(m => m.id === mod.id)
           const isCompleted = progressMod?.is_completed ?? false
           const quizScore = progressMod?.quiz_score ?? null
-          const firstLesson = progressMod?.lessons?.[0]
+          // Use lessons from coursesApi.modules() since progressApi doesn't return lessons
+          const firstLesson = mod.lessons?.[0]
 
           return (
             <div
@@ -153,9 +154,9 @@ export default function ProgressPage() {
               </div>
 
               {/* Lesson list (collapsed by default, shown when in progress) */}
-              {!isCompleted && progressMod?.lessons && progressMod.lessons.length > 0 && (
+              {!isCompleted && mod.lessons && mod.lessons.length > 0 && (
                 <div className="border-t border-surface-100 divide-y divide-surface-100">
-                  {progressMod.lessons.map(lesson => (
+                  {mod.lessons.map(lesson => (
                     <Link
                       key={lesson.id}
                       to={`/courses/${slug}/lesson/${lesson.id}`}

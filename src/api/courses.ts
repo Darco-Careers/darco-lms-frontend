@@ -54,8 +54,8 @@ export const coursesApi = {
   },
 
   lesson: async (lessonId: string | number): Promise<Lesson> => {
-    const res = await apiClient.get<ApiResponse<Record<string, unknown>>>(`/student/lessons/${lessonId}/`)
-    const raw = res.data.data
+    const res = await apiClient.get<Record<string, unknown>>(`/student/lessons/${lessonId}/`)
+    const raw = res.data
     // Normalize backend response shape to frontend Lesson type
     const nav = (raw.navigation as Record<string, unknown>) ?? {}
     const prevNav = nav.prev as Record<string, unknown> | null

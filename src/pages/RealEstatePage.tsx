@@ -1,9 +1,51 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
 import { ArrowRight, Lock, BookOpen, CheckCircle } from 'lucide-react'
-import { coursesApi } from '@/api/courses'
 import { COURSE_COLORS } from '@/types'
+
+// Hardcoded catalog data — will be replaced by public API endpoint in a future backend batch
+const CATALOG: Record<string, { price: number; modules: string[]; quizCount: number; glossaryCount: number }> = {
+  'real-estate-residential-agent': {
+    price: 150, quizCount: 50, glossaryCount: 60,
+    modules: ['The Residential Agent Role', 'Getting Your Real Estate License', 'Building Your Business', 'Working With Buyers', 'Working With Sellers'],
+  },
+  'real-estate-commercial': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['Commercial Real Estate Overview', 'Commercial Leasing', 'Commercial Investment Analysis', 'Getting Started in Commercial'],
+  },
+  'real-estate-investing': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['Investing Fundamentals', 'Analyzing Investment Properties', 'Financing Your Investments', 'Property Management for Investors'],
+  },
+  'real-estate-property-management': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['Property Management Overview', 'Tenant Relations', 'Financial Management', 'Getting Your First PM Job'],
+  },
+  'real-estate-leasing': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['The Leasing Consultant Role', 'Sales Skills for Leasing', 'LA Apartment Market', 'Getting Hired as a Leasing Consultant'],
+  },
+  'real-estate-development': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['Real Estate Development Overview', 'Site Selection and Feasibility', 'Development Finance', 'Getting Into Development'],
+  },
+  'real-estate-mortgage-lending': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['The Mortgage Industry', 'Getting Your NMLS License', 'Mortgage Products and Underwriting', 'Building Your Mortgage Business'],
+  },
+  'real-estate-wholesaling': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['Wholesaling Fundamentals', 'Finding Motivated Sellers', 'Analyzing and Contracting Deals', 'Building Your Buyers List'],
+  },
+  'real-estate-photography': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['Real Estate Photography Overview', 'Equipment and Technical Skills', 'Shooting Techniques', 'Building Your Photography Business'],
+  },
+  'real-estate-maintenance-repair': {
+    price: 150, quizCount: 40, glossaryCount: 50,
+    modules: ['The Maintenance Career in Real Estate', 'Core Maintenance Skills', 'Getting Certified', 'Getting Hired or Going Independent'],
+  },
+}
 
 const TRACKS = [
   {
@@ -103,20 +145,8 @@ export default function RealEstatePage() {
   const [activeIdx, setActiveIdx] = useState(0)
   const activeTrack = TRACKS[activeIdx]
   const theme = COURSE_COLORS[activeTrack.slug] ?? COURSE_COLORS['real-estate-foundation']
-
-  const { data: moduleData } = useQuery({
-    queryKey: ['modules', activeTrack.slug],
-    queryFn: () => coursesApi.modules(activeTrack.slug),
-    staleTime: 60 * 60 * 1000,
-  })
-
-  const { data: courseData } = useQuery({
-    queryKey: ['course', activeTrack.slug],
-    queryFn: () => coursesApi.detail(activeTrack.slug),
-    staleTime: 60 * 60 * 1000,
-  })
-
-  const modules = moduleData ?? []
+  const catalog = CATALOG[activeTrack.slug] ?? { price: 150, modules: [], quizCount: 0, glossaryCount: 0 }
+  const modules = catalog.modules
 
   return (
     <div className="bg-[#C8D4E0]">
@@ -272,8 +302,8 @@ export default function RealEstatePage() {
                 <div>
                   <p className="text-xs font-body font-semibold text-[#8A9AAA] uppercase tracking-wider mb-3">Course modules</p>
                   <div className="space-y-2">
-                    {modules.slice(0, 4).map((mod, idx) => (
-                      <div key={mod.id} className="flex items-center gap-3 p-3 rounded-lg border border-[#EEF2F6] bg-[#FAFAFA]">
+                    {modules.slice(0, 4).map((title, idx) => (
+                      <div key={title} className="flex items-center gap-3 p-3 rounded-lg border border-[#EEF2F6] bg-[#FAFAFA]">
                         <div
                           className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
                           style={idx === 0
@@ -284,8 +314,8 @@ export default function RealEstatePage() {
                           {idx === 0 ? <BookOpen size={13} /> : <Lock size={11} />}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="font-body font-semibold text-[#1A2433] text-xs truncate">{mod.title}</p>
-                          <p className="text-[#8A9AAA] text-xs">{mod.lessons_count} lessons · 10 quiz questions</p>
+                          <p className="font-body font-semibold text-[#1A2433] text-xs truncate">{title}</p>
+                          <p className="text-[#8A9AAA] text-xs">10 quiz questions</p>
                         </div>
                         {idx === 0
                           ? <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full border flex-shrink-0"
@@ -306,13 +336,6 @@ export default function RealEstatePage() {
                         </p>
                       </div>
                     )}
-                    {modules.length === 0 && (
-                      <div className="space-y-2">
-                        {[1,2,3].map(i => (
-                          <div key={i} className="h-12 bg-[#EEF2F6] rounded-lg animate-pulse" />
-                        ))}
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
@@ -321,7 +344,7 @@ export default function RealEstatePage() {
               <div className="p-7 flex flex-col">
                 <div className="h-1 w-12 rounded-full mb-5" style={{ background: theme.primary }} />
                 <div className="font-display text-3xl font-bold text-[#1A2433] mb-1">
-                  ${courseData?.price ?? '—'}
+                  ${catalog.price}
                 </div>
                 <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time · 3 months access</p>
 
@@ -343,9 +366,9 @@ export default function RealEstatePage() {
 
                 <div className="space-y-2 text-xs font-body text-[#4A5A6A]">
                   {[
-                    `${courseData?.modules_count ?? '—'} self-paced modules`,
-                    `${courseData?.quiz_count ?? '—'} practice questions`,
-                    `${courseData?.glossary_terms_count ?? '—'} glossary terms`,
+                    `${catalog.modules.length} self-paced modules`,
+                    `${catalog.quizCount} practice questions`,
+                    `${catalog.glossaryCount} glossary terms`,
                     'Certificate of completion',
                     '3 months access',
                     'Module 1 always free',

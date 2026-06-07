@@ -3,13 +3,17 @@ import type { ApiResponse, User } from '@/types'
 
 export interface LoginRequest { email: string; password: string }
 export interface RegisterRequest { email: string; password: string; name: string }
+
+// Backend login returns { access, refresh, user, tenant } directly (no ApiResponse wrapper)
+interface LoginBackendResponse { access: string; refresh: string; user: User; tenant?: Record<string, unknown> }
 export interface LoginResponse { token: string; refresh_token?: string; user: User }
 export interface RegisterResponse { token: string; refresh_token: string; user: User }
 
 export const authApi = {
-  login: async (data: LoginRequest) => {
-    const res = await apiClient.post<ApiResponse<LoginResponse>>('/auth/login/', data)
-    return res.data.data
+  login: async (data: LoginRequest): Promise<LoginResponse> => {
+    const res = await apiClient.post<LoginBackendResponse>('/auth/login/', data)
+    const d = res.data
+    return { token: d.access, refresh_token: d.refresh, user: d.user }
   },
 
   register: async (data: RegisterRequest) => {

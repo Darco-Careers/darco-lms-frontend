@@ -14,11 +14,18 @@ export const apiClient = axios.create({
 })
 
 // ─── Request interceptor: attach JWT token ────────────────────────────────────
+// Skip Authorization header for auth endpoints (login, register) to avoid
+// sending an expired/invalid token that would cause JWTAuthentication to reject
+// the request even though those endpoints have AllowAny permission.
+const AUTH_ENDPOINTS = ['/auth/login/', '/auth/register/']
 apiClient.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('authToken')
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`
+    const isAuthEndpoint = AUTH_ENDPOINTS.some(ep => config.url?.includes(ep))
+    if (!isAuthEndpoint) {
+      const token = localStorage.getItem('authToken')
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`
+      }
     }
     return config
   },

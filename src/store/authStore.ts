@@ -32,6 +32,12 @@ export const useAuthStore = create<AuthStore>()(
     {
       name: 'darco-auth',
       partialize: (state) => ({ user: state.user, token: state.token, isAuthenticated: state.isAuthenticated }),
+      onRehydrateStorage: () => (state) => {
+        // Re-sync localStorage.authToken from the persisted Zustand state
+        if (state?.token) {
+          localStorage.setItem('authToken', state.token)
+        }
+      },
     }
   )
 )

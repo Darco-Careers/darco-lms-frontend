@@ -83,24 +83,31 @@ export interface Lesson {
 // ─── Quiz ─────────────────────────────────────────────────────────────────────
 
 export interface QuizAnswer {
-  id: number
-  text: string
-  order: number
+  id: string
+  answer_text: string
+  sequence_order: number
 }
 
 export interface QuizQuestion {
-  id: number
+  id: string
   question_text: string
+  question_type: string
+  sequence_order: number
   answers: QuizAnswer[]
 }
 
 export interface Quiz {
-  id: number
-  module_id: number
-  total_questions: number
+  id: string
+  title: string
   passing_score: number
   max_attempts: number
+  attempts_used: number
+  attempts_left: number
+  can_attempt: boolean
+  already_passed: boolean
+  last_score: number | null
   questions: QuizQuestion[]
+  attempt_history: QuizAttempt[]
 }
 
 export interface QuizSubmission {
@@ -108,18 +115,21 @@ export interface QuizSubmission {
 }
 
 export interface QuizResult {
+  attempt_id: string
   passed: boolean
   score: number
-  total_questions: number
-  correct_count: number
-  explanation: string
+  passing_score: number
+  correct_answers: Record<string, string>
+  attempts_used: number
+  attempts_left: number
+  certificate_issued: boolean
 }
 
 export interface QuizAttempt {
   attempt_number: number
   score: number
   passed: boolean
-  submitted_at: string
+  attempted_at: string
 }
 
 // ─── Progress ────────────────────────────────────────────────────────────────

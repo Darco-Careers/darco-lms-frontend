@@ -1,10 +1,20 @@
 import { apiClient } from './client'
-import type { ApiResponse, PaginatedResponse, CourseProgress, DetailedProgress, Enrollment, CheckoutSession } from '@/types'
+import type { CourseProgress, DetailedProgress, CheckoutSession } from '@/types'
 
 export const progressApi = {
-  list: async () => {
-    const res = await apiClient.get<ApiResponse<PaginatedResponse<CourseProgress>>>('/progress/')
-    return res.data.data.results
+  list: async (): Promise<CourseProgress[]> => {
+    const res = await apiClient.get<{ enrollments: Array<Record<string, unknown>> }>('/student/enrollments/')
+    const enrollments = res.data.enrollments ?? []
+    return enrollments.map((e) => ({
+      course_id: e.course_id as number,
+      course_slug: e.course_slug as string,
+      course_title: e.course_title as string,
+      enrollment_date: e.enrolled_at as string,
+      modules_completed: 0,  // not returned by list endpoint
+      modules_total: 0,       // not returned by list endpoint
+      progress_percentage: (e.progress_pct as number) ?? 0,
+      is_completed: false,    // not returned by list endpoint; use progress_pct === 100 as proxy
+    }))
   },
 
   detail: async (courseSlug: string): Promise<DetailedProgress> => {
@@ -36,29 +46,29 @@ export const progressApi = {
   },
 
   completeModule: async (moduleId: string | number) => {
-    const res = await apiClient.post<ApiResponse<{ module_id: string | number; is_completed: boolean }>>(
+    const res = await apiClient.post<{ module_id: string | number; is_completed: boolean }>(
       `/progress/${moduleId}/complete/`
     )
-    return res.data.data
+    return res.data
   },
 }
 
 export const enrollmentApi = {
   list: async () => {
-    const res = await apiClient.get<ApiResponse<PaginatedResponse<Enrollment>>>('/enrollment/')
-    return res.data.data.results
+    const res = await apiClient.get<{ enrollments: Array<Record<string, unknown>> }>('/student/enrollments/')
+    return res.data.enrollments ?? []
   },
 
   create: async (courseSlug: string) => {
-    const res = await apiClient.post<ApiResponse<Enrollment>>('/enrollment/', { course_slug: courseSlug })
-    return res.data.data
+    const res = await apiClient.post<Record<string, unknown>>('/student/enrollments/', { course_slug: courseSlug })
+    return res.data
   },
 
   createCheckout: async (courseSlug: string) => {
-    const res = await apiClient.post<ApiResponse<CheckoutSession>>('/payments/create-checkout/', {
+    const res = await apiClient.post<CheckoutSession>('/student/checkout/', {
       course_slug: courseSlug,
     })
-    return res.data.data
+    return res.data
   },
 }
 

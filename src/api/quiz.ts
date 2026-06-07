@@ -1,19 +1,23 @@
 import { apiClient } from './client'
-import type { ApiResponse, PaginatedResponse, Quiz, QuizResult, QuizAttempt, QuizSubmission } from '@/types'
+import type { Quiz, QuizResult, QuizSubmission } from '@/types'
 
 export const quizApi = {
-  get: async (moduleId: number) => {
-    const res = await apiClient.get<ApiResponse<Quiz>>(`/modules/${moduleId}/quiz/`)
-    return res.data.data
+  /**
+   * GET /student/quizzes/<uuid>/
+   * Returns quiz questions (without correct answers) and attempt history.
+   */
+  get: async (quizId: string): Promise<Quiz> => {
+    const res = await apiClient.get<Quiz>(`/quizzes/${quizId}/`)
+    return res.data
   },
 
-  submit: async (quizId: number, submission: QuizSubmission) => {
-    const res = await apiClient.post<ApiResponse<QuizResult>>(`/quiz/${quizId}/submit/`, submission)
-    return res.data.data
-  },
-
-  attempts: async (quizId: number) => {
-    const res = await apiClient.get<ApiResponse<PaginatedResponse<QuizAttempt>>>(`/quiz/${quizId}/attempts/`)
-    return res.data.data.results
+  /**
+   * POST /student/quizzes/<uuid>/attempt/
+   * Body: { answers: { "<question_id>": "<answer_id>", ... } }
+   * Returns score, passed, correct_answers, etc.
+   */
+  submit: async (quizId: string, submission: QuizSubmission): Promise<QuizResult> => {
+    const res = await apiClient.post<QuizResult>(`/quizzes/${quizId}/attempt/`, submission)
+    return res.data
   },
 }

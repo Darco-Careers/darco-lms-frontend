@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import { ArrowLeft, CheckCircle, XCircle, RotateCcw, Trophy } from 'lucide-react'
-import { quizApi } from '@/api/quiz'
+import { apiClient } from '@/api/client'
 import { COURSE_COLORS } from '@/types'
-import type { QuizResult } from '@/types'
+import type { Quiz, QuizResult } from '@/types'
 import clsx from 'clsx'
 
 export default function QuizPage() {
@@ -17,18 +17,21 @@ export default function QuizPage() {
 
   const { data: quiz, isLoading } = useQuery({
     queryKey: ['quiz', moduleId],
-    queryFn: () => quizApi.get(Number(moduleId)),
+    queryFn: async (): Promise<Quiz> => {
+      const res = await apiClient.get<Quiz>(`/modules/${moduleId}/quiz/`)
+      return res.data
+    },
     enabled: !!moduleId,
   })
 
-  const { data: attempts } = useQuery({
-    queryKey: ['attempts', quiz?.id],
-    queryFn: () => quizApi.attempts(quiz!.id),
-    enabled: !!quiz?.id,
-  })
-
   const submitMutation = useMutation({
-    mutationFn: () => quizApi.submit(quiz!.id, { answers }),
+    mutationFn: async (): Promise<QuizResult> => {
+      const res = await apiClient.post<QuizResult>(
+        `/modules/${moduleId}/quiz/attempt/`,
+        { answers }
+      )
+      return res.data
+    },
     onSuccess: (data) => {
       setResult(data)
       setSubmitted(true)
@@ -43,8 +46,9 @@ export default function QuizPage() {
 
   const answeredCount = Object.keys(answers).length
   const allAnswered = quiz ? answeredCount === quiz.questions.length : false
-  const attemptsUsed = attempts?.length ?? 0
-  const canRetry = quiz ? attemptsUsed < quiz.max_attempts && !result?.passed : false
+  const attemptsUsed = quiz?.attempts_used ?? 0
+  const attemptsLeft = quiz?.attempts_left ?? 0
+  const canRetry = attemptsLeft > 0 && !result?.passed
 
   if (isLoading) {
     return (
@@ -57,6 +61,8 @@ export default function QuizPage() {
   }
 
   if (!quiz) return null
+
+  const totalQuestions = quiz.questions.length
 
   return (
     <div className="min-h-screen bg-surface-50">
@@ -72,7 +78,7 @@ export default function QuizPage() {
           </Link>
           {!submitted && (
             <span className="text-sm font-body text-surface-400">
-              {answeredCount} / {quiz.questions.length} answered
+              {answeredCount} / {totalQuestions} answered
             </span>
           )}
         </div>
@@ -89,11 +95,11 @@ export default function QuizPage() {
             Module Quiz
           </div>
           <h1 className="font-display text-2xl font-bold text-navy-900 mb-1">
-            {submitted ? (result?.passed ? '🎉 You passed!' : 'Not quite — try again') : 'Module Quiz'}
+            {submitted ? (result?.passed ? '🎉 You passed!' : 'Not quite — try again') : quiz.title}
           </h1>
           <p className="text-surface-500 font-body text-sm">
-            {quiz.total_questions} questions · {quiz.passing_score}% to pass ·{' '}
-            {quiz.max_attempts - attemptsUsed} attempt{quiz.max_attempts - attemptsUsed !== 1 ? 's' : ''} remaining
+            {totalQuestions} questions · {quiz.passing_score}% to pass ·{' '}
+            {attemptsLeft} attempt{attemptsLeft !== 1 ? 's' : ''} remaining
           </p>
         </div>
 
@@ -113,9 +119,13 @@ export default function QuizPage() {
             }
             <div>
               <p className={clsx('font-body font-bold text-lg', result.passed ? 'text-emerald-700' : 'text-red-700')}>
-                {result.score}% — {result.correct_count} of {result.total_questions} correct
+                {result.score}% — {result.passed ? 'Passed' : `Need ${result.passing_score}% to pass`}
               </p>
-              <p className="text-sm font-body text-surface-600 mt-1">{result.explanation}</p>
+              {result.certificate_issued && (
+                <p className="text-sm font-body text-emerald-600 mt-1 font-semibold">
+                  🎓 Certificate issued! Check your dashboard.
+                </p>
+              )}
               <div className="flex gap-3 mt-4">
                 {result.passed ? (
                   <Link
@@ -152,27 +162,34 @@ export default function QuizPage() {
                     {q.question_text}
                   </p>
                   <div className="space-y-2">
-                    {q.answers.map((ans) => {
-                      const letter = String.fromCharCode(65 + ans.order) // A, B, C, D
-                      const isSelected = answers[`question_${q.id}`] === letter
+                    {q.answers.map((ans, ansIdx) => {
+                      const letter = String.fromCharCode(65 + ansIdx) // A, B, C, D
+                      const isSelected = answers[q.id] === ans.id
+                      // Show correct/incorrect after submission
+                      const isCorrect = result?.correct_answers?.[q.id] === ans.id
                       return (
                         <button
                           key={ans.id}
-                          onClick={() => setAnswers(prev => ({ ...prev, [`question_${q.id}`]: letter }))}
+                          onClick={() => !submitted && setAnswers(prev => ({ ...prev, [q.id]: ans.id }))}
+                          disabled={submitted}
                           className={clsx(
                             'w-full text-left px-4 py-3 rounded-lg border text-sm font-body transition-all duration-150',
-                            isSelected
+                            submitted && isCorrect
+                              ? 'border-emerald-400 bg-emerald-50 text-emerald-800 font-semibold'
+                              : submitted && isSelected && !isCorrect
+                              ? 'border-red-400 bg-red-50 text-red-700'
+                              : isSelected
                               ? 'border-2 font-semibold'
                               : 'border-surface-200 text-surface-700 hover:border-surface-300 bg-white'
                           )}
-                          style={isSelected ? {
+                          style={!submitted && isSelected ? {
                             borderColor: theme.primary,
                             background: `${theme.pale}`,
                             color: theme.primary,
                           } : {}}
                         >
                           <span className="font-semibold mr-2">{letter}.</span>
-                          {ans.text}
+                          {ans.answer_text}
                         </button>
                       )
                     })}
@@ -184,7 +201,9 @@ export default function QuizPage() {
             {/* Submit */}
             <div className="mt-8 flex justify-between items-center">
               <p className="text-sm text-surface-400 font-body">
-                {allAnswered ? 'All questions answered — ready to submit!' : `${quiz.questions.length - answeredCount} question${quiz.questions.length - answeredCount !== 1 ? 's' : ''} remaining`}
+                {allAnswered
+                  ? 'All questions answered — ready to submit!'
+                  : `${totalQuestions - answeredCount} question${totalQuestions - answeredCount !== 1 ? 's' : ''} remaining`}
               </p>
               <button
                 onClick={() => submitMutation.mutate()}

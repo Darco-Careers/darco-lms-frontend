@@ -18,7 +18,7 @@ export default function QuizPage() {
   const { data: quiz, isLoading } = useQuery({
     queryKey: ['quiz', moduleId],
     queryFn: async (): Promise<Quiz> => {
-      const res = await apiClient.get<Quiz>(`/modules/${moduleId}/quiz/`)
+      const res = await apiClient.get<Quiz>(`/student/modules/${moduleId}/quiz/`)
       return res.data
     },
     enabled: !!moduleId,
@@ -27,7 +27,7 @@ export default function QuizPage() {
   const submitMutation = useMutation({
     mutationFn: async (): Promise<QuizResult> => {
       const res = await apiClient.post<QuizResult>(
-        `/modules/${moduleId}/quiz/attempt/`,
+        `/student/modules/${moduleId}/quiz/attempt/`,
         { answers }
       )
       return res.data

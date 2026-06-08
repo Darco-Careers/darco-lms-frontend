@@ -1,8 +1,9 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useQuery, useMutation } from '@tanstack/react-query'
-import { BookOpen, Award, FileText, Lock, CheckCircle, ArrowLeft, Clock } from 'lucide-react'
+import { BookOpen, Award, FileText, Lock, CheckCircle, ArrowLeft, Clock, Tag, X, Loader2 } from 'lucide-react'
 import { coursesApi } from '@/api/courses'
 import { enrollmentApi, freeEnrollmentApi } from '@/api/progress'
+import { validatePromoCode, type ValidatePromoCodeResult } from '@/api/promoCodes'
 import { COURSE_COLORS } from '@/types'
 import { useAuthStore } from '@/store/authStore'
 import { useState } from 'react'
@@ -12,6 +13,11 @@ export default function CourseDetailPage() {
   const navigate = useNavigate()
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated)
   const [enrolling, setEnrolling] = useState(false)
+  const [promoInput, setPromoInput] = useState('')
+  const [promoValidating, setPromoValidating] = useState(false)
+  const [promoResult, setPromoResult] = useState<ValidatePromoCodeResult | null>(null)
+  const [promoError, setPromoError] = useState<string | null>(null)
+  const [showPromoField, setShowPromoField] = useState(false)
 
   const { data: course, isLoading } = useQuery({
     queryKey: ['course', slug],
@@ -42,6 +48,28 @@ export default function CourseDetailPage() {
     freeMutation.mutate()
   }
 
+  const handleValidatePromo = async () => {
+    if (!promoInput.trim()) return
+    setPromoValidating(true)
+    setPromoError(null)
+    setPromoResult(null)
+    try {
+      const result = await validatePromoCode(promoInput.trim(), slug!)
+      setPromoResult(result)
+    } catch (err: unknown) {
+      const axiosErr = err as { response?: { data?: { error?: string } } }
+      setPromoError(axiosErr?.response?.data?.error || 'Invalid promo code.')
+    } finally {
+      setPromoValidating(false)
+    }
+  }
+
+  const handleClearPromo = () => {
+    setPromoInput('')
+    setPromoResult(null)
+    setPromoError(null)
+  }
+
   const handleEnroll = async () => {
     if (!isAuthenticated) {
       navigate(`/register?next=/courses/${slug}`)
@@ -49,8 +77,15 @@ export default function CourseDetailPage() {
     }
     setEnrolling(true)
     try {
-      const session = await enrollmentApi.createCheckout(slug!)
-      window.location.href = session.checkout_url
+      const session = await enrollmentApi.createCheckout(slug!, promoResult?.code)
+      if (session.enrolled) {
+        // 100% off — enrolled directly, redirect to progress page
+        navigate(`/courses/${slug}/progress`)
+        return
+      }
+      if (session.checkout_url) {
+        window.location.href = session.checkout_url
+      }
     } catch {
       setEnrolling(false)
     }
@@ -212,10 +247,79 @@ export default function CourseDetailPage() {
                 </>
               ) : (
                 <>
-                  <div className="font-display text-3xl font-bold text-[#1A2433] mb-1">
-                    ${course.price}
+                  {/* Price display */}
+                  <div className="mb-1">
+                    {promoResult ? (
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-display text-3xl font-bold text-[#1A2433]">
+                          {promoResult.is_free ? 'Free' : `$${(promoResult.final_price_cents / 100).toFixed(2)}`}
+                        </span>
+                        <span className="font-display text-lg text-[#8A9AAA] line-through">
+                          ${course.price}
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="font-display text-3xl font-bold text-[#1A2433]">${course.price}</div>
+                    )}
                   </div>
-                  <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time payment</p>
+                  <p className="text-[#8A9AAA] text-sm font-body mb-4">One-time payment</p>
+
+                  {/* Promo code section */}
+                  {!promoResult ? (
+                    <div className="mb-4">
+                      {!showPromoField ? (
+                        <button
+                          onClick={() => setShowPromoField(true)}
+                          className="flex items-center gap-1.5 text-xs font-body text-[#C9A84C] hover:text-[#A8873C] transition-colors"
+                        >
+                          <Tag size={12} /> Have a promo code?
+                        </button>
+                      ) : (
+                        <div>
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              className="flex-1 px-3 py-2 text-sm font-mono uppercase border border-[#BCCAD8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent"
+                              placeholder="Enter code"
+                              value={promoInput}
+                              onChange={e => setPromoInput(e.target.value.toUpperCase())}
+                              onKeyDown={e => e.key === 'Enter' && handleValidatePromo()}
+                              maxLength={50}
+                            />
+                            <button
+                              onClick={handleValidatePromo}
+                              disabled={promoValidating || !promoInput.trim()}
+                              className="px-3 py-2 rounded-lg text-xs font-body font-semibold text-[#1E2A38] disabled:opacity-50 transition-all hover:brightness-110"
+                              style={{ background: '#C9A84C' }}
+                            >
+                              {promoValidating ? <Loader2 size={14} className="animate-spin" /> : 'Apply'}
+                            </button>
+                            <button
+                              onClick={() => { setShowPromoField(false); handleClearPromo() }}
+                              className="p-2 text-[#8A9AAA] hover:text-[#1A2433] transition-colors"
+                            >
+                              <X size={14} />
+                            </button>
+                          </div>
+                          {promoError && (
+                            <p className="text-xs text-red-500 font-body mt-1.5">{promoError}</p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg px-3 py-2 mb-4">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle size={14} className="text-green-600 flex-shrink-0" />
+                        <span className="text-xs font-body font-semibold text-green-700">
+                          {promoResult.discount_label} applied
+                        </span>
+                      </div>
+                      <button onClick={handleClearPromo} className="text-[#8A9AAA] hover:text-[#1A2433] transition-colors">
+                        <X size={13} />
+                      </button>
+                    </div>
+                  )}
 
                   <button
                     onClick={handleEnroll}
@@ -223,7 +327,12 @@ export default function CourseDetailPage() {
                     className="w-full py-3.5 rounded-lg font-body font-semibold text-white text-base mb-3 transition-all hover:brightness-110"
                     style={{ background: theme.primary }}
                   >
-                    {enrolling ? 'Redirecting...' : 'Enroll now'}
+                    {enrolling
+                      ? (promoResult?.is_free ? 'Enrolling...' : 'Redirecting...')
+                      : promoResult?.is_free
+                        ? 'Enroll for Free'
+                        : 'Enroll now'
+                    }
                   </button>
 
                   <button

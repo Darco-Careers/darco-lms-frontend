@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { Menu, X, LogOut } from 'lucide-react'
+import { Menu, X, LogOut, Tag } from 'lucide-react'
 import { useAuthStore } from '@/store/authStore'
 import { authApi } from '@/api/auth'
 
@@ -52,6 +52,16 @@ export default function Navbar() {
                 }
               >
                 Dashboard
+              </NavLink>
+            )}
+            {isAuthenticated && user && ['school_admin', 'platform_admin'].includes(user.role) && (
+              <NavLink
+                to="/admin/promo-codes"
+                className={({ isActive }) =>
+                  `flex items-center gap-1.5 font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#4A5A6A] hover:text-[#1A2433]'}`
+                }
+              >
+                <Tag size={14} /> Promo Codes
               </NavLink>
             )}
           </div>
@@ -110,6 +120,11 @@ export default function Navbar() {
             {isAuthenticated && (
               <Link to="/dashboard" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
                 Dashboard
+              </Link>
+            )}
+            {isAuthenticated && user && ['school_admin', 'platform_admin'].includes(user.role) && (
+              <Link to="/admin/promo-codes" className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+                <Tag size={15} /> Promo Codes
               </Link>
             )}
             <div className="pt-3 border-t border-[#EEF2F6] mt-2 space-y-2">

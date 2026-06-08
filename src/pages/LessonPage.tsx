@@ -42,7 +42,7 @@ export default function LessonPage() {
     setEnrolling(true)
     try {
       const session = await enrollmentApi.createCheckout(slug!)
-      window.location.href = session.checkout_url
+      if (session.checkout_url) window.location.href = session.checkout_url
     } catch {
       setEnrolling(false)
     }

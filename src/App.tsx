@@ -18,6 +18,18 @@ import GlossaryPage from '@/pages/GlossaryPage'
 import ProgressPage from '@/pages/ProgressPage'
 import CheckoutSuccessPage from '@/pages/CheckoutSuccessPage'
 import NotFoundPage from '@/pages/NotFoundPage'
+import AdminPromoCodesPage from '@/pages/AdminPromoCodesPage'
+
+// Admin route wrapper — only accessible to school_admin or platform_admin
+function AdminRoute({ children }: { children: React.ReactNode }) {
+  const user = useAuthStore((s) => s.user)
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated)
+  if (!isAuthenticated) return <Navigate to="/login" replace />
+  if (!user || !['school_admin', 'platform_admin'].includes(user.role)) {
+    return <Navigate to="/dashboard" replace />
+  }
+  return <>{children}</>
+}
 
 // Protected route wrapper
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -51,6 +63,11 @@ export default function App() {
           <Route path="/courses/:slug/glossary" element={<GlossaryPage />} />
           <Route path="/courses/:slug/progress" element={<ProgressPage />} />
           <Route path="/checkout/success" element={<CheckoutSuccessPage />} />
+        </Route>
+
+        {/* Admin-only routes */}
+        <Route element={<AdminRoute><MainLayout /></AdminRoute>}>
+          <Route path="/admin/promo-codes" element={<AdminPromoCodesPage />} />
         </Route>
 
         {/* 404 */}

@@ -64,9 +64,10 @@ export const enrollmentApi = {
     return res.data
   },
 
-  createCheckout: async (courseSlug: string) => {
+  createCheckout: async (courseSlug: string, promoCode?: string) => {
     const res = await apiClient.post<CheckoutSession>('/student/checkout/', {
       course_slug: courseSlug,
+      ...(promoCode ? { promo_code: promoCode } : {}),
     })
     return res.data
   },

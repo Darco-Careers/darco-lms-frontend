@@ -4,6 +4,7 @@ export interface User {
   id: number
   email: string
   name: string
+  role: 'student' | 'school_admin' | 'platform_admin'
 }
 
 export interface AuthState {
@@ -174,8 +175,13 @@ export interface Enrollment {
 }
 
 export interface CheckoutSession {
-  checkout_url: string
-  session_id: string
+  checkout_url?: string
+  session_id?: string
+  // 100% off promo code path — enrolled directly without Stripe
+  enrolled?: boolean
+  enrollment_id?: string
+  course_slug?: string
+  message?: string
 }
 
 // ─── Glossary ────────────────────────────────────────────────────────────────

@@ -151,7 +151,16 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
             type="datetime-local"
             className="input-field"
             value={form.expires_at ? form.expires_at.slice(0, 16) : ''}
-            onChange={e => setForm(f => ({ ...f, expires_at: e.target.value ? new Date(e.target.value).toISOString() : null }))}
+            onChange={e => {
+              const val = e.target.value
+              setForm(f => ({ ...f, expires_at: val && val.trim() !== '' ? new Date(val).toISOString() : null }))
+            }}
+            onBlur={e => {
+              // If user clears the field, ensure expires_at is null
+              if (!e.target.value || e.target.value.trim() === '') {
+                setForm(f => ({ ...f, expires_at: null }))
+              }
+            }}
           />
           <p className="text-xs text-[#8A9AAA] mt-1">Leave blank — code never expires.</p>
         </div>

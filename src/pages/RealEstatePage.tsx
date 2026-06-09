@@ -223,7 +223,7 @@ export default function RealEstatePage() {
               <ul className="mt-4 space-y-1.5">
                 {[
                   'Overview of all 10 real estate career tracks',
-                  'Free orientation module — no payment required',
+                  'Course overview is always free — no account needed',
                   'Helps you choose the right path with confidence',
                 ].map(item => (
                   <li key={item} className="flex items-center gap-2 text-sm font-body text-[#8A9BB0]">
@@ -241,7 +241,7 @@ export default function RealEstatePage() {
               >
                 Explore Core Foundation <ArrowRight size={16} />
               </Link>
-              <p className="text-center text-xs text-[#8A9BB0] font-body">Free orientation module included</p>
+              <p className="text-center text-xs text-[#8A9BB0] font-body">Course overview is free — no payment needed</p>
             </div>
           </div>
         </div>

@@ -56,7 +56,7 @@ const TRACKS = [
   {
     slug: 'real-estate-foundation',
     emoji: '🏛️', short: 'Core Foundation',
-    tagline: 'Not sure where to begin? Start here.',
+    tagline: 'Get a solid overview of the real estate career industry.',
     desc: "New to real estate and not sure which direction is right for you? The Real Estate Core Foundation gives you a comprehensive overview of the many career paths available in the industry. Explore each path, understand how they connect, and make an informed decision before committing to a specific track.",
     tags: ['Beginner friendly', 'All career paths covered', 'No license required'],
     license: false, noLicense: true,

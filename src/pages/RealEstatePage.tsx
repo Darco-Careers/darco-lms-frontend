@@ -260,6 +260,16 @@ export default function RealEstatePage() {
 
           {/* TABS ROW */}
           <div className="flex flex-wrap gap-2 mb-6">
+            {/* Core Foundation — special Start Here tab */}
+            <Link
+              to="/courses/real-estate-foundation"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border text-xs font-body font-semibold transition-all duration-200 whitespace-nowrap"
+              style={{ background: '#C9A84C', color: '#1A2433', borderColor: 'transparent' }}
+            >
+              <span>🏛️</span>
+              <span>Start Here — Core Foundation</span>
+            </Link>
+
             {TRACKS.map((track, idx) => {
               const trackTheme = COURSE_COLORS[track.slug]
               const isActive = idx === activeIdx

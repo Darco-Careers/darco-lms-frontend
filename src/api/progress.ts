@@ -10,6 +10,8 @@ export const progressApi = {
       course_slug: e.course_slug as string,
       course_title: e.course_title as string,
       enrollment_date: e.enrolled_at as string,
+      enrollment_id: e.id as string,
+      enrollment_status: e.status as string,
       modules_completed: 0,  // not returned by list endpoint
       modules_total: 0,       // not returned by list endpoint
       progress_percentage: (e.progress_pct as number) ?? 0,
@@ -69,6 +71,15 @@ export const enrollmentApi = {
       course_slug: courseSlug,
       ...(promoCode ? { promo_code: promoCode } : {}),
     })
+    return res.data
+  },
+}
+
+export const cancelPreviewApi = {
+  cancel: async (enrollmentId: string) => {
+    const res = await apiClient.delete<{ success: boolean; message: string }>(
+      `/student/enrollments/${enrollmentId}/cancel-preview/`
+    )
     return res.data
   },
 }

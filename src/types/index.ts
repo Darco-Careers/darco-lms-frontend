@@ -140,6 +140,8 @@ export interface CourseProgress {
   course_slug: string
   course_title: string
   enrollment_date: string
+  enrollment_id?: string
+  enrollment_status?: string
   modules_completed: number
   modules_total: number
   progress_percentage: number

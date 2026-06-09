@@ -1,12 +1,16 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
-import { BookOpen, ArrowRight, Trophy, Clock } from 'lucide-react'
-import { progressApi } from '@/api/progress'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { BookOpen, ArrowRight, Trophy, Clock, X, Eye } from 'lucide-react'
+import { progressApi, cancelPreviewApi } from '@/api/progress'
 import { COURSE_COLORS } from '@/types'
 import { useAuthStore } from '@/store/authStore'
 
 export default function DashboardPage() {
   const user = useAuthStore((s) => s.user)
+  const queryClient = useQueryClient()
+  const [cancellingId, setCancellingId] = useState<string | null>(null)
+  const [cancelError, setCancelError] = useState<string | null>(null)
 
   const { data: progressList, isLoading } = useQuery({
     queryKey: ['progress'],
@@ -16,6 +20,22 @@ export default function DashboardPage() {
   const enrolled = progressList ?? []
   const completed = enrolled.filter(c => c.is_completed)
   const inProgress = enrolled.filter(c => !c.is_completed)
+  const freePreviews = inProgress.filter(c => c.enrollment_status === 'free_preview')
+  const paidInProgress = inProgress.filter(c => c.enrollment_status !== 'free_preview')
+
+  const handleCancelPreview = async (enrollmentId: string, courseTitle: string) => {
+    if (!confirm(`Cancel your free preview of "${courseTitle}"? You can start a new free preview on any other course after cancelling.`)) return
+    setCancellingId(enrollmentId)
+    setCancelError(null)
+    try {
+      await cancelPreviewApi.cancel(enrollmentId)
+      await queryClient.invalidateQueries({ queryKey: ['progress'] })
+    } catch (err: any) {
+      setCancelError(err?.response?.data?.error || 'Failed to cancel. Please try again.')
+    } finally {
+      setCancellingId(null)
+    }
+  }
 
   return (
     <div className="page-container py-10">
@@ -51,6 +71,12 @@ export default function DashboardPage() {
         ))}
       </div>
 
+      {cancelError && (
+        <div className="mb-6 bg-red-50 border border-red-200 rounded-lg px-4 py-3 font-body text-sm text-red-600">
+          {cancelError}
+        </div>
+      )}
+
       {isLoading && (
         <div className="space-y-4">
           {[1, 2].map(i => (
@@ -64,18 +90,77 @@ export default function DashboardPage() {
           <BookOpen size={36} className="text-surface-300 mx-auto mb-4" />
           <h3 className="font-display text-lg font-bold text-navy-900 mb-2">No courses yet</h3>
           <p className="text-surface-500 font-body text-sm mb-5">
-            Browse our 13 career tracks and enroll in your first course.
+            Browse our career tracks and enroll in your first course.
           </p>
           <Link to="/" className="btn-primary">Browse courses</Link>
         </div>
       )}
 
-      {/* In progress */}
-      {inProgress.length > 0 && (
+      {/* Free Previews */}
+      {freePreviews.length > 0 && (
+        <div className="mb-10">
+          <div className="flex items-center gap-2 mb-4">
+            <Eye size={16} className="text-[#C9A84C]" />
+            <h2 className="font-display text-xl font-bold text-navy-900">Free Preview</h2>
+            <span className="text-xs font-body text-[#8A9AAA] bg-[#EEF2F6] px-2 py-0.5 rounded-full">
+              1 active at a time
+            </span>
+          </div>
+          <div className="space-y-4">
+            {freePreviews.map(course => {
+              const theme = COURSE_COLORS[course.course_slug] ?? COURSE_COLORS['real-estate-foundation']
+              const isCancelling = cancellingId === course.enrollment_id
+              return (
+                <div key={course.course_id} className="card flex items-center gap-5 p-5">
+                  <div
+                    className="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-white font-display font-bold text-lg"
+                    style={{ background: theme.heroGradient }}
+                  >
+                    {course.course_title.charAt(0)}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="font-body font-semibold text-navy-900 truncate">{course.course_title}</p>
+                      <span className="text-[10px] font-body font-semibold text-[#C9A84C] bg-[#C9A84C]/10 px-2 py-0.5 rounded-full uppercase tracking-wide flex-shrink-0">
+                        Free Preview
+                      </span>
+                    </div>
+                    <p className="text-xs text-surface-400 font-body mt-0.5">
+                      Module 1 unlocked — explore the content before committing
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <Link
+                      to={`/courses/${course.course_slug}`}
+                      className="font-body font-semibold text-xs px-3 py-1.5 rounded-lg text-[#1E2A38] bg-[#C9A84C] hover:brightness-110 transition-all"
+                    >
+                      Continue
+                    </Link>
+                    <button
+                      onClick={() => course.enrollment_id && handleCancelPreview(course.enrollment_id, course.course_title)}
+                      disabled={isCancelling}
+                      title="Cancel free preview"
+                      className="p-1.5 rounded-lg text-surface-400 hover:text-red-500 hover:bg-red-50 transition-colors disabled:opacity-50"
+                    >
+                      {isCancelling
+                        ? <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" /></svg>
+                        : <X size={16} />
+                      }
+                    </button>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Paid courses in progress */}
+      {paidInProgress.length > 0 && (
         <div className="mb-10">
           <h2 className="font-display text-xl font-bold text-navy-900 mb-4">In progress</h2>
           <div className="space-y-4">
-            {inProgress.map(course => {
+            {paidInProgress.map(course => {
               const theme = COURSE_COLORS[course.course_slug] ?? COURSE_COLORS['real-estate-foundation']
               return (
                 <Link

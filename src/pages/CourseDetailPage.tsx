@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import { BookOpen, Award, FileText, Lock, CheckCircle, ArrowLeft, Clock, Tag, X, Loader2 } from 'lucide-react'
 import { coursesApi } from '@/api/courses'
@@ -19,6 +19,10 @@ export default function CourseDetailPage() {
   const [promoError, setPromoError] = useState<string | null>(null)
   const [showPromoField, setShowPromoField] = useState(false)
 
+  const location = useLocation()
+  // Detect if student came from Core Foundation flow
+  const fromFoundation = location.state?.from === 'foundation' || document.referrer.includes('/courses/real-estate-foundation')
+
   const { data: course, isLoading } = useQuery({
     queryKey: ['course', slug],
     queryFn: () => coursesApi.detail(slug!),
@@ -32,11 +36,20 @@ export default function CourseDetailPage() {
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
   const isLight = slug === 'construction-painting'
 
+  const [previewLimitError, setPreviewLimitError] = useState<{ courseName: string } | null>(null)
+
   // Free enrollment mutation
   const freeMutation = useMutation({
     mutationFn: () => freeEnrollmentApi.enroll(slug!),
     onSuccess: (data) => {
       navigate(`/courses/${slug}/lesson/${data.first_lesson_id}`)
+    },
+    onError: (err: any) => {
+      if (err?.response?.data?.error === 'one_preview_limit') {
+        setPreviewLimitError({
+          courseName: err.response.data.active_preview?.course_title ?? 'another course',
+        })
+      }
     },
   })
 
@@ -45,6 +58,7 @@ export default function CourseDetailPage() {
       navigate(`/register?next=/courses/${slug}/free`)
       return
     }
+    setPreviewLimitError(null)
     freeMutation.mutate()
   }
 
@@ -117,16 +131,27 @@ export default function CourseDetailPage() {
         }}
       >
         <div className="page-container relative">
-          <Link
-            to={slug?.startsWith('real-estate') || slug === 'real-estate-leasing' ? '/real-estate' : '/'}
-            className="inline-flex items-center gap-2 text-sm font-body mb-6 transition-colors"
-            style={{ color: isLight ? theme.mid : 'rgba(255,255,255,0.6)' }}
-          >
-            <ArrowLeft size={15} />
-            {slug?.startsWith('real-estate') || slug === 'real-estate-leasing'
-              ? 'Real Estate tracks'
-              : 'All paths'}
-          </Link>
+          <div className="flex items-center gap-4 mb-6">
+            <Link
+              to={slug?.startsWith('real-estate') || slug === 'real-estate-leasing' ? '/real-estate' : '/'}
+              className="inline-flex items-center gap-2 text-sm font-body transition-colors"
+              style={{ color: isLight ? theme.mid : 'rgba(255,255,255,0.6)' }}
+            >
+              <ArrowLeft size={15} />
+              {slug?.startsWith('real-estate') || slug === 'real-estate-leasing'
+                ? 'Real Estate tracks'
+                : 'All paths'}
+            </Link>
+            {fromFoundation && (
+              <Link
+                to="/courses/real-estate-foundation"
+                className="inline-flex items-center gap-2 text-sm font-body transition-colors"
+                style={{ color: isLight ? theme.mid : 'rgba(255,255,255,0.6)' }}
+              >
+                · Back to Core Foundation
+              </Link>
+            )}
+          </div>
 
           <div
             className="inline-block px-3 py-1 rounded-full text-xs font-body font-semibold uppercase tracking-widest mb-4"
@@ -350,7 +375,19 @@ export default function CourseDetailPage() {
                     </p>
                   )}
 
-                  {freeMutation.isError && (
+                  {previewLimitError && (
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 mb-3 text-xs font-body">
+                      <p className="text-amber-800 font-semibold mb-1">You already have an active free preview</p>
+                      <p className="text-amber-700 mb-2">
+                        You're currently previewing <strong>{previewLimitError.courseName}</strong>. Cancel that preview first to start a new one.
+                      </p>
+                      <Link to="/dashboard" className="text-[#C9A84C] font-semibold hover:underline">
+                        Go to Dashboard to cancel →
+                      </Link>
+                    </div>
+                  )}
+
+                  {freeMutation.isError && !previewLimitError && (
                     <p className="text-center text-xs text-red-500 font-body mb-3">
                       Something went wrong. Please try again.
                     </p>

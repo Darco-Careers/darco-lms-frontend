@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <footer className="bg-[#1A2433] text-[#8A9BB0]">
       <div className="page-container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
           {/* Brand */}
-          <div>
+          <div className="sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 bg-[#1E2A38] border border-[#2D3E52] rounded-lg flex items-center justify-center">
                 <span className="font-display font-bold text-[#C9A84C] text-base">D</span>
@@ -23,7 +23,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Career Paths */}
+          {/* Career Tracks */}
           <div>
             <h4 className="font-body font-semibold text-white mb-4 text-xs uppercase tracking-wider">Career Tracks</h4>
             <ul className="space-y-2 text-sm">
@@ -44,9 +44,36 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* About */}
+          {/* Support */}
           <div>
-            <h4 className="font-body font-semibold text-white mb-4 text-xs uppercase tracking-wider">About</h4>
+            <h4 className="font-body font-semibold text-white mb-4 text-xs uppercase tracking-wider">Support</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/faq" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <a href="mailto:info@darcocenter.org" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                  info@darcocenter.org
+                </a>
+              </li>
+              <li>
+                <a href="tel:+18186870188" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                  (818) 687-0188
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-body font-semibold text-white mb-4 text-xs uppercase tracking-wider">Company</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="https://darcoacademy.com/about.html" target="_blank" rel="noopener noreferrer"
@@ -57,7 +84,7 @@ export default function Footer() {
               <li>
                 <a href="https://darcoinc.org" target="_blank" rel="noopener noreferrer"
                   className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
-                  DARCO Inc.
+                  DARCO Inc. (Parent Company)
                 </a>
               </li>
               <li>
@@ -74,11 +101,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#2D3E52] mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-[#4A5A6A] text-sm font-body">
+        <div className="border-t border-[#2D3E52] mt-10 pt-6 flex flex-col sm:flex-row justify-between items-start gap-3">
+          <p className="text-[#4A5A6A] text-sm font-body flex-shrink-0">
             © {new Date().getFullYear()} DARCO Inc. All rights reserved.
           </p>
-          <p className="text-[#4A5A6A] text-xs font-body">
+          <p className="text-[#4A5A6A] text-xs font-body text-right">
             Educational content only. Course materials are for general informational purposes and do not constitute legal, professional, or licensing advice. Always verify current licensing requirements with your state or local authority. DARCO Academy makes no guarantees regarding employment outcomes.
           </p>
         </div>

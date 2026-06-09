@@ -19,6 +19,8 @@ import ProgressPage from '@/pages/ProgressPage'
 import CheckoutSuccessPage from '@/pages/CheckoutSuccessPage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import AdminPromoCodesPage from '@/pages/AdminPromoCodesPage'
+import ContactPage from '@/pages/ContactPage'
+import FAQPage from '@/pages/FAQPage'
 
 // Admin route wrapper — only accessible to school_admin or platform_admin
 function AdminRoute({ children }: { children: React.ReactNode }) {
@@ -47,6 +49,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/real-estate" element={<RealEstatePage />} />
           <Route path="/courses/:slug" element={<CourseDetailPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/faq" element={<FAQPage />} />
         </Route>
 
         {/* Auth routes */}

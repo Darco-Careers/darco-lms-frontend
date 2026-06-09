@@ -58,6 +58,22 @@ export default function Navbar() {
             <button onClick={handleCareerPaths} className="font-body font-medium text-sm text-[#4A5A6A] hover:text-[#1A2433] transition-colors">
               Career Paths
             </button>
+            <NavLink
+              to="/faq"
+              className={({ isActive }) =>
+                `font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#4A5A6A] hover:text-[#1A2433]'}`
+              }
+            >
+              FAQ
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#4A5A6A] hover:text-[#1A2433]'}`
+              }
+            >
+              Contact
+            </NavLink>
             {isAuthenticated && (
               <NavLink
                 to="/dashboard"
@@ -131,6 +147,12 @@ export default function Navbar() {
             <button onClick={handleCareerPaths} className="block w-full text-left px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm">
               Career Paths
             </button>
+            <Link to="/faq" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+              FAQ
+            </Link>
+            <Link to="/contact" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+              Contact
+            </Link>
             {isAuthenticated && (
               <Link to="/dashboard" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
                 Dashboard

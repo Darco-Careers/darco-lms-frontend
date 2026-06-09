@@ -289,47 +289,33 @@ export default function CourseDetailPage() {
                   </div>
                   <p className="text-[#8A9AAA] text-sm font-body mb-4">One-time payment</p>
 
-                  {/* Promo code section */}
+                  {/* Promo code section — always visible */}
                   {!promoResult ? (
                     <div className="mb-4">
-                      {!showPromoField ? (
+                      <label className="block text-xs font-body font-semibold text-[#8A9AAA] uppercase tracking-wide mb-1.5">
+                        <Tag size={11} className="inline mr-1" />Promo Code
+                      </label>
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          className="flex-1 px-3 py-2 text-sm font-mono uppercase border border-[#BCCAD8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent"
+                          placeholder="Enter promo code"
+                          value={promoInput}
+                          onChange={e => setPromoInput(e.target.value.toUpperCase())}
+                          onKeyDown={e => e.key === 'Enter' && handleValidatePromo()}
+                          maxLength={50}
+                        />
                         <button
-                          onClick={() => setShowPromoField(true)}
-                          className="flex items-center gap-1.5 text-xs font-body text-[#C9A84C] hover:text-[#A8873C] transition-colors"
+                          onClick={handleValidatePromo}
+                          disabled={promoValidating || !promoInput.trim()}
+                          className="px-3 py-2 rounded-lg text-xs font-body font-semibold text-[#1E2A38] disabled:opacity-50 transition-all hover:brightness-110"
+                          style={{ background: '#C9A84C' }}
                         >
-                          <Tag size={12} /> Have a promo code?
+                          {promoValidating ? <Loader2 size={14} className="animate-spin" /> : 'Apply'}
                         </button>
-                      ) : (
-                        <div>
-                          <div className="flex gap-2">
-                            <input
-                              type="text"
-                              className="flex-1 px-3 py-2 text-sm font-mono uppercase border border-[#BCCAD8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent"
-                              placeholder="Enter code"
-                              value={promoInput}
-                              onChange={e => setPromoInput(e.target.value.toUpperCase())}
-                              onKeyDown={e => e.key === 'Enter' && handleValidatePromo()}
-                              maxLength={50}
-                            />
-                            <button
-                              onClick={handleValidatePromo}
-                              disabled={promoValidating || !promoInput.trim()}
-                              className="px-3 py-2 rounded-lg text-xs font-body font-semibold text-[#1E2A38] disabled:opacity-50 transition-all hover:brightness-110"
-                              style={{ background: '#C9A84C' }}
-                            >
-                              {promoValidating ? <Loader2 size={14} className="animate-spin" /> : 'Apply'}
-                            </button>
-                            <button
-                              onClick={() => { setShowPromoField(false); handleClearPromo() }}
-                              className="p-2 text-[#8A9AAA] hover:text-[#1A2433] transition-colors"
-                            >
-                              <X size={14} />
-                            </button>
-                          </div>
-                          {promoError && (
-                            <p className="text-xs text-red-500 font-body mt-1.5">{promoError}</p>
-                          )}
-                        </div>
+                      </div>
+                      {promoError && (
+                        <p className="text-xs text-red-500 font-body mt-1.5">{promoError}</p>
                       )}
                     </div>
                   ) : (

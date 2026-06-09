@@ -217,8 +217,7 @@ export default function RealEstatePage() {
                 Not sure which track is right for you?
               </h2>
               <p className="text-[#8A9BB0] font-body text-sm max-w-xl leading-relaxed">
-                The <strong className="text-white">Real Estate Core Foundation</strong> is a free guided tour of the entire industry.
-                Explore every career track, understand how they connect, and find the path that fits who you are — before you commit to anything.
+                The <strong className="text-white">Real Estate Core Foundation</strong> is a free guided tour of the industry. Explore many real estate career opportunity paths, understand how they connect, and find the path that fits who you are — before you commit to anything.
               </p>
               <ul className="mt-4 space-y-1.5">
                 {[

@@ -204,6 +204,49 @@ export default function RealEstatePage() {
         </div>
       </div>
 
+      {/* ── CORE FOUNDATION BANNER ── */}
+      <div className="bg-[#1A2433] py-10 px-4">
+        <div className="page-container">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="h-px w-8 bg-[#C9A84C]" />
+                <span className="text-xs font-body font-semibold tracking-[2px] uppercase text-[#C9A84C]">Start Here</span>
+              </div>
+              <h2 className="font-display text-2xl font-bold text-white mb-2">
+                Not sure which track is right for you?
+              </h2>
+              <p className="text-[#8A9BB0] font-body text-sm max-w-xl leading-relaxed">
+                The <strong className="text-white">Real Estate Core Foundation</strong> is a free guided tour of the entire industry.
+                Explore every career track, understand how they connect, and find the path that fits who you are — before you commit to anything.
+              </p>
+              <ul className="mt-4 space-y-1.5">
+                {[
+                  'Overview of all 10 real estate career tracks',
+                  'Free orientation module — no payment required',
+                  'Helps you choose the right path with confidence',
+                ].map(item => (
+                  <li key={item} className="flex items-center gap-2 text-sm font-body text-[#8A9BB0]">
+                    <CheckCircle size={14} className="text-[#C9A84C] flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex flex-col gap-3 min-w-[220px]">
+              <Link
+                to="/courses/real-estate-foundation"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body font-semibold text-sm transition-all"
+                style={{ background: '#C9A84C', color: '#1A2433' }}
+              >
+                Explore Core Foundation <ArrowRight size={16} />
+              </Link>
+              <p className="text-center text-xs text-[#8A9BB0] font-body">Free orientation module included</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ── TABS + CONTENT ── */}
       <div className="py-12 px-4">
         <div className="page-container">

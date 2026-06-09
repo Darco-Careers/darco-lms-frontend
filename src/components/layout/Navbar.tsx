@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { Menu, X, LogOut, Tag } from 'lucide-react'
 import { useAuthStore } from '@/store/authStore'
 import { authApi } from '@/api/auth'
@@ -8,6 +8,23 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { isAuthenticated, user, clearAuth } = useAuthStore()
   const navigate = useNavigate()
+  const location = useLocation()
+
+  const handleCareerPaths = () => {
+    setMobileOpen(false)
+    if (location.pathname === '/') {
+      // Already on homepage — just scroll
+      const el = document.getElementById('tracks')
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // Navigate to homepage then scroll after render
+      navigate('/')
+      setTimeout(() => {
+        const el = document.getElementById('tracks')
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 300)
+    }
+  }
 
   const handleLogout = async () => {
     try { await authApi.logout() } catch { /* ignore */ }
@@ -38,9 +55,9 @@ export default function Navbar() {
 
           {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/#tracks" className="font-body font-medium text-sm text-[#4A5A6A] hover:text-[#1A2433] transition-colors">
+            <button onClick={handleCareerPaths} className="font-body font-medium text-sm text-[#4A5A6A] hover:text-[#1A2433] transition-colors">
               Career Paths
-            </Link>
+            </button>
             {isAuthenticated && (
               <NavLink
                 to="/dashboard"
@@ -111,9 +128,9 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden border-t border-[#BCCAD8] bg-white">
           <div className="page-container py-4 space-y-1">
-            <Link to="/#tracks" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+            <button onClick={handleCareerPaths} className="block w-full text-left px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm">
               Career Paths
-            </Link>
+            </button>
             {isAuthenticated && (
               <Link to="/dashboard" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
                 Dashboard

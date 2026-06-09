@@ -4,50 +4,64 @@ import { ArrowRight, Lock, BookOpen, CheckCircle } from 'lucide-react'
 import { COURSE_COLORS } from '@/types'
 
 // Hardcoded catalog data — will be replaced by public API endpoint in a future backend batch
-const CATALOG: Record<string, { price: number; modules: string[]; quizCount: number; glossaryCount: number }> = {
+const CATALOG: Record<string, { price: number; modules: string[]; quizCount: number; glossaryCount: number; freeModules?: number }> = {
+  'real-estate-foundation': {
+    price: 299, quizCount: 100, glossaryCount: 80,
+    freeModules: 2,
+    modules: ['Orientation — What Is Real Estate?', 'Residential Agent & Broker Overview', 'Commercial Real Estate Overview', 'Real Estate Investing Overview', 'Property Management Overview', 'Apartment Leasing Overview', 'Development Overview', 'Mortgage & Lending Overview', 'Wholesaling Overview', 'Real Estate Photography Overview', 'Maintenance & Repair Overview'],
+  },
   'real-estate-residential-agent': {
-    price: 150, quizCount: 50, glossaryCount: 60,
+    price: 299, quizCount: 50, glossaryCount: 60,
     modules: ['The Residential Agent Role', 'Getting Your Real Estate License', 'Building Your Business', 'Working With Buyers', 'Working With Sellers'],
   },
   'real-estate-commercial': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['Commercial Real Estate Overview', 'Commercial Leasing', 'Commercial Investment Analysis', 'Getting Started in Commercial'],
   },
   'real-estate-investing': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['Investing Fundamentals', 'Analyzing Investment Properties', 'Financing Your Investments', 'Property Management for Investors'],
   },
   'real-estate-property-management': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['Property Management Overview', 'Tenant Relations', 'Financial Management', 'Getting Your First PM Job'],
   },
   'real-estate-leasing': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['The Leasing Consultant Role', 'Sales Skills for Leasing', 'The Apartment Market', 'Getting Hired as a Leasing Consultant'],
   },
   'real-estate-development': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['Real Estate Development Overview', 'Site Selection and Feasibility', 'Development Finance', 'Getting Into Development'],
   },
   'real-estate-mortgage-lending': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['The Mortgage Industry', 'Getting Your NMLS License', 'Mortgage Products and Underwriting', 'Building Your Mortgage Business'],
   },
   'real-estate-wholesaling': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['Wholesaling Fundamentals', 'Finding Motivated Sellers', 'Analyzing and Contracting Deals', 'Building Your Buyers List'],
   },
   'real-estate-photography': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['Real Estate Photography Overview', 'Equipment and Technical Skills', 'Shooting Techniques', 'Building Your Photography Business'],
   },
   'real-estate-maintenance-repair': {
-    price: 150, quizCount: 40, glossaryCount: 50,
+    price: 299, quizCount: 40, glossaryCount: 50,
     modules: ['The Maintenance Career in Real Estate', 'Core Maintenance Skills', 'Getting Certified', 'Getting Hired or Going Independent'],
   },
 }
 
 const TRACKS = [
+  {
+    slug: 'real-estate-foundation',
+    emoji: '🏛️', short: 'Core Foundation',
+    tagline: 'Not sure where to begin? Start here.',
+    desc: "New to real estate and not sure which direction is right for you? The Real Estate Core Foundation gives you a comprehensive overview of the many career paths available in the industry. Explore each path, understand how they connect, and make an informed decision before committing to a specific track.",
+    tags: ['Beginner friendly', 'All career paths covered', 'No license required'],
+    license: false, noLicense: true,
+    isFoundation: true,
+  },
   {
     slug: 'real-estate-residential-agent',
     emoji: '🏠', short: 'Residential Agent',
@@ -145,8 +159,9 @@ export default function RealEstatePage() {
   const [activeIdx, setActiveIdx] = useState(0)
   const activeTrack = TRACKS[activeIdx]
   const theme = COURSE_COLORS[activeTrack.slug] ?? COURSE_COLORS['real-estate-foundation']
-  const catalog = CATALOG[activeTrack.slug] ?? { price: 150, modules: [], quizCount: 0, glossaryCount: 0 }
+  const catalog = CATALOG[activeTrack.slug] ?? { price: 299, modules: [], quizCount: 0, glossaryCount: 0, freeModules: 1 }
   const modules = catalog.modules
+  const freeModules = catalog.freeModules ?? 1
 
   return (
     <div className="bg-[#C8D4E0]">
@@ -259,33 +274,29 @@ export default function RealEstatePage() {
 
           {/* TABS ROW */}
           <div className="flex flex-wrap gap-2 mb-6">
-            {/* Core Foundation — special Start Here tab */}
-            <Link
-              to="/courses/real-estate-foundation"
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border text-xs font-body font-semibold transition-all duration-200 whitespace-nowrap"
-              style={{ background: '#C9A84C', color: '#1A2433', borderColor: 'transparent' }}
-            >
-              <span>🏛️</span>
-              <span>Start Here — Core Foundation</span>
-            </Link>
-
             {TRACKS.map((track, idx) => {
               const trackTheme = COURSE_COLORS[track.slug]
               const isActive = idx === activeIdx
+              const isFoundation = (track as any).isFoundation
               return (
                 <div key={track.slug} className="relative group/tab">
                   <button
                     onClick={() => setActiveIdx(idx)}
                     className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border text-xs font-body font-semibold transition-all duration-200 whitespace-nowrap"
-                    style={isActive ? {
-                      background: trackTheme?.primary ?? '#1B4D3E',
-                      color: 'white',
-                      borderColor: 'transparent',
-                    } : {
-                      background: 'white',
-                      color: '#4A5A6A',
-                      borderColor: '#BCCAD8',
-                    }}
+                    style={isFoundation
+                      ? isActive
+                        ? { background: '#C9A84C', color: '#1A2433', borderColor: 'transparent' }
+                        : { background: '#FDF6E3', color: '#8a6a1a', borderColor: '#C9A84C' }
+                      : isActive ? {
+                          background: trackTheme?.primary ?? '#1B4D3E',
+                          color: 'white',
+                          borderColor: 'transparent',
+                        } : {
+                          background: 'white',
+                          color: '#4A5A6A',
+                          borderColor: '#BCCAD8',
+                        }
+                    }
                   >
                     <span>{track.emoji}</span>
                     <span>{track.short}</span>
@@ -358,18 +369,18 @@ export default function RealEstatePage() {
                       <div key={title} className="flex items-center gap-3 p-3 rounded-lg border border-[#EEF2F6] bg-[#FAFAFA]">
                         <div
                           className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
-                          style={idx === 0
+                          style={idx < freeModules
                             ? { background: theme.primary, color: 'white' }
                             : { background: '#EEF2F6', color: '#8A9AAA' }
                           }
                         >
-                          {idx === 0 ? <BookOpen size={13} /> : <Lock size={11} />}
+                          {idx < freeModules ? <BookOpen size={13} /> : <Lock size={11} />}
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="font-body font-semibold text-[#1A2433] text-xs truncate">{title}</p>
                           <p className="text-[#8A9AAA] text-xs">10 quiz questions</p>
                         </div>
-                        {idx === 0
+                        {idx < freeModules
                           ? <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full border flex-shrink-0"
                               style={{ color: theme.primary, background: `${theme.pale}`, borderColor: `${theme.primary}30` }}>
                               Free

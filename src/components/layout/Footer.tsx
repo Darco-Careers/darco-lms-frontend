@@ -18,10 +18,9 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm font-body leading-relaxed text-[#8A9BB0]">
-              Career foundation training for the Los Angeles community.
+              Serving anyone who wants to work hard and succeed.
               Real skills. Real careers. Real impact.
             </p>
-            <p className="text-xs text-[#4A5A6A] font-body mt-3">In partnership with Chabad SOLA</p>
           </div>
 
           {/* Career Paths */}
@@ -29,7 +28,7 @@ export default function Footer() {
             <h4 className="font-body font-semibold text-white mb-4 text-xs uppercase tracking-wider">Career Tracks</h4>
             <ul className="space-y-2 text-sm">
               {[
-                ['Real Estate Foundation', '/courses/real-estate-foundation'],
+                ['Real Estate Foundation', '/real-estate'],
                 ['Residential Agent', '/courses/real-estate-residential-agent'],
                 ['Property Management', '/courses/real-estate-property-management'],
                 ['Apartment Leasing', '/courses/real-estate-leasing'],
@@ -80,7 +79,7 @@ export default function Footer() {
             © {new Date().getFullYear()} DARCO Inc. All rights reserved.
           </p>
           <p className="text-[#4A5A6A] text-xs font-body">
-            Educational content only. Always verify local licensing requirements.
+            Educational content only. Course materials are for general informational purposes and do not constitute legal, professional, or licensing advice. Always verify current licensing requirements with your state or local authority. DARCO Academy makes no guarantees regarding employment outcomes.
           </p>
         </div>
       </div>

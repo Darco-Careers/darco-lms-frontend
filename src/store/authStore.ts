@@ -33,10 +33,12 @@ export const useAuthStore = create<AuthStore>()(
       name: 'darco-auth',
       partialize: (state) => ({ user: state.user, token: state.token, isAuthenticated: state.isAuthenticated }),
       onRehydrateStorage: () => (state) => {
-        // Re-sync localStorage.authToken from the persisted Zustand state
+        // Re-sync localStorage.authToken from the persisted Zustand state on page reload
         if (state?.token) {
           localStorage.setItem('authToken', state.token)
         }
+        // Note: refreshToken is stored only in localStorage (not Zustand) to avoid
+        // it appearing in Zustand DevTools. It persists across reloads via localStorage.
       },
     }
   )

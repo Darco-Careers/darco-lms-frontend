@@ -74,8 +74,10 @@ apiClient.interceptors.response.use(
       }
 
       try {
-        const response = await axios.post(`${BASE_URL}/auth/refresh/`, { token: refreshToken })
-        const newToken = response.data.data.token
+        // simplejwt TokenRefreshView returns { access: '...' } directly (no ApiResponse wrapper)
+        // We send the refresh token as 'refresh' field (simplejwt standard)
+        const response = await axios.post(`${BASE_URL}/auth/refresh/`, { refresh: refreshToken })
+        const newToken = response.data.access ?? response.data.data?.token
         localStorage.setItem('authToken', newToken)
         apiClient.defaults.headers.common.Authorization = `Bearer ${newToken}`
         processQueue(null, newToken)

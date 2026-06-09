@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="page-container">
         <div className="flex items-center justify-between h-16">
 
-          {/* Logo — matches darcoacademy.com exactly */}
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-3 flex-shrink-0">
             <div className="w-9 h-9 bg-[#1E2A38] rounded-lg flex items-center justify-center shadow-sm">
               <span className="font-display font-bold text-[#C9A84C] text-base">D</span>
@@ -38,11 +38,8 @@ export default function Navbar() {
 
           {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-6">
-            <a href="/#paths" className="font-body font-medium text-sm text-[#4A5A6A] hover:text-[#1A2433] transition-colors">
+            <Link to="/#tracks" className="font-body font-medium text-sm text-[#4A5A6A] hover:text-[#1A2433] transition-colors">
               Career Paths
-            </a>
-            <Link to="/about" className="font-body font-medium text-sm text-[#4A5A6A] hover:text-[#1A2433] transition-colors">
-              About & Philosophy
             </Link>
             {isAuthenticated && (
               <NavLink
@@ -114,9 +111,9 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden border-t border-[#BCCAD8] bg-white">
           <div className="page-container py-4 space-y-1">
-            <a href="/#paths" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+            <Link to="/#tracks" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
               Career Paths
-            </a>
+            </Link>
             {isAuthenticated && (
               <Link to="/dashboard" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
                 Dashboard

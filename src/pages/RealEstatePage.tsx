@@ -23,7 +23,7 @@ const CATALOG: Record<string, { price: number; modules: string[]; quizCount: num
   },
   'real-estate-leasing': {
     price: 150, quizCount: 40, glossaryCount: 50,
-    modules: ['The Leasing Consultant Role', 'Sales Skills for Leasing', 'LA Apartment Market', 'Getting Hired as a Leasing Consultant'],
+    modules: ['The Leasing Consultant Role', 'Sales Skills for Leasing', 'The Apartment Market', 'Getting Hired as a Leasing Consultant'],
   },
   'real-estate-development': {
     price: 150, quizCount: 40, glossaryCount: 50,
@@ -85,7 +85,7 @@ const TRACKS = [
     emoji: '🏠', short: 'Apt Leasing',
     tagline: 'Lease, retain & build resident communities',
     desc: 'Leasing consultants are the front door of every apartment community — converting prospects into residents, guiding move-ins, and building long-term occupancy. No license required to start.',
-    tags: ['Sales + service', 'LA market focus'],
+    tags: ['Sales + service', 'No license needed'],
     license: false, noLicense: true,
   },
   {

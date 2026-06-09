@@ -20,7 +20,7 @@ const TRACK_DOORS = [
     emoji: '⚡',
     label: 'Electrician',
     tagline: '1 career track',
-    desc: 'High demand, excellent pay. Learn wiring, panels, safety codes, certifications, and exactly how to get hired as an electrician in the LA market.',
+    desc: 'High demand, excellent pay. Learn wiring, panels, safety codes, certifications, and exactly how to get hired as an electrician.',
     color: '#1A2E4D',
     colorMid: '#2A4A7A',
     colorPale: '#EBF0F7',
@@ -119,7 +119,7 @@ export default function HomePage() {
       <div className="bg-[#1E2A38]">
         <div className="page-container py-4">
           <div className="flex flex-wrap gap-x-8 gap-y-2 justify-center sm:justify-start">
-            {['13 career tracks', '1,160+ quiz questions', '700+ glossary terms', 'Module 1 free on every course', 'Self-paced', 'Los Angeles based'].map(item => (
+            {['13 career tracks', 'Quizzes on every module', 'Glossary on every course', 'Module 1 free on every course', 'Self-paced', 'Study anywhere, anytime'].map(item => (
               <div key={item} className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#C9A84C]" />
                 <span className="text-[#B8C8D8] text-xs font-body font-medium">{item}</span>
@@ -233,7 +233,7 @@ export default function HomePage() {
             {[
               { num: '01', title: 'Choose your path', body: 'Browse the three career worlds. Click into Real Estate to explore all 10 tracks with free previews.' },
               { num: '02', title: 'Start for free', body: 'Module 1 of every course is completely free. Read the lessons, watch the videos, get a real feel for the career.' },
-              { num: '03', title: 'Enroll & get hired', body: 'When you\'re ready, enroll to unlock all modules. Every course ends with a getting-hired module and certificate.' },
+              { num: '03', title: 'Enroll & get job-ready', body: 'When you\'re ready, enroll to unlock all modules. Every course ends with a job-readiness module and certificate of completion to show employers.' },
             ].map(({ num, title, body }) => (
               <div key={num} className="flex gap-5">
                 <div
@@ -261,10 +261,10 @@ export default function HomePage() {
             <div className="h-px w-8 bg-[#C9A84C]" />
           </div>
           <p className="font-display text-2xl sm:text-3xl font-medium text-white leading-relaxed mb-5">
-            "DARCO exists to give every person in our community a clear, structured path from zero experience to a sustainable career."
+            "DARCO exists to give every person a clear, structured path from zero experience to a sustainable career — no matter where they are starting from."
           </p>
           <p className="text-[#8A9BB0] font-body text-sm">
-            DARCO Inc. — Los Angeles · In partnership with Chabad SOLA
+            DARCO Inc. — Serving anyone who wants to work hard and succeed.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a

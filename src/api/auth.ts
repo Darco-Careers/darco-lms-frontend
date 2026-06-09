@@ -28,7 +28,8 @@ export const authApi = {
   },
 
   refresh: async (token: string) => {
-    const res = await apiClient.post<ApiResponse<{ token: string }>>('/auth/refresh/', { token })
-    return res.data.data.token
+    // simplejwt TokenRefreshView expects { refresh: '...' } and returns { access: '...' }
+    const res = await apiClient.post<{ access: string }>('/auth/refresh/', { refresh: token })
+    return res.data.access
   },
 }

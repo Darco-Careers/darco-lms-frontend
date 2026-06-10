@@ -202,6 +202,30 @@ export default function CourseDetailPage() {
           {/* Module list */}
           <div className="lg:col-span-2">
             <h2 className="font-display text-xl font-bold text-[#1A2433] mb-5">Course modules</h2>
+
+            {/* Core Foundation entry point — shown on non-foundation courses */}
+            {slug !== 'real-estate-foundation' && (
+              <div className="flex items-center gap-3 p-4 mb-4 rounded-xl border-2 border-dashed bg-[#FFFBF0] cursor-pointer group"
+                style={{ borderColor: '#C9A84C40' }}
+                onClick={() => window.location.href = '/courses/real-estate-foundation'}
+              >
+                <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: '#C9A84C' }}>
+                  <BookOpen size={15} className="text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-body font-semibold text-sm" style={{ color: '#1A2433' }}>
+                    Core Foundation
+                  </p>
+                  <p className="text-xs font-body mt-0.5" style={{ color: '#8A9AAA' }}>
+                    New to real estate? Start here — orientation is free
+                  </p>
+                </div>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full font-body whitespace-nowrap" style={{ background: '#FFF3D0', color: '#C9A84C', border: '1px solid #C9A84C30' }}>
+                  Free
+                </span>
+              </div>
+            )}
+
             <div className="space-y-2">
               {(modules ?? []).map((mod, idx) => (
                 <div
@@ -352,7 +376,7 @@ export default function CourseDetailPage() {
                     className="w-full py-3 rounded-lg font-body font-semibold text-sm mb-5 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all flex items-center justify-center gap-2"
                   >
                     <BookOpen size={14} />
-                    {freeMutation.isPending ? 'Loading...' : 'Explore free — Module 1'}
+                    {freeMutation.isPending ? 'Loading...' : 'Explore free — Module 1 →'}
                   </button>
 
                   {!isAuthenticated && (
@@ -393,13 +417,20 @@ export default function CourseDetailPage() {
                   </div>
 
                   <div className="space-y-2 text-sm font-body text-[#4A5A6A]">
-                    {[
+                    {(slug === 'real-estate-foundation' ? [
+                      'Orientation module (free)',
+                      `${Math.max((course.modules_count ?? 1) - 1, 10)} course modules`,
+                      `${course.quiz_count} practice questions`,
+                      `${course.glossary_terms_count} glossary terms`,
+                      'Certificate of completion',
+                      'Orientation always free',
+                    ] : [
                       `${course.modules_count} self-paced modules`,
                       `${course.quiz_count} practice questions`,
                       `${course.glossary_terms_count} glossary terms`,
                       'Certificate of completion',
                       'Module 1 always free',
-                    ].map(item => (
+                    ]).map(item => (
                       <div key={item} className="flex items-center gap-2">
                         <CheckCircle size={14} className="text-emerald-500 flex-shrink-0" />
                         {item}

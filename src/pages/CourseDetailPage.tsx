@@ -100,7 +100,12 @@ export default function CourseDetailPage() {
       if (session.checkout_url) {
         window.location.href = session.checkout_url
       }
-    } catch {
+    } catch (err: any) {
+      // If already enrolled, redirect to progress page
+      if (err?.response?.status === 409) {
+        navigate(`/courses/${slug}/progress`)
+        return
+      }
       setEnrolling(false)
     }
   }

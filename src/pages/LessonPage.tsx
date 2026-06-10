@@ -42,8 +42,18 @@ export default function LessonPage() {
     setEnrolling(true)
     try {
       const session = await enrollmentApi.createCheckout(slug!)
+      if (session.enrolled) {
+        // Already enrolled or 100% off — go to progress page
+        navigate(`/courses/${slug}/progress`)
+        return
+      }
       if (session.checkout_url) window.location.href = session.checkout_url
-    } catch {
+    } catch (err: any) {
+      // If already enrolled, redirect to progress page
+      if (err?.response?.status === 409) {
+        navigate(`/courses/${slug}/progress`)
+        return
+      }
       setEnrolling(false)
     }
   }
@@ -96,6 +106,22 @@ export default function LessonPage() {
           <div className="mt-5 pt-5 border-t border-[#EEF2F6] text-xs font-body text-[#8A9AAA]">
             One-time payment · 3 months access · Certificate included
           </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (isError && !isUpgradeRequired) {
+    return (
+      <div className="min-h-screen bg-[#C8D4E0] flex items-center justify-center">
+        <div className="text-center max-w-md px-4">
+          <div className="text-4xl mb-4">⚠️</div>
+          <h2 className="font-display text-xl font-bold text-[#1A2433] mb-2">Couldn't load this lesson</h2>
+          <p className="text-[#4A5A6A] font-body text-sm mb-6">There was a problem loading this lesson. Please try refreshing or go back to the course.</p>
+          <Link to={`/courses/${slug}/progress`} className="flex items-center gap-2 justify-center px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all">
+            <ArrowLeft size={14} />
+            Back to course
+          </Link>
         </div>
       </div>
     )

@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight, Lock, BookOpen, CheckCircle } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ArrowRight, Lock, BookOpen, CheckCircle, Loader2 } from 'lucide-react'
 import { COURSE_COLORS } from '@/types'
+import { enrollmentApi } from '@/api/progress'
+import { useAuthStore } from '@/store/authStore'
 
 // Hardcoded catalog data — will be replaced by public API endpoint in a future backend batch
 const CATALOG: Record<string, { price: number; modules: string[]; quizCount: number; glossaryCount: number; freeModules?: number }> = {
@@ -156,7 +158,36 @@ const PERSONALITY_TYPES = [
 ]
 
 export default function RealEstatePage() {
+  const navigate = useNavigate()
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated)
   const [activeIdx, setActiveIdx] = useState(0)
+  const [enrolling, setEnrolling] = useState(false)
+  const [enrollingSlug, setEnrollingSlug] = useState<string | null>(null)
+
+  const handleDirectEnroll = async (slug: string) => {
+    if (!isAuthenticated) {
+      navigate(`/register?next=/courses/${slug}`)
+      return
+    }
+    setEnrolling(true)
+    setEnrollingSlug(slug)
+    try {
+      const session = await enrollmentApi.createCheckout(slug)
+      if (session.enrolled) {
+        navigate(`/courses/${slug}/progress`)
+        return
+      }
+      if (session.checkout_url) {
+        window.location.href = session.checkout_url
+      }
+    } catch {
+      // fallback to course detail page on error
+      navigate(`/courses/${slug}`)
+    } finally {
+      setEnrolling(false)
+      setEnrollingSlug(null)
+    }
+  }
   const activeTrack = TRACKS[activeIdx]
   const theme = COURSE_COLORS[activeTrack.slug] ?? COURSE_COLORS['real-estate-foundation']
   const catalog = CATALOG[activeTrack.slug] ?? { price: 299, modules: [], quizCount: 0, glossaryCount: 0, freeModules: 1 }
@@ -411,13 +442,16 @@ export default function RealEstatePage() {
                 </div>
                 <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time · 3 months access</p>
 
-                <Link
-                  to={`/courses/${activeTrack.slug}`}
-                  className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-white text-sm mb-3 transition-all hover:brightness-110"
+                <button
+                  onClick={() => handleDirectEnroll(activeTrack.slug)}
+                  disabled={enrolling && enrollingSlug === activeTrack.slug}
+                  className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-white text-sm mb-3 transition-all hover:brightness-110 disabled:opacity-70 w-full"
                   style={{ background: theme.primary }}
                 >
-                  Enroll now <ArrowRight size={15} />
-                </Link>
+                  {enrolling && enrollingSlug === activeTrack.slug
+                    ? <><Loader2 size={15} className="animate-spin" /> Processing...</>
+                    : <>Enroll now <ArrowRight size={15} /></>}
+                </button>
 
                 <Link
                   to={`/courses/${activeTrack.slug}`}

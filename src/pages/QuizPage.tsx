@@ -60,7 +60,24 @@ export default function QuizPage() {
     )
   }
 
-  if (!quiz) return null
+  if (!quiz) {
+    return (
+      <div className="min-h-screen bg-surface-50 flex items-center justify-center">
+        <div className="text-center max-w-md px-4">
+          <div className="text-4xl mb-4">📋</div>
+          <h2 className="font-display text-xl font-bold text-navy-900 mb-2">No Quiz Available</h2>
+          <p className="text-surface-500 font-body text-sm mb-6">This module doesn't have a quiz yet. Check back soon!</p>
+          <Link
+            to={`/courses/${slug}/progress`}
+            className="btn-secondary text-sm py-2 px-4"
+          >
+            <ArrowLeft size={15} />
+            Back to course
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   const totalQuestions = quiz.questions.length
 

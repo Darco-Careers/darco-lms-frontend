@@ -811,3 +811,25 @@
   .lesson-html-body .module-hero { margin: -1.5rem -1.25rem 1.5rem; }
 }
 
+
+/* ===== FULL-BLEED MODE: original-site layout for HTML lessons ===== */
+
+/* Lesson body spans the full width; original sections provide their
+   own backgrounds and inner .container centering (already ported). */
+.lesson-fullbleed .lesson-html-body {
+  padding: 0;
+  background: var(--cream, #FAF8F3);
+}
+
+/* Heroes no longer need the card-breakout negative margins */
+.lesson-fullbleed .lesson-html-body .hero,
+.lesson-fullbleed .lesson-html-body .module-hero {
+  margin: 0 0 0 0;
+  border-radius: 0;
+}
+
+/* Sections that had no explicit background get cream, so no LMS
+   blue-grey shows through between sections */
+.lesson-fullbleed { display: block; background: var(--cream, #FAF8F3); }
+
+/* Mobile: nothing extra needed — original responsive rules apply */

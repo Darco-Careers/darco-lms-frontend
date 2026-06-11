@@ -197,11 +197,11 @@ export default function LessonPage() {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="page-container max-w-3xl mx-auto py-10 px-4">
+      {/* Content — full-width for HTML lessons, constrained card for Markdown */}
+      <div className={lesson.content_type === 'html' ? '' : 'page-container max-w-3xl mx-auto py-10 px-4'}>
 
-        {/* YouTube embed */}
-        {lesson.youtube_url && (
+        {/* YouTube embed — only for non-HTML lessons (HTML lessons embed video inside the body) */}
+        {lesson.youtube_url && lesson.content_type !== 'html' && (
           <div className="mb-8 rounded-xl overflow-hidden shadow-sm aspect-video">
             <iframe
               src={lesson.youtube_url}
@@ -214,7 +214,9 @@ export default function LessonPage() {
         )}
 
         {/* Lesson body */}
-        <article className="prose-darco bg-white rounded-2xl border border-[#BCCAD8] shadow-sm overflow-hidden">
+        <article className={lesson.content_type === 'html'
+          ? 'lesson-fullbleed'
+          : 'prose-darco bg-white rounded-2xl border border-[#BCCAD8] shadow-sm overflow-hidden'}>
           {lesson.content_type === 'html' ? (
             // Rich HTML content from original site — rendered with full CSS
             <div
@@ -229,76 +231,81 @@ export default function LessonPage() {
           )}
         </article>
 
-        {/* End of module CTA */}
-        {lesson.next_lesson_id === null && (
-          <div
-            className="mt-8 p-6 rounded-xl border"
-            style={{ background: theme.pale, borderColor: `${theme.primary}25` }}
-          >
-            <h3 className="font-display font-bold text-[#1A2433] mb-2">Ready for the quiz?</h3>
-            <p className="text-[#4A5A6A] font-body text-sm mb-4">
-              You've reached the end of this module's lessons. Take the quiz to complete this module.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <button
-                onClick={() => completeMutation.mutate()}
-                disabled={completeMutation.isPending || completeMutation.isSuccess}
+        {/* CTA + navigation — re-constrained for HTML lessons */}
+        <div className={lesson.content_type === 'html' ? 'page-container max-w-3xl mx-auto px-4 pb-10' : ''}>
+
+          {/* End of module CTA */}
+          {lesson.next_lesson_id === null && (
+            <div
+              className="mt-8 p-6 rounded-xl border"
+              style={{ background: theme.pale, borderColor: `${theme.primary}25` }}
+            >
+              <h3 className="font-display font-bold text-[#1A2433] mb-2">Ready for the quiz?</h3>
+              <p className="text-[#4A5A6A] font-body text-sm mb-4">
+                You've reached the end of this module's lessons. Take the quiz to complete this module.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  onClick={() => completeMutation.mutate()}
+                  disabled={completeMutation.isPending || completeMutation.isSuccess}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                >
+                  {completeMutation.isSuccess
+                    ? <><CheckCircle size={14} className="text-emerald-500" /> Marked complete</>
+                    : 'Mark lesson complete'
+                  }
+                </button>
+                <Link
+                  to={`/courses/${slug}/quiz/${lesson.quiz_id ?? lesson.module_id}`}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
+                  style={{ background: theme.primary }}
+                >
+                  <ClipboardList size={14} />
+                  Take the quiz
+                </Link>
+              </div>
+            </div>
+          )}
+
+          {/* Prev / Next navigation */}
+          <div className="flex justify-between items-center mt-8 pt-6 border-t border-[#BCCAD8]">
+            {lesson.prev_lesson_id ? (
+              <Link
+                to={`/courses/${slug}/lesson/${lesson.prev_lesson_id}`}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
               >
-                {completeMutation.isSuccess
-                  ? <><CheckCircle size={14} className="text-emerald-500" /> Marked complete</>
-                  : 'Mark lesson complete'
-                }
-              </button>
+                <ArrowLeft size={14} /> Previous
+              </Link>
+            ) : <div />}
+
+            {lesson.next_lesson_id ? (
+              <Link
+                to={`/courses/${slug}/lesson/${lesson.next_lesson_id}`}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
+                style={{ background: theme.primary }}
+              >
+                Next lesson <ArrowRight size={14} />
+              </Link>
+            ) : lesson.next_module_lesson_id ? (
+              <Link
+                to={`/courses/${slug}/lesson/${lesson.next_module_lesson_id}`}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
+                style={{ background: theme.primary }}
+              >
+                Continue to next module <ArrowRight size={14} />
+              </Link>
+            ) : (
               <Link
                 to={`/courses/${slug}/quiz/${lesson.quiz_id ?? lesson.module_id}`}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
                 style={{ background: theme.primary }}
               >
-                <ClipboardList size={14} />
-                Take the quiz
+                Take the quiz <ArrowRight size={14} />
               </Link>
-            </div>
+            )}
           </div>
-        )}
 
-        {/* Prev / Next navigation */}
-        <div className="flex justify-between items-center mt-8 pt-6 border-t border-[#BCCAD8]">
-          {lesson.prev_lesson_id ? (
-            <Link
-              to={`/courses/${slug}/lesson/${lesson.prev_lesson_id}`}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
-            >
-              <ArrowLeft size={14} /> Previous
-            </Link>
-          ) : <div />}
-
-          {lesson.next_lesson_id ? (
-            <Link
-              to={`/courses/${slug}/lesson/${lesson.next_lesson_id}`}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
-              style={{ background: theme.primary }}
-            >
-              Next lesson <ArrowRight size={14} />
-            </Link>
-          ) : lesson.next_module_lesson_id ? (
-            <Link
-              to={`/courses/${slug}/lesson/${lesson.next_module_lesson_id}`}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
-              style={{ background: theme.primary }}
-            >
-              Continue to next module <ArrowRight size={14} />
-            </Link>
-          ) : (
-            <Link
-              to={`/courses/${slug}/quiz/${lesson.quiz_id ?? lesson.module_id}`}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
-              style={{ background: theme.primary }}
-            >
-              Take the quiz <ArrowRight size={14} />
-            </Link>
-          )}
-        </div>
+        </div>{/* end CTA + nav wrapper */}
       </div>
     </div>
   )

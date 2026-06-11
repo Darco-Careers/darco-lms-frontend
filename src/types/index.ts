@@ -190,10 +190,10 @@ export interface CheckoutSession {
 // ─── Glossary ────────────────────────────────────────────────────────────────
 
 export interface GlossaryTerm {
-  id: number
+  id: string
   term: string
   definition: string
-  course_slug: string
+  course_slug?: string
 }
 
 // ─── Course Color Map ─────────────────────────────────────────────────────────

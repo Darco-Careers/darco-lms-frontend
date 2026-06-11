@@ -4643,3 +4643,88 @@
 @media (max-width: 640px) {
   .lesson-html-body .hero { padding: 3.5rem 1.5rem 3rem; }
 }
+
+/* ============================================================
+   PATCH 2: LESSON PADDING + MODULE HERO FIX
+   Fixes:
+   A) Text touching card edges — .lesson-html-body has no padding
+   B) Module 1–10 missing hero — .module-hero / .module-badge /
+      .module-meta CSS was never ported
+   ============================================================ */
+
+/* --- A) Lesson body padding --- */
+.lesson-html-body {
+  padding: 2.5rem 2.75rem;
+  --forest-mid: #2A6B56;
+}
+
+/* Heroes break out to card edges (full-bleed) */
+.lesson-html-body .hero,
+.lesson-html-body .module-hero {
+  margin: -2.5rem -2.75rem 2.5rem;
+  border-radius: 0;
+}
+
+/* --- B) MODULE HERO (modules 1–10) --- */
+.lesson-html-body .module-hero {
+  background: linear-gradient(135deg, #0D2820 0%, var(--forest) 55%, var(--forest-mid) 100%);
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.lesson-html-body .module-hero::before {
+  content: '';
+  position: absolute; top: -40%; right: -10%;
+  width: 55%; height: 200%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.lesson-html-body .module-hero-inner { max-width: 860px; margin: 0 auto; }
+
+.lesson-html-body .module-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.lesson-html-body .module-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.lesson-html-body .module-hero h1 em { color: var(--gold-light); font-style: italic; }
+
+.lesson-html-body .module-hero p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.lesson-html-body .module-meta { display: flex; gap: 2rem; flex-wrap: wrap; }
+.lesson-html-body .meta-item {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+.lesson-html-body .meta-item span { color: var(--gold-light); font-weight: 600; }
+
+/* --- Mobile --- */
+@media (max-width: 640px) {
+  .lesson-html-body { padding: 1.5rem 1.25rem; }
+  .lesson-html-body .hero,
+  .lesson-html-body .module-hero {
+    margin: -1.5rem -1.25rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+}

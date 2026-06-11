@@ -31,7 +31,7 @@ export default function LessonPage() {
   const isUpgradeRequired = is403 && lessonError?.response?.data?.upgrade_required
 
   const completeMutation = useMutation({
-    mutationFn: () => progressApi.completeModule(lesson!.module_id),
+    mutationFn: () => progressApi.completeLesson(lesson!.id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['progress'] })
     },

@@ -12,8 +12,8 @@ export const progressApi = {
       enrollment_date: e.enrolled_at as string,
       enrollment_id: e.id as string,
       enrollment_status: e.status as string,
-      modules_completed: 0,  // not returned by list endpoint
-      modules_total: 0,       // not returned by list endpoint
+      modules_completed: (e.modules_completed as number) ?? 0,
+      modules_total: (e.modules_total as number) ?? 0,
       progress_percentage: (e.progress_pct as number) ?? 0,
       is_completed: false,    // not returned by list endpoint; use progress_pct === 100 as proxy
     }))
@@ -47,9 +47,9 @@ export const progressApi = {
     }
   },
 
-  completeModule: async (moduleId: string | number) => {
-    const res = await apiClient.post<{ module_id: string | number; is_completed: boolean }>(
-      `/progress/${moduleId}/complete/`
+  completeLesson: async (lessonId: string) => {
+    const res = await apiClient.post<{ lesson_id: string; completed: boolean; completed_at: string; certificate_issued: boolean }>(
+      `/student/lessons/${lessonId}/complete/`
     )
     return res.data
   },

@@ -80,6 +80,8 @@ export interface Lesson {
   is_completed: boolean
   prev_lesson_id: string | null
   next_lesson_id: string | null
+  quiz_id: string | null
+  next_module_lesson_id: string | null
 }
 
 // ─── Quiz ─────────────────────────────────────────────────────────────────────

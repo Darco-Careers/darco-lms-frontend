@@ -92,6 +92,11 @@ export const coursesApi = {
       is_completed: !!(progress.completed ?? raw.is_completed),
       prev_lesson_id: prevNav ? (prevNav.id as string) : (raw.prev_lesson_id as string | null) ?? null,
       next_lesson_id: nextNav ? (nextNav.id as string) : (raw.next_lesson_id as string | null) ?? null,
+      quiz_id: (nav.quiz_id as string | null) ?? (raw.quiz_id as string | null) ?? null,
+      next_module_lesson_id: (() => {
+        const nml = nav.next_module_lesson as Record<string, unknown> | null
+        return nml ? (nml.id as string) : null
+      })(),
     }
   },
 }

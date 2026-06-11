@@ -251,7 +251,7 @@ export default function LessonPage() {
                 }
               </button>
               <Link
-                to={`/courses/${slug}/quiz/${lesson.module_id}`}
+                to={`/courses/${slug}/quiz/${lesson.quiz_id ?? lesson.module_id}`}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
                 style={{ background: theme.primary }}
               >
@@ -281,9 +281,17 @@ export default function LessonPage() {
             >
               Next lesson <ArrowRight size={14} />
             </Link>
+          ) : lesson.next_module_lesson_id ? (
+            <Link
+              to={`/courses/${slug}/lesson/${lesson.next_module_lesson_id}`}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
+              style={{ background: theme.primary }}
+            >
+              Continue to next module <ArrowRight size={14} />
+            </Link>
           ) : (
             <Link
-              to={`/courses/${slug}/quiz/${lesson.module_id}`}
+              to={`/courses/${slug}/quiz/${lesson.quiz_id ?? lesson.module_id}`}
               className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
               style={{ background: theme.primary }}
             >

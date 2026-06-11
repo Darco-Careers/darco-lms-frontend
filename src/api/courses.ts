@@ -85,6 +85,7 @@ export const coursesApi = {
       id: raw.id as string,
       title: raw.title as string,
       sequence_order: raw.sequence_order as number,
+      content_type: ((raw.content_type as string) ?? 'markdown') as 'markdown' | 'html' | 'video' | 'pdf',
       body: (raw.body as string) ?? '',
       youtube_url: (raw.youtube_url as string | null) ?? null,
       module_id: moduleObj ? (moduleObj.id as string) : (raw.module_id as string),

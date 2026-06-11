@@ -73,6 +73,7 @@ export interface Lesson {
   id: string
   title: string
   sequence_order: number
+  content_type: 'markdown' | 'html' | 'video' | 'pdf'
   body: string
   youtube_url: string | null
   module_id: string

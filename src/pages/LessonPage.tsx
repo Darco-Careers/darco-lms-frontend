@@ -214,8 +214,19 @@ export default function LessonPage() {
         )}
 
         {/* Lesson body */}
-        <article className="prose-darco bg-white rounded-2xl border border-[#BCCAD8] p-8 shadow-sm">
-          <ReactMarkdown>{lesson.body}</ReactMarkdown>
+        <article className="prose-darco bg-white rounded-2xl border border-[#BCCAD8] shadow-sm overflow-hidden">
+          {lesson.content_type === 'html' ? (
+            // Rich HTML content from original site — rendered with full CSS
+            <div
+              className="lesson-html-body"
+              dangerouslySetInnerHTML={{ __html: lesson.body }}
+            />
+          ) : (
+            // Plain Markdown content
+            <div className="p-8">
+              <ReactMarkdown>{lesson.body}</ReactMarkdown>
+            </div>
+          )}
         </article>
 
         {/* End of module CTA */}

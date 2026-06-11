@@ -120,3 +120,815 @@
   outline: 2px solid theme('colors.brand.400');
   outline-offset: 2px;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LESSON HTML BODY — Rich HTML lesson content styles
+   Scoped to .lesson-html-body to avoid polluting the rest of the app.
+   Ported from the original darco-real-estate-academy static site.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.lesson-html-body {
+  /* CSS variables from the original site */
+  --forest: #1B4D3E;
+  --forest-light: #2A6B56;
+  --forest-dark: #0F2E24;
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-pale: #FBF5E6;
+  --cream: #FAF8F3;
+  --cream-dark: #F0EBE0;
+  --text-dark: #1A1A18;
+  --text-mid: #4A4A42;
+  --text-light: #8A8A7A;
+  --white: #FFFFFF;
+  --border: rgba(27,77,62,0.12);
+  --shadow-soft: 0 4px 24px rgba(27,77,62,0.08);
+  --shadow-card: 0 2px 16px rgba(27,77,62,0.06);
+
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.7;
+  background: var(--cream);
+}
+
+/* ── TYPOGRAPHY ── */
+.lesson-html-body h1,
+.lesson-html-body h2,
+.lesson-html-body h3,
+.lesson-html-body h4,
+.lesson-html-body h5 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+.lesson-html-body h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
+.lesson-html-body h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; margin-bottom: 0.75rem; margin-top: 2.5rem; }
+.lesson-html-body h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; margin-top: 1.75rem; }
+.lesson-html-body h2 em, .lesson-html-body h3 em { color: var(--forest); font-style: italic; }
+.lesson-html-body p { font-size: 1rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 1.25rem; }
+.lesson-html-body strong { font-weight: 600; color: var(--text-dark); }
+.lesson-html-body em { font-style: italic; }
+.lesson-html-body a { color: var(--forest); text-decoration: underline; transition: color 0.2s; }
+.lesson-html-body a:hover { color: var(--forest-light); }
+.lesson-html-body ul, .lesson-html-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.lesson-html-body li { margin-bottom: 0.4rem; color: var(--text-mid); line-height: 1.7; }
+.lesson-html-body hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+/* ── LAYOUT ── */
+.lesson-html-body .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.lesson-html-body section {
+  padding: 3.5rem 0;
+}
+
+/* ── EYEBROW / DIVIDER ── */
+.lesson-html-body .section-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 0.75rem;
+}
+
+.lesson-html-body .section-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.lesson-html-body .section-title em {
+  color: var(--forest);
+  font-style: italic;
+}
+
+.lesson-html-body .gold-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin: 1.25rem 0;
+}
+
+.lesson-html-body .lead-text {
+  font-size: 1.1rem;
+  color: var(--text-mid);
+  max-width: 700px;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+/* ── DEFINITION / QUOTE BOX ── */
+.lesson-html-body .definition-section {
+  background: var(--white);
+  padding: 3.5rem 0;
+}
+
+.lesson-html-body .definition-box {
+  background: var(--gold-pale);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  padding: 1.75rem 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.lesson-html-body .definition-box p {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.15rem;
+  color: var(--forest-dark);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.lesson-html-body .definition-box .source {
+  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 0.75rem;
+  display: block;
+}
+
+/* ── TABLE OF CONTENTS ── */
+.lesson-html-body .toc {
+  background: var(--gold-pale);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0;
+}
+
+.lesson-html-body .toc h4 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--forest-dark);
+  margin-bottom: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.lesson-html-body .toc ol {
+  padding-left: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.4rem 1.5rem;
+  margin-bottom: 0;
+}
+
+.lesson-html-body .toc li {
+  font-size: 13.5px;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+.lesson-html-body .toc li a {
+  color: var(--forest);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.lesson-html-body .toc li a:hover { color: var(--forest-light); text-decoration: underline; }
+
+/* ── ECOSYSTEM GRID ── */
+.lesson-html-body .ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.lesson-html-body .eco-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-html-body .eco-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--forest);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.lesson-html-body .eco-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); border-color: rgba(27,77,62,0.2); }
+.lesson-html-body .eco-card:hover::before { transform: scaleX(1); }
+
+.lesson-html-body .eco-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+.lesson-html-body .eco-icon.green { background: #E8F4EE; }
+.lesson-html-body .eco-icon.gold { background: #FBF3E2; }
+.lesson-html-body .eco-icon.blue { background: #E8F0FB; }
+.lesson-html-body .eco-icon.terracotta { background: #FAF0EC; }
+.lesson-html-body .eco-icon.purple { background: #F0EBF8; }
+.lesson-html-body .eco-icon.teal { background: #E8F4F4; }
+
+.lesson-html-body .eco-card h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.lesson-html-body .eco-card p {
+  font-size: 13.5px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ── CAREER CARDS ── */
+.lesson-html-body .careers-section {
+  background: var(--cream);
+  padding: 3.5rem 0;
+}
+
+.lesson-html-body .career-cards,
+.lesson-html-body .career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.lesson-html-body .career-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.lesson-html-body .career-card:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-3px);
+  border-color: rgba(27,77,62,0.18);
+}
+
+.lesson-html-body .career-card-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lesson-html-body .career-emoji {
+  font-size: 22px;
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lesson-html-body .career-card-header h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.lesson-html-body .career-card-header p {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.65);
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.lesson-html-body .career-card-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.lesson-html-body .career-card-body p {
+  font-size: 13.5px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.lesson-html-body .career-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.lesson-html-body .tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--cream-dark);
+  color: var(--forest);
+  letter-spacing: 0.3px;
+}
+
+.lesson-html-body .deep-dive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--forest);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(27,77,62,0.25);
+  padding-bottom: 1px;
+  transition: all 0.2s;
+}
+
+.lesson-html-body .deep-dive-link:hover { color: var(--forest-light); border-color: var(--forest-light); gap: 10px; }
+.lesson-html-body .deep-dive-link::after { content: '→'; }
+
+/* ── PERSONALITY SECTION ── */
+.lesson-html-body .personality-section {
+  background: var(--forest-dark);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-html-body .personality-section .section-eyebrow { color: var(--gold-light); }
+.lesson-html-body .personality-section .section-title { color: var(--white); }
+.lesson-html-body .personality-section .section-title em { color: var(--gold-light); }
+
+.lesson-html-body .personality-intro {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 640px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.lesson-html-body .personality-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.lesson-html-body .personality-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.lesson-html-body .personality-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-2px);
+}
+
+.lesson-html-body .personality-type {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+}
+
+.lesson-html-body .personality-desc {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.lesson-html-body .personality-paths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.lesson-html-body .p-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: rgba(201,168,76,0.12);
+  color: var(--gold-light);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+
+.lesson-html-body .personality-disclaimer,
+.lesson-html-body .personality-note {
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 680px;
+}
+
+.lesson-html-body .disclaimer-icon { font-size: 18px; margin-top: 2px; flex-shrink: 0; }
+
+.lesson-html-body .personality-disclaimer p,
+.lesson-html-body .personality-note p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.lesson-html-body .personality-disclaimer strong,
+.lesson-html-body .personality-note strong { color: var(--gold-light); font-weight: 500; }
+
+/* ── RESOURCES / BOOKS ── */
+.lesson-html-body .resources-section {
+  background: var(--cream-dark);
+  padding: 3.5rem 0;
+}
+
+.lesson-html-body .resource-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.lesson-html-body .resource-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s;
+}
+
+.lesson-html-body .resource-card:hover { box-shadow: var(--shadow-card); }
+
+.lesson-html-body .resource-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.lesson-html-body .book-cover {
+  width: 52px;
+  height: 70px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  color: var(--white);
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.lesson-html-body .book-harris { background: linear-gradient(145deg, #1B4D3E, #2A6B56); }
+.lesson-html-body .book-murray { background: linear-gradient(145deg, #A0793A, #C9A84C); }
+
+.lesson-html-body .resource-card h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.35;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.lesson-html-body .resource-card .author { font-size: 12px; color: var(--text-light); }
+
+.lesson-html-body .resource-card p {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.lesson-html-body .free-badge {
+  display: inline-block;
+  background: #E8F4EE;
+  color: var(--forest);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+/* ── BUTTONS ── */
+.lesson-html-body .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.lesson-html-body .btn-forest { background: var(--forest); color: var(--white); }
+.lesson-html-body .btn-forest:hover { background: var(--forest-light); color: var(--white); }
+.lesson-html-body .btn-gold { background: var(--gold); color: var(--forest-dark); }
+.lesson-html-body .btn-gold:hover { background: var(--gold-light); }
+.lesson-html-body .btn-outline { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); }
+.lesson-html-body .btn-outline:hover { background: var(--forest); color: var(--white); }
+.lesson-html-body .btn-lg { padding: 14px 32px; font-size: 15px; border-radius: 10px; }
+
+/* ── CTA SECTION ── */
+.lesson-html-body .cta-section {
+  background: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.lesson-html-body .cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── EXPANDABLE SECTIONS ── */
+.lesson-html-body .expand-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.lesson-html-body .expand-content.open { max-height: 2000px; opacity: 1; }
+
+.lesson-html-body .expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--forest);
+  background: none;
+  border: 1.5px solid rgba(27,77,62,0.3);
+  padding: 7px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.lesson-html-body .expand-btn:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
+
+.lesson-html-body .expand-icon {
+  display: inline-block;
+  transition: transform 0.3s;
+  font-style: normal;
+}
+
+.lesson-html-body .expand-icon.rotated { transform: rotate(180deg); }
+
+/* ── MODULE-SPECIFIC CONTENT BLOCKS ── */
+
+/* Concept cards used in many modules */
+.lesson-html-body .concept-grid,
+.lesson-html-body .concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.lesson-html-body .concept-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.lesson-html-body .concept-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+
+.lesson-html-body .concept-card h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.lesson-html-body .concept-card p {
+  font-size: 13.5px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* Callout / info boxes */
+.lesson-html-body .callout,
+.lesson-html-body .info-box,
+.lesson-html-body .note-box,
+.lesson-html-body .warning-box,
+.lesson-html-body .tip-box {
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.lesson-html-body .callout { background: #E8F4EE; border: 1px solid rgba(27,77,62,0.2); }
+.lesson-html-body .info-box { background: #E8F0FB; border: 1px solid rgba(59,130,246,0.2); }
+.lesson-html-body .note-box { background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.3); }
+.lesson-html-body .warning-box { background: #FEF3C7; border: 1px solid rgba(245,158,11,0.3); }
+.lesson-html-body .tip-box { background: #F0FDF4; border: 1px solid rgba(34,197,94,0.2); }
+
+.lesson-html-body .callout p,
+.lesson-html-body .info-box p,
+.lesson-html-body .note-box p,
+.lesson-html-body .warning-box p,
+.lesson-html-body .tip-box p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  margin-bottom: 0;
+  color: var(--text-mid);
+}
+
+/* Step/numbered process blocks */
+.lesson-html-body .steps-list,
+.lesson-html-body .process-steps {
+  list-style: none;
+  padding: 0;
+  counter-reset: steps;
+  margin: 1.5rem 0;
+}
+
+.lesson-html-body .steps-list li,
+.lesson-html-body .process-steps li {
+  counter-increment: steps;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.lesson-html-body .steps-list li:last-child,
+.lesson-html-body .process-steps li:last-child { border-bottom: none; }
+
+.lesson-html-body .steps-list li::before,
+.lesson-html-body .process-steps li::before {
+  content: counter(steps);
+  min-width: 32px;
+  height: 32px;
+  background: var(--forest);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Comparison / two-column tables */
+.lesson-html-body .comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 640px) {
+  .lesson-html-body .comparison-grid { grid-template-columns: 1fr; }
+}
+
+.lesson-html-body .comparison-col {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.lesson-html-body .comparison-col h4 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+/* Stat / highlight cards */
+.lesson-html-body .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.lesson-html-body .stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.lesson-html-body .stat-number {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.lesson-html-body .stat-label {
+  font-size: 12px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Glossary terms */
+.lesson-html-body .glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.lesson-html-body .glossary-term {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.lesson-html-body .glossary-term h4 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--forest-dark);
+  margin-bottom: 0.4rem;
+  margin-top: 0;
+}
+
+.lesson-html-body .glossary-term p {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .lesson-html-body .container { padding: 0 1.25rem; }
+  .lesson-html-body section { padding: 2.5rem 0; }
+  .lesson-html-body .career-cards,
+  .lesson-html-body .career-grid { grid-template-columns: 1fr; }
+  .lesson-html-body .personality-grid { grid-template-columns: 1fr; }
+  .lesson-html-body .ecosystem-grid { grid-template-columns: 1fr; }
+  .lesson-html-body .resource-cards { grid-template-columns: 1fr; }
+}

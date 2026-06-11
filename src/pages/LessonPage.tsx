@@ -25,10 +25,11 @@ export default function LessonPage() {
     },
   })
 
-  // Detect upgrade_required 403
+  // Detect upgrade_required 403 (free preview limit) vs not_enrolled 403
   const lessonError = error as any
   const is403 = lessonError?.response?.status === 403
   const isUpgradeRequired = is403 && lessonError?.response?.data?.upgrade_required
+  const isNotEnrolled = is403 && !lessonError?.response?.data?.upgrade_required
 
   const completeMutation = useMutation({
     mutationFn: () => progressApi.completeLesson(lesson!.id),
@@ -111,7 +112,47 @@ export default function LessonPage() {
     )
   }
 
-  if (isError && !isUpgradeRequired) {
+  // ── Not enrolled wall ─────────────────────────────────────────────────────
+  if (isNotEnrolled) {
+    return (
+      <div className="min-h-[70vh] flex items-center justify-center px-4 bg-[#C8D4E0]">
+        <div className="bg-white rounded-2xl border border-[#BCCAD8] p-8 max-w-md w-full text-center shadow-sm">
+          <div
+            className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
+            style={{ background: `${theme.pale}` }}
+          >
+            <Lock size={28} style={{ color: theme.primary }} />
+          </div>
+          <h2 className="font-display text-2xl font-bold text-[#1A2433] mb-3">
+            Enroll to access this lesson
+          </h2>
+          <p className="text-[#4A5A6A] font-body text-sm leading-relaxed mb-6">
+            This lesson is part of a paid course. Enroll to unlock all modules,
+            quizzes, and your certificate of completion.
+          </p>
+          <button
+            onClick={handleEnroll}
+            disabled={enrolling}
+            className="w-full py-3.5 rounded-lg font-body font-semibold text-white mb-3 transition-all hover:brightness-110"
+            style={{ background: theme.primary }}
+          >
+            {enrolling ? 'Redirecting to checkout...' : 'Enroll now — unlock everything'}
+          </button>
+          <Link
+            to={`/courses/${slug}`}
+            className="block text-sm font-body text-[#8A9AAA] hover:text-[#4A5A6A] transition-colors"
+          >
+            Back to course overview
+          </Link>
+          <div className="mt-5 pt-5 border-t border-[#EEF2F6] text-xs font-body text-[#8A9AAA]">
+            One-time payment · 3 months access · Certificate included
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (isError && !isUpgradeRequired && !isNotEnrolled) {
     return (
       <div className="min-h-screen bg-[#C8D4E0] flex items-center justify-center">
         <div className="text-center max-w-md px-4">

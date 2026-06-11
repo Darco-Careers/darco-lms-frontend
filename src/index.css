@@ -132,8 +132,11 @@
   --forest: #1B4D3E;
   --forest-light: #2A6B56;
   --forest-dark: #0F2E24;
+  --forest-mid: #2A6B56;
+  --forest-pale: #E8F4EE;
   --gold: #C9A84C;
   --gold-light: #E8C97A;
+  --gold-mid: #8A6A20;
   --gold-pale: #FBF5E6;
   --cream: #FAF8F3;
   --cream-dark: #F0EBE0;
@@ -932,3 +935,307 @@
   .lesson-html-body .ecosystem-grid { grid-template-columns: 1fr; }
   .lesson-html-body .resource-cards { grid-template-columns: 1fr; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LESSON HTML BODY — ADDITIONAL COMPONENTS (Phase 2 additions)
+   Missing classes identified by ground-truth audit, June 2026.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── FADE-IN OVERRIDE (critical fix) ── */
+/* Original HTML uses JS IntersectionObserver to add .visible — scripts
+   don't run inside dangerouslySetInnerHTML, so force all sections visible */
+.lesson-html-body .fade-in { opacity: 1 !important; transform: none !important; }
+.lesson-html-body .fade-in.visible { opacity: 1 !important; transform: none !important; }
+
+/* ── MODULE HERO ── */
+.lesson-html-body .module-hero {
+  background: linear-gradient(135deg, #0D2820 0%, var(--forest) 55%, var(--forest-mid) 100%);
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.lesson-html-body .module-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -10%;
+  width: 55%; height: 200%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.lesson-html-body .module-hero-inner { max-width: 860px; margin: 0 auto; }
+.lesson-html-body .module-badge {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold-light);
+  border: 1px solid rgba(201,168,76,0.4);
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin-bottom: 1.25rem;
+}
+.lesson-html-body .module-hero h1 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 0.75rem;
+}
+.lesson-html-body .module-hero h1 em { color: var(--gold-light); font-style: italic; }
+.lesson-html-body .module-hero p {
+  font-size: 1rem; color: rgba(255,255,255,0.7);
+  max-width: 600px; line-height: 1.8; font-weight: 300; margin-bottom: 1.5rem;
+}
+.lesson-html-body .module-hero .module-meta {
+  display: flex; gap: 1.5rem; flex-wrap: wrap;
+  font-size: 13px; color: rgba(255,255,255,0.55);
+}
+.lesson-html-body .module-hero .module-meta span { display: flex; align-items: center; gap: 6px; }
+
+/* ── CALLOUT VARIANTS ── */
+.lesson-html-body .callout-insight,
+.lesson-html-body .callout-warning,
+.lesson-html-body .callout-mentor {
+  border-radius: 0 14px 14px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.lesson-html-body .callout-insight { background: var(--gold-pale); border-left: 4px solid var(--gold); }
+.lesson-html-body .callout-warning { background: #FDF5E8; border-left: 4px solid #D4881A; }
+.lesson-html-body .callout-mentor  { background: var(--forest-pale); border-left: 4px solid var(--forest-mid); }
+.lesson-html-body .callout-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.lesson-html-body .callout-insight .callout-label { color: var(--gold-mid); }
+.lesson-html-body .callout-warning .callout-label { color: #D4881A; }
+.lesson-html-body .callout-mentor  .callout-label { color: var(--forest-mid); }
+.lesson-html-body .callout-insight p { font-size: 1rem; color: var(--text-dark); line-height: 1.8; }
+.lesson-html-body .callout-warning p { font-size: 1rem; color: var(--text-dark); line-height: 1.8; }
+.lesson-html-body .callout-mentor  p {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.05rem; color: var(--forest); font-style: italic; line-height: 1.75;
+}
+
+/* ── PILLAR CARDS ── */
+.lesson-html-body .pillars,
+.lesson-html-body .pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem; margin: 2rem 0;
+}
+.lesson-html-body .pillar {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.5rem; text-align: center;
+  transition: all 0.25s; position: relative; overflow: hidden;
+}
+.lesson-html-body .pillar::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+}
+.lesson-html-body .pillar:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.lesson-html-body .pillar.p1::before { background: linear-gradient(90deg, var(--forest), var(--forest-mid)); }
+.lesson-html-body .pillar.p2::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+.lesson-html-body .pillar.p3::before { background: linear-gradient(90deg, #4A6FA5, #7A9FD5); }
+.lesson-html-body .pillar.p4::before { background: linear-gradient(90deg, #8A4A90, #C07AC8); }
+.lesson-html-body .pillar h4 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem;
+}
+.lesson-html-body .pillar p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+.lesson-html-body .pillar-icon { font-size: 32px; margin-bottom: 0.75rem; display: block; }
+.lesson-html-body .pillar-tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 10px; margin-bottom: 0.6rem;
+}
+.lesson-html-body .p1 .pillar-tag { background: var(--forest-pale); color: var(--forest-mid); }
+.lesson-html-body .p2 .pillar-tag { background: var(--gold-pale); color: #8A6A20; }
+.lesson-html-body .p3 .pillar-tag { background: #E8EFF8; color: #4A6FA5; }
+.lesson-html-body .p4 .pillar-tag { background: #F5EEF8; color: #8A4A90; }
+/* Pillar cards (Module 10 variant) */
+.lesson-html-body .pillar-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.25rem; text-align: center; transition: all 0.25s;
+}
+.lesson-html-body .pillar-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.lesson-html-body .pillar-card .pillar-icon { font-size: 30px; margin-bottom: 0.5rem; display: block; }
+.lesson-html-body .pillar-card h4 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem;
+}
+.lesson-html-body .pillar-card p { font-size: 12px; color: var(--text-mid); line-height: 1.55; }
+
+/* ── WEALTH LADDER (Module 3) ── */
+.lesson-html-body .ladder { margin: 2rem 0; display: flex; flex-direction: column; gap: 0; }
+.lesson-html-body .ladder-step { display: flex; gap: 1.25rem; align-items: flex-start; }
+.lesson-html-body .ladder-connector { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.lesson-html-body .ladder-circle {
+  width: 40px; height: 40px;
+  background: var(--forest); color: var(--gold-light);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1rem; font-weight: 700; flex-shrink: 0; z-index: 1;
+}
+.lesson-html-body .ladder-line {
+  width: 2px; height: 32px;
+  background: linear-gradient(to bottom, var(--forest-mid), rgba(27,77,62,0.2));
+  margin: 0 auto;
+}
+.lesson-html-body .ladder-content {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.25rem 1.5rem; flex: 1;
+  margin-bottom: 8px; transition: box-shadow 0.2s;
+}
+.lesson-html-body .ladder-content:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body .ladder-content h4 {
+  font-weight: 600; font-size: 0.95rem; color: var(--text-dark); margin-bottom: 0.3rem;
+}
+.lesson-html-body .ladder-content p { font-size: 13.5px; color: var(--text-mid); line-height: 1.65; }
+
+/* ── METRIC CARDS (Module 5) ── */
+.lesson-html-body .metrics-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem; margin: 2rem 0;
+}
+.lesson-html-body .metric-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.4rem;
+  transition: all 0.25s; position: relative; overflow: hidden;
+}
+.lesson-html-body .metric-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.lesson-html-body .metric-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.lesson-html-body .metric-card.m1::before { background: var(--forest); }
+.lesson-html-body .metric-card.m2::before { background: var(--gold); }
+.lesson-html-body .metric-card.m3::before { background: #4A6FA5; }
+.lesson-html-body .metric-card.m4::before { background: #8A4A90; }
+.lesson-html-body .metric-card.m5::before { background: #2A8A6E; }
+.lesson-html-body .metric-card h4 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem;
+}
+.lesson-html-body .metric-card p { font-size: 12.5px; color: var(--text-mid); line-height: 1.6; margin-top: 0.4rem; }
+.lesson-html-body .metric-card .formula {
+  font-size: 12px; font-weight: 700; color: var(--forest-mid);
+  background: var(--forest-pale); padding: 3px 8px; border-radius: 6px;
+  display: inline-block; margin: 0.3rem 0;
+}
+
+/* ── FORMULA BOXES ── */
+.lesson-html-body .formula {
+  background: var(--forest-pale); border-radius: 8px;
+  padding: 0.75rem 1rem; margin: 0.75rem 0;
+  font-size: 13px; color: var(--forest); font-weight: 600; text-align: center;
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+.lesson-html-body .calc-formula {
+  background: var(--forest-pale); border-radius: 8px;
+  padding: 0.75rem 1rem; margin: 0.75rem 0;
+  font-size: 13px; color: var(--forest); font-weight: 600; text-align: center;
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+.lesson-html-body .rule-formula {
+  background: var(--forest); color: var(--gold-light);
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.1rem; font-weight: 600; text-align: center;
+  padding: 1rem; border-radius: 10px; margin: 1rem 0;
+}
+
+/* ── SUB-TITLE ── */
+.lesson-html-body h3.sub-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.2rem; font-weight: 600; color: var(--text-dark); margin: 2rem 0 0.75rem;
+}
+
+/* ── VIDEO CARDS ── */
+.lesson-html-body .video-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  box-shadow: var(--shadow-card); margin: 1.75rem 0;
+}
+.lesson-html-body .video-wrapper {
+  position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+}
+.lesson-html-body .video-wrapper iframe {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+}
+.lesson-html-body .video-info { padding: 1rem 1.25rem; }
+.lesson-html-body .video-badge {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 10px; margin-bottom: 0.5rem;
+  background: var(--forest-pale); color: var(--forest-mid);
+}
+.lesson-html-body .video-badge.ph { background: var(--forest-pale); color: var(--forest-mid); }
+.lesson-html-body .video-badge.bp { background: #E8F0FB; color: #1A4E7A; }
+.lesson-html-body .video-badge.cc { background: #EBF0FB; color: #1A4E7A; }
+.lesson-html-body .video-badge.tc { background: var(--forest-pale); color: var(--forest-mid); }
+.lesson-html-body .video-badge.acre { background: #EBF0FB; color: #1A4E7A; }
+.lesson-html-body .video-badge.dee { background: var(--gold-pale); color: #8A6A20; }
+.lesson-html-body .video-badge.lu  { background: #EBF0FB; color: #1A4E7A; }
+.lesson-html-body .video-badge.cpa { background: var(--forest-pale); color: var(--forest-mid); }
+.lesson-html-body .video-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;
+}
+.lesson-html-body .video-desc { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+/* ── DEAL TABLE ── */
+.lesson-html-body .deal-table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13.5px;
+}
+.lesson-html-body .deal-table th {
+  background: var(--forest); color: var(--white);
+  padding: 10px 14px; text-align: left;
+  font-weight: 600; font-size: 12px; letter-spacing: 0.5px;
+}
+.lesson-html-body .deal-table th:not(:first-child) { text-align: right; }
+.lesson-html-body .deal-table td {
+  padding: 9px 14px; border-bottom: 1px solid var(--border); color: var(--text-mid);
+}
+.lesson-html-body .deal-table td:not(:first-child) { text-align: right; font-weight: 500; color: var(--text-dark); }
+.lesson-html-body .deal-table tr:hover td { background: var(--forest-pale); }
+.lesson-html-body .deal-table tr.total td { background: var(--forest); color: var(--white); font-weight: 700; font-size: 14px; }
+.lesson-html-body .deal-table tr.total td:not(:first-child) { color: var(--gold-light); }
+.lesson-html-body .deal-table tr.result td { background: var(--forest-pale); font-weight: 700; color: var(--forest); font-size: 13.5px; }
+.lesson-html-body .deal-table tr.section-header td {
+  background: var(--forest-pale); font-weight: 700; color: var(--forest);
+  font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+/* ── COMPARE TABLE ── */
+.lesson-html-body .compare-table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 13.5px;
+}
+.lesson-html-body .compare-table th {
+  background: var(--forest); color: var(--white);
+  padding: 10px 14px; text-align: center; font-weight: 600;
+}
+.lesson-html-body .compare-table th:first-child { text-align: left; }
+.lesson-html-body .compare-table th.highlight { background: var(--forest-mid); }
+.lesson-html-body .compare-table td {
+  padding: 9px 14px; border-bottom: 1px solid var(--border); color: var(--text-mid);
+}
+.lesson-html-body .compare-table td:not(:first-child) { text-align: center; font-weight: 600; color: var(--text-dark); }
+.lesson-html-body .compare-table tr:hover td { background: var(--forest-pale); }
+.lesson-html-body .compare-table tr.highlight td { background: var(--gold-pale); font-weight: 700; color: var(--forest); }
+.lesson-html-body .compare-table tr:last-child td { border-bottom: none; }
+.lesson-html-body .compare-table tr:nth-child(even) td { background: var(--cream); }
+.lesson-html-body .compare-table .check { color: var(--forest-mid); font-weight: 700; }
+.lesson-html-body .compare-table .cross { color: #C0392B; font-weight: 700; }
+
+/* ── KNOWLEDGE CHECK (hide in LMS — redundant with native quiz) ── */
+.lesson-html-body .knowledge-check,
+.lesson-html-body .score-result { display: none !important; }
+
+/* ── HIDE PAGE CHROME (nav, footer, module-nav, progress bar) ── */
+.lesson-html-body nav,
+.lesson-html-body .nav-brand,
+.lesson-html-body .nav-logo,
+.lesson-html-body .nav-links,
+.lesson-html-body .nav-back,
+.lesson-html-body footer,
+.lesson-html-body .footer-brand,
+.lesson-html-body .footer-gold,
+.lesson-html-body .module-nav,
+.lesson-html-body .module-nav-info,
+.lesson-html-body .progress-track,
+.lesson-html-body .progress-label,
+.lesson-html-body .progress-modules { display: none !important; }

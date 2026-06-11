@@ -7,7 +7,7 @@ export const quizApi = {
    * Returns quiz questions (without correct answers) and attempt history.
    */
   get: async (quizId: string): Promise<Quiz> => {
-    const res = await apiClient.get<Quiz>(`/quizzes/${quizId}/`)
+    const res = await apiClient.get<Quiz>(`/student/quizzes/${quizId}/`)
     return res.data
   },
 
@@ -17,7 +17,7 @@ export const quizApi = {
    * Returns score, passed, correct_answers, etc.
    */
   submit: async (quizId: string, submission: QuizSubmission): Promise<QuizResult> => {
-    const res = await apiClient.post<QuizResult>(`/quizzes/${quizId}/attempt/`, submission)
+    const res = await apiClient.post<QuizResult>(`/student/quizzes/${quizId}/attempt/`, submission)
     return res.data
   },
 }

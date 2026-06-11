@@ -25,11 +25,18 @@ export default function LessonPage() {
     },
   })
 
-  // Detect upgrade_required 403 (free preview limit) vs not_enrolled 403
+  // Detect upgrade_required 403 (free preview limit) vs not_enrolled 403.
+  // The custom DRF exception handler wraps the original response data inside
+  // a "detail" field: { error, code, status, detail: { upgrade_required, ... } }
+  // So we must check both the top-level and the nested detail field.
   const lessonError = error as any
   const is403 = lessonError?.response?.status === 403
-  const isUpgradeRequired = is403 && lessonError?.response?.data?.upgrade_required
-  const isNotEnrolled = is403 && !lessonError?.response?.data?.upgrade_required
+  const errData = lessonError?.response?.data ?? {}
+  const isUpgradeRequired = is403 && (
+    errData?.upgrade_required ||
+    errData?.detail?.upgrade_required
+  )
+  const isNotEnrolled = is403 && !isUpgradeRequired
 
   const completeMutation = useMutation({
     mutationFn: () => progressApi.completeLesson(lesson!.id),

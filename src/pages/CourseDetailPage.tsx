@@ -42,7 +42,12 @@ export default function CourseDetailPage() {
   const freeMutation = useMutation({
     mutationFn: () => freeEnrollmentApi.enroll(slug!),
     onSuccess: (data) => {
-      navigate(`/courses/${slug}/lesson/${data.first_lesson_id}`)
+      if (data.first_lesson_id) {
+        navigate(`/courses/${slug}/lesson/${data.first_lesson_id}`)
+      } else {
+        // Fallback: go to progress page if no specific lesson ID returned
+        navigate(`/courses/${slug}/progress`)
+      }
     },
     onError: (err: any) => {
       if (err?.response?.data?.error === 'one_preview_limit') {
@@ -232,11 +237,29 @@ export default function CourseDetailPage() {
             )}
 
             <div className="space-y-2">
-              {(modules ?? []).map((mod, idx) => (
+              {(modules ?? []).map((mod: any, idx: number) => {
+                // Determine if this module is accessible (free preview = first 2 modules)
+                const isFreeModule = idx <= 1
+                const isAccessible = course.is_enrolled || isFreeModule
+                const lessonTarget = mod.first_lesson_id
+                  ? `/courses/${slug}/lesson/${mod.first_lesson_id}`
+                  : course.is_enrolled ? `/courses/${slug}/progress` : null
+
+                return (
                 <div
                   key={mod.id}
-                  className="flex items-center gap-4 p-4 bg-white rounded-xl border border-[#BCCAD8] transition-colors"
+                  className={`flex items-center gap-4 p-4 bg-white rounded-xl border border-[#BCCAD8] transition-colors ${isAccessible && lessonTarget ? 'cursor-pointer hover:bg-[#EEF2F6]' : ''}`}
                   style={idx === 0 ? { borderColor: `${theme.primary}40` } : {}}
+                  onClick={() => {
+                    if (isAccessible && lessonTarget) {
+                      if (course.is_enrolled) {
+                        navigate(lessonTarget)
+                      } else {
+                        // Trigger free preview enrollment then navigate
+                        handleFreePreview()
+                      }
+                    }
+                  }}
                 >
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center font-display font-bold text-sm flex-shrink-0"
@@ -250,14 +273,14 @@ export default function CourseDetailPage() {
                   <div className="flex-1 min-w-0">
                     <p className="font-body font-semibold text-[#1A2433] text-sm truncate">{mod.title}</p>
                     <p className="text-[#8A9AAA] text-xs font-body mt-0.5">
-                      {mod.lessons_count} lessons · 10 quiz questions
+                      {mod.lessons_total ?? mod.lessons_count ?? 0} lessons · {mod.quiz_count ?? 10} quiz questions
                     </p>
                   </div>
                   {course.is_enrolled ? (
                     mod.is_completed
                       ? <CheckCircle size={17} className="text-emerald-500 flex-shrink-0" />
                       : <span className="text-xs font-body text-[#4A5A6A] flex-shrink-0">Continue</span>
-                  ) : idx === 0 ? (
+                  ) : isFreeModule ? (
                     <span
                       className="text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0 font-body whitespace-nowrap"
                       style={{ background: `${theme.pale}`, color: theme.primary, border: `1px solid ${theme.primary}30` }}
@@ -268,7 +291,8 @@ export default function CourseDetailPage() {
                     <Lock size={14} className="text-[#8A9AAA] flex-shrink-0" />
                   )}
                 </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 
@@ -381,7 +405,7 @@ export default function CourseDetailPage() {
                     className="w-full py-3 rounded-lg font-body font-semibold text-sm mb-5 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all flex items-center justify-center gap-2"
                   >
                     <BookOpen size={14} />
-                    {freeMutation.isPending ? 'Loading...' : 'Explore free — Module 1 →'}
+                    {freeMutation.isPending ? 'Loading...' : 'Explore free — Orientation + Module 1 →'}
                   </button>
 
                   {!isAuthenticated && (

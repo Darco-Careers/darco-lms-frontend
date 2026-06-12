@@ -437,45 +437,70 @@ export default function RealEstatePage() {
               {/* Right: enroll CTA */}
               <div className="p-7 flex flex-col">
                 <div className="h-1 w-12 rounded-full mb-5" style={{ background: theme.primary }} />
-                <div className="font-display text-3xl font-bold text-[#1A2433] mb-1">
-                  ${catalog.price}
-                </div>
-                <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time · 3 months access</p>
 
-                <button
-                  onClick={() => handleDirectEnroll(activeTrack.slug)}
-                  disabled={enrolling && enrollingSlug === activeTrack.slug}
-                  className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-white text-sm mb-3 transition-all hover:brightness-110 disabled:opacity-70 w-full"
-                  style={{ background: theme.primary }}
-                >
-                  {enrolling && enrollingSlug === activeTrack.slug
-                    ? <><Loader2 size={15} className="animate-spin" /> Processing...</>
-                    : <>Enroll now <ArrowRight size={15} /></>}
-                </button>
-
-                <Link
-                  to={`/courses/${activeTrack.slug}`}
-                  className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-sm mb-6 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
-                >
-                  <BookOpen size={14} />
-                  Explore free (Module 1)
-                </Link>
-
-                <div className="space-y-2 text-xs font-body text-[#4A5A6A]">
-                  {[
-                    `${catalog.modules.length} self-paced modules`,
-                    `${catalog.quizCount} practice questions`,
-                    `${catalog.glossaryCount} glossary terms`,
-                    'Certificate of completion',
-                    '3 months access',
-                    'Module 1 always free',
-                  ].map(item => (
-                    <div key={item} className="flex items-center gap-2">
-                      <CheckCircle size={12} className="text-emerald-500 flex-shrink-0" />
-                      {item}
+                {activeTrack.isFoundation ? (
+                  // Foundation has its own dedicated course page — send students there
+                  // instead of duplicating the enrollment card here.
+                  <>
+                    <p className="text-[#4A5A6A] font-body text-sm leading-relaxed mb-6">
+                      The Core Foundation is the starting point for every real estate career track.
+                      Orientation and Module 1 are always free — no account needed to explore.
+                    </p>
+                    <Link
+                      to="/courses/real-estate-foundation"
+                      className="flex items-center justify-center gap-2 py-3.5 px-5 rounded-lg font-body font-semibold text-white text-sm mb-3 transition-all hover:brightness-110 w-full"
+                      style={{ background: theme.primary }}
+                    >
+                      View full course details <ArrowRight size={15} />
+                    </Link>
+                    <p className="text-center text-xs text-[#8A9AAA] font-body">
+                      Orientation + Module 1 free · No account needed
+                    </p>
+                  </>
+                ) : (
+                  // All other tracks: show the full enrollment card
+                  <>
+                    <div className="font-display text-3xl font-bold text-[#1A2433] mb-1">
+                      ${catalog.price}
                     </div>
-                  ))}
-                </div>
+                    <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time · 3 months access</p>
+
+                    <button
+                      onClick={() => handleDirectEnroll(activeTrack.slug)}
+                      disabled={enrolling && enrollingSlug === activeTrack.slug}
+                      className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-white text-sm mb-3 transition-all hover:brightness-110 disabled:opacity-70 w-full"
+                      style={{ background: theme.primary }}
+                    >
+                      {enrolling && enrollingSlug === activeTrack.slug
+                        ? <><Loader2 size={15} className="animate-spin" /> Processing...</>
+                        : <>Enroll now <ArrowRight size={15} /></>}
+                    </button>
+
+                    <Link
+                      to={`/courses/${activeTrack.slug}`}
+                      className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-sm mb-6 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                    >
+                      <BookOpen size={14} />
+                      Explore free (Module 1)
+                    </Link>
+
+                    <div className="space-y-2 text-xs font-body text-[#4A5A6A]">
+                      {[
+                        `${catalog.modules.length} self-paced modules`,
+                        `${catalog.quizCount} practice questions`,
+                        `${catalog.glossaryCount} glossary terms`,
+                        'Certificate of completion',
+                        '3 months access',
+                        'Module 1 always free',
+                      ].map(item => (
+                        <div key={item} className="flex items-center gap-2">
+                          <CheckCircle size={12} className="text-emerald-500 flex-shrink-0" />
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>

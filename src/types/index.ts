@@ -97,6 +97,7 @@ export interface QuizQuestion {
   question_text: string
   question_type: string
   sequence_order: number
+  section: string
   answers: QuizAnswer[]
 }
 
@@ -104,9 +105,11 @@ export interface Quiz {
   id: string
   title: string
   passing_score: number
-  max_attempts: number
+  max_attempts: number          // 0 = unlimited (exam mode)
+  is_exam_mode: boolean
+  time_limit_minutes: number | null
   attempts_used: number
-  attempts_left: number
+  attempts_left: number | null  // null = unlimited
   can_attempt: boolean
   already_passed: boolean
   last_score: number | null
@@ -118,14 +121,24 @@ export interface QuizSubmission {
   answers: Record<string, string>
 }
 
+export interface SectionBreakdown {
+  key: string
+  label: string
+  correct: number
+  total: number
+  score: number
+}
+
 export interface QuizResult {
   attempt_id: string
   passed: boolean
   score: number
   passing_score: number
   correct_answers: Record<string, string>
+  rationales: Record<string, string>
+  section_breakdown: SectionBreakdown[]
   attempts_used: number
-  attempts_left: number
+  attempts_left: number | null
   certificate_issued: boolean
 }
 

@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { ArrowLeft, ArrowRight, BookOpen, ClipboardList, CheckCircle, Lock } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, ClipboardList, CheckCircle, Lock, Tag } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import { coursesApi } from '@/api/courses'
 import { progressApi, enrollmentApi } from '@/api/progress'
@@ -13,6 +13,11 @@ export default function LessonPage() {
   const queryClient = useQueryClient()
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
   const [upgradeRequired, setUpgradeRequired] = useState(false)
+
+  // Promo code state (shared between both paywall screens)
+  const [promoCode, setPromoCode] = useState('')
+  const [promoError, setPromoError] = useState('')
+  const [enrolling, setEnrolling] = useState(false)
 
   const { data: lesson, isLoading, isError, error } = useQuery({
     queryKey: ['lesson', lessonId],
@@ -45,13 +50,13 @@ export default function LessonPage() {
     },
   })
 
-  const [enrolling, setEnrolling] = useState(false)
-  const handleEnroll = async () => {
+  const handleEnroll = async (code?: string) => {
     setEnrolling(true)
+    setPromoError('')
     try {
-      const session = await enrollmentApi.createCheckout(slug!)
+      const session = await enrollmentApi.createCheckout(slug!, code?.trim().toUpperCase() || undefined)
       if (session.enrolled) {
-        // Already enrolled or 100% off — go to progress page
+        // Already enrolled or 100% off promo — go to progress page
         navigate(`/courses/${slug}/progress`)
         return
       }
@@ -61,6 +66,11 @@ export default function LessonPage() {
       if (err?.response?.status === 409) {
         navigate(`/courses/${slug}/progress`)
         return
+      }
+      // Show promo code error inline
+      const msg = err?.response?.data?.error || err?.response?.data?.detail?.error || ''
+      if (msg && code) {
+        setPromoError(msg)
       }
       setEnrolling(false)
     }
@@ -78,6 +88,36 @@ export default function LessonPage() {
       </div>
     )
   }
+
+  // ── Shared promo code block ────────────────────────────────────────────────
+  const PromoCodeBlock = () => (
+    <div className="mt-4 pt-4 border-t border-[#EEF2F6]">
+      <p className="text-xs font-body text-[#8A9AAA] mb-2 flex items-center gap-1">
+        <Tag size={11} />
+        Have a promo code?
+      </p>
+      <div className="flex gap-2">
+        <input
+          type="text"
+          value={promoCode}
+          onChange={e => { setPromoCode(e.target.value.toUpperCase()); setPromoError('') }}
+          placeholder="Enter code"
+          className="flex-1 px-3 py-2 rounded-lg border border-[#BCCAD8] bg-[#F8FAFC] text-sm font-body text-[#1A2433] placeholder-[#BCCAD8] focus:outline-none focus:border-[#4A5A6A] transition-colors"
+        />
+        <button
+          onClick={() => handleEnroll(promoCode)}
+          disabled={enrolling || !promoCode.trim()}
+          className="px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110 disabled:opacity-50"
+          style={{ background: theme.primary }}
+        >
+          {enrolling ? '...' : 'Apply'}
+        </button>
+      </div>
+      {promoError && (
+        <p className="mt-2 text-xs font-body text-red-500">{promoError}</p>
+      )}
+    </div>
+  )
 
   // ── Upgrade required wall ──────────────────────────────────────────────────
   if (isUpgradeRequired || upgradeRequired) {
@@ -98,7 +138,7 @@ export default function LessonPage() {
             quizzes, and your certificate of completion.
           </p>
           <button
-            onClick={handleEnroll}
+            onClick={() => handleEnroll()}
             disabled={enrolling}
             className="w-full py-3.5 rounded-lg font-body font-semibold text-white mb-3 transition-all hover:brightness-110"
             style={{ background: theme.primary }}
@@ -114,6 +154,7 @@ export default function LessonPage() {
           <div className="mt-5 pt-5 border-t border-[#EEF2F6] text-xs font-body text-[#8A9AAA]">
             One-time payment · 3 months access · Certificate included
           </div>
+          <PromoCodeBlock />
         </div>
       </div>
     )
@@ -138,7 +179,7 @@ export default function LessonPage() {
             quizzes, and your certificate of completion.
           </p>
           <button
-            onClick={handleEnroll}
+            onClick={() => handleEnroll()}
             disabled={enrolling}
             className="w-full py-3.5 rounded-lg font-body font-semibold text-white mb-3 transition-all hover:brightness-110"
             style={{ background: theme.primary }}
@@ -154,6 +195,7 @@ export default function LessonPage() {
           <div className="mt-5 pt-5 border-t border-[#EEF2F6] text-xs font-body text-[#8A9AAA]">
             One-time payment · 3 months access · Certificate included
           </div>
+          <PromoCodeBlock />
         </div>
       </div>
     )

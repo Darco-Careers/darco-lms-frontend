@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ArrowRight, Lock, BookOpen, CheckCircle, Loader2 } from 'lucide-react'
 import { COURSE_COLORS } from '@/types'
-import { enrollmentApi } from '@/api/progress'
+import { enrollmentApi, freeEnrollmentApi } from '@/api/progress'
 import { useAuthStore } from '@/store/authStore'
 
 // Hardcoded catalog data — will be replaced by public API endpoint in a future backend batch
@@ -163,7 +163,26 @@ export default function RealEstatePage() {
   const [activeIdx, setActiveIdx] = useState(0)
   const [enrolling, setEnrolling] = useState(false)
   const [enrollingSlug, setEnrollingSlug] = useState<string | null>(null)
+  const [freeEnrolling, setFreeEnrolling] = useState(false)
+  const [freeEnrollingSlug, setFreeEnrollingSlug] = useState<string | null>(null)
 
+  const handleFreeExplore = async (slug: string) => {
+    if (!isAuthenticated) {
+      navigate(`/register?next=/courses/${slug}/free`)
+      return
+    }
+    setFreeEnrolling(true)
+    setFreeEnrollingSlug(slug)
+    try {
+      const enrollment = await freeEnrollmentApi.enroll(slug)
+      navigate(`/courses/${slug}/lesson/${enrollment.first_lesson_id}`)
+    } catch {
+      navigate(`/courses/${slug}`)
+    } finally {
+      setFreeEnrolling(false)
+      setFreeEnrollingSlug(null)
+    }
+  }
   const handleDirectEnroll = async (slug: string) => {
     if (!isAuthenticated) {
       navigate(`/register?next=/courses/${slug}`)
@@ -476,13 +495,15 @@ export default function RealEstatePage() {
                         : <>Enroll now <ArrowRight size={15} /></>}
                     </button>
 
-                    <Link
-                      to={`/courses/${activeTrack.slug}`}
-                      className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-sm mb-6 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                    <button
+                      onClick={() => handleFreeExplore(activeTrack.slug)}
+                      disabled={freeEnrolling && freeEnrollingSlug === activeTrack.slug}
+                      className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-sm mb-6 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all w-full disabled:opacity-60"
                     >
-                      <BookOpen size={14} />
-                      Explore free (Module 1)
-                    </Link>
+                      {freeEnrolling && freeEnrollingSlug === activeTrack.slug
+                        ? <><Loader2 size={14} className="animate-spin" /> Loading...</>
+                        : <><BookOpen size={14} /> Explore free (Module 1)</>}
+                    </button>
 
                     <div className="space-y-2 text-xs font-body text-[#4A5A6A]">
                       {[

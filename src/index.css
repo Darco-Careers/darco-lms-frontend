@@ -793,6 +793,8 @@
 .lesson-html-body .fade-in { opacity: 1 !important; transform: none !important; }
 .lesson-html-body nav, .lesson-html-body .progress-nav,
 .lesson-html-body .module-nav, .lesson-html-body footer { display: none !important; }
+/* Hide the static-site breadcrumb and progress tracker — replaced by the LMS sticky nav */
+.lesson-html-body .breadcrumb, .lesson-html-body .progress-bar { display: none !important; }
 .lesson-html-body .knowledge-check, .lesson-html-body .score-result { display: none !important; }
 .lesson-html-body .career-card-header { min-height: 86px; }
 .lesson-html-body .career-cards .career-card:nth-of-type(1) .career-card-header { background:#0D6E6E; }

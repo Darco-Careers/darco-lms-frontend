@@ -77,11 +77,14 @@ export interface Lesson {
   body: string
   youtube_url: string | null
   module_id: string
+  module_title: string | null
   is_completed: boolean
   prev_lesson_id: string | null
   next_lesson_id: string | null
   quiz_id: string | null
   next_module_lesson_id: string | null
+  lesson_position: number | null
+  lesson_total: number | null
 }
 
 // ─── Quiz ─────────────────────────────────────────────────────────────────────

@@ -89,6 +89,7 @@ export const coursesApi = {
       body: (raw.body as string) ?? '',
       youtube_url: (raw.youtube_url as string | null) ?? null,
       module_id: moduleObj ? (moduleObj.id as string) : (raw.module_id as string),
+      module_title: moduleObj ? (moduleObj.title as string) : null,
       is_completed: !!(progress.completed ?? raw.is_completed),
       prev_lesson_id: prevNav ? (prevNav.id as string) : (raw.prev_lesson_id as string | null) ?? null,
       next_lesson_id: nextNav ? (nextNav.id as string) : (raw.next_lesson_id as string | null) ?? null,
@@ -97,6 +98,8 @@ export const coursesApi = {
         const nml = nav.next_module_lesson as Record<string, unknown> | null
         return nml ? (nml.id as string) : null
       })(),
+      lesson_position: (raw.lesson_position as number | null) ?? null,
+      lesson_total: (raw.lesson_total as number | null) ?? null,
     }
   },
 }

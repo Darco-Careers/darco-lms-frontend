@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import { coursesApi } from '@/api/courses'
 import { progressApi, enrollmentApi } from '@/api/progress'
 import { COURSE_COLORS } from '@/types'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function LessonPage() {
   const { slug, lessonId } = useParams<{ slug: string; lessonId: string }>()
@@ -18,6 +18,11 @@ export default function LessonPage() {
   const [promoCode, setPromoCode] = useState('')
   const [promoError, setPromoError] = useState('')
   const [enrolling, setEnrolling] = useState(false)
+
+  // Fix #1 — scroll to top whenever the lesson changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [lessonId])
 
   const { data: lesson, isLoading, isError, error } = useQuery({
     queryKey: ['lesson', lessonId],
@@ -219,11 +224,28 @@ export default function LessonPage() {
 
   if (!lesson) return null
 
+  // Fix #2 — derive lesson progress for the nav bar indicator
+  const lessonPos = lesson.lesson_position ?? lesson.sequence_order
+  const lessonTotal = lesson.lesson_total ?? null
+  const progressPct = lessonTotal && lessonTotal > 0 ? Math.round((lessonPos / lessonTotal) * 100) : null
+
+  // Fix #3 — quiz route must use module_id, not quiz_id
+  // The QuizPage calls /student/modules/<id>/quiz/ so it needs the module UUID
+  const quizRouteId = lesson.module_id
+
+  // Fix #4 — detect when next module is locked for free preview students
+  // When next_lesson_id is null AND next_module_lesson_id is null AND quiz_id is null
+  // it means we're at the end of the last free module — show enroll CTA
+  const isEndOfFreePreview =
+    lesson.next_lesson_id === null &&
+    lesson.next_module_lesson_id === null &&
+    lesson.quiz_id === null
+
   return (
     <div className="min-h-screen bg-[#C8D4E0]">
-      {/* Top nav bar */}
-      <div className="sticky top-16 z-40 bg-white border-b border-[#BCCAD8] px-4 py-3">
-        <div className="page-container flex items-center justify-between gap-4">
+      {/* Fix #2 — sticky nav bar with lesson progress indicator */}
+      <div className="sticky top-16 z-40 bg-white border-b border-[#BCCAD8]">
+        <div className="page-container flex items-center justify-between gap-4 px-4 py-3">
           <Link
             to={`/courses/${slug}/progress`}
             className="flex items-center gap-2 text-[#4A5A6A] hover:text-[#1A2433] text-sm font-body transition-colors"
@@ -232,8 +254,23 @@ export default function LessonPage() {
             <span className="hidden sm:block">Back to course</span>
           </Link>
 
-          <div className="flex-1 text-center">
-            <p className="text-xs font-body text-[#8A9AAA] truncate">{lesson.title}</p>
+          <div className="flex-1 text-center min-w-0">
+            <p className="text-xs font-body text-[#8A9AAA] truncate">
+              {lesson.module_title ? `${lesson.module_title}` : lesson.title}
+            </p>
+            {progressPct !== null && (
+              <div className="mt-1.5 flex items-center gap-2 justify-center">
+                <div className="w-32 sm:w-48 h-1.5 bg-[#EEF2F6] rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-all duration-500"
+                    style={{ width: `${progressPct}%`, background: theme.primary }}
+                  />
+                </div>
+                <span className="text-[10px] font-body text-[#8A9AAA] whitespace-nowrap">
+                  {lessonPos}/{lessonTotal}
+                </span>
+              </div>
+            )}
           </div>
 
           <Link
@@ -283,8 +320,8 @@ export default function LessonPage() {
         {/* CTA + navigation — re-constrained for HTML lessons */}
         <div className={lesson.content_type === 'html' ? 'page-container max-w-3xl mx-auto px-4 pb-10' : ''}>
 
-          {/* End of module CTA */}
-          {lesson.next_lesson_id === null && (
+          {/* End of module CTA — only show when there IS a quiz */}
+          {lesson.next_lesson_id === null && lesson.quiz_id !== null && (
             <div
               className="mt-8 p-6 rounded-xl border"
               style={{ background: theme.pale, borderColor: `${theme.primary}25` }}
@@ -304,14 +341,60 @@ export default function LessonPage() {
                     : 'Mark lesson complete'
                   }
                 </button>
+                {/* Fix #3 — use module_id for the quiz route, not quiz_id */}
                 <Link
-                  to={`/courses/${slug}/quiz/${lesson.quiz_id ?? lesson.module_id}`}
+                  to={`/courses/${slug}/quiz/${quizRouteId}`}
                   className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
                   style={{ background: theme.primary }}
                 >
                   <ClipboardList size={14} />
                   Take the quiz
                 </Link>
+              </div>
+            </div>
+          )}
+
+          {/* Fix #4 — end of free preview: show enroll CTA instead of broken next-module button */}
+          {isEndOfFreePreview && (
+            <div
+              className="mt-8 p-6 rounded-xl border"
+              style={{ background: theme.pale, borderColor: `${theme.primary}25` }}
+            >
+              <div className="flex items-start gap-3 mb-4">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  style={{ background: `${theme.primary}18` }}
+                >
+                  <Lock size={18} style={{ color: theme.primary }} />
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-[#1A2433] mb-1">
+                    You've completed the free preview!
+                  </h3>
+                  <p className="text-[#4A5A6A] font-body text-sm leading-relaxed">
+                    Enroll to unlock all remaining modules, quizzes, and your certificate of completion.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  onClick={() => completeMutation.mutate()}
+                  disabled={completeMutation.isPending || completeMutation.isSuccess}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                >
+                  {completeMutation.isSuccess
+                    ? <><CheckCircle size={14} className="text-emerald-500" /> Marked complete</>
+                    : 'Mark lesson complete'
+                  }
+                </button>
+                <button
+                  onClick={() => handleEnroll()}
+                  disabled={enrolling}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
+                  style={{ background: theme.primary }}
+                >
+                  {enrolling ? 'Redirecting...' : <>Enroll to continue <ArrowRight size={14} /></>}
+                </button>
               </div>
             </div>
           )}
@@ -343,13 +426,31 @@ export default function LessonPage() {
               >
                 Continue to next module <ArrowRight size={14} />
               </Link>
-            ) : (
+            ) : lesson.quiz_id ? (
+              /* Fix #3 — use module_id for the quiz route in the bottom nav too */
               <Link
-                to={`/courses/${slug}/quiz/${lesson.quiz_id ?? lesson.module_id}`}
+                to={`/courses/${slug}/quiz/${quizRouteId}`}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
                 style={{ background: theme.primary }}
               >
                 Take the quiz <ArrowRight size={14} />
+              </Link>
+            ) : isEndOfFreePreview ? (
+              /* Fix #4 — enroll CTA in the bottom nav for free preview end */
+              <button
+                onClick={() => handleEnroll()}
+                disabled={enrolling}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
+                style={{ background: theme.primary }}
+              >
+                {enrolling ? 'Redirecting...' : <>Enroll to continue <ArrowRight size={14} /></>}
+              </button>
+            ) : (
+              <Link
+                to={`/courses/${slug}/progress`}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+              >
+                Back to course <ArrowRight size={14} />
               </Link>
             )}
           </div>

@@ -85,7 +85,16 @@ export const coursesApi = {
       id: raw.id as string,
       title: raw.title as string,
       sequence_order: raw.sequence_order as number,
-      content_type: ((raw.content_type as string) ?? 'markdown') as 'markdown' | 'html' | 'video' | 'pdf',
+      content_type: (() => {
+        const ct = (raw.content_type as string) ?? 'markdown'
+        const body = (raw.body as string) ?? ''
+        // 'text' and 'mixed' lessons may contain raw HTML (painting, electrician)
+        // or Markdown. Detect by checking if the body starts with an HTML tag.
+        if (ct === 'text' || ct === 'mixed') {
+          return body.trimStart().startsWith('<') ? 'html' : 'markdown'
+        }
+        return ct as 'markdown' | 'html' | 'video' | 'pdf'
+      })(),
       body: (raw.body as string) ?? '',
       youtube_url: (raw.youtube_url as string | null) ?? null,
       module_id: moduleObj ? (moduleObj.id as string) : (raw.module_id as string),

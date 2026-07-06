@@ -283,6 +283,35 @@ export default function LessonPage() {
         </div>
       </div>
 
+      {/* Hero banner — only for non-HTML lessons (electrician, painting, markdown courses) */}
+      {lesson.content_type !== 'html' && (() => {
+        // construction-painting uses a light background gradient — use dark text
+        const isLightHero = slug === 'construction-painting'
+        return (
+          <div
+            className="py-10 px-4"
+            style={{ background: theme.heroGradient ?? `linear-gradient(135deg, ${theme.primary} 0%, ${theme.mid} 100%)` }}
+          >
+            <div className="page-container max-w-3xl">
+              {lesson.module_title && (
+                <p
+                  className="text-xs font-body font-semibold uppercase tracking-widest mb-2"
+                  style={{ color: isLightHero ? theme.mid : 'rgba(255,255,255,0.6)' }}
+                >
+                  {lesson.module_title}
+                </p>
+              )}
+              <h1
+                className="font-display text-2xl sm:text-3xl font-bold leading-tight"
+                style={{ color: isLightHero ? theme.primary : '#ffffff' }}
+              >
+                {lesson.title}
+              </h1>
+            </div>
+          </div>
+        )
+      })()}
+
       {/* Content — full-width for HTML lessons, constrained card for Markdown */}
       <div className={lesson.content_type === 'html' ? '' : 'page-container max-w-3xl mx-auto py-10 px-4'}>
 

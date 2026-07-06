@@ -12,7 +12,18 @@ const TRACK_DOORS = [
     color: '#1B4D3E',
     colorMid: '#2A6B56',
     colorPale: '#F0F7F4',
-    tracks: ['Residential Agent', 'Commercial RE', 'Investing', 'Property Management', 'Apartment Leasing', 'Development', 'Mortgage', 'Wholesaling', 'Photography', 'Maintenance'],
+    tracks: [
+      { label: 'Residential Agent', slug: 'real-estate-residential-agent' },
+      { label: 'Commercial RE',     slug: 'real-estate-commercial' },
+      { label: 'Investing',         slug: 'real-estate-investing' },
+      { label: 'Property Mgmt',     slug: 'real-estate-property-management' },
+      { label: 'Apt Leasing',       slug: 'real-estate-leasing' },
+      { label: 'Development',       slug: 'real-estate-development' },
+      { label: 'Mortgage',          slug: 'real-estate-mortgage-lending' },
+      { label: 'Wholesaling',       slug: 'real-estate-wholesaling' },
+      { label: 'Photography',       slug: 'real-estate-photography' },
+      { label: 'Maintenance',       slug: 'real-estate-maintenance-repair' },
+    ],
   },
   {
     slug: 'electrician',
@@ -24,7 +35,13 @@ const TRACK_DOORS = [
     color: '#1A2E4D',
     colorMid: '#2A4A7A',
     colorPale: '#EBF0F7',
-    tracks: ['Safety & OSHA', 'Tools & Materials', 'Wiring & Circuits', 'Panels & Conduit', 'Getting Hired'],
+    tracks: [
+      { label: 'Safety & OSHA', slug: null },
+      { label: 'Tools & Materials', slug: null },
+      { label: 'Wiring & Circuits', slug: null },
+      { label: 'Panels & Conduit', slug: null },
+      { label: 'Getting Hired', slug: null },
+    ],
   },
   {
     slug: 'construction-painting',
@@ -36,7 +53,13 @@ const TRACK_DOORS = [
     color: '#4D2A1A',
     colorMid: '#7A4228',
     colorPale: '#FAF0EA',
-    tracks: ['The Trade', 'Safety & OSHA', 'Tools & Equipment', 'Surface Prep', 'Getting Hired'],
+    tracks: [
+      { label: 'The Trade', slug: null },
+      { label: 'Safety & OSHA', slug: null },
+      { label: 'Tools & Equipment', slug: null },
+      { label: 'Surface Prep', slug: null },
+      { label: 'Getting Hired', slug: null },
+    ],
   },
 ]
 
@@ -178,16 +201,28 @@ export default function HomePage() {
                     {track.desc}
                   </p>
 
-                  {/* Sample tracks */}
+                  {/* Sample tracks — each pill links to the specific track if a slug is available */}
                   <div className="flex flex-wrap gap-1.5 mb-5">
                     {track.tracks.slice(0, 5).map(t => (
-                      <span
-                        key={t}
-                        className="text-xs px-2 py-0.5 rounded font-body"
-                        style={{ background: track.colorPale, color: track.color, border: `1px solid ${track.color}25` }}
-                      >
-                        {t}
-                      </span>
+                      t.slug ? (
+                        <Link
+                          key={t.label}
+                          to={`/real-estate?track=${t.slug}`}
+                          onClick={e => e.stopPropagation()}
+                          className="text-xs px-2 py-0.5 rounded font-body hover:brightness-95 transition-all"
+                          style={{ background: track.colorPale, color: track.color, border: `1px solid ${track.color}25` }}
+                        >
+                          {t.label}
+                        </Link>
+                      ) : (
+                        <span
+                          key={t.label}
+                          className="text-xs px-2 py-0.5 rounded font-body"
+                          style={{ background: track.colorPale, color: track.color, border: `1px solid ${track.color}25` }}
+                        >
+                          {t.label}
+                        </span>
+                      )
                     ))}
                     {track.tracks.length > 5 && (
                       <span className="text-xs px-2 py-0.5 rounded font-body bg-[#EEF2F6] text-[#8A9AAA] border border-[#BCCAD8]">

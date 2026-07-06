@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowRight, Lock, BookOpen, CheckCircle, Loader2 } from 'lucide-react'
 import { COURSE_COLORS } from '@/types'
 import { enrollmentApi, freeEnrollmentApi } from '@/api/progress'
@@ -159,8 +159,16 @@ const PERSONALITY_TYPES = [
 
 export default function RealEstatePage() {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated)
-  const [activeIdx, setActiveIdx] = useState(0)
+  const [activeIdx, setActiveIdx] = useState(() => {
+    const trackParam = searchParams.get('track')
+    if (trackParam) {
+      const idx = TRACKS.findIndex(t => t.slug === trackParam)
+      return idx >= 0 ? idx : 0
+    }
+    return 0
+  })
   const [enrolling, setEnrolling] = useState(false)
   const [enrollingSlug, setEnrollingSlug] = useState<string | null>(null)
   const [freeEnrolling, setFreeEnrolling] = useState(false)

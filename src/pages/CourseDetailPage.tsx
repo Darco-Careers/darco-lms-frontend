@@ -213,8 +213,8 @@ export default function CourseDetailPage() {
           <div className="lg:col-span-2">
             <h2 className="font-display text-xl font-bold text-[#1A2433] mb-5">Course modules</h2>
 
-            {/* Core Foundation entry point — shown on non-foundation courses */}
-            {slug !== 'real-estate-foundation' && (
+            {/* Core Foundation entry point — shown on real-estate tracks only, NOT on trade courses */}
+            {slug !== 'real-estate-foundation' && slug !== 'construction-painting' && slug !== 'electrician' && (
               <div className="flex items-center gap-3 p-4 mb-4 rounded-xl border-2 border-dashed bg-[#FFFBF0] cursor-pointer group"
                 style={{ borderColor: '#C9A84C40' }}
                 onClick={() => window.location.href = '/courses/real-estate-foundation'}

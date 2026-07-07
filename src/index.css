@@ -788,19 +788,23 @@
 
 /* ========== LMS INTEGRATION FIXES ========== */
 /* Base element styles — cover bare HTML tags used by painting/electrician lessons
-   (no custom class names, just plain <h2>, <p>, <ul>, <blockquote>, <table> etc.) */
-.lesson-html-body h2:not([class]) { font-family: 'Playfair Display', serif; font-size: clamp(1.25rem, 2.5vw, 1.65rem); font-weight: 700; color: #1A2433; line-height: 1.3; margin: 2rem 0 0.75rem; }
-.lesson-html-body h3:not([class]) { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #1A2433; margin: 1.75rem 0 0.6rem; }
-.lesson-html-body h4:not([class]) { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: #2A3A4A; text-transform: uppercase; letter-spacing: 0.05em; margin: 1.5rem 0 0.5rem; }
-.lesson-html-body p:not([class]) { font-family: 'DM Sans', sans-serif; font-size: 15px; color: #3A4A5A; line-height: 1.75; margin-bottom: 1rem; }
-.lesson-html-body ul:not([class]) { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
-.lesson-html-body ol:not([class]) { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+   (no custom class names, just plain <h2>, <p>, <ul>, <blockquote>, <table> etc.)
+   max-width + auto margins constrain the reading column to ~760px on wide screens
+   without affecting Foundation's .container/.hero/.section which have their own widths. */
+/* max-width and auto horizontal margins are baked into each rule so the
+   shorthand margin property on h2/h3/h4/blockquote cannot override them. */
+.lesson-html-body h2:not([class]) { max-width: 760px; margin: 2rem auto 0.75rem; font-family: 'Playfair Display', serif; font-size: clamp(1.25rem, 2.5vw, 1.65rem); font-weight: 700; color: #1A2433; line-height: 1.3; }
+.lesson-html-body h3:not([class]) { max-width: 760px; margin: 1.75rem auto 0.6rem; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: #1A2433; }
+.lesson-html-body h4:not([class]) { max-width: 760px; margin: 1.5rem auto 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: #2A3A4A; text-transform: uppercase; letter-spacing: 0.05em; }
+.lesson-html-body p:not([class]) { max-width: 760px; margin-left: auto; margin-right: auto; margin-bottom: 1rem; font-family: 'DM Sans', sans-serif; font-size: 15px; color: #3A4A5A; line-height: 1.75; }
+.lesson-html-body ul:not([class]) { max-width: 760px; margin-left: auto; margin-right: auto; margin-bottom: 1rem; list-style: disc; padding-left: 1.5rem; }
+.lesson-html-body ol:not([class]) { max-width: 760px; margin-left: auto; margin-right: auto; margin-bottom: 1rem; list-style: decimal; padding-left: 1.5rem; }
 .lesson-html-body li:not([class]) { font-family: 'DM Sans', sans-serif; font-size: 15px; color: #3A4A5A; line-height: 1.7; margin-bottom: 0.35rem; }
-.lesson-html-body blockquote:not([class]) { border-left: 4px solid #2E6B54; padding: 0.75rem 1.25rem; background: #F0F7F4; border-radius: 0 8px 8px 0; margin: 1.5rem 0; font-style: italic; color: #2A4A3A; font-size: 15px; }
+.lesson-html-body blockquote:not([class]) { max-width: 760px; margin: 1.5rem auto; border-left: 4px solid #2E6B54; padding: 0.75rem 1.25rem; background: #F0F7F4; border-radius: 0 8px 8px 0; font-style: italic; color: #2A4A3A; font-size: 15px; }
 .lesson-html-body strong:not([class]) { font-weight: 700; color: #1A2433; }
 .lesson-html-body em:not([class]) { font-style: italic; }
 .lesson-html-body a:not([class]) { color: #1B4D3E; text-decoration: underline; }
-.lesson-html-body table:not([class]) { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
+.lesson-html-body table:not([class]) { max-width: 760px; margin: 1.5rem auto; width: 100%; border-collapse: collapse; font-size: 14px; }
 .lesson-html-body table:not([class]) th { background: #1B4D3E; color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 600; padding: 0.6rem 0.85rem; text-align: left; }
 .lesson-html-body table:not([class]) td { padding: 0.55rem 0.85rem; border-bottom: 1px solid #DDE8E4; color: #3A4A5A; vertical-align: top; }
 .lesson-html-body table:not([class]) tr:nth-child(even) td { background: #F4F9F7; }

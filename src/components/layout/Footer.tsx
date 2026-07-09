@@ -2,22 +2,22 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A2433] text-[#8A9BB0]">
+    <footer className="bg-[#111318] text-[#8A8070]">
       <div className="page-container py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
           {/* Brand */}
           <div className="sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 bg-[#1E2A38] border border-[#2D3E52] rounded-lg flex items-center justify-center">
-                <span className="font-display font-bold text-[#C9A84C] text-base">D</span>
+              <div className="w-9 h-9 bg-[#1A1A1A] border border-[#2A2A22] rounded-lg flex items-center justify-center">
+                <span className="font-display font-bold text-[#F7C948] text-base">D</span>
               </div>
               <div>
                 <div className="font-display font-bold text-white text-base tracking-wide">Darco Academy</div>
                 <div className="font-body text-[#8A8070] text-[10px] uppercase tracking-widest">Your Career. Your Path.</div>
               </div>
             </div>
-            <p className="text-sm font-body leading-relaxed text-[#8A9BB0]">
+            <p className="text-sm font-body leading-relaxed text-[#8A8070]">
               Serving anyone who wants to work hard and succeed.
               Real skills. Real careers. Real impact.
             </p>
@@ -36,7 +36,7 @@ export default function Footer() {
                 ['Construction Painting', '/courses/construction-painting'],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link to={href} className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors duration-200 font-body">
+                  <Link to={href} className="text-[#8A8070] hover:text-[#F7C948] transition-colors duration-200 font-body">
                     {label}
                   </Link>
                 </li>
@@ -49,22 +49,22 @@ export default function Footer() {
             <h4 className="font-body font-semibold text-white mb-4 text-xs uppercase tracking-wider">Support</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/faq" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                <Link to="/faq" className="text-[#8A8070] hover:text-[#F7C948] transition-colors font-body">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                <Link to="/contact" className="text-[#8A8070] hover:text-[#F7C948] transition-colors font-body">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <a href="mailto:info@darcocenter.org" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                <a href="mailto:info@darcocenter.org" className="text-[#8A8070] hover:text-[#F7C948] transition-colors font-body">
                   info@darcocenter.org
                 </a>
               </li>
               <li>
-                <a href="tel:+18186870188" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                <a href="tel:+18186870188" className="text-[#8A8070] hover:text-[#F7C948] transition-colors font-body">
                   (818) 687-0188
                 </a>
               </li>
@@ -77,23 +77,23 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="https://darcoacademy.com/about.html" target="_blank" rel="noopener noreferrer"
-                  className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                  className="text-[#8A8070] hover:text-[#F7C948] transition-colors font-body">
                   About & Philosophy
                 </a>
               </li>
               <li>
                 <a href="https://darcoinc.org" target="_blank" rel="noopener noreferrer"
-                  className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                  className="text-[#8A8070] hover:text-[#F7C948] transition-colors font-body">
                   DARCO Inc. (Parent Company)
                 </a>
               </li>
               <li>
-                <Link to="/login" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                <Link to="/login" className="text-[#8A8070] hover:text-[#F7C948] transition-colors font-body">
                   Student Login
                 </Link>
               </li>
               <li>
-                <Link to="/register" className="text-[#8A9BB0] hover:text-[#C9A84C] transition-colors font-body">
+                <Link to="/register" className="text-[#8A8070] hover:text-[#F7C948] transition-colors font-body">
                   Create Account
                 </Link>
               </li>
@@ -101,11 +101,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[#2D3E52] mt-10 pt-6 flex flex-col sm:flex-row justify-between items-start gap-3">
-          <p className="text-[#5A4A3A] text-sm font-body flex-shrink-0">
+        <div className="border-t border-[#2A2A22] mt-10 pt-6 flex flex-col sm:flex-row justify-between items-start gap-3">
+          <p className="text-[#5A5A52] text-sm font-body flex-shrink-0">
             © {new Date().getFullYear()} DARCO Inc. All rights reserved.
           </p>
-          <p className="text-[#5A4A3A] text-xs font-body text-right">
+          <p className="text-[#5A5A52] text-xs font-body text-right">
             Educational content only. Course materials are for general informational purposes and do not constitute legal, professional, or licensing advice. Always verify current licensing requirements with your state or local authority. DARCO Academy makes no guarantees regarding employment outcomes.
           </p>
         </div>

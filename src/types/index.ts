@@ -335,14 +335,13 @@ export const COURSE_COLORS: Record<string, CourseColorTheme> = {
     heroGradient: 'linear-gradient(135deg, #0A0A0C 0%, #111318 55%, #1A1A1A 100%)',
     label: 'Black & Gold',
   },
-  // Construction Painting — LIGHT theme: warm off-white bg + dark navy + muted gold
-  // Uses Bebas Neue font (trades/industrial), completely different feel from RE courses
+  // Construction Painting — dark warm brown + gold, matches enriched Ch0 HTML
   'construction-painting': {
-    primary: '#1a1a2e',
-    mid: '#2d2d4a',
-    light: '#8a6a10',
-    pale: '#f8f7f4',
-    heroGradient: 'linear-gradient(135deg, #f8f7f4 0%, #f0ede8 100%)',
-    label: 'Industrial Light',
+    primary: '#3D2B1F',
+    mid: '#5C4432',
+    light: '#C9A84C',
+    pale: '#FBF5E6',
+    heroGradient: 'linear-gradient(135deg, #2A1D14 0%, #3D2B1F 55%, #5C4432 100%)',
+    label: 'Dark Brown & Gold',
   },
 }

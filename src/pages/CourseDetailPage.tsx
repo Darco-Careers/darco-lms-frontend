@@ -34,7 +34,7 @@ export default function CourseDetailPage() {
   const modules = course?.modules ?? []
 
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
-  const isLight = slug === 'construction-painting'
+  const isLight = false // all trade courses now use dark hero themes
 
   const [previewLimitError, setPreviewLimitError] = useState<{ courseName: string } | null>(null)
 

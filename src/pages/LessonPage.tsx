@@ -248,7 +248,8 @@ export default function LessonPage() {
         <div className="page-container flex items-center justify-between gap-4 px-4 py-3">
           <Link
             to={`/courses/${slug}/progress`}
-            className="flex items-center gap-2 text-[#5A4A3A] hover:text-[#1A1A18] text-sm font-body transition-colors"
+            className="flex items-center gap-2 text-sm font-body transition-colors"
+            style={{ color: theme.mid }}
           >
             <ArrowLeft size={15} />
             <span className="hidden sm:block">Back to course</span>
@@ -263,7 +264,7 @@ export default function LessonPage() {
                 <div className="w-32 sm:w-48 h-1.5 bg-[#F5F0EB] rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-500"
-                    style={{ width: `${progressPct}%`, background: theme.primary }}
+                    style={{ width: `${progressPct}%`, background: theme.light }}
                   />
                 </div>
                 <span className="text-[10px] font-body text-[#8A8070] whitespace-nowrap">
@@ -275,7 +276,8 @@ export default function LessonPage() {
 
           <Link
             to={`/courses/${slug}/glossary`}
-            className="hidden sm:flex items-center gap-1.5 text-xs font-body font-medium text-[#5A4A3A] hover:text-[#1A1A18] transition-colors px-3 py-1.5 rounded-lg border border-[#DDD5C8] hover:bg-[#F5F0EB]"
+            className="hidden sm:flex items-center gap-1.5 text-xs font-body font-medium transition-colors px-3 py-1.5 rounded-lg border"
+            style={{ color: theme.mid, borderColor: `${theme.primary}30` }}
           >
             <BookOpen size={13} />
             Glossary
@@ -355,15 +357,16 @@ export default function LessonPage() {
               className="mt-8 p-6 rounded-xl border"
               style={{ background: theme.pale, borderColor: `${theme.primary}25` }}
             >
-              <h3 className="font-display font-bold text-[#1A1A18] mb-2">Ready for the quiz?</h3>
-              <p className="text-[#5A4A3A] font-body text-sm mb-4">
+              <h3 className="font-display font-bold mb-2" style={{ color: theme.primary }}>Ready for the quiz?</h3>
+              <p className="font-body text-sm mb-4" style={{ color: theme.mid }}>
                 You've reached the end of this module's lessons. Take the quiz to complete this module.
               </p>
               <div className="flex flex-wrap gap-3">
                 <button
                   onClick={() => completeMutation.mutate()}
                   disabled={completeMutation.isPending || completeMutation.isSuccess}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border bg-white text-sm font-body font-semibold transition-all"
+                  style={{ borderColor: `${theme.primary}40`, color: theme.primary }}
                 >
                   {completeMutation.isSuccess
                     ? <><CheckCircle size={14} className="text-emerald-500" /> Marked complete</>
@@ -397,10 +400,10 @@ export default function LessonPage() {
                   <Lock size={18} style={{ color: theme.primary }} />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-[#1A1A18] mb-1">
+                  <h3 className="font-display font-bold mb-1" style={{ color: theme.primary }}>
                     You've completed the free preview!
                   </h3>
-                  <p className="text-[#5A4A3A] font-body text-sm leading-relaxed">
+                  <p className="font-body text-sm leading-relaxed" style={{ color: theme.mid }}>
                     Enroll to unlock all remaining modules, quizzes, and your certificate of completion.
                   </p>
                 </div>
@@ -409,7 +412,8 @@ export default function LessonPage() {
                 <button
                   onClick={() => completeMutation.mutate()}
                   disabled={completeMutation.isPending || completeMutation.isSuccess}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border bg-white text-sm font-body font-semibold transition-all"
+                  style={{ borderColor: `${theme.primary}40`, color: theme.primary }}
                 >
                   {completeMutation.isSuccess
                     ? <><CheckCircle size={14} className="text-emerald-500" /> Marked complete</>
@@ -433,7 +437,8 @@ export default function LessonPage() {
             {lesson.prev_lesson_id ? (
               <Link
                 to={`/courses/${slug}/lesson/${lesson.prev_lesson_id}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border bg-white text-sm font-body font-semibold transition-all"
+                style={{ borderColor: `${theme.primary}40`, color: theme.primary }}
               >
                 <ArrowLeft size={14} /> Previous
               </Link>
@@ -477,7 +482,8 @@ export default function LessonPage() {
             ) : (
               <Link
                 to={`/courses/${slug}/progress`}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border bg-white text-sm font-body font-semibold transition-all"
+                style={{ borderColor: `${theme.primary}40`, color: theme.primary }}
               >
                 Back to course <ArrowRight size={14} />
               </Link>

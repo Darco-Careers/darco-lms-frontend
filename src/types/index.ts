@@ -326,14 +326,14 @@ export const COURSE_COLORS: Record<string, CourseColorTheme> = {
     heroGradient: 'linear-gradient(135deg, #2E2000 0%, #7A5800 60%, #C49030 100%)',
     label: 'Deep Amber',
   },
-  // Electrician — original site: near-black bg (#111318) + bright yellow/gold (#F7C948)
+  // Electrician — dark navy + warm gold (from lesson page screenshot)
   'electrician': {
-    primary: '#111318',
-    mid: '#1A1A1A',
-    light: '#F7C948',
-    pale: '#FAF6EE',
-    heroGradient: 'linear-gradient(135deg, #0A0A0C 0%, #111318 55%, #1A1A1A 100%)',
-    label: 'Black & Gold',
+    primary: '#1A3A5C',
+    mid: '#183554',
+    light: '#E8C97A',
+    pale: '#FAF8F3',
+    heroGradient: 'linear-gradient(135deg, #183554 0%, #1A3A5C 55%, #1D3F62 100%)',
+    label: 'Navy & Gold',
   },
   // Construction Painting — dark warm brown + gold, matches enriched Ch0 HTML
   'construction-painting': {

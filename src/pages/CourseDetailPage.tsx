@@ -137,7 +137,7 @@ export default function CourseDetailPage() {
         style={{
           background: isLight
             ? 'linear-gradient(135deg, #f8f7f4 0%, #f0ede8 100%)'
-            : `linear-gradient(135deg, ${theme.primary} 0%, ${theme.mid} 100%)`
+            : theme.heroGradient
         }}
       >
         <div className="page-container relative">
@@ -318,7 +318,10 @@ export default function CourseDetailPage() {
                   </Link>
                   <Link
                     to={`/courses/${slug}/glossary`}
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg font-body font-semibold text-sm border border-[#DDD5C8] text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg font-body font-semibold text-sm border transition-all"
+                    style={{ borderColor: `${theme.primary}40`, color: theme.primary, background: 'white' }}
+                    onMouseEnter={e => (e.currentTarget.style.background = theme.pale)}
+                    onMouseLeave={e => (e.currentTarget.style.background = 'white')}
                   >
                     View glossary
                   </Link>
@@ -361,8 +364,8 @@ export default function CourseDetailPage() {
                         <button
                           onClick={handleValidatePromo}
                           disabled={promoValidating || !promoInput.trim()}
-                          className="px-3 py-2 rounded-lg text-xs font-body font-semibold text-[#1E2A38] disabled:opacity-50 transition-all hover:brightness-110"
-                          style={{ background: '#C9A84C' }}
+                          className="px-3 py-2 rounded-lg text-xs font-body font-semibold disabled:opacity-50 transition-all hover:brightness-110"
+                          style={{ background: theme.light, color: theme.mid }}
                         >
                           {promoValidating ? <Loader2 size={14} className="animate-spin" /> : 'Apply'}
                         </button>
@@ -402,7 +405,8 @@ export default function CourseDetailPage() {
                   <button
                     onClick={handleFreePreview}
                     disabled={freeMutation.isPending}
-                    className="w-full py-3 rounded-lg font-body font-semibold text-sm mb-5 border border-[#DDD5C8] text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-lg font-body font-semibold text-sm mb-5 border transition-all flex items-center justify-center gap-2"
+                    style={{ borderColor: `${theme.primary}40`, color: theme.primary }}
                   >
                     <BookOpen size={14} />
                     {freeMutation.isPending ? 'Loading...' : 'Explore free — Orientation + Module 1 →'}
@@ -433,19 +437,19 @@ export default function CourseDetailPage() {
                   )}
 
                   {/* Access policy */}
-                  <div className="bg-[#F5F0EB] rounded-xl p-4 mb-5 border border-[#DDD5C8]">
+                  <div className="rounded-xl p-4 mb-5 border" style={{ background: theme.pale, borderColor: `${theme.primary}20` }}>
                     <div className="flex items-center gap-2 mb-2">
-                      <Clock size={14} className="text-[#C9A84C] flex-shrink-0" />
+                      <Clock size={14} style={{ color: theme.light }} className="flex-shrink-0" />
                       <span className="text-xs font-body font-semibold text-[#1A1A18]">Access policy</span>
                     </div>
-                    <ul className="text-xs font-body text-[#5A4A3A] space-y-1">
+                    <ul className="text-xs font-body space-y-1" style={{ color: theme.mid }}>
                       <li>• 3 months access after enrollment</li>
                       <li>• 1-click +2 month extension (free)</li>
                       <li>• Final +2 month extension on request</li>
                     </ul>
                   </div>
 
-                  <div className="space-y-2 text-sm font-body text-[#5A4A3A]">
+                  <div className="space-y-2 text-sm font-body" style={{ color: theme.mid }}>
                     {(slug === 'real-estate-foundation' ? [
                       'Orientation module (free)',
                       `${Math.max((course.modules_count ?? 1) - 1, 10)} course modules`,

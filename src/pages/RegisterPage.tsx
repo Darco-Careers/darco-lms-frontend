@@ -59,10 +59,10 @@ export default function RegisterPage() {
             {nextParam?.endsWith('/free') ? 'Free access' : 'Get started free'}
           </span>
         </div>
-        <h1 className="font-display text-3xl font-bold text-[#1A2433] mb-2">
+        <h1 className="font-display text-3xl font-bold text-[#1A1A18] mb-2">
           {nextParam?.endsWith('/free') ? 'Create your free account' : 'Begin your career training'}
         </h1>
-        <p className="text-[#8A9AAA] font-body text-sm">
+        <p className="text-[#8A8070] font-body text-sm">
           {nextParam?.endsWith('/free')
             ? 'Module 1 is completely free — no payment required.'
             : 'Free to join. Explore any course. Enroll when you\'re ready.'}
@@ -96,10 +96,10 @@ export default function RegisterPage() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">Full name</label>
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">Full name</label>
           <input
             type="text"
-            className="w-full px-4 py-3 rounded-xl border border-[#BCCAD8] bg-white text-[#1A2433] font-body text-sm placeholder-[#B8C8D8] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-[#DDD5C8] bg-white text-[#1A1A18] font-body text-sm placeholder-[#C8C0B0] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all"
             placeholder="Your full name"
             value={form.name}
             onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
@@ -108,10 +108,10 @@ export default function RegisterPage() {
           />
         </div>
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">Email address</label>
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">Email address</label>
           <input
             type="email"
-            className="w-full px-4 py-3 rounded-xl border border-[#BCCAD8] bg-white text-[#1A2433] font-body text-sm placeholder-[#B8C8D8] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-[#DDD5C8] bg-white text-[#1A1A18] font-body text-sm placeholder-[#C8C0B0] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all"
             placeholder="you@example.com"
             value={form.email}
             onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
@@ -120,11 +120,11 @@ export default function RegisterPage() {
           />
         </div>
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">Password</label>
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">Password</label>
           <div className="relative">
             <input
               type={showPassword ? 'text' : 'password'}
-              className="w-full px-4 py-3 rounded-xl border border-[#BCCAD8] bg-white text-[#1A2433] font-body text-sm placeholder-[#B8C8D8] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all pr-11"
+              className="w-full px-4 py-3 rounded-xl border border-[#DDD5C8] bg-white text-[#1A1A18] font-body text-sm placeholder-[#C8C0B0] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all pr-11"
               placeholder="At least 8 characters"
               value={form.password}
               onChange={e => setForm(f => ({ ...f, password: e.target.value }))}
@@ -134,17 +134,17 @@ export default function RegisterPage() {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#8A9AAA] hover:text-[#4A5A6A] transition-colors"
+              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#8A8070] hover:text-[#5A4A3A] transition-colors"
             >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
           </div>
         </div>
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">Confirm password</label>
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">Confirm password</label>
           <input
             type={showPassword ? 'text' : 'password'}
-            className="w-full px-4 py-3 rounded-xl border border-[#BCCAD8] bg-white text-[#1A2433] font-body text-sm placeholder-[#B8C8D8] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-[#DDD5C8] bg-white text-[#1A1A18] font-body text-sm placeholder-[#C8C0B0] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all"
             placeholder="Repeat your password"
             value={form.confirm}
             onChange={e => setForm(f => ({ ...f, confirm: e.target.value }))}
@@ -160,9 +160,9 @@ export default function RegisterPage() {
             id="disclaimer"
             checked={disclaimer}
             onChange={e => setDisclaimer(e.target.checked)}
-            className="mt-0.5 w-4 h-4 rounded border-[#BCCAD8] accent-[#C9A84C] flex-shrink-0 cursor-pointer"
+            className="mt-0.5 w-4 h-4 rounded border-[#DDD5C8] accent-[#C9A84C] flex-shrink-0 cursor-pointer"
           />
-          <label htmlFor="disclaimer" className="text-xs font-body text-[#8A9AAA] leading-relaxed cursor-pointer">
+          <label htmlFor="disclaimer" className="text-xs font-body text-[#8A8070] leading-relaxed cursor-pointer">
             I understand this course is for educational purposes only. Licensing requirements vary by state and locality. DARCO Academy does not guarantee employment or licensing outcomes.
           </label>
         </div>
@@ -182,8 +182,8 @@ export default function RegisterPage() {
         </button>
       </form>
 
-      <div className="mt-6 pt-6 border-t border-[#EEF2F6] text-center">
-        <p className="text-sm text-[#8A9AAA] font-body">
+      <div className="mt-6 pt-6 border-t border-[#EDE8E2] text-center">
+        <p className="text-sm text-[#8A8070] font-body">
           Already have an account?{' '}
           <Link
             to={`/login${nextParam ? `?next=${nextParam}` : ''}`}

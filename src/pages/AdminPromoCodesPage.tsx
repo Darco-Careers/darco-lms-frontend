@@ -64,8 +64,8 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-[#BCCAD8] rounded-xl p-6 mb-6 shadow-sm">
-      <h3 className="font-display font-bold text-[#1A2433] text-lg mb-5">Create New Promo Code</h3>
+    <form onSubmit={handleSubmit} className="bg-white border border-[#DDD5C8] rounded-xl p-6 mb-6 shadow-sm">
+      <h3 className="font-display font-bold text-[#1A1A18] text-lg mb-5">Create New Promo Code</h3>
 
       {error && (
         <div className="flex items-start gap-2 bg-red-50 border border-red-200 rounded-lg px-4 py-3 mb-4 text-sm text-red-700">
@@ -77,7 +77,7 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Code name */}
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">
             Promo Code Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -89,12 +89,12 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
             required
             maxLength={50}
           />
-          <p className="text-xs text-[#8A9AAA] mt-1">Letters, numbers, and hyphens only. Will be uppercased automatically.</p>
+          <p className="text-xs text-[#8A8070] mt-1">Letters, numbers, and hyphens only. Will be uppercased automatically.</p>
         </div>
 
         {/* Discount value */}
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">
             Discount <span className="text-red-500">*</span>
           </label>
           <div className="flex gap-2">
@@ -118,7 +118,7 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
             </select>
           </div>
           {form.discount_type === 'percent' && (
-            <p className="text-xs text-[#8A9AAA] mt-1">
+            <p className="text-xs text-[#8A8070] mt-1">
               {form.discount_value === 100
                 ? '100% off = completely free enrollment (no payment needed)'
                 : `${form.discount_value}% will be deducted from the course price`}
@@ -128,7 +128,7 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
 
         {/* Max uses */}
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">
             Max Total Uses
           </label>
           <input
@@ -139,12 +139,12 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
             onChange={e => setForm(f => ({ ...f, max_uses: e.target.value ? Number(e.target.value) : null }))}
             min={1}
           />
-          <p className="text-xs text-[#8A9AAA] mt-1">Leave blank for unlimited uses.</p>
+          <p className="text-xs text-[#8A8070] mt-1">Leave blank for unlimited uses.</p>
         </div>
 
         {/* Expiry date */}
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">
             Expiry Date
           </label>
           <input
@@ -162,7 +162,7 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
               }
             }}
           />
-          <p className="text-xs text-[#8A9AAA] mt-1">Leave blank — code never expires.</p>
+          <p className="text-xs text-[#8A8070] mt-1">Leave blank — code never expires.</p>
         </div>
       </div>
 
@@ -179,7 +179,7 @@ function CreatePromoForm({ onCreated, onCancel }: CreateFormProps) {
         <button
           type="button"
           onClick={onCancel}
-          className="px-5 py-2.5 rounded-lg font-body font-medium text-sm text-[#4A5A6A] border border-[#BCCAD8] hover:bg-[#EEF2F6] transition-colors"
+          className="px-5 py-2.5 rounded-lg font-body font-medium text-sm text-[#5A4A3A] border border-[#DDD5C8] hover:bg-[#F5F0EB] transition-colors"
         >
           Cancel
         </button>
@@ -258,8 +258,8 @@ export default function AdminPromoCodesPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="font-display font-bold text-[#1A2433] text-3xl mb-1">Promo Codes</h1>
-          <p className="font-body text-[#4A5A6A] text-sm">
+          <h1 className="font-display font-bold text-[#1A1A18] text-3xl mb-1">Promo Codes</h1>
+          <p className="font-body text-[#5A4A3A] text-sm">
             Create and manage discount codes for your students. Codes can be 1–100% off.
           </p>
         </div>
@@ -293,7 +293,7 @@ export default function AdminPromoCodesPage() {
 
       {/* Loading state */}
       {loading && (
-        <div className="flex items-center justify-center py-16 text-[#8A9AAA]">
+        <div className="flex items-center justify-center py-16 text-[#8A8070]">
           <Loader2 size={24} className="animate-spin mr-3" />
           <span className="font-body text-sm">Loading promo codes…</span>
         </div>
@@ -301,10 +301,10 @@ export default function AdminPromoCodesPage() {
 
       {/* Empty state */}
       {!loading && !error && codes.length === 0 && (
-        <div className="text-center py-16 bg-white border border-[#BCCAD8] rounded-xl">
+        <div className="text-center py-16 bg-white border border-[#DDD5C8] rounded-xl">
           <Tag size={40} className="mx-auto text-[#BCCAD8] mb-4" />
-          <h3 className="font-display font-bold text-[#1A2433] text-lg mb-2">No promo codes yet</h3>
-          <p className="font-body text-[#8A9AAA] text-sm mb-6">
+          <h3 className="font-display font-bold text-[#1A1A18] text-lg mb-2">No promo codes yet</h3>
+          <p className="font-body text-[#8A8070] text-sm mb-6">
             Create your first code to give students a discount or free access.
           </p>
           <button
@@ -320,17 +320,17 @@ export default function AdminPromoCodesPage() {
 
       {/* Codes table */}
       {!loading && codes.length > 0 && (
-        <div className="bg-white border border-[#BCCAD8] rounded-xl overflow-hidden shadow-sm">
+        <div className="bg-white border border-[#DDD5C8] rounded-xl overflow-hidden shadow-sm">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-[#EEF2F6] bg-[#F7F9FB]">
-                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#4A5A6A] text-xs uppercase tracking-wide">Code</th>
-                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#4A5A6A] text-xs uppercase tracking-wide">Discount</th>
-                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#4A5A6A] text-xs uppercase tracking-wide">Course</th>
-                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#4A5A6A] text-xs uppercase tracking-wide">Uses</th>
-                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#4A5A6A] text-xs uppercase tracking-wide">Expires</th>
-                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#4A5A6A] text-xs uppercase tracking-wide">Status</th>
+                <tr className="border-b border-[#EDE8E2] bg-[#F7F9FB]">
+                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#5A4A3A] text-xs uppercase tracking-wide">Code</th>
+                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#5A4A3A] text-xs uppercase tracking-wide">Discount</th>
+                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#5A4A3A] text-xs uppercase tracking-wide">Course</th>
+                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#5A4A3A] text-xs uppercase tracking-wide">Uses</th>
+                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#5A4A3A] text-xs uppercase tracking-wide">Expires</th>
+                  <th className="text-left px-5 py-3.5 font-body font-semibold text-[#5A4A3A] text-xs uppercase tracking-wide">Status</th>
                   <th className="px-5 py-3.5"></th>
                 </tr>
               </thead>
@@ -338,19 +338,19 @@ export default function AdminPromoCodesPage() {
                 {codes.map((code, idx) => (
                   <tr
                     key={code.id}
-                    className={`border-b border-[#EEF2F6] last:border-0 transition-colors ${
+                    className={`border-b border-[#EDE8E2] last:border-0 transition-colors ${
                       !code.is_active ? 'opacity-50' : ''
                     } ${idx % 2 === 0 ? '' : 'bg-[#FAFBFC]'}`}
                   >
                     {/* Code + copy button */}
                     <td className="px-5 py-4">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono font-bold text-[#1A2433] text-sm tracking-wider bg-[#EEF2F6] px-2.5 py-1 rounded">
+                        <span className="font-mono font-bold text-[#1A1A18] text-sm tracking-wider bg-[#F5F0EB] px-2.5 py-1 rounded">
                           {code.code}
                         </span>
                         <button
                           onClick={() => handleCopy(code.code, code.id)}
-                          className="text-[#8A9AAA] hover:text-[#1A2433] transition-colors"
+                          className="text-[#8A8070] hover:text-[#1A1A18] transition-colors"
                           title="Copy code"
                         >
                           {copiedId === code.id ? <Check size={14} className="text-green-500" /> : <Copy size={14} />}
@@ -363,25 +363,25 @@ export default function AdminPromoCodesPage() {
                       <span className={`font-body font-semibold ${
                         code.discount_value === 100 && code.discount_type === 'percent'
                           ? 'text-green-600'
-                          : 'text-[#1A2433]'
+                          : 'text-[#1A1A18]'
                       }`}>
                         {discountLabel(code)}
                       </span>
                     </td>
 
                     {/* Course */}
-                    <td className="px-5 py-4 text-[#4A5A6A] font-body">
-                      {code.course ?? <span className="text-[#8A9AAA] italic">All courses</span>}
+                    <td className="px-5 py-4 text-[#5A4A3A] font-body">
+                      {code.course ?? <span className="text-[#8A8070] italic">All courses</span>}
                     </td>
 
                     {/* Uses */}
-                    <td className="px-5 py-4 text-[#4A5A6A] font-body">
+                    <td className="px-5 py-4 text-[#5A4A3A] font-body">
                       {code.times_used}
                       {code.max_uses ? ` / ${code.max_uses}` : ' / ∞'}
                     </td>
 
                     {/* Expires */}
-                    <td className="px-5 py-4 text-[#4A5A6A] font-body">
+                    <td className="px-5 py-4 text-[#5A4A3A] font-body">
                       {formatDate(code.expires_at)}
                     </td>
 
@@ -409,7 +409,7 @@ export default function AdminPromoCodesPage() {
                         <button
                           onClick={() => handleToggle(code.id)}
                           disabled={togglingId === code.id}
-                          className="text-[#8A9AAA] hover:text-[#1A2433] transition-colors disabled:opacity-50"
+                          className="text-[#8A8070] hover:text-[#1A1A18] transition-colors disabled:opacity-50"
                           title={code.is_active ? 'Deactivate' : 'Activate'}
                         >
                           {togglingId === code.id
@@ -425,7 +425,7 @@ export default function AdminPromoCodesPage() {
                           <button
                             onClick={() => handleDelete(code.id, code.code)}
                             disabled={deletingId === code.id}
-                            className="text-[#8A9AAA] hover:text-red-500 transition-colors disabled:opacity-50"
+                            className="text-[#8A8070] hover:text-red-500 transition-colors disabled:opacity-50"
                             title="Delete code"
                           >
                             {deletingId === code.id
@@ -443,7 +443,7 @@ export default function AdminPromoCodesPage() {
           </div>
 
           {/* Summary footer */}
-          <div className="px-5 py-3 bg-[#F7F9FB] border-t border-[#EEF2F6] text-xs text-[#8A9AAA] font-body">
+          <div className="px-5 py-3 bg-[#F7F9FB] border-t border-[#EDE8E2] text-xs text-[#8A8070] font-body">
             {codes.filter(c => c.is_active && c.is_valid).length} active code{codes.filter(c => c.is_active && c.is_valid).length !== 1 ? 's' : ''}
             {' · '}
             {codes.reduce((sum, c) => sum + c.times_used, 0)} total uses
@@ -452,9 +452,9 @@ export default function AdminPromoCodesPage() {
       )}
 
       {/* Help text */}
-      <div className="mt-8 bg-[#F7F9FB] border border-[#EEF2F6] rounded-xl px-5 py-4">
-        <h4 className="font-body font-semibold text-[#1A2433] text-sm mb-2">How promo codes work</h4>
-        <ul className="font-body text-[#4A5A6A] text-sm space-y-1.5">
+      <div className="mt-8 bg-[#F7F9FB] border border-[#EDE8E2] rounded-xl px-5 py-4">
+        <h4 className="font-body font-semibold text-[#1A1A18] text-sm mb-2">How promo codes work</h4>
+        <ul className="font-body text-[#5A4A3A] text-sm space-y-1.5">
           <li><span className="font-semibold">1–99% off</span> — student pays the discounted price through Stripe checkout.</li>
           <li><span className="font-semibold">100% off</span> — student is enrolled instantly for free, no payment required.</li>
           <li><span className="font-semibold">Max uses</span> — leave blank for unlimited. Once the limit is hit, the code stops working automatically.</li>

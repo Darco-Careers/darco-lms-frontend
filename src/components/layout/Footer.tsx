@@ -14,7 +14,7 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-display font-bold text-white text-base tracking-wide">Darco Academy</div>
-                <div className="font-body text-[#8A9AAA] text-[10px] uppercase tracking-widest">Your Career. Your Path.</div>
+                <div className="font-body text-[#8A8070] text-[10px] uppercase tracking-widest">Your Career. Your Path.</div>
               </div>
             </div>
             <p className="text-sm font-body leading-relaxed text-[#8A9BB0]">
@@ -102,10 +102,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#2D3E52] mt-10 pt-6 flex flex-col sm:flex-row justify-between items-start gap-3">
-          <p className="text-[#4A5A6A] text-sm font-body flex-shrink-0">
+          <p className="text-[#5A4A3A] text-sm font-body flex-shrink-0">
             © {new Date().getFullYear()} DARCO Inc. All rights reserved.
           </p>
-          <p className="text-[#4A5A6A] text-xs font-body text-right">
+          <p className="text-[#5A4A3A] text-xs font-body text-right">
             Educational content only. Course materials are for general informational purposes and do not constitute legal, professional, or licensing advice. Always verify current licensing requirements with your state or local authority. DARCO Academy makes no guarantees regarding employment outcomes.
           </p>
         </div>

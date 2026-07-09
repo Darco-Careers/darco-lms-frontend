@@ -65,7 +65,7 @@ const TRACK_DOORS = [
 
 export default function HomePage() {
   return (
-    <div className="bg-[#C8D4E0]">
+    <div className="bg-[#FAF8F5]">
 
       {/* ── HERO ── */}
       <section
@@ -135,7 +135,7 @@ export default function HomePage() {
 
         {/* Bottom fade into bg color */}
         <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, #C8D4E0)' }} />
+          style={{ background: 'linear-gradient(to bottom, transparent, #FAF8F5)' }} />
       </section>
 
       {/* ── INTRO STRIP ── */}
@@ -161,10 +161,10 @@ export default function HomePage() {
               Choose Your Path
             </span>
           </div>
-          <h2 className="font-display text-3xl font-bold text-[#1A2433] mb-2">
+          <h2 className="font-display text-3xl font-bold text-[#1A1A18] mb-2">
             Where do you want to <em className="text-[#C9A84C] not-italic">go?</em>
           </h2>
-          <p className="text-[#4A5A6A] font-body mb-10 max-w-xl">
+          <p className="text-[#5A4A3A] font-body mb-10 max-w-xl">
             Pick a career world. Explore free. Enroll when you're ready to start learning.
           </p>
 
@@ -173,7 +173,7 @@ export default function HomePage() {
               <Link
                 key={track.slug}
                 to={track.href}
-                className="group relative rounded-2xl overflow-hidden border border-[#BCCAD8] bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                className="group relative rounded-2xl overflow-hidden border border-[#DDD5C8] bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
               >
                 {/* Color header bar */}
                 <div
@@ -191,13 +191,13 @@ export default function HomePage() {
                       {track.emoji}
                     </div>
                     <div>
-                      <h3 className="font-display font-bold text-[#1A2433] text-xl">{track.label}</h3>
-                      <p className="text-xs font-body text-[#8A9AAA]">{track.tagline}</p>
+                      <h3 className="font-display font-bold text-[#1A1A18] text-xl">{track.label}</h3>
+                      <p className="text-xs font-body text-[#8A8070]">{track.tagline}</p>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-[#4A5A6A] font-body text-sm leading-relaxed mb-5 flex-1">
+                  <p className="text-[#5A4A3A] font-body text-sm leading-relaxed mb-5 flex-1">
                     {track.desc}
                   </p>
 
@@ -225,7 +225,7 @@ export default function HomePage() {
                       )
                     ))}
                     {track.tracks.length > 5 && (
-                      <span className="text-xs px-2 py-0.5 rounded font-body bg-[#EEF2F6] text-[#8A9AAA] border border-[#BCCAD8]">
+                      <span className="text-xs px-2 py-0.5 rounded font-body bg-[#F5F0EB] text-[#8A8070] border border-[#DDD5C8]">
                         +{track.tracks.length - 5} more
                       </span>
                     )}
@@ -236,7 +236,7 @@ export default function HomePage() {
                     className="flex items-center justify-between pt-4 border-t"
                     style={{ borderColor: `${track.color}20` }}
                   >
-                    <div className="flex items-center gap-1.5 text-xs font-body text-[#8A9AAA]">
+                    <div className="flex items-center gap-1.5 text-xs font-body text-[#8A8070]">
                       <CheckCircle size={12} className="text-emerald-500" />
                       Module 1 free
                     </div>
@@ -261,7 +261,7 @@ export default function HomePage() {
             <div className="h-px w-8 bg-[#C9A84C]" />
             <span className="text-xs font-body font-semibold tracking-[2px] uppercase text-[#C9A84C]">How It Works</span>
           </div>
-          <h2 className="font-display text-3xl font-bold text-[#1A2433] mb-10">
+          <h2 className="font-display text-3xl font-bold text-[#1A1A18] mb-10">
             Simple as <em className="text-[#C9A84C] not-italic">1, 2, 3</em>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
@@ -278,8 +278,8 @@ export default function HomePage() {
                   {num}
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-[#1A2433] text-lg mb-2">{title}</h3>
-                  <p className="text-[#4A5A6A] font-body text-sm leading-relaxed">{body}</p>
+                  <h3 className="font-display font-bold text-[#1A1A18] text-lg mb-2">{title}</h3>
+                  <p className="text-[#5A4A3A] font-body text-sm leading-relaxed">{body}</p>
                 </div>
               </div>
             ))}

@@ -97,8 +97,8 @@ export default function AuthLayout() {
         </div>
 
         {/* Footer note */}
-        <div className="px-6 py-4 text-center border-t border-[#BCCAD8]">
-          <p className="text-[#8A9AAA] text-xs font-body">
+        <div className="px-6 py-4 text-center border-t border-[#DDD5C8]">
+          <p className="text-[#8A8070] text-xs font-body">
             © {new Date().getFullYear()} DARCO Inc. — Serving anyone who wants to work hard and succeed.
           </p>
         </div>

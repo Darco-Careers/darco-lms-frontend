@@ -85,10 +85,10 @@ export default function LessonPage() {
     return (
       <div className="page-container py-10 max-w-3xl mx-auto">
         <div className="animate-pulse space-y-4">
-          <div className="h-6 bg-[#BCCAD8] rounded w-1/3" />
-          <div className="h-4 bg-[#EEF2F6] rounded" />
-          <div className="h-4 bg-[#EEF2F6] rounded w-5/6" />
-          <div className="h-48 bg-[#BCCAD8] rounded-xl mt-6" />
+          <div className="h-6 bg-[#DDD5C8] rounded w-1/3" />
+          <div className="h-4 bg-[#F5F0EB] rounded" />
+          <div className="h-4 bg-[#F5F0EB] rounded w-5/6" />
+          <div className="h-48 bg-[#DDD5C8] rounded-xl mt-6" />
         </div>
       </div>
     )
@@ -96,8 +96,8 @@ export default function LessonPage() {
 
   // ── Shared promo code block ────────────────────────────────────────────────
   const PromoCodeBlock = () => (
-    <div className="mt-4 pt-4 border-t border-[#EEF2F6]">
-      <p className="text-xs font-body text-[#8A9AAA] mb-2 flex items-center gap-1">
+    <div className="mt-4 pt-4 border-t border-[#EDE8E2]">
+      <p className="text-xs font-body text-[#8A8070] mb-2 flex items-center gap-1">
         <Tag size={11} />
         Have a promo code?
       </p>
@@ -107,7 +107,7 @@ export default function LessonPage() {
           value={promoCode}
           onChange={e => { setPromoCode(e.target.value.toUpperCase()); setPromoError('') }}
           placeholder="Enter code"
-          className="flex-1 px-3 py-2 rounded-lg border border-[#BCCAD8] bg-[#F8FAFC] text-sm font-body text-[#1A2433] placeholder-[#BCCAD8] focus:outline-none focus:border-[#4A5A6A] transition-colors"
+          className="flex-1 px-3 py-2 rounded-lg border border-[#DDD5C8] bg-[#FAF8F5] text-sm font-body text-[#1A1A18] placeholder-[#DDD5C8] focus:outline-none focus:border-[#5A4A3A] transition-colors"
         />
         <button
           onClick={() => handleEnroll(promoCode)}
@@ -127,18 +127,18 @@ export default function LessonPage() {
   // ── Upgrade required wall ──────────────────────────────────────────────────
   if (isUpgradeRequired || upgradeRequired) {
     return (
-      <div className="min-h-[70vh] flex items-center justify-center px-4 bg-[#C8D4E0]">
-        <div className="bg-white rounded-2xl border border-[#BCCAD8] p-8 max-w-md w-full text-center shadow-sm">
+      <div className="min-h-[70vh] flex items-center justify-center px-4 bg-[#FAF8F5]">
+        <div className="bg-white rounded-2xl border border-[#DDD5C8] p-8 max-w-md w-full text-center shadow-sm">
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
             style={{ background: `${theme.pale}` }}
           >
             <Lock size={28} style={{ color: theme.primary }} />
           </div>
-          <h2 className="font-display text-2xl font-bold text-[#1A2433] mb-3">
+          <h2 className="font-display text-2xl font-bold text-[#1A1A18] mb-3">
             Module 1 complete — great work!
           </h2>
-          <p className="text-[#4A5A6A] font-body text-sm leading-relaxed mb-6">
+          <p className="text-[#5A4A3A] font-body text-sm leading-relaxed mb-6">
             You've finished the free preview. Enroll to unlock all remaining modules,
             quizzes, and your certificate of completion.
           </p>
@@ -152,11 +152,11 @@ export default function LessonPage() {
           </button>
           <Link
             to={`/courses/${slug}`}
-            className="block text-sm font-body text-[#8A9AAA] hover:text-[#4A5A6A] transition-colors"
+            className="block text-sm font-body text-[#8A8070] hover:text-[#5A4A3A] transition-colors"
           >
             Back to course overview
           </Link>
-          <div className="mt-5 pt-5 border-t border-[#EEF2F6] text-xs font-body text-[#8A9AAA]">
+          <div className="mt-5 pt-5 border-t border-[#EDE8E2] text-xs font-body text-[#8A8070]">
             One-time payment · 3 months access · Certificate included
           </div>
           <PromoCodeBlock />
@@ -168,18 +168,18 @@ export default function LessonPage() {
   // ── Not enrolled wall ─────────────────────────────────────────────────────
   if (isNotEnrolled) {
     return (
-      <div className="min-h-[70vh] flex items-center justify-center px-4 bg-[#C8D4E0]">
-        <div className="bg-white rounded-2xl border border-[#BCCAD8] p-8 max-w-md w-full text-center shadow-sm">
+      <div className="min-h-[70vh] flex items-center justify-center px-4 bg-[#FAF8F5]">
+        <div className="bg-white rounded-2xl border border-[#DDD5C8] p-8 max-w-md w-full text-center shadow-sm">
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
             style={{ background: `${theme.pale}` }}
           >
             <Lock size={28} style={{ color: theme.primary }} />
           </div>
-          <h2 className="font-display text-2xl font-bold text-[#1A2433] mb-3">
+          <h2 className="font-display text-2xl font-bold text-[#1A1A18] mb-3">
             Enroll to access this lesson
           </h2>
-          <p className="text-[#4A5A6A] font-body text-sm leading-relaxed mb-6">
+          <p className="text-[#5A4A3A] font-body text-sm leading-relaxed mb-6">
             This lesson is part of a paid course. Enroll to unlock all modules,
             quizzes, and your certificate of completion.
           </p>
@@ -193,11 +193,11 @@ export default function LessonPage() {
           </button>
           <Link
             to={`/courses/${slug}`}
-            className="block text-sm font-body text-[#8A9AAA] hover:text-[#4A5A6A] transition-colors"
+            className="block text-sm font-body text-[#8A8070] hover:text-[#5A4A3A] transition-colors"
           >
             Back to course overview
           </Link>
-          <div className="mt-5 pt-5 border-t border-[#EEF2F6] text-xs font-body text-[#8A9AAA]">
+          <div className="mt-5 pt-5 border-t border-[#EDE8E2] text-xs font-body text-[#8A8070]">
             One-time payment · 3 months access · Certificate included
           </div>
           <PromoCodeBlock />
@@ -208,12 +208,12 @@ export default function LessonPage() {
 
   if (isError && !isUpgradeRequired && !isNotEnrolled) {
     return (
-      <div className="min-h-screen bg-[#C8D4E0] flex items-center justify-center">
+      <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center">
         <div className="text-center max-w-md px-4">
           <div className="text-4xl mb-4">⚠️</div>
-          <h2 className="font-display text-xl font-bold text-[#1A2433] mb-2">Couldn't load this lesson</h2>
-          <p className="text-[#4A5A6A] font-body text-sm mb-6">There was a problem loading this lesson. Please try refreshing or go back to the course.</p>
-          <Link to={`/courses/${slug}/progress`} className="flex items-center gap-2 justify-center px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all">
+          <h2 className="font-display text-xl font-bold text-[#1A1A18] mb-2">Couldn't load this lesson</h2>
+          <p className="text-[#5A4A3A] font-body text-sm mb-6">There was a problem loading this lesson. Please try refreshing or go back to the course.</p>
+          <Link to={`/courses/${slug}/progress`} className="flex items-center gap-2 justify-center px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all">
             <ArrowLeft size={14} />
             Back to course
           </Link>
@@ -242,31 +242,31 @@ export default function LessonPage() {
     lesson.quiz_id === null
 
   return (
-    <div className="min-h-screen bg-[#C8D4E0]">
+    <div className="min-h-screen bg-[#FAF8F5]">
       {/* Fix #2 — sticky nav bar with lesson progress indicator */}
-      <div className="sticky top-16 z-40 bg-white border-b border-[#BCCAD8]">
+      <div className="sticky top-16 z-40 bg-white border-b border-[#DDD5C8]">
         <div className="page-container flex items-center justify-between gap-4 px-4 py-3">
           <Link
             to={`/courses/${slug}/progress`}
-            className="flex items-center gap-2 text-[#4A5A6A] hover:text-[#1A2433] text-sm font-body transition-colors"
+            className="flex items-center gap-2 text-[#5A4A3A] hover:text-[#1A1A18] text-sm font-body transition-colors"
           >
             <ArrowLeft size={15} />
             <span className="hidden sm:block">Back to course</span>
           </Link>
 
           <div className="flex-1 text-center min-w-0">
-            <p className="text-xs font-body text-[#8A9AAA] truncate">
+            <p className="text-xs font-body text-[#8A8070] truncate">
               {lesson.module_title ? `${lesson.module_title}` : lesson.title}
             </p>
             {progressPct !== null && (
               <div className="mt-1.5 flex items-center gap-2 justify-center">
-                <div className="w-32 sm:w-48 h-1.5 bg-[#EEF2F6] rounded-full overflow-hidden">
+                <div className="w-32 sm:w-48 h-1.5 bg-[#F5F0EB] rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-500"
                     style={{ width: `${progressPct}%`, background: theme.primary }}
                   />
                 </div>
-                <span className="text-[10px] font-body text-[#8A9AAA] whitespace-nowrap">
+                <span className="text-[10px] font-body text-[#8A8070] whitespace-nowrap">
                   {lessonPos}/{lessonTotal}
                 </span>
               </div>
@@ -275,7 +275,7 @@ export default function LessonPage() {
 
           <Link
             to={`/courses/${slug}/glossary`}
-            className="hidden sm:flex items-center gap-1.5 text-xs font-body font-medium text-[#4A5A6A] hover:text-[#1A2433] transition-colors px-3 py-1.5 rounded-lg border border-[#BCCAD8] hover:bg-[#EEF2F6]"
+            className="hidden sm:flex items-center gap-1.5 text-xs font-body font-medium text-[#5A4A3A] hover:text-[#1A1A18] transition-colors px-3 py-1.5 rounded-lg border border-[#DDD5C8] hover:bg-[#F5F0EB]"
           >
             <BookOpen size={13} />
             Glossary
@@ -331,7 +331,7 @@ export default function LessonPage() {
         {/* Lesson body */}
         <article className={lesson.content_type === 'html'
           ? 'lesson-fullbleed'
-          : 'prose-darco bg-white rounded-2xl border border-[#BCCAD8] shadow-sm overflow-hidden'}>
+          : 'prose-darco bg-white rounded-2xl border border-[#DDD5C8] shadow-sm overflow-hidden'}>
           {lesson.content_type === 'html' ? (
             // Rich HTML content from original site — rendered with full CSS
             <div
@@ -355,15 +355,15 @@ export default function LessonPage() {
               className="mt-8 p-6 rounded-xl border"
               style={{ background: theme.pale, borderColor: `${theme.primary}25` }}
             >
-              <h3 className="font-display font-bold text-[#1A2433] mb-2">Ready for the quiz?</h3>
-              <p className="text-[#4A5A6A] font-body text-sm mb-4">
+              <h3 className="font-display font-bold text-[#1A1A18] mb-2">Ready for the quiz?</h3>
+              <p className="text-[#5A4A3A] font-body text-sm mb-4">
                 You've reached the end of this module's lessons. Take the quiz to complete this module.
               </p>
               <div className="flex flex-wrap gap-3">
                 <button
                   onClick={() => completeMutation.mutate()}
                   disabled={completeMutation.isPending || completeMutation.isSuccess}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
                 >
                   {completeMutation.isSuccess
                     ? <><CheckCircle size={14} className="text-emerald-500" /> Marked complete</>
@@ -397,10 +397,10 @@ export default function LessonPage() {
                   <Lock size={18} style={{ color: theme.primary }} />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-[#1A2433] mb-1">
+                  <h3 className="font-display font-bold text-[#1A1A18] mb-1">
                     You've completed the free preview!
                   </h3>
-                  <p className="text-[#4A5A6A] font-body text-sm leading-relaxed">
+                  <p className="text-[#5A4A3A] font-body text-sm leading-relaxed">
                     Enroll to unlock all remaining modules, quizzes, and your certificate of completion.
                   </p>
                 </div>
@@ -409,7 +409,7 @@ export default function LessonPage() {
                 <button
                   onClick={() => completeMutation.mutate()}
                   disabled={completeMutation.isPending || completeMutation.isSuccess}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
                 >
                   {completeMutation.isSuccess
                     ? <><CheckCircle size={14} className="text-emerald-500" /> Marked complete</>
@@ -429,11 +429,11 @@ export default function LessonPage() {
           )}
 
           {/* Prev / Next navigation */}
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-[#BCCAD8]">
+          <div className="flex justify-between items-center mt-8 pt-6 border-t border-[#DDD5C8]">
             {lesson.prev_lesson_id ? (
               <Link
                 to={`/courses/${slug}/lesson/${lesson.prev_lesson_id}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
               >
                 <ArrowLeft size={14} /> Previous
               </Link>
@@ -477,7 +477,7 @@ export default function LessonPage() {
             ) : (
               <Link
                 to={`/courses/${slug}/progress`}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#BCCAD8] bg-white text-sm font-body font-semibold text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#DDD5C8] bg-white text-sm font-body font-semibold text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
               >
                 Back to course <ArrowRight size={14} />
               </Link>

@@ -55,10 +55,10 @@ export default function LoginPage() {
             Welcome back
           </span>
         </div>
-        <h1 className="font-display text-3xl font-bold text-[#1A2433] mb-2">
+        <h1 className="font-display text-3xl font-bold text-[#1A1A18] mb-2">
           Sign in to continue
         </h1>
-        <p className="text-[#8A9AAA] font-body text-sm">
+        <p className="text-[#8A8070] font-body text-sm">
           {nextParam?.endsWith('/free')
             ? 'Sign in to access your free Module 1 preview.'
             : 'Pick up right where you left off.'}
@@ -73,12 +73,12 @@ export default function LoginPage() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-body font-medium text-[#4A5A6A] mb-1.5">
+          <label className="block text-sm font-body font-medium text-[#5A4A3A] mb-1.5">
             Email address
           </label>
           <input
             type="email"
-            className="w-full px-4 py-3 rounded-xl border border-[#BCCAD8] bg-white text-[#1A2433] font-body text-sm placeholder-[#B8C8D8] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-[#DDD5C8] bg-white text-[#1A1A18] font-body text-sm placeholder-[#C8C0B0] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all"
             placeholder="you@example.com"
             value={form.email}
             onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
@@ -88,7 +88,7 @@ export default function LoginPage() {
         </div>
         <div>
           <div className="flex items-center justify-between mb-1.5">
-            <label className="block text-sm font-body font-medium text-[#4A5A6A]">Password</label>
+            <label className="block text-sm font-body font-medium text-[#5A4A3A]">Password</label>
             <Link to="/forgot-password" className="text-xs font-body font-medium hover:underline" style={{ color: '#C9A84C' }}>
               Forgot password?
             </Link>
@@ -96,7 +96,7 @@ export default function LoginPage() {
           <div className="relative">
             <input
               type={showPassword ? 'text' : 'password'}
-              className="w-full px-4 py-3 rounded-xl border border-[#BCCAD8] bg-white text-[#1A2433] font-body text-sm placeholder-[#B8C8D8] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all pr-11"
+              className="w-full px-4 py-3 rounded-xl border border-[#DDD5C8] bg-white text-[#1A1A18] font-body text-sm placeholder-[#C8C0B0] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent transition-all pr-11"
               placeholder="••••••••"
               value={form.password}
               onChange={e => setForm(f => ({ ...f, password: e.target.value }))}
@@ -106,7 +106,7 @@ export default function LoginPage() {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#8A9AAA] hover:text-[#4A5A6A] transition-colors"
+              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#8A8070] hover:text-[#5A4A3A] transition-colors"
             >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
@@ -125,8 +125,8 @@ export default function LoginPage() {
         </button>
       </form>
 
-      <div className="mt-6 pt-6 border-t border-[#EEF2F6] text-center">
-        <p className="text-sm text-[#8A9AAA] font-body">
+      <div className="mt-6 pt-6 border-t border-[#EDE8E2] text-center">
+        <p className="text-sm text-[#8A8070] font-body">
           Don't have an account?{' '}
           <Link
             to={`/register${nextParam ? `?next=${nextParam}` : ''}`}

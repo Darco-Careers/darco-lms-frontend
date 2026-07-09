@@ -119,9 +119,9 @@ export default function CourseDetailPage() {
     return (
       <div className="page-container py-16">
         <div className="animate-pulse space-y-4">
-          <div className="h-48 bg-[#BCCAD8] rounded-xl" />
-          <div className="h-6 bg-[#BCCAD8] rounded w-1/2" />
-          <div className="h-4 bg-[#EEF2F6] rounded w-3/4" />
+          <div className="h-48 bg-[#DDD5C8] rounded-xl" />
+          <div className="h-6 bg-[#DDD5C8] rounded w-1/2" />
+          <div className="h-4 bg-[#F5F0EB] rounded w-3/4" />
         </div>
       </div>
     )
@@ -130,7 +130,7 @@ export default function CourseDetailPage() {
   if (!course) return null
 
   return (
-    <div className="bg-[#C8D4E0]">
+    <div className="bg-[#FAF8F5]">
       {/* ── Hero ── */}
       <div
         className="py-14 px-4 relative overflow-hidden"
@@ -211,7 +211,7 @@ export default function CourseDetailPage() {
 
           {/* Module list */}
           <div className="lg:col-span-2">
-            <h2 className="font-display text-xl font-bold text-[#1A2433] mb-5">Course modules</h2>
+            <h2 className="font-display text-xl font-bold text-[#1A1A18] mb-5">Course modules</h2>
 
             {/* Core Foundation entry point — shown on real-estate tracks only, NOT on trade courses */}
             {slug !== 'real-estate-foundation' && slug !== 'construction-painting' && slug !== 'electrician' && (
@@ -223,10 +223,10 @@ export default function CourseDetailPage() {
                   <BookOpen size={15} className="text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-body font-semibold text-sm" style={{ color: '#1A2433' }}>
+                  <p className="font-body font-semibold text-sm" style={{ color: '#1A1A18' }}>
                     Core Foundation
                   </p>
-                  <p className="text-xs font-body mt-0.5" style={{ color: '#8A9AAA' }}>
+                  <p className="text-xs font-body mt-0.5" style={{ color: '#8A8070' }}>
                     New to real estate? Start here — orientation is free
                   </p>
                 </div>
@@ -248,7 +248,7 @@ export default function CourseDetailPage() {
                 return (
                 <div
                   key={mod.id}
-                  className={`flex items-center gap-4 p-4 bg-white rounded-xl border border-[#BCCAD8] transition-colors ${isAccessible && lessonTarget ? 'cursor-pointer hover:bg-[#EEF2F6]' : ''}`}
+                  className={`flex items-center gap-4 p-4 bg-white rounded-xl border border-[#DDD5C8] transition-colors ${isAccessible && lessonTarget ? 'cursor-pointer hover:bg-[#F5F0EB]' : ''}`}
                   style={idx === 0 ? { borderColor: `${theme.primary}40` } : {}}
                   onClick={() => {
                     if (isAccessible && lessonTarget) {
@@ -265,21 +265,21 @@ export default function CourseDetailPage() {
                     className="w-9 h-9 rounded-full flex items-center justify-center font-display font-bold text-sm flex-shrink-0"
                     style={idx === 0
                       ? { background: theme.primary, color: 'white' }
-                      : { background: '#EEF2F6', color: '#8A9AAA' }
+                      : { background: '#F5F0EB', color: '#8A8070' }
                     }
                   >
                     {idx === 0 ? <BookOpen size={15} /> : idx + 1}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-body font-semibold text-[#1A2433] text-sm truncate">{mod.title}</p>
-                    <p className="text-[#8A9AAA] text-xs font-body mt-0.5">
+                    <p className="font-body font-semibold text-[#1A1A18] text-sm truncate">{mod.title}</p>
+                    <p className="text-[#8A8070] text-xs font-body mt-0.5">
                       {mod.lessons_total ?? mod.lessons_count ?? 0} lessons · {mod.quiz_count ?? 10} quiz questions
                     </p>
                   </div>
                   {course.is_enrolled ? (
                     mod.is_completed
                       ? <CheckCircle size={17} className="text-emerald-500 flex-shrink-0" />
-                      : <span className="text-xs font-body text-[#4A5A6A] flex-shrink-0">Continue</span>
+                      : <span className="text-xs font-body text-[#5A4A3A] flex-shrink-0">Continue</span>
                   ) : isFreeModule ? (
                     <span
                       className="text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0 font-body whitespace-nowrap"
@@ -288,7 +288,7 @@ export default function CourseDetailPage() {
                       Free preview
                     </span>
                   ) : (
-                    <Lock size={14} className="text-[#8A9AAA] flex-shrink-0" />
+                    <Lock size={14} className="text-[#8A8070] flex-shrink-0" />
                   )}
                 </div>
                 )
@@ -298,7 +298,7 @@ export default function CourseDetailPage() {
 
           {/* Enrollment card */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl border border-[#BCCAD8] p-6 sticky top-24 shadow-sm">
+            <div className="bg-white rounded-2xl border border-[#DDD5C8] p-6 sticky top-24 shadow-sm">
               <div className="h-1 w-full rounded-full mb-5"
                 style={{ background: `linear-gradient(90deg, ${theme.primary}, ${theme.mid})` }}
               />
@@ -318,7 +318,7 @@ export default function CourseDetailPage() {
                   </Link>
                   <Link
                     to={`/courses/${slug}/glossary`}
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg font-body font-semibold text-sm border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-lg font-body font-semibold text-sm border border-[#DDD5C8] text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all"
                   >
                     View glossary
                   </Link>
@@ -329,29 +329,29 @@ export default function CourseDetailPage() {
                   <div className="mb-1">
                     {promoResult ? (
                       <div className="flex items-baseline gap-2">
-                        <span className="font-display text-3xl font-bold text-[#1A2433]">
+                        <span className="font-display text-3xl font-bold text-[#1A1A18]">
                           {promoResult.is_free ? 'Free' : `$${(promoResult.final_price_cents / 100).toFixed(2)}`}
                         </span>
-                        <span className="font-display text-lg text-[#8A9AAA] line-through">
+                        <span className="font-display text-lg text-[#8A8070] line-through">
                           ${course.price}
                         </span>
                       </div>
                     ) : (
-                      <div className="font-display text-3xl font-bold text-[#1A2433]">${course.price}</div>
+                      <div className="font-display text-3xl font-bold text-[#1A1A18]">${course.price}</div>
                     )}
                   </div>
-                  <p className="text-[#8A9AAA] text-sm font-body mb-4">One-time payment</p>
+                  <p className="text-[#8A8070] text-sm font-body mb-4">One-time payment</p>
 
                   {/* Promo code section — always visible */}
                   {!promoResult ? (
                     <div className="mb-4">
-                      <label className="block text-xs font-body font-semibold text-[#8A9AAA] uppercase tracking-wide mb-1.5">
+                      <label className="block text-xs font-body font-semibold text-[#8A8070] uppercase tracking-wide mb-1.5">
                         <Tag size={11} className="inline mr-1" />Promo Code
                       </label>
                       <div className="flex gap-2">
                         <input
                           type="text"
-                          className="flex-1 px-3 py-2 text-sm font-mono uppercase border border-[#BCCAD8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent"
+                          className="flex-1 px-3 py-2 text-sm font-mono uppercase border border-[#DDD5C8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent"
                           placeholder="Enter promo code"
                           value={promoInput}
                           onChange={e => setPromoInput(e.target.value.toUpperCase())}
@@ -379,7 +379,7 @@ export default function CourseDetailPage() {
                           {promoResult.discount_label} applied
                         </span>
                       </div>
-                      <button onClick={handleClearPromo} className="text-[#8A9AAA] hover:text-[#1A2433] transition-colors">
+                      <button onClick={handleClearPromo} className="text-[#8A8070] hover:text-[#1A1A18] transition-colors">
                         <X size={13} />
                       </button>
                     </div>
@@ -402,14 +402,14 @@ export default function CourseDetailPage() {
                   <button
                     onClick={handleFreePreview}
                     disabled={freeMutation.isPending}
-                    className="w-full py-3 rounded-lg font-body font-semibold text-sm mb-5 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-lg font-body font-semibold text-sm mb-5 border border-[#DDD5C8] text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all flex items-center justify-center gap-2"
                   >
                     <BookOpen size={14} />
                     {freeMutation.isPending ? 'Loading...' : 'Explore free — Orientation + Module 1 →'}
                   </button>
 
                   {!isAuthenticated && (
-                    <p className="text-center text-xs text-[#8A9AAA] font-body mb-5">
+                    <p className="text-center text-xs text-[#8A8070] font-body mb-5">
                       Free account required — takes 30 seconds
                     </p>
                   )}
@@ -433,19 +433,19 @@ export default function CourseDetailPage() {
                   )}
 
                   {/* Access policy */}
-                  <div className="bg-[#EEF2F6] rounded-xl p-4 mb-5 border border-[#BCCAD8]">
+                  <div className="bg-[#F5F0EB] rounded-xl p-4 mb-5 border border-[#DDD5C8]">
                     <div className="flex items-center gap-2 mb-2">
                       <Clock size={14} className="text-[#C9A84C] flex-shrink-0" />
-                      <span className="text-xs font-body font-semibold text-[#1A2433]">Access policy</span>
+                      <span className="text-xs font-body font-semibold text-[#1A1A18]">Access policy</span>
                     </div>
-                    <ul className="text-xs font-body text-[#4A5A6A] space-y-1">
+                    <ul className="text-xs font-body text-[#5A4A3A] space-y-1">
                       <li>• 3 months access after enrollment</li>
                       <li>• 1-click +2 month extension (free)</li>
                       <li>• Final +2 month extension on request</li>
                     </ul>
                   </div>
 
-                  <div className="space-y-2 text-sm font-body text-[#4A5A6A]">
+                  <div className="space-y-2 text-sm font-body text-[#5A4A3A]">
                     {(slug === 'real-estate-foundation' ? [
                       'Orientation module (free)',
                       `${Math.max((course.modules_count ?? 1) - 1, 10)} course modules`,

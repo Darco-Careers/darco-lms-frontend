@@ -34,7 +34,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-white border-b border-[#BCCAD8] sticky top-0 z-50 shadow-sm">
+    <nav className="bg-white border-b border-[#DDD5C8] sticky top-0 z-50 shadow-sm">
       <div className="page-container">
         <div className="flex items-center justify-between h-16">
 
@@ -44,10 +44,10 @@ export default function Navbar() {
               <span className="font-display font-bold text-[#C9A84C] text-base">D</span>
             </div>
             <div className="hidden sm:block">
-              <div className="font-display font-bold text-[#1A2433] text-base leading-tight tracking-wide">
+              <div className="font-display font-bold text-[#1A1A18] text-base leading-tight tracking-wide">
                 Darco Academy
               </div>
-              <div className="font-body text-[#8A9AAA] text-[10px] uppercase tracking-widest leading-none">
+              <div className="font-body text-[#8A8070] text-[10px] uppercase tracking-widest leading-none">
                 Your Career. Your Path.
               </div>
             </div>
@@ -55,13 +55,13 @@ export default function Navbar() {
 
           {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-6">
-            <button onClick={handleCareerPaths} className="font-body font-medium text-sm text-[#4A5A6A] hover:text-[#1A2433] transition-colors">
+            <button onClick={handleCareerPaths} className="font-body font-medium text-sm text-[#5A4A3A] hover:text-[#1A1A18] transition-colors">
               Career Paths
             </button>
             <NavLink
               to="/faq"
               className={({ isActive }) =>
-                `font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#4A5A6A] hover:text-[#1A2433]'}`
+                `font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#5A4A3A] hover:text-[#1A1A18]'}`
               }
             >
               FAQ
@@ -69,7 +69,7 @@ export default function Navbar() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#4A5A6A] hover:text-[#1A2433]'}`
+                `font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#5A4A3A] hover:text-[#1A1A18]'}`
               }
             >
               Contact
@@ -78,7 +78,7 @@ export default function Navbar() {
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
-                  `font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#4A5A6A] hover:text-[#1A2433]'}`
+                  `font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#5A4A3A] hover:text-[#1A1A18]'}`
                 }
               >
                 Dashboard
@@ -88,7 +88,7 @@ export default function Navbar() {
               <NavLink
                 to="/admin/promo-codes"
                 className={({ isActive }) =>
-                  `flex items-center gap-1.5 font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#4A5A6A] hover:text-[#1A2433]'}`
+                  `flex items-center gap-1.5 font-body font-medium text-sm transition-colors ${isActive ? 'text-[#C9A84C]' : 'text-[#5A4A3A] hover:text-[#1A1A18]'}`
                 }
               >
                 <Tag size={14} /> Promo Codes
@@ -100,12 +100,12 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             {isAuthenticated ? (
               <>
-                <span className="text-sm text-[#8A9AAA] font-body">
+                <span className="text-sm text-[#8A8070] font-body">
                   {user?.name?.split(' ')[0]}
                 </span>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-1.5 text-sm font-body font-medium text-[#4A5A6A] hover:text-[#1A2433] transition-colors"
+                  className="flex items-center gap-1.5 text-sm font-body font-medium text-[#5A4A3A] hover:text-[#1A1A18] transition-colors"
                 >
                   <LogOut size={15} /> Sign out
                 </button>
@@ -114,7 +114,7 @@ export default function Navbar() {
               <>
                 <Link
                   to="/login"
-                  className="font-body font-medium text-sm text-[#4A5A6A] hover:text-[#1A2433] transition-colors px-3 py-2"
+                  className="font-body font-medium text-sm text-[#5A4A3A] hover:text-[#1A1A18] transition-colors px-3 py-2"
                 >
                   Sign in
                 </Link>
@@ -131,7 +131,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-[#4A5A6A] hover:text-[#1A2433]"
+            className="md:hidden p-2 text-[#5A4A3A] hover:text-[#1A1A18]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -142,35 +142,35 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-[#BCCAD8] bg-white">
+        <div className="md:hidden border-t border-[#DDD5C8] bg-white">
           <div className="page-container py-4 space-y-1">
-            <button onClick={handleCareerPaths} className="block w-full text-left px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm">
+            <button onClick={handleCareerPaths} className="block w-full text-left px-3 py-2.5 rounded-lg text-[#5A4A3A] hover:bg-[#F5F0EB] font-body font-medium text-sm">
               Career Paths
             </button>
-            <Link to="/faq" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+            <Link to="/faq" className="block px-3 py-2.5 rounded-lg text-[#5A4A3A] hover:bg-[#F5F0EB] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
               FAQ
             </Link>
-            <Link to="/contact" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+            <Link to="/contact" className="block px-3 py-2.5 rounded-lg text-[#5A4A3A] hover:bg-[#F5F0EB] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
               Contact
             </Link>
             {isAuthenticated && (
-              <Link to="/dashboard" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+              <Link to="/dashboard" className="block px-3 py-2.5 rounded-lg text-[#5A4A3A] hover:bg-[#F5F0EB] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
                 Dashboard
               </Link>
             )}
             {isAuthenticated && user && ['school_admin', 'platform_admin'].includes(user.role) && (
-              <Link to="/admin/promo-codes" className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+              <Link to="/admin/promo-codes" className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-[#5A4A3A] hover:bg-[#F5F0EB] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
                 <Tag size={15} /> Promo Codes
               </Link>
             )}
-            <div className="pt-3 border-t border-[#EEF2F6] mt-2 space-y-2">
+            <div className="pt-3 border-t border-[#EDE8E2] mt-2 space-y-2">
               {isAuthenticated ? (
-                <button onClick={handleLogout} className="w-full text-left px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm flex items-center gap-2">
+                <button onClick={handleLogout} className="w-full text-left px-3 py-2.5 rounded-lg text-[#5A4A3A] hover:bg-[#F5F0EB] font-body font-medium text-sm flex items-center gap-2">
                   <LogOut size={16} /> Sign out
                 </button>
               ) : (
                 <>
-                  <Link to="/login" className="block px-3 py-2.5 rounded-lg text-[#4A5A6A] hover:bg-[#EEF2F6] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
+                  <Link to="/login" className="block px-3 py-2.5 rounded-lg text-[#5A4A3A] hover:bg-[#F5F0EB] font-body font-medium text-sm" onClick={() => setMobileOpen(false)}>
                     Sign in
                   </Link>
                   <Link

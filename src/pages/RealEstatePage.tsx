@@ -222,7 +222,7 @@ export default function RealEstatePage() {
   const freeModules = catalog.freeModules ?? 1
 
   return (
-    <div className="bg-[#C8D4E0]">
+    <div className="bg-[#FAF8F5]">
 
       {/* ── PAGE HEADER ── */}
       <div
@@ -254,10 +254,10 @@ export default function RealEstatePage() {
             <div className="h-px w-8 bg-[#C9A84C]" />
             <span className="text-xs font-body font-semibold tracking-[2px] uppercase text-[#C9A84C]">The Big Picture</span>
           </div>
-          <h2 className="font-display text-2xl font-bold text-[#1A2433] mb-2">
+          <h2 className="font-display text-2xl font-bold text-[#1A1A18] mb-2">
             Real estate is an <em className="text-[#C9A84C] not-italic">ecosystem</em>
           </h2>
-          <p className="text-[#4A5A6A] font-body text-sm mb-6 max-w-lg">Every part plays a different role — but they all depend on each other.</p>
+          <p className="text-[#5A4A3A] font-body text-sm mb-6 max-w-lg">Every part plays a different role — but they all depend on each other.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
               { emoji: '🏗️', title: 'Creation', desc: 'Developers & contractors' },
@@ -267,10 +267,10 @@ export default function RealEstatePage() {
               { emoji: '📊', title: 'Finance', desc: 'Mortgage brokers' },
               { emoji: '📸', title: 'Marketing', desc: 'Photographers' },
             ].map(({ emoji, title, desc }) => (
-              <div key={title} className="bg-[#EEF2F6] border border-[#BCCAD8] rounded-xl p-4 text-center">
+              <div key={title} className="bg-[#F5F0EB] border border-[#DDD5C8] rounded-xl p-4 text-center">
                 <div className="text-xl mb-2">{emoji}</div>
-                <div className="font-display font-bold text-[#1A2433] text-xs mb-0.5">{title}</div>
-                <div className="text-[#8A9AAA] text-xs">{desc}</div>
+                <div className="font-display font-bold text-[#1A1A18] text-xs mb-0.5">{title}</div>
+                <div className="text-[#8A8070] text-xs">{desc}</div>
               </div>
             ))}
           </div>
@@ -309,7 +309,7 @@ export default function RealEstatePage() {
               <Link
                 to="/courses/real-estate-foundation"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body font-semibold text-sm transition-all"
-                style={{ background: '#C9A84C', color: '#1A2433' }}
+                style={{ background: '#C9A84C', color: '#1A1A18' }}
               >
                 Explore Core Foundation <ArrowRight size={16} />
               </Link>
@@ -326,7 +326,7 @@ export default function RealEstatePage() {
             <div className="h-px w-8 bg-[#C9A84C]" />
             <span className="text-xs font-body font-semibold tracking-[2px] uppercase text-[#C9A84C]">10 Career Tracks</span>
           </div>
-          <h2 className="font-display text-2xl font-bold text-[#1A2433] mb-6">
+          <h2 className="font-display text-2xl font-bold text-[#1A1A18] mb-6">
             Choose your <em className="text-[#C9A84C] not-italic">career track</em>
           </h2>
 
@@ -343,7 +343,7 @@ export default function RealEstatePage() {
                     className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border text-xs font-body font-semibold transition-all duration-200 whitespace-nowrap"
                     style={isFoundation
                       ? isActive
-                        ? { background: '#C9A84C', color: '#1A2433', borderColor: 'transparent' }
+                        ? { background: '#C9A84C', color: '#1A1A18', borderColor: 'transparent' }
                         : { background: '#FDF6E3', color: '#8a6a1a', borderColor: '#C9A84C' }
                       : isActive ? {
                           background: trackTheme?.primary ?? '#1B4D3E',
@@ -351,8 +351,8 @@ export default function RealEstatePage() {
                           borderColor: 'transparent',
                         } : {
                           background: 'white',
-                          color: '#4A5A6A',
-                          borderColor: '#BCCAD8',
+                          color: '#5A4A3A',
+                          borderColor: '#DDD5C8',
                         }
                     }
                   >
@@ -361,20 +361,20 @@ export default function RealEstatePage() {
                   </button>
 
                   {/* Hover tooltip */}
-                  <div className="hidden group-hover/tab:block absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-56 bg-white rounded-xl shadow-xl border border-[#BCCAD8] p-4 pointer-events-none">
+                  <div className="hidden group-hover/tab:block absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-56 bg-white rounded-xl shadow-xl border border-[#DDD5C8] p-4 pointer-events-none">
                     {/* Color accent bar */}
                     <div className="h-1 w-full rounded-full mb-3" style={{ background: trackTheme?.primary ?? '#1B4D3E' }} />
                     <div className="flex items-start gap-2 mb-2">
                       <span className="text-lg flex-shrink-0">{track.emoji}</span>
                       <div>
-                        <div className="font-body font-semibold text-[#1A2433] text-xs">{track.short}</div>
-                        <div className="text-[#8A9AAA] text-xs mt-0.5">{track.tagline}</div>
+                        <div className="font-body font-semibold text-[#1A1A18] text-xs">{track.short}</div>
+                        <div className="text-[#8A8070] text-xs mt-0.5">{track.tagline}</div>
                       </div>
                     </div>
-                    <p className="text-[#4A5A6A] text-xs leading-relaxed mb-2 line-clamp-3">{track.desc}</p>
+                    <p className="text-[#5A4A3A] text-xs leading-relaxed mb-2 line-clamp-3">{track.desc}</p>
                     <div className="flex flex-wrap gap-1 mb-2">
                       {track.tags.slice(0, 2).map(tag => (
-                        <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-[#EEF2F6] text-[#4A5A6A] rounded border border-[#BCCAD8]">{tag}</span>
+                        <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-[#F5F0EB] text-[#5A4A3A] rounded border border-[#DDD5C8]">{tag}</span>
                       ))}
                       {track.noLicense && (
                         <span className="text-[10px] px-1.5 py-0.5 bg-[#C9A84C]/10 text-[#8a6a1a] rounded border border-[#C9A84C]/25">No license needed</span>
@@ -390,26 +390,26 @@ export default function RealEstatePage() {
           </div>
 
           {/* ACTIVE CONTENT PANEL */}
-          <div className="bg-white rounded-2xl border border-[#BCCAD8] overflow-hidden shadow-sm">
+          <div className="bg-white rounded-2xl border border-[#DDD5C8] overflow-hidden shadow-sm">
             {/* Top accent */}
             <div className="h-1.5 w-full" style={{ background: `linear-gradient(90deg, ${theme.primary} 0%, ${theme.mid} 100%)` }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
               {/* Left: description */}
-              <div className="lg:col-span-2 p-7 border-b lg:border-b-0 lg:border-r border-[#EEF2F6]">
+              <div className="lg:col-span-2 p-7 border-b lg:border-b-0 lg:border-r border-[#EDE8E2]">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{activeTrack.emoji}</span>
                   <div>
-                    <h3 className="font-display font-bold text-[#1A2433] text-xl">{activeTrack.short}</h3>
-                    <p className="text-[#8A9AAA] font-body text-sm">{activeTrack.tagline}</p>
+                    <h3 className="font-display font-bold text-[#1A1A18] text-xl">{activeTrack.short}</h3>
+                    <p className="text-[#8A8070] font-body text-sm">{activeTrack.tagline}</p>
                   </div>
                 </div>
 
-                <p className="text-[#4A5A6A] font-body text-sm leading-relaxed mb-5">{activeTrack.desc}</p>
+                <p className="text-[#5A4A3A] font-body text-sm leading-relaxed mb-5">{activeTrack.desc}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {activeTrack.tags.map(tag => (
-                    <span key={tag} className="text-xs px-2.5 py-1 rounded-lg bg-[#EEF2F6] text-[#4A5A6A] border border-[#BCCAD8] font-body">{tag}</span>
+                    <span key={tag} className="text-xs px-2.5 py-1 rounded-lg bg-[#F5F0EB] text-[#5A4A3A] border border-[#DDD5C8] font-body">{tag}</span>
                   ))}
                   {activeTrack.noLicense && (
                     <span className="text-xs px-2.5 py-1 rounded-lg bg-[#C9A84C]/10 text-[#8a6a1a] border border-[#C9A84C]/25 font-body">No license needed</span>
@@ -421,38 +421,38 @@ export default function RealEstatePage() {
 
                 {/* Module list */}
                 <div>
-                  <p className="text-xs font-body font-semibold text-[#8A9AAA] uppercase tracking-wider mb-3">Course modules</p>
+                  <p className="text-xs font-body font-semibold text-[#8A8070] uppercase tracking-wider mb-3">Course modules</p>
                   <div className="space-y-2">
                     {modules.slice(0, 4).map((title, idx) => (
-                      <div key={title} className="flex items-center gap-3 p-3 rounded-lg border border-[#EEF2F6] bg-[#FAFAFA]">
+                      <div key={title} className="flex items-center gap-3 p-3 rounded-lg border border-[#EDE8E2] bg-[#FAFAFA]">
                         <div
                           className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
                           style={idx < freeModules
                             ? { background: theme.primary, color: 'white' }
-                            : { background: '#EEF2F6', color: '#8A9AAA' }
+                            : { background: '#F5F0EB', color: '#8A8070' }
                           }
                         >
                           {idx < freeModules ? <BookOpen size={13} /> : <Lock size={11} />}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="font-body font-semibold text-[#1A2433] text-xs truncate">{title}</p>
-                          <p className="text-[#8A9AAA] text-xs">10 quiz questions</p>
+                          <p className="font-body font-semibold text-[#1A1A18] text-xs truncate">{title}</p>
+                          <p className="text-[#8A8070] text-xs">10 quiz questions</p>
                         </div>
                         {idx < freeModules
                           ? <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full border flex-shrink-0"
                               style={{ color: theme.primary, background: `${theme.pale}`, borderColor: `${theme.primary}30` }}>
                               Free
                             </span>
-                          : <span className="text-[10px] text-[#8A9AAA] flex-shrink-0">Enroll to unlock</span>
+                          : <span className="text-[10px] text-[#8A8070] flex-shrink-0">Enroll to unlock</span>
                         }
                       </div>
                     ))}
                     {modules.length > 4 && (
-                      <div className="flex items-center gap-3 p-3 rounded-lg border border-dashed border-[#BCCAD8]">
-                        <div className="w-7 h-7 rounded-full bg-[#EEF2F6] flex items-center justify-center flex-shrink-0">
-                          <Lock size={11} className="text-[#8A9AAA]" />
+                      <div className="flex items-center gap-3 p-3 rounded-lg border border-dashed border-[#DDD5C8]">
+                        <div className="w-7 h-7 rounded-full bg-[#F5F0EB] flex items-center justify-center flex-shrink-0">
+                          <Lock size={11} className="text-[#8A8070]" />
                         </div>
-                        <p className="text-[#8A9AAA] font-body text-xs">
+                        <p className="text-[#8A8070] font-body text-xs">
                           + {modules.length - 4} more {modules.length - 4 === 1 ? 'module' : 'modules'} — unlock with enrollment
                         </p>
                       </div>
@@ -469,7 +469,7 @@ export default function RealEstatePage() {
                   // Foundation has its own dedicated course page — send students there
                   // instead of duplicating the enrollment card here.
                   <>
-                    <p className="text-[#4A5A6A] font-body text-sm leading-relaxed mb-6">
+                    <p className="text-[#5A4A3A] font-body text-sm leading-relaxed mb-6">
                       The Core Foundation is the starting point for every real estate career track.
                       Orientation and Module 1 are always free — no account needed to explore.
                     </p>
@@ -480,17 +480,17 @@ export default function RealEstatePage() {
                     >
                       View full course details <ArrowRight size={15} />
                     </Link>
-                    <p className="text-center text-xs text-[#8A9AAA] font-body">
+                    <p className="text-center text-xs text-[#8A8070] font-body">
                       Orientation + Module 1 free · No account needed
                     </p>
                   </>
                 ) : (
                   // All other tracks: show the full enrollment card
                   <>
-                    <div className="font-display text-3xl font-bold text-[#1A2433] mb-1">
+                    <div className="font-display text-3xl font-bold text-[#1A1A18] mb-1">
                       ${catalog.price}
                     </div>
-                    <p className="text-[#8A9AAA] text-sm font-body mb-5">One-time · 3 months access</p>
+                    <p className="text-[#8A8070] text-sm font-body mb-5">One-time · 3 months access</p>
 
                     <button
                       onClick={() => handleDirectEnroll(activeTrack.slug)}
@@ -506,14 +506,14 @@ export default function RealEstatePage() {
                     <button
                       onClick={() => handleFreeExplore(activeTrack.slug)}
                       disabled={freeEnrolling && freeEnrollingSlug === activeTrack.slug}
-                      className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-sm mb-6 border border-[#BCCAD8] text-[#4A5A6A] hover:bg-[#EEF2F6] transition-all w-full disabled:opacity-60"
+                      className="flex items-center justify-center gap-2 py-3 px-5 rounded-lg font-body font-semibold text-sm mb-6 border border-[#DDD5C8] text-[#5A4A3A] hover:bg-[#F5F0EB] transition-all w-full disabled:opacity-60"
                     >
                       {freeEnrolling && freeEnrollingSlug === activeTrack.slug
                         ? <><Loader2 size={14} className="animate-spin" /> Loading...</>
                         : <><BookOpen size={14} /> Explore free (Module 1)</>}
                     </button>
 
-                    <div className="space-y-2 text-xs font-body text-[#4A5A6A]">
+                    <div className="space-y-2 text-xs font-body text-[#5A4A3A]">
                       {[
                         `${catalog.modules.length} self-paced modules`,
                         `${catalog.quizCount} practice questions`,
@@ -543,15 +543,15 @@ export default function RealEstatePage() {
             <div className="h-px w-8 bg-[#C9A84C]" />
             <span className="text-xs font-body font-semibold tracking-[2px] uppercase text-[#C9A84C]">Find Your Fit</span>
           </div>
-          <h2 className="font-display text-2xl font-bold text-[#1A2433] mb-2">
+          <h2 className="font-display text-2xl font-bold text-[#1A1A18] mb-2">
             Which one <em className="text-[#C9A84C] not-italic">feels like you?</em>
           </h2>
-          <p className="text-[#4A5A6A] font-body text-sm mb-6 max-w-lg">These aren't labels — they're starting points. Any personality can succeed in any path.</p>
+          <p className="text-[#5A4A3A] font-body text-sm mb-6 max-w-lg">These aren't labels — they're starting points. Any personality can succeed in any path.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {PERSONALITY_TYPES.map(({ type, desc, paths }) => (
-              <div key={type} className="bg-[#EEF2F6] border border-[#BCCAD8] rounded-xl p-4">
-                <h3 className="font-display font-bold text-[#1A2433] text-sm mb-2">{type}</h3>
-                <p className="text-[#4A5A6A] font-body text-xs leading-relaxed mb-3">{desc}</p>
+              <div key={type} className="bg-[#F5F0EB] border border-[#DDD5C8] rounded-xl p-4">
+                <h3 className="font-display font-bold text-[#1A1A18] text-sm mb-2">{type}</h3>
+                <p className="text-[#5A4A3A] font-body text-xs leading-relaxed mb-3">{desc}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {paths.map(path => (
                     <span key={path} className="text-[10px] px-2 py-0.5 rounded bg-[#C9A84C]/10 text-[#8a6a1a] border border-[#C9A84C]/25 font-body">{path}</span>
@@ -560,9 +560,9 @@ export default function RealEstatePage() {
               </div>
             ))}
           </div>
-          <div className="mt-6 p-4 bg-[#EEF2F6] border border-[#BCCAD8] rounded-xl max-w-2xl">
-            <p className="text-[#4A5A6A] font-body text-sm leading-relaxed">
-              💡 <strong className="text-[#1A2433]">Remember:</strong> These are suggestions, not rules. The most successful people in real estate are often a blend of several types. This is just a compass, not a cage.
+          <div className="mt-6 p-4 bg-[#F5F0EB] border border-[#DDD5C8] rounded-xl max-w-2xl">
+            <p className="text-[#5A4A3A] font-body text-sm leading-relaxed">
+              💡 <strong className="text-[#1A1A18]">Remember:</strong> These are suggestions, not rules. The most successful people in real estate are often a blend of several types. This is just a compass, not a cage.
             </p>
           </div>
         </div>

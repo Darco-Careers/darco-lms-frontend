@@ -102,7 +102,7 @@ export default function DashboardPage() {
           <div className="flex items-center gap-2 mb-4">
             <Eye size={16} className="text-[#C9A84C]" />
             <h2 className="font-display text-xl font-bold text-navy-900">Free Preview</h2>
-            <span className="text-xs font-body text-[#8A9AAA] bg-[#EEF2F6] px-2 py-0.5 rounded-full">
+            <span className="text-xs font-body text-[#8A8070] bg-[#F5F0EB] px-2 py-0.5 rounded-full">
               1 active at a time
             </span>
           </div>

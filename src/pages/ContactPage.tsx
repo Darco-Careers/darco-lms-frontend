@@ -47,8 +47,8 @@ export default function ContactPage() {
         {/* Contact info panel */}
         <div className="space-y-8">
           <div>
-            <h2 className="font-display font-bold text-xl text-[#1A2433] mb-2">Contact Information</h2>
-            <p className="font-body text-[#4A5A6A] text-sm leading-relaxed">
+            <h2 className="font-display font-bold text-xl text-[#1A1A18] mb-2">Contact Information</h2>
+            <p className="font-body text-[#5A4A3A] text-sm leading-relaxed">
               Reach out by email or phone and we will get back to you as soon as possible.
               Our team typically responds within one business day.
             </p>
@@ -60,10 +60,10 @@ export default function ContactPage() {
                 <Mail size={18} className="text-[#C9A84C]" />
               </div>
               <div>
-                <div className="font-body font-semibold text-sm text-[#1A2433]">Email</div>
+                <div className="font-body font-semibold text-sm text-[#1A1A18]">Email</div>
                 <a
                   href="mailto:info@darcocenter.org"
-                  className="font-body text-sm text-[#4A5A6A] hover:text-[#C9A84C] transition-colors"
+                  className="font-body text-sm text-[#5A4A3A] hover:text-[#C9A84C] transition-colors"
                 >
                   info@darcocenter.org
                 </a>
@@ -75,10 +75,10 @@ export default function ContactPage() {
                 <Phone size={18} className="text-[#C9A84C]" />
               </div>
               <div>
-                <div className="font-body font-semibold text-sm text-[#1A2433]">Phone</div>
+                <div className="font-body font-semibold text-sm text-[#1A1A18]">Phone</div>
                 <a
                   href="tel:+18186870188"
-                  className="font-body text-sm text-[#4A5A6A] hover:text-[#C9A84C] transition-colors"
+                  className="font-body text-sm text-[#5A4A3A] hover:text-[#C9A84C] transition-colors"
                 >
                   (818) 687-0188
                 </a>
@@ -86,22 +86,22 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl border border-[#BCCAD8] p-5">
-            <div className="font-body font-semibold text-sm text-[#1A2433] mb-1">Office Hours</div>
-            <p className="font-body text-sm text-[#4A5A6A]">Monday – Friday, 9:00 AM – 5:00 PM PT</p>
-            <p className="font-body text-xs text-[#8A9AAA] mt-2">
+          <div className="bg-white rounded-xl border border-[#DDD5C8] p-5">
+            <div className="font-body font-semibold text-sm text-[#1A1A18] mb-1">Office Hours</div>
+            <p className="font-body text-sm text-[#5A4A3A]">Monday – Friday, 9:00 AM – 5:00 PM PT</p>
+            <p className="font-body text-xs text-[#8A8070] mt-2">
               For urgent matters outside office hours, email us and we will respond the next business day.
             </p>
           </div>
         </div>
 
         {/* Contact form */}
-        <div className="bg-white rounded-2xl border border-[#BCCAD8] shadow-sm p-8">
+        <div className="bg-white rounded-2xl border border-[#DDD5C8] shadow-sm p-8">
           {status === 'success' ? (
             <div className="flex flex-col items-center justify-center h-full text-center py-8">
               <CheckCircle size={48} className="text-green-500 mb-4" />
-              <h3 className="font-display font-bold text-xl text-[#1A2433] mb-2">Message Sent!</h3>
-              <p className="font-body text-[#4A5A6A] text-sm">
+              <h3 className="font-display font-bold text-xl text-[#1A1A18] mb-2">Message Sent!</h3>
+              <p className="font-body text-[#5A4A3A] text-sm">
                 Thank you for reaching out. We will get back to you within one business day.
               </p>
               <button
@@ -113,13 +113,13 @@ export default function ContactPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
-              <h2 className="font-display font-bold text-xl text-[#1A2433] mb-1">Send Us a Message</h2>
-              <p className="font-body text-sm text-[#8A9AAA] mb-4">
+              <h2 className="font-display font-bold text-xl text-[#1A1A18] mb-1">Send Us a Message</h2>
+              <p className="font-body text-sm text-[#8A8070] mb-4">
                 Fill out the form below and we will be in touch shortly.
               </p>
 
               <div>
-                <label className="block font-body font-medium text-sm text-[#1A2433] mb-1.5">
+                <label className="block font-body font-medium text-sm text-[#1A1A18] mb-1.5">
                   Your Name <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -129,12 +129,12 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   placeholder="Jane Smith"
-                  className="w-full px-4 py-2.5 rounded-lg border border-[#BCCAD8] bg-[#F4F7FA] font-body text-sm text-[#1A2433] placeholder-[#8A9AAA] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 focus:border-[#C9A84C] transition"
+                  className="w-full px-4 py-2.5 rounded-lg border border-[#DDD5C8] bg-[#F4F7FA] font-body text-sm text-[#1A1A18] placeholder-[#8A9AAA] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 focus:border-[#C9A84C] transition"
                 />
               </div>
 
               <div>
-                <label className="block font-body font-medium text-sm text-[#1A2433] mb-1.5">
+                <label className="block font-body font-medium text-sm text-[#1A1A18] mb-1.5">
                   Email Address <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -144,12 +144,12 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   placeholder="jane@example.com"
-                  className="w-full px-4 py-2.5 rounded-lg border border-[#BCCAD8] bg-[#F4F7FA] font-body text-sm text-[#1A2433] placeholder-[#8A9AAA] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 focus:border-[#C9A84C] transition"
+                  className="w-full px-4 py-2.5 rounded-lg border border-[#DDD5C8] bg-[#F4F7FA] font-body text-sm text-[#1A1A18] placeholder-[#8A9AAA] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 focus:border-[#C9A84C] transition"
                 />
               </div>
 
               <div>
-                <label className="block font-body font-medium text-sm text-[#1A2433] mb-1.5">
+                <label className="block font-body font-medium text-sm text-[#1A1A18] mb-1.5">
                   Message <span className="text-red-400">*</span>
                 </label>
                 <textarea
@@ -160,9 +160,9 @@ export default function ContactPage() {
                   rows={5}
                   maxLength={2000}
                   placeholder="Tell us how we can help..."
-                  className="w-full px-4 py-2.5 rounded-lg border border-[#BCCAD8] bg-[#F4F7FA] font-body text-sm text-[#1A2433] placeholder-[#8A9AAA] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 focus:border-[#C9A84C] transition resize-none"
+                  className="w-full px-4 py-2.5 rounded-lg border border-[#DDD5C8] bg-[#F4F7FA] font-body text-sm text-[#1A1A18] placeholder-[#8A9AAA] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/40 focus:border-[#C9A84C] transition resize-none"
                 />
-                <div className="text-right font-body text-xs text-[#8A9AAA] mt-1">
+                <div className="text-right font-body text-xs text-[#8A8070] mt-1">
                   {form.message.length}/2000
                 </div>
               </div>

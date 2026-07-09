@@ -133,12 +133,12 @@ const FAQ_CATEGORIES: { title: string; items: FAQItem[] }[] = [
 function FAQAccordion({ item }: { item: FAQItem }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="border-b border-[#EEF2F6] last:border-0">
+    <div className="border-b border-[#EDE8E2] last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-4 py-5 text-left"
       >
-        <span className="font-body font-semibold text-sm text-[#1A2433] leading-snug">
+        <span className="font-body font-semibold text-sm text-[#1A1A18] leading-snug">
           {item.question}
         </span>
         <ChevronDown
@@ -148,7 +148,7 @@ function FAQAccordion({ item }: { item: FAQItem }) {
       </button>
       {open && (
         <div className="pb-5 pr-8">
-          <p className="font-body text-sm text-[#4A5A6A] leading-relaxed">{item.answer}</p>
+          <p className="font-body text-sm text-[#5A4A3A] leading-relaxed">{item.answer}</p>
         </div>
       )}
     </div>
@@ -172,7 +172,7 @@ export default function FAQPage() {
 
       <div className="max-w-3xl mx-auto px-4 py-14 space-y-10">
         {FAQ_CATEGORIES.map(category => (
-          <div key={category.title} className="bg-white rounded-2xl border border-[#BCCAD8] shadow-sm overflow-hidden">
+          <div key={category.title} className="bg-white rounded-2xl border border-[#DDD5C8] shadow-sm overflow-hidden">
             <div className="bg-[#1E2A38] px-6 py-4">
               <h2 className="font-display font-bold text-base text-white">{category.title}</h2>
             </div>

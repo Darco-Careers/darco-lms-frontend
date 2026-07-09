@@ -326,14 +326,14 @@ export const COURSE_COLORS: Record<string, CourseColorTheme> = {
     heroGradient: 'linear-gradient(135deg, #2E2000 0%, #7A5800 60%, #C49030 100%)',
     label: 'Deep Amber',
   },
-  // Electrician — awaiting file, using yellow/gold placeholder
+  // Electrician — original site: near-black bg (#111318) + bright yellow/gold (#F7C948)
   'electrician': {
-    primary: '#7A6000',
-    mid: '#A08010',
-    light: '#C8A030',
-    pale: '#FDFAE8',
-    heroGradient: 'linear-gradient(135deg, #3A2E00 0%, #7A6000 55%, #A08010 100%)',
-    label: 'Gold',
+    primary: '#111318',
+    mid: '#1A1A1A',
+    light: '#F7C948',
+    pale: '#FAF6EE',
+    heroGradient: 'linear-gradient(135deg, #0A0A0C 0%, #111318 55%, #1A1A1A 100%)',
+    label: 'Black & Gold',
   },
   // Construction Painting — LIGHT theme: warm off-white bg + dark navy + muted gold
   // Uses Bebas Neue font (trades/industrial), completely different feel from RE courses

@@ -1,9 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import * as Sentry from '@sentry/react'
 import App from './App'
 import ErrorBoundary from './components/ErrorBoundary'
 import './index.css'
+
+const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN
+
+if (SENTRY_DSN && import.meta.env.PROD) {
+  try {
+    Sentry.init({
+      dsn: SENTRY_DSN,
+      environment: 'production',
+      tracesSampleRate: 0.1,
+      replaysOnErrorSampleRate: 1.0,
+    })
+  } catch {
+    // Never crash on Sentry misconfiguration
+  }
+}
 
 const queryClient = new QueryClient({
   defaultOptions: {

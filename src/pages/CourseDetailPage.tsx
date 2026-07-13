@@ -178,8 +178,8 @@ export default function CourseDetailPage() {
             className="font-display text-3xl sm:text-4xl font-bold leading-tight mb-4"
             style={{ color: isLight ? theme.primary : '#ffffff' }}
           >
-            {(() => {
-              // Split title at last em-dash or last word for gold-italic accent
+            {slug === 'electrician' ? (() => {
+              // Gold-italic accent: split at last em-dash or last word
               const title = course.title
               const dashIdx = title.lastIndexOf(' — ')
               if (dashIdx !== -1) {
@@ -192,7 +192,6 @@ export default function CourseDetailPage() {
                   </>
                 )
               }
-              // Fallback: italicise last word in gold
               const words = title.split(' ')
               const lastWord = words.pop()
               return (
@@ -201,7 +200,7 @@ export default function CourseDetailPage() {
                   <em style={{ color: theme.light, fontStyle: 'italic' }}>{lastWord}</em>
                 </>
               )
-            })()}
+            })() : course.title}
           </h1>
 
           <p

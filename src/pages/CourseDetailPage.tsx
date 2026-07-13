@@ -178,7 +178,30 @@ export default function CourseDetailPage() {
             className="font-display text-3xl sm:text-4xl font-bold leading-tight mb-4"
             style={{ color: isLight ? theme.primary : '#ffffff' }}
           >
-            {course.title}
+            {(() => {
+              // Split title at last em-dash or last word for gold-italic accent
+              const title = course.title
+              const dashIdx = title.lastIndexOf(' — ')
+              if (dashIdx !== -1) {
+                return (
+                  <>
+                    {title.slice(0, dashIdx + 3)}
+                    <em style={{ color: theme.light, fontStyle: 'italic' }}>
+                      {title.slice(dashIdx + 3)}
+                    </em>
+                  </>
+                )
+              }
+              // Fallback: italicise last word in gold
+              const words = title.split(' ')
+              const lastWord = words.pop()
+              return (
+                <>
+                  {words.join(' ')}{' '}
+                  <em style={{ color: theme.light, fontStyle: 'italic' }}>{lastWord}</em>
+                </>
+              )
+            })()}
           </h1>
 
           <p

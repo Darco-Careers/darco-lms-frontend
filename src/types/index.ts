@@ -66,6 +66,9 @@ export interface Module {
   is_completed: boolean
   quiz_score: number | null
   lessons_count: number
+  lessons_total?: number
+  quiz_count?: number
+  first_lesson_id?: string | null  // populated by coursesApi.detail()
   lessons?: ModuleLesson[]  // populated by coursesApi.modules()
 }
 
@@ -318,7 +321,7 @@ export const COURSE_COLORS: Record<string, CourseColorTheme> = {
     label: 'Rust',
   },
   // Apartment Leasing: Deep Amber
-  'apartment-leasing': {
+  'real-estate-leasing': {
     primary: '#4A3400',
     mid: '#A07010',
     light: '#C49030',

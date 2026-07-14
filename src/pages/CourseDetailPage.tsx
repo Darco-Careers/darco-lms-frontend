@@ -263,8 +263,8 @@ export default function CourseDetailPage() {
                 // Determine if this module is accessible (free preview = first 2 modules)
                 const isFreeModule = idx <= 1
                 const isAccessible = course.is_enrolled || isFreeModule
-                const lessonTarget = mod.first_lesson_id
-                  ? `/courses/${slug}/lesson/${mod.first_lesson_id}`
+                const lessonTarget = (mod as any).first_lesson_id
+                  ? `/courses/${slug}/lesson/${(mod as any).first_lesson_id}`
                   : course.is_enrolled ? `/courses/${slug}/progress` : null
 
                 return (

@@ -16,12 +16,16 @@ export const coursesApi = {
     // Normalize field names from backend to frontend TypeScript types:
     // - price_cents (backend) → price in dollars (frontend)
     // - modules[].lessons_total (backend) → modules[].lessons_count (frontend)
+    // - modules[].first_lesson_id preserved for direct lesson navigation
     const rawModules = (raw.modules as Array<Record<string, unknown>>) ?? []
     const modules: Module[] = rawModules.map((m) => ({
       id: m.id as number,
       title: m.title as string,
       sequence_order: m.sequence_order as number,
       lessons_count: (m.lessons_total ?? m.lessons_count ?? 0) as number,
+      lessons_total: (m.lessons_total ?? m.lessons_count ?? 0) as number,
+      quiz_count: (m.quiz_count ?? 10) as number,
+      first_lesson_id: (m.first_lesson_id as string | null) ?? null,
       is_completed: (m.lessons_completed !== undefined
         ? (m.lessons_completed as number) >= (m.lessons_total as number)
         : false),
@@ -55,6 +59,7 @@ export const coursesApi = {
         title: m.title as string,
         sequence_order: m.sequence_order as number,
         lessons_count: rawLessons.length ?? (m.lessons_total as number) ?? (m.lessons_count as number) ?? 0,
+        first_lesson_id: (m.first_lesson_id as string | null) ?? null,
         is_completed: !!(m.quiz_passed),
         quiz_score: (m.quiz_passed ? 100 : null) as number | null,
         lessons: rawLessons.map((l) => ({

@@ -396,10 +396,10 @@
 .lesson-html-body .career-card-header h3 { font-family: 'Playfair Display', serif;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--white);
+    color: var(--white) !important;
     line-height: 1.3; }
 .lesson-html-body .career-card-header p { font-size: 11.5px;
-    color: rgba(255,255,255,0.82);
+    color: rgba(255,255,255,0.82) !important;
     margin-top: 2px; }
 .lesson-html-body .career-card-body { padding: 1.25rem 1.5rem; }
 .lesson-html-body .career-card-body p { font-size: 13.5px;

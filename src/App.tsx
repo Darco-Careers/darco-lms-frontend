@@ -10,6 +10,7 @@ import HomePage from '@/pages/HomePage'
 import RealEstatePage from '@/pages/RealEstatePage'
 import LoginPage from '@/pages/LoginPage'
 import RegisterPage from '@/pages/RegisterPage'
+import ResetPasswordPage from '@/pages/ResetPasswordPage'
 import DashboardPage from '@/pages/DashboardPage'
 import CourseDetailPage from '@/pages/CourseDetailPage'
 import LessonPage from '@/pages/LessonPage'
@@ -57,6 +58,7 @@ export default function App() {
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/reset-password/:uid/:token" element={<ResetPasswordPage />} />
         </Route>
 
         {/* Protected routes */}

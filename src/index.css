@@ -256,7 +256,7 @@
 .lesson-html-body .hero-question p { font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
     font-style: italic;
-    color: var(--white);
+    color: var(--white) !important;
     line-height: 1.6;
     margin-bottom: 0.75rem; }
 .lesson-html-body .hero-question .hint { font-size: 13px;

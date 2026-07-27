@@ -1096,6 +1096,9 @@
 .lesson-html-body .book-item a {
   display:inline-flex;align-items:center;gap:6px;background:var(--teal);color:var(--white);padding:7px 16px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;
 }
+.lesson-html-body .affiliate-disclosure {
+  font-size:11px;color:rgba(255,255,255,0.4);text-align:center;margin:0.25rem 0 0;font-style:italic;
+}
 .lesson-html-body /* Next module */
 .state-table-section {
   margin:2rem 0;

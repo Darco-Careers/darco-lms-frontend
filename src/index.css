@@ -826,7 +826,7 @@
 /* Hide the static-site breadcrumb and progress tracker — replaced by the LMS sticky nav */
 .lesson-html-body .breadcrumb, .lesson-html-body .progress-bar { display: none !important; }
 .lesson-html-body .knowledge-check, .lesson-html-body .score-result { display: none !important; }
-.lesson-html-body .career-card-header { min-height: 96px; align-items: center; }
+.lesson-html-body .career-card-header { height: 96px; align-items: center; overflow: hidden; }
 .lesson-html-body .career-cards .career-card:nth-of-type(4) .career-card-header h3,
 .lesson-html-body .career-cards .career-card:nth-of-type(7) .career-card-header h3 { font-size: 0.88rem; line-height: 1.25; }
 .lesson-html-body .career-cards .career-card:nth-of-type(1) .career-card-header { background:#0D6E6E; }

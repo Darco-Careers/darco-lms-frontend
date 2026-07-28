@@ -1375,7 +1375,7 @@
   font-size: 11.5px; color: rgba(255,255,255,0.5); margin-top: 3px;
 }
 .lesson-html-body .hero-stats {
-  display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;
+  display:flex;gap:2rem;flex-wrap:wrap;
 }
 .lesson-html-body .mentor-avatar {
   width:52px;height:52px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:var(--gold-light);flex-shrink:0;margin-top:4px;box-shadow:0 2px 12px rgba(61,26,110,0.25);
@@ -1394,4 +1394,38 @@
 }
 .lesson-html-body .mentor-bubble p {
   font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:#1A1E26;line-height:1.75;
+}
+
+/* ============================================================
+   MLO TRACK — orientation hero overrides (purple, left-aligned)
+   Scoped to .track-mlo so they don't affect other tracks
+   ============================================================ */
+.lesson-html-body .track-mlo .hero {
+  background: linear-gradient(135deg, #220E40 0%, #3D1A6E 55%, #5430A0 100%) !important;
+  text-align: left !important;
+}
+.lesson-html-body .track-mlo .hero-sub {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.lesson-html-body .track-mlo .hero-stats {
+  justify-content: flex-start !important;
+}
+.lesson-html-body .track-mlo .hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+/* License step cards — ensure white text on dark purple background */
+.lesson-html-body .track-mlo .license-step p {
+  color: rgba(255,255,255,0.78) !important;
+}
+.lesson-html-body .track-mlo .license-step a {
+  color: #E8C97A !important;
+}
+.lesson-html-body .track-mlo .license-step .step-num {
+  color: #E8C97A !important;
 }

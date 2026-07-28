@@ -1144,3 +1144,254 @@
 }
 
 /* End agent track CSS — 84 rules */
+
+/* ===== Mortgage & Lending Track — content classes ===== */
+.lesson-html-body .callout-quote .attr {
+  font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:var(--purple-mid);margin-top:0.5rem;font-weight:600;
+}
+.lesson-html-body .book-callout .bc-icon {
+  font-size:2rem;flex-shrink:0;
+}
+.lesson-html-body .book-callout {
+  background:var(--gold-pale);border:1px solid rgba(201,168,76,0.3);border-radius:14px;padding:1.5rem;margin:1.75rem 0;display:flex;gap:1.25rem;align-items:flex-start;
+}
+.lesson-html-body .book-callout h4 {
+  font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:0.3rem;
+}
+.lesson-html-body .book-callout p {
+  font-size:13.5px;color:var(--text-mid);line-height:1.7;
+}
+.lesson-html-body .book-callout a {
+  color:var(--purple);font-weight:600;text-decoration:none;
+}
+.lesson-html-body .video-badge.broker {
+  background: #E3EFF9; color: #1A4E7A;
+}
+.lesson-html-body .btn-outline-white {
+  background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3);
+}
+.lesson-html-body .btn-outline-white:hover {
+  background: rgba(255,255,255,0.1);
+}
+.lesson-html-body .btn-purple {
+  display:inline-flex;align-items:center;gap:6px;background:var(--purple);color:var(--white);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;
+}
+.lesson-html-body .btn-purple:hover {
+  background:var(--purple-mid);
+}
+.lesson-html-body .callout-danger {
+  background:var(--danger-pale);border-left:4px solid var(--danger);border-radius:0 14px 14px 0;
+}
+.lesson-html-body .callout-danger .callout-label {
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--danger);margin-bottom:0.5rem;
+}
+.lesson-html-body .callout-danger p {
+  font-size:1rem;color:var(--text-dark);line-height:1.8;
+}
+.lesson-html-body .challenge-stats {
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;
+}
+.lesson-html-body .checklist {
+  display:flex;flex-direction:column;gap:0;
+}
+.lesson-html-body .cl-check {
+  width:20px;height:20px;border-radius:4px;border:2px solid var(--border);background:var(--white);cursor:pointer;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;
+}
+.lesson-html-body .cl-check.checked {
+  background:var(--green);border-color:var(--green);
+}
+.lesson-html-body .cl-check.checked::after {
+  content:'✓';color:var(--white);font-size:11px;font-weight:700;
+}
+.lesson-html-body .cl-item {
+  display:flex;gap:0.85rem;align-items:flex-start;padding:0.6rem 0;border-bottom:1px solid var(--border);
+}
+.lesson-html-body .cl-item:last-child {
+  border-bottom:none;
+}
+.lesson-html-body .cl-item.checked .cl-text {
+  text-decoration:line-through;color:var(--text-light);
+}
+.lesson-html-body .cl-section {
+  margin-bottom:1.5rem;
+}
+.lesson-html-body .cl-section h4 {
+  font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--purple-mid);margin-bottom:0.75rem;
+}
+.lesson-html-body .cl-text {
+  font-size:14px;color:var(--text-mid);line-height:1.6;
+}
+.lesson-html-body .congrats {
+  background:var(--gold-pale);border:2px solid var(--gold);border-radius:18px;padding:2.5rem;margin:2rem 0;text-align:center;
+}
+.lesson-html-body .congrats h2 {
+  font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:700;color:var(--purple);margin-bottom:0.75rem;
+}
+.lesson-html-body .congrats p {
+  font-size:1rem;color:var(--text-mid);line-height:1.8;max-width:600px;margin:0 auto 1.5rem;
+}
+.lesson-html-body .congrats-links {
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+}
+.lesson-html-body .cs-item {
+  background:var(--gold-pale);border:1px solid rgba(201,168,76,0.3);border-radius:10px;padding:0.85rem;text-align:center;
+}
+.lesson-html-body .cs-label {
+  font-size:11px;color:var(--text-light);margin-top:3px;
+}
+.lesson-html-body .cs-num {
+  font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--purple);
+}
+.lesson-html-body .domains {
+  display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;
+}
+.lesson-html-body .domain {
+  background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:1.25rem;
+}
+.lesson-html-body .domain-pct {
+  font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--purple);min-width:60px;text-align:center;
+}
+.lesson-html-body .domain-bar-wrap {
+  flex:1;
+}
+.lesson-html-body .domain-name {
+  font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:0.4rem;
+}
+.lesson-html-body .domain-bar {
+  height:6px;background:rgba(61,26,110,0.1);border-radius:3px;overflow:hidden;
+}
+.lesson-html-body .domain-fill {
+  height:100%;background:var(--purple-mid);border-radius:3px;
+}
+.lesson-html-body .earnings-amount {
+  font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 0.4rem;
+}
+.lesson-html-body .earnings-card {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(201,168,76,0.15); border-radius: 14px; padding: 1.75rem; text-align: center; transition: all 0.25s;
+}
+.lesson-html-body .earnings-card:hover {
+  background: rgba(255,255,255,0.11); border-color: rgba(201,168,76,0.3);
+}
+.lesson-html-body .earnings-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2rem;
+}
+.lesson-html-body .earnings-note {
+  font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.5;
+}
+.lesson-html-body .earnings-role {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 0.75rem;
+}
+.lesson-html-body .earnings-section {
+  background: var(--purple); padding: 4rem 0; position: relative; overflow: hidden;
+}
+.lesson-html-body .earnings-section::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+}
+.lesson-html-body .ed-grid {
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.lesson-html-body .ed-item {
+  background:rgba(255,255,255,0.07);border-radius:10px;padding:1rem 1.1rem;
+}
+.lesson-html-body .ed-item h4 {
+  font-size:13px;font-weight:700;color:var(--gold-light);margin-bottom:0.4rem;
+}
+.lesson-html-body .ed-item p {
+  font-size:13px;color:rgba(255,255,255,0.82);line-height:1.65;
+}
+.lesson-html-body .skill-label.essential {
+  background: var(--purple-pale); color: var(--purple-mid);
+}
+.lesson-html-body .ethics-scenarios {
+  display:flex;flex-direction:column;gap:1rem;margin:1.75rem 0;
+}
+.lesson-html-body .exam-day {
+  background:linear-gradient(135deg,#1A0838,var(--purple));border-radius:18px;padding:2rem 2.25rem;margin:2rem 0;color:var(--white);
+}
+.lesson-html-body .exam-day h3 {
+  font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold-light);margin-bottom:1.25rem;
+}
+.lesson-html-body .fraud-card .fc-tag {
+  font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--danger);margin-bottom:0.4rem;
+}
+.lesson-html-body .fit-card {
+  border-radius: 14px; padding: 1.5rem; border: 1px solid var(--border);
+}
+.lesson-html-body .fit-card.yes {
+  background: var(--purple-pale); border-color: rgba(61,26,110,0.15);
+}
+.lesson-html-body .fit-card.no {
+  background: #FBF0EE; border-color: rgba(180,60,40,0.12);
+}
+.lesson-html-body .fit-card h4 {
+  font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;
+}
+.lesson-html-body .fit-card.yes h4 {
+  color: var(--purple);
+}
+.lesson-html-body .fit-card.no h4 {
+  color: #8B2F20;
+}
+.lesson-html-body .fit-card.yes .fit-list li::before {
+  content: '✓'; color: var(--purple); font-weight: 700; flex-shrink: 0;
+}
+.lesson-html-body .fit-card.no .fit-list li::before {
+  content: '✗'; color: #C0392B; font-weight: 700; flex-shrink: 0;
+}
+.lesson-html-body .fit-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem;
+}
+.lesson-html-body .fit-grid {
+  grid-template-columns: 1fr;
+}
+.lesson-html-body .fit-list {
+  list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+}
+.lesson-html-body .fit-list li {
+  font-size: 13.5px; color: var(--text-mid); display: flex; gap: 8px; line-height: 1.5;
+}
+.lesson-html-body .fraud-cards {
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.75rem 0;
+}
+.lesson-html-body .fraud-card {
+  background:var(--white);border:1px solid var(--border);border-top:3px solid var(--danger);border-radius:0 0 12px 12px;padding:1.25rem;
+}
+.lesson-html-body .fraud-card h4 {
+  font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--text-dark);margin-bottom:0.5rem;
+}
+.lesson-html-body .fraud-card p {
+  font-size:13px;color:var(--text-mid);line-height:1.65;
+}
+.lesson-html-body .skill-label.helpful {
+  background: var(--gold-pale); color: #8A6A20;
+}
+.lesson-html-body .hero-stats {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.lesson-html-body .hero-stat .number {
+  font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold-light); line-height: 1;
+}
+.lesson-html-body .hero-stat .label {
+  font-size: 11.5px; color: rgba(255,255,255,0.5); margin-top: 3px;
+}
+.lesson-html-body .hero-stats {
+  display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;
+}
+.lesson-html-body .mentor-avatar {
+  width:52px;height:52px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:var(--gold-light);flex-shrink:0;margin-top:4px;box-shadow:0 2px 12px rgba(61,26,110,0.25);
+}
+.lesson-html-body .mentor-bubble-wrap {
+  margin:2.5rem 0;display:flex;gap:1.25rem;align-items:flex-start;
+}
+.lesson-html-body .mentor-bubble {
+  background:#FFFDF7;border:2px solid #C9A02A;border-radius:16px;border-top-left-radius:4px;padding:1.25rem 1.5rem;flex:1;position:relative;
+}
+.lesson-html-body .mentor-bubble::before {
+  content:'';position:absolute;left:-10px;top:14px;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:10px solid #C9A02A;
+}
+.lesson-html-body .mentor-bubble::after {
+  content:'';position:absolute;left:-7px;top:15px;width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-right:9px solid #FFFDF7;
+}
+.lesson-html-body .mentor-bubble p {
+  font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:#1A1E26;line-height:1.75;
+}

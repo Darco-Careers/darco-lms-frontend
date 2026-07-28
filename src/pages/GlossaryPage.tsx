@@ -1,14 +1,20 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { Search, ArrowLeft } from 'lucide-react'
 import { glossaryApi } from '@/api/glossary'
 import { coursesApi } from '@/api/courses'
 import { COURSE_COLORS } from '@/types'
+import { useTrackThemeStore } from '@/store/trackThemeStore'
 
 export default function GlossaryPage() {
   const { slug } = useParams<{ slug: string }>()
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
+  const setTrackTheme = useTrackThemeStore((s) => s.setTrackTheme)
+  useEffect(() => {
+    setTrackTheme(slug ?? null)
+    return () => setTrackTheme(null)
+  }, [slug, setTrackTheme])
   const [search, setSearch] = useState('')
   const [activeLetter, setActiveLetter] = useState<string | null>(null)
 

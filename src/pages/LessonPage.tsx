@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import { coursesApi } from '@/api/courses'
 import { progressApi, enrollmentApi } from '@/api/progress'
 import { COURSE_COLORS } from '@/types'
+import { useTrackThemeStore } from '@/store/trackThemeStore'
 import { useState, useEffect } from 'react'
 
 export default function LessonPage() {
@@ -12,6 +13,12 @@ export default function LessonPage() {
   const navigate = useNavigate()
   const queryClient = useQueryClient()
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
+  const setTrackTheme = useTrackThemeStore((s) => s.setTrackTheme)
+  // Activate track-aware Navbar/Footer theming; clear on unmount
+  useEffect(() => {
+    setTrackTheme(slug ?? null)
+    return () => setTrackTheme(null)
+  }, [slug, setTrackTheme])
   const [upgradeRequired, setUpgradeRequired] = useState(false)
 
   // Promo code state (shared between both paywall screens)

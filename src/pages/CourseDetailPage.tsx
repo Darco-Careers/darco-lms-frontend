@@ -6,12 +6,18 @@ import { enrollmentApi, freeEnrollmentApi } from '@/api/progress'
 import { validatePromoCode, type ValidatePromoCodeResult } from '@/api/promoCodes'
 import { COURSE_COLORS } from '@/types'
 import { useAuthStore } from '@/store/authStore'
-import { useState } from 'react'
+import { useTrackThemeStore } from '@/store/trackThemeStore'
+import { useState, useEffect } from 'react'
 
 export default function CourseDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated)
+  const setTrackTheme = useTrackThemeStore((s) => s.setTrackTheme)
+  useEffect(() => {
+    setTrackTheme(slug ?? null)
+    return () => setTrackTheme(null)
+  }, [slug, setTrackTheme])
   const [enrolling, setEnrolling] = useState(false)
   const [promoInput, setPromoInput] = useState('')
   const [promoValidating, setPromoValidating] = useState(false)

@@ -1436,3 +1436,75 @@
 .lesson-html-body .track-mlo .license-box h3 {
   color: #E8C97A !important;
 }
+
+/* ============================================================
+   FOUNDATION TRACK — missing component CSS
+   Ported from original module HTML <style> blocks.
+   Scoped to .lesson-html-body to avoid polluting other components.
+   Affects: module-3 through module-10 (pillars, example boxes,
+   career money grid, ladder steps, video badges).
+   ============================================================ */
+
+/* Money Pillars */
+.lesson-html-body .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
+.lesson-html-body .pillar { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; text-align: center; transition: all 0.25s; position: relative; overflow: hidden; }
+.lesson-html-body .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+.lesson-html-body .pillar.p1::before { background: linear-gradient(90deg, var(--forest), var(--forest-mid)); }
+.lesson-html-body .pillar.p2::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+.lesson-html-body .pillar.p3::before { background: linear-gradient(90deg, #4A6FA5, #7A9FD5); }
+.lesson-html-body .pillar.p4::before { background: linear-gradient(90deg, #8A4A90, #C07AC8); }
+.lesson-html-body .pillar:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.lesson-html-body .pillar-icon { font-size: 32px; margin-bottom: 0.75rem; display: block; }
+.lesson-html-body .pillar h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body .pillar p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+.lesson-html-body .pillar-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 9px; border-radius: 10px; margin-bottom: 0.6rem; }
+.lesson-html-body .p1 .pillar-tag { background: var(--forest-pale); color: var(--forest-mid); }
+.lesson-html-body .p2 .pillar-tag { background: var(--gold-pale); color: #8A6A20; }
+.lesson-html-body .p3 .pillar-tag { background: #E8EFF8; color: #4A6FA5; }
+.lesson-html-body .p4 .pillar-tag { background: #F5EEF8; color: #8A4A90; }
+
+/* Example box (financial breakdowns, tables) */
+.lesson-html-body .example-box { background: var(--cream-dark); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 1.75rem 0; border: 1px solid var(--border); }
+.lesson-html-body .example-box .ex-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--forest-mid); margin-bottom: 0.75rem; }
+.lesson-html-body .example-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.75rem; }
+.lesson-html-body .example-row { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+.lesson-html-body .example-row:last-child { border-bottom: none; font-weight: 700; color: var(--forest); padding-top: 0.75rem; }
+.lesson-html-body .example-row .label { color: var(--text-mid); }
+.lesson-html-body .example-row .value { font-weight: 600; color: var(--text-dark); }
+.lesson-html-body .example-row.total .value { color: var(--forest); font-size: 14.5px; }
+
+/* Career money grid */
+.lesson-html-body .career-money-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
+.lesson-html-body .career-money-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; transition: all 0.25s; }
+.lesson-html-body .career-money-card:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body .career-money-card .emoji { font-size: 22px; margin-bottom: 0.5rem; display: block; }
+.lesson-html-body .career-money-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--forest); margin-bottom: 0.4rem; }
+.lesson-html-body .career-money-card p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+.lesson-html-body .career-money-card .how { font-size: 12px; font-weight: 600; color: var(--forest-mid); margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border); }
+
+/* Ladder steps */
+.lesson-html-body .ladder { margin: 2rem 0; display: flex; flex-direction: column; gap: 0; }
+.lesson-html-body .ladder-step { display: flex; gap: 1.25rem; align-items: flex-start; }
+.lesson-html-body .ladder-connector { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+.lesson-html-body .ladder-circle { width: 40px; height: 40px; background: var(--forest); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; flex-shrink: 0; z-index: 1; }
+.lesson-html-body .ladder-line { width: 2px; height: 32px; background: linear-gradient(to bottom, var(--forest-mid), rgba(27,77,62,0.2)); margin: 0 auto; }
+.lesson-html-body .ladder-content { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; flex: 1; margin-bottom: 8px; transition: box-shadow 0.2s; }
+.lesson-html-body .ladder-content:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body .ladder-content h4 { font-weight: 600; font-size: 0.95rem; color: var(--text-dark); margin-bottom: 0.3rem; }
+.lesson-html-body .ladder-content p { font-size: 13.5px; color: var(--text-mid); line-height: 1.65; }
+
+/* Video badge variants */
+.lesson-html-body .video-badge.cc { background: var(--forest-pale); color: var(--forest-mid); }
+.lesson-html-body .video-badge.bp { background: #E8F0FB; color: #1A4E7A; }
+.lesson-html-body .video-info .credit { font-size: 12px; color: var(--text-light); margin-top: 0.4rem; }
+.lesson-html-body .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem; margin: 1.75rem 0; }
+
+/* Module nav (prev/next) — hide in LMS context (already hidden globally, but ensure sub-elements don't show) */
+.lesson-html-body .module-nav-info p { font-size: 12px; color: var(--text-light); }
+.lesson-html-body .module-nav-info strong { font-size: 14px; color: var(--text-dark); }
+
+/* Responsive: pillars 2-col on mobile */
+@media (max-width: 640px) {
+  .lesson-html-body .pillars { grid-template-columns: 1fr 1fr; }
+  .lesson-html-body .video-grid { grid-template-columns: 1fr; }
+}

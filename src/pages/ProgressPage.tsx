@@ -4,11 +4,18 @@ import { CheckCircle, Lock, PlayCircle, ClipboardList, BookOpen, ArrowRight } fr
 import { progressApi } from '@/api/progress'
 import { coursesApi } from '@/api/courses'
 import { COURSE_COLORS } from '@/types'
+import { useTrackThemeStore } from '@/store/trackThemeStore'
+import { useEffect } from 'react'
 import clsx from 'clsx'
 
 export default function ProgressPage() {
   const { slug } = useParams<{ slug: string }>()
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
+  const setTrackTheme = useTrackThemeStore((s) => s.setTrackTheme)
+  useEffect(() => {
+    setTrackTheme(slug ?? null)
+    return () => setTrackTheme(null)
+  }, [slug, setTrackTheme])
 
   const { data: progress, isLoading } = useQuery({
     queryKey: ['progress', slug],

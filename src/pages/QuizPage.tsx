@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import { apiClient } from '@/api/client'
 import { COURSE_COLORS } from '@/types'
+import { useTrackThemeStore } from '@/store/trackThemeStore'
 import type { Quiz, QuizResult, SectionBreakdown } from '@/types'
 import clsx from 'clsx'
 
@@ -208,6 +209,11 @@ function ReviewItem({ q, idx, themeColor }: { q: ReviewQuestion; idx: number; th
 export default function QuizPage() {
   const { slug, moduleId } = useParams<{ slug: string; moduleId: string }>()
   const theme = COURSE_COLORS[slug ?? ''] ?? COURSE_COLORS['real-estate-foundation']
+  const setTrackTheme = useTrackThemeStore((s) => s.setTrackTheme)
+  useEffect(() => {
+    setTrackTheme(slug ?? null)
+    return () => setTrackTheme(null)
+  }, [slug, setTrackTheme])
 
   // ── Shared state ──
   const [answers, setAnswers] = useState<Record<string, string>>({})

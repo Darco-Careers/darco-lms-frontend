@@ -1429,3 +1429,10 @@
 .lesson-html-body .track-mlo .license-step .step-num {
   color: #E8C97A !important;
 }
+/* License box intro paragraph — white text on dark purple background */
+.lesson-html-body .track-mlo .license-box p {
+  color: rgba(255,255,255,0.85) !important;
+}
+.lesson-html-body .track-mlo .license-box h3 {
+  color: #E8C97A !important;
+}

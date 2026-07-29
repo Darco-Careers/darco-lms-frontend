@@ -495,10 +495,10 @@ export default function LessonPage() {
         }}
       >
         <div className="page-container flex items-center justify-between gap-3 px-4 py-3">
-          {/* Left: Previous Module, or Back to Track on first module */}
-          {lesson.prev_lesson_id ? (
+          {/* Left: Previous Module (by module), or Back to Track on Module 1 */}
+          {lesson.prev_module_lesson_id ? (
             <Link
-              to={`/courses/${slug}/lesson/${lesson.prev_lesson_id}`}
+              to={`/courses/${slug}/lesson/${lesson.prev_module_lesson_id}`}
               className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
               style={{
                 background: 'rgba(255,255,255,0.15)',
@@ -507,7 +507,9 @@ export default function LessonPage() {
               }}
             >
               <ArrowLeft size={14} />
-              Previous Module
+              {lesson.prev_module_number != null && lesson.prev_module_title
+                ? `Module ${lesson.prev_module_number} — ${lesson.prev_module_title}`
+                : 'Previous Module'}
             </Link>
           ) : (
             <Link
@@ -524,8 +526,9 @@ export default function LessonPage() {
             </Link>
           )}
 
-          {/* Right: context-aware forward action */}
+          {/* Right: next module (within-module next or cross-module next), enroll CTA, or Complete Track */}
           {lesson.next_lesson_id ? (
+            // Within the same module — still show the NEXT module label (forward progress)
             <Link
               to={`/courses/${slug}/lesson/${lesson.next_lesson_id}`}
               className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
@@ -535,7 +538,9 @@ export default function LessonPage() {
                 border: '1px solid rgba(255,255,255,0.35)',
               }}
             >
-              Next Module <ArrowRight size={14} />
+              {lesson.module_sequence_order != null && lesson.module_title
+                ? <>Module {lesson.module_sequence_order} — {lesson.module_title} <ArrowRight size={14} /></>
+                : <>Next Module <ArrowRight size={14} /></>}
             </Link>
           ) : lesson.next_module_lesson_id ? (
             <Link
@@ -547,8 +552,8 @@ export default function LessonPage() {
                 border: '1px solid rgba(255,255,255,0.35)',
               }}
             >
-              {lesson.next_module_title
-                ? <>Next: {lesson.next_module_title} <ArrowRight size={14} /></>
+              {lesson.next_module_number != null && lesson.next_module_title
+                ? <>Module {lesson.next_module_number} — {lesson.next_module_title} <ArrowRight size={14} /></>
                 : <>Next Module <ArrowRight size={14} /></>}
             </Link>
           ) : isEndOfFreePreview ? (

@@ -81,12 +81,17 @@ export interface Lesson {
   youtube_url: string | null
   module_id: string
   module_title: string | null
+  module_sequence_order: number | null   // sequence_order of the current module (1-based)
   is_completed: boolean
   prev_lesson_id: string | null
   next_lesson_id: string | null
   quiz_id: string | null
   next_module_lesson_id: string | null
   next_module_title: string | null
+  next_module_number: number | null       // sequence_order of the next module
+  prev_module_lesson_id: string | null
+  prev_module_title: string | null
+  prev_module_number: number | null       // sequence_order of the previous module
   lesson_position: number | null
   lesson_total: number | null
   enrollment_status: string | null

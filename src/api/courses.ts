@@ -104,6 +104,7 @@ export const coursesApi = {
       youtube_url: (raw.youtube_url as string | null) ?? null,
       module_id: moduleObj ? (moduleObj.id as string) : (raw.module_id as string),
       module_title: moduleObj ? (moduleObj.title as string) : null,
+      module_sequence_order: moduleObj ? (moduleObj.sequence_order as number | null) ?? null : null,
       is_completed: !!(progress.completed ?? raw.is_completed),
       prev_lesson_id: prevNav ? (prevNav.id as string) : (raw.prev_lesson_id as string | null) ?? null,
       next_lesson_id: nextNav ? (nextNav.id as string) : (raw.next_lesson_id as string | null) ?? null,
@@ -115,6 +116,22 @@ export const coursesApi = {
       next_module_title: (() => {
         const nml = nav.next_module_lesson as Record<string, unknown> | null
         return nml ? (nml.module_title as string) : null
+      })(),
+      next_module_number: (() => {
+        const nml = nav.next_module_lesson as Record<string, unknown> | null
+        return nml ? (nml.module_number as number | null) ?? null : null
+      })(),
+      prev_module_lesson_id: (() => {
+        const pml = nav.prev_module_lesson as Record<string, unknown> | null
+        return pml ? (pml.id as string) : null
+      })(),
+      prev_module_title: (() => {
+        const pml = nav.prev_module_lesson as Record<string, unknown> | null
+        return pml ? (pml.module_title as string) : null
+      })(),
+      prev_module_number: (() => {
+        const pml = nav.prev_module_lesson as Record<string, unknown> | null
+        return pml ? (pml.module_number as number | null) ?? null : null
       })(),
       lesson_position: (raw.lesson_position as number | null) ?? null,
       lesson_total: (raw.lesson_total as number | null) ?? null,

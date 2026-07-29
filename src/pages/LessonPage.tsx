@@ -344,7 +344,7 @@ export default function LessonPage() {
           {lesson.content_type === 'html' ? (
             // Rich HTML content from original site — rendered with full CSS
             <div
-              className="lesson-html-body"
+              className={`lesson-html-body track-${slug ?? 'unknown'}`}
               dangerouslySetInnerHTML={{ __html: lesson.body }}
             />
           ) : (

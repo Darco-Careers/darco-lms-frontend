@@ -4578,8 +4578,11 @@
 .lesson-html-body.track-real-estate-mortgage-lending .hs-label {
     font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.5px;
 }
-.lesson-html-body.track-real-estate-mortgage-lending .
-.section {
+/* Module 7 content wrapper — provides padding and max-width for body content */
+.lesson-html-body.track-real-estate-mortgage-lending .body {
+    max-width:860px;margin:0 auto;padding:3rem 2rem;
+}
+.lesson-html-body.track-real-estate-mortgage-lending .section {
     margin-bottom:3.5rem;
 }
 .lesson-html-body.track-real-estate-mortgage-lending h2.section-title {

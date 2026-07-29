@@ -467,15 +467,6 @@ export default function LessonPage() {
               >
                 Continue to next module <ArrowRight size={14} />
               </Link>
-            ) : lesson.quiz_id ? (
-              /* Fix #3 — use module_id for the quiz route in the bottom nav too */
-              <Link
-                to={`/courses/${slug}/quiz/${quizRouteId}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-white text-sm transition-all hover:brightness-110"
-                style={{ background: theme.primary }}
-              >
-                Take the quiz <ArrowRight size={14} />
-              </Link>
             ) : isEndOfFreePreview ? (
               /* Fix #4 — enroll CTA in the bottom nav for free preview end */
               <button
@@ -548,18 +539,6 @@ export default function LessonPage() {
               }}
             >
               Next Module <ArrowRight size={14} />
-            </Link>
-          ) : lesson.quiz_id ? (
-            <Link
-              to={`/courses/${slug}/quiz/${quizRouteId}`}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
-              style={{
-                background: 'rgba(255,255,255,0.2)',
-                color: '#fff',
-                border: '1px solid rgba(255,255,255,0.35)',
-              }}
-            >
-              Take the Quiz <ArrowRight size={14} />
             </Link>
           ) : isEndOfFreePreview ? (
             <button

@@ -499,6 +499,98 @@ export default function LessonPage() {
 
         </div>{/* end CTA + nav wrapper */}
       </div>
+
+      {/* ── Fixed bottom navigation bar ─────────────────────────────────── */}
+      {/* Pinned to viewport bottom; adds padding-bottom so content isn't hidden behind it */}
+      <div
+        className="fixed bottom-0 left-0 right-0 z-50 border-t"
+        style={{
+          background: theme.primary,
+          borderColor: `${theme.primary}cc`,
+        }}
+      >
+        <div className="page-container flex items-center justify-between gap-3 px-4 py-3">
+          {/* Left: Track Overview (always) */}
+          <Link
+            to={`/courses/${slug}/progress`}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
+            style={{
+              background: 'rgba(255,255,255,0.15)',
+              color: '#fff',
+              border: '1px solid rgba(255,255,255,0.25)',
+            }}
+          >
+            <ArrowLeft size={14} />
+            Track Overview
+          </Link>
+
+          {/* Right: context-aware forward action */}
+          {lesson.next_lesson_id ? (
+            <Link
+              to={`/courses/${slug}/lesson/${lesson.next_lesson_id}`}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
+              style={{
+                background: 'rgba(255,255,255,0.2)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.35)',
+              }}
+            >
+              Next Lesson <ArrowRight size={14} />
+            </Link>
+          ) : lesson.next_module_lesson_id ? (
+            <Link
+              to={`/courses/${slug}/lesson/${lesson.next_module_lesson_id}`}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
+              style={{
+                background: 'rgba(255,255,255,0.2)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.35)',
+              }}
+            >
+              Next Module <ArrowRight size={14} />
+            </Link>
+          ) : lesson.quiz_id ? (
+            <Link
+              to={`/courses/${slug}/quiz/${quizRouteId}`}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
+              style={{
+                background: 'rgba(255,255,255,0.2)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.35)',
+              }}
+            >
+              Take the Quiz <ArrowRight size={14} />
+            </Link>
+          ) : isEndOfFreePreview ? (
+            <button
+              onClick={() => handleEnroll()}
+              disabled={enrolling}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80 disabled:opacity-50"
+              style={{
+                background: 'rgba(255,255,255,0.2)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.35)',
+              }}
+            >
+              {enrolling ? 'Redirecting...' : <>Enroll to continue <ArrowRight size={14} /></>}
+            </button>
+          ) : (
+            <Link
+              to={`/courses/${slug}/progress`}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
+              style={{
+                background: 'rgba(255,255,255,0.2)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.35)',
+              }}
+            >
+              Track Overview <ArrowRight size={14} />
+            </Link>
+          )}
+        </div>
+      </div>
+      {/* Spacer so page content isn't hidden behind the fixed bar */}
+      <div className="h-16" />
     </div>
   )
 }

@@ -6214,3 +6214,489 @@
 .lesson-html-body.track-real-estate-mortgage-lending .mg-none {
     font-size:13px;color:var(--text-light);padding:1rem 0;text-align:center;display:none;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   CALIFORNIA LICENSING PATHWAY — track-california-licensing-pathway
+   Deep navy (#1C3D5A) base with gold (#C9A84C) premium accents.
+   Scoped to .lesson-html-body.track-california-licensing-pathway
+   ═══════════════════════════════════════════════════════════════════ */
+
+.lesson-html-body.track-california-licensing-pathway {
+    --seal: #1C3D5A;
+    --seal-mid: #2A5580;
+    --seal-light: #4A7AA8;
+    --seal-pale: #EBF1F7;
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #FBF5E6;
+    --cream: #FAF8F3;
+    --cream-dark: #F0EBE0;
+    --text-dark: #1A1A18;
+    --text-mid: #4A4A42;
+    --text-light: #8A8A7A;
+    --white: #FFFFFF;
+    --border: rgba(28,61,90,0.12);
+    --shadow-card: 0 2px 16px rgba(28,61,90,0.07);
+    --teal: #0D6E6E;
+    --warn: #A05A1A;
+    --warn-pale: #FBF2E6;
+    --forest: #1B4D3E;
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.75;
+}
+
+.lesson-html-body.track-california-licensing-pathway .container {
+    max-width: 780px; margin: 0 auto; padding: 0 2.5rem;
+}
+
+/* ── Module Hero ───────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .module-hero {
+    background: linear-gradient(135deg, #12293D 0%, var(--seal) 55%, var(--seal-mid) 100%);
+    padding: 3.5rem 2.5rem; position: relative; overflow: hidden;
+}
+.lesson-html-body.track-california-licensing-pathway .module-hero::before {
+    content: ''; position: absolute; top: -40%; right: -10%; width: 55%; height: 200%;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+.lesson-html-body.track-california-licensing-pathway .module-hero-inner {
+    max-width: 860px; margin: 0 auto; position: relative;
+}
+.lesson-html-body.track-california-licensing-pathway .module-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light); font-size: 11px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem;
+}
+.lesson-html-body.track-california-licensing-pathway .module-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700;
+    color: var(--white); line-height: 1.2; margin-bottom: 0.75rem;
+}
+.lesson-html-body.track-california-licensing-pathway .module-hero h1 em {
+    color: var(--gold-light); font-style: italic;
+}
+.lesson-html-body.track-california-licensing-pathway .module-hero p {
+    font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 600px;
+    line-height: 1.8; font-weight: 300; margin-bottom: 1.5rem;
+}
+.lesson-html-body.track-california-licensing-pathway .module-meta {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.lesson-html-body.track-california-licensing-pathway .meta-item {
+    display: flex; align-items: center; gap: 7px; font-size: 13px;
+    color: rgba(255,255,255,0.6);
+}
+.lesson-html-body.track-california-licensing-pathway .meta-item span {
+    color: var(--gold-light); font-weight: 600;
+}
+
+/* ── Section structure ─────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway section {
+    padding: 3.25rem 0 0.5rem;
+}
+.lesson-html-body.track-california-licensing-pathway .section-label {
+    font-size: 11.5px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
+}
+.lesson-html-body.track-california-licensing-pathway h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700;
+    line-height: 1.25; margin-bottom: 0.5rem; color: var(--seal);
+}
+.lesson-html-body.track-california-licensing-pathway h2 em {
+    color: var(--seal-mid); font-style: italic;
+}
+.lesson-html-body.track-california-licensing-pathway h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--seal); margin-bottom: 0.5rem;
+}
+.lesson-html-body.track-california-licensing-pathway h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: var(--seal); margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-california-licensing-pathway .gold-divider {
+    width: 46px; height: 3px; background: var(--gold);
+    border-radius: 2px; margin: 1rem 0 1.5rem;
+}
+.lesson-html-body.track-california-licensing-pathway .lesson-text {
+    font-size: 15.5px; color: var(--text-mid); margin-bottom: 1.25rem;
+}
+.lesson-html-body.track-california-licensing-pathway .lesson-text strong {
+    color: var(--text-dark);
+}
+.lesson-html-body.track-california-licensing-pathway a {
+    color: var(--seal-mid); font-weight: 500;
+}
+.lesson-html-body.track-california-licensing-pathway a:hover {
+    color: var(--gold);
+}
+
+/* ── Callouts ──────────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .callout {
+    border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0; font-size: 14.5px; color: var(--text-mid);
+}
+.lesson-html-body.track-california-licensing-pathway .callout-label {
+    font-size: 10.5px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-california-licensing-pathway .callout-insight {
+    background: var(--seal-pale); border-left: 3px solid var(--seal-mid);
+}
+.lesson-html-body.track-california-licensing-pathway .callout-insight .callout-label {
+    color: var(--seal-mid);
+}
+.lesson-html-body.track-california-licensing-pathway .callout-mentor {
+    background: var(--gold-pale); border-left: 3px solid var(--gold);
+}
+.lesson-html-body.track-california-licensing-pathway .callout-mentor .callout-label {
+    color: #A0793A;
+}
+.lesson-html-body.track-california-licensing-pathway .callout-warning {
+    background: var(--warn-pale); border-left: 3px solid var(--warn);
+}
+.lesson-html-body.track-california-licensing-pathway .callout-warning .callout-label {
+    color: var(--warn);
+}
+
+/* ── Concept grid / cards ──────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .concept-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem; margin: 1.75rem 0;
+}
+.lesson-html-body.track-california-licensing-pathway .concept-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.35rem 1.3rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-california-licensing-pathway .concept-icon {
+    font-size: 1.3rem; margin-bottom: 0.5rem;
+}
+
+/* ── Tables ────────────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .compare-table,
+.lesson-html-body.track-california-licensing-pathway .cost-table,
+.lesson-html-body.track-california-licensing-pathway .weight-table {
+    width: 100%; border-collapse: collapse; margin: 1.75rem 0;
+    background: var(--white); border-radius: 12px; overflow: hidden;
+    box-shadow: var(--shadow-card); font-size: 13.5px;
+}
+.lesson-html-body.track-california-licensing-pathway .compare-table th,
+.lesson-html-body.track-california-licensing-pathway .cost-table th,
+.lesson-html-body.track-california-licensing-pathway .weight-table th {
+    background: var(--seal); color: var(--white);
+    text-align: left; padding: 0.85rem 1.1rem;
+    font-weight: 600; font-size: 12.5px;
+}
+.lesson-html-body.track-california-licensing-pathway .compare-table td,
+.lesson-html-body.track-california-licensing-pathway .cost-table td,
+.lesson-html-body.track-california-licensing-pathway .weight-table td {
+    padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--border);
+    color: var(--text-mid); vertical-align: top;
+}
+.lesson-html-body.track-california-licensing-pathway .compare-table tr:last-child td,
+.lesson-html-body.track-california-licensing-pathway .cost-table tr:last-child td,
+.lesson-html-body.track-california-licensing-pathway .weight-table tr:last-child td {
+    border-bottom: none;
+}
+.lesson-html-body.track-california-licensing-pathway .compare-table tr:nth-child(even) td,
+.lesson-html-body.track-california-licensing-pathway .cost-table tr:nth-child(even) td,
+.lesson-html-body.track-california-licensing-pathway .weight-table tr:nth-child(even) td {
+    background: rgba(28,61,90,0.02);
+}
+
+/* ── Badges ────────────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .badge-yes {
+    background: rgba(13,110,110,0.1); color: var(--teal);
+    display: inline-block; font-size: 11px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px;
+}
+.lesson-html-body.track-california-licensing-pathway .badge-no {
+    background: rgba(160,90,26,0.1); color: var(--warn);
+    display: inline-block; font-size: 11px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px;
+}
+.lesson-html-body.track-california-licensing-pathway .badge-cond {
+    background: rgba(201,168,76,0.15); color: #A0793A;
+    display: inline-block; font-size: 11px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px;
+}
+
+/* ── Asymmetry box ─────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .asymmetry-box {
+    background: linear-gradient(135deg, var(--seal) 0%, #0D3050 100%);
+    border-radius: 16px; padding: 2rem 2.25rem; margin: 2rem 0; color: var(--white);
+}
+.lesson-html-body.track-california-licensing-pathway .asymmetry-box h3 {
+    color: var(--gold-light); margin-bottom: 1rem;
+}
+.lesson-html-body.track-california-licensing-pathway .asymmetry-row {
+    display: flex; gap: 1.5rem; margin-bottom: 0.75rem; align-items: flex-start;
+}
+.lesson-html-body.track-california-licensing-pathway .asymmetry-arrow {
+    font-size: 1.1rem; color: var(--gold); flex-shrink: 0; margin-top: 2px;
+}
+.lesson-html-body.track-california-licensing-pathway .asymmetry-text {
+    font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6;
+}
+.lesson-html-body.track-california-licensing-pathway .asymmetry-text strong {
+    color: var(--gold-light);
+}
+
+/* ── Career translation ────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .career-translation {
+    background: var(--seal); border-radius: 16px;
+    padding: 2rem 2.25rem; margin: 2rem 0;
+}
+.lesson-html-body.track-california-licensing-pathway .career-translation .section-label {
+    color: var(--gold-light);
+}
+.lesson-html-body.track-california-licensing-pathway .career-translation h3 {
+    color: var(--white); margin-bottom: 1.25rem;
+}
+.lesson-html-body.track-california-licensing-pathway .career-translation p {
+    font-size: 14px; color: rgba(255,255,255,0.8);
+    margin-bottom: 0.85rem; line-height: 1.7;
+}
+
+/* ── Next box ──────────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .next-box {
+    background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 14px; padding: 1.75rem 2rem; margin: 2.5rem 0 3rem;
+    text-align: center;
+}
+.lesson-html-body.track-california-licensing-pathway .next-box p {
+    font-size: 15px; color: var(--text-mid); margin-bottom: 1.25rem;
+}
+.lesson-html-body.track-california-licensing-pathway .next-box a {
+    display: inline-block; background: var(--seal); color: var(--white);
+    font-weight: 600; font-size: 14.5px; padding: 0.75rem 1.75rem;
+    border-radius: 8px; text-decoration: none; transition: background 0.2s;
+}
+.lesson-html-body.track-california-licensing-pathway .next-box a:hover {
+    background: var(--seal-mid);
+}
+
+/* ── Timeline ──────────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .timeline {
+    border-left: 3px solid var(--gold);
+    margin: 1.75rem 0 1.75rem 0.75rem; padding-left: 1.75rem;
+}
+.lesson-html-body.track-california-licensing-pathway .timeline-item {
+    position: relative; margin-bottom: 1.5rem;
+}
+.lesson-html-body.track-california-licensing-pathway .timeline-item::before {
+    content: ''; position: absolute; left: -2.25rem; top: 6px;
+    width: 10px; height: 10px; background: var(--gold);
+    border-radius: 50%; border: 2px solid var(--cream);
+}
+
+/* ── Steps grid ────────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .steps-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem; margin: 1.75rem 0;
+}
+.lesson-html-body.track-california-licensing-pathway .step-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.35rem 1.25rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-california-licensing-pathway .step-num {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem;
+    font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+}
+
+/* ── PE breakdown ──────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .pe-breakdown {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; margin: 1.75rem 0;
+}
+.lesson-html-body.track-california-licensing-pathway .pe-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.15rem 1rem;
+    text-align: center; box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-california-licensing-pathway .hours {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem;
+    font-weight: 700; color: var(--seal);
+}
+.lesson-html-body.track-california-licensing-pathway .hours-label {
+    font-size: 10px; color: var(--text-light); letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 0.4rem;
+}
+
+/* ── Status grid ───────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .status-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem; margin: 1.75rem 0;
+}
+.lesson-html-body.track-california-licensing-pathway .status-card {
+    border-radius: 12px; padding: 1.4rem 1.35rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-california-licensing-pathway .status-card.active {
+    background: #EDF5F0; border: 1px solid rgba(27,77,62,0.2);
+}
+.lesson-html-body.track-california-licensing-pathway .status-card.inactive {
+    background: var(--warn-pale); border: 1px solid rgba(160,90,26,0.2);
+}
+
+/* ── Course grid ───────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .course-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.1rem; margin: 1.75rem 0;
+}
+.lesson-html-body.track-california-licensing-pathway .course-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.25rem 1.3rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-california-licensing-pathway .lbl {
+    font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-california-licensing-pathway .num {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem;
+    font-weight: 700; color: var(--gold-light);
+}
+.lesson-html-body.track-california-licensing-pathway .total {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem;
+    font-weight: 700; color: var(--seal);
+}
+
+/* ── Trap cards ────────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .trap-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0;
+    padding: 1.35rem 1.4rem; margin: 1.25rem 0;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-california-licensing-pathway .trap-name {
+    font-family: 'Playfair Display', serif; font-size: 1.05rem;
+    color: var(--seal); margin-bottom: 0.3rem;
+}
+.lesson-html-body.track-california-licensing-pathway .trap-desc {
+    font-size: 13.5px; color: var(--text-mid); margin-bottom: 0.75rem;
+}
+.lesson-html-body.track-california-licensing-pathway .trap-example {
+    background: var(--cream); border-radius: 8px;
+    padding: 0.85rem 1rem; font-size: 13px;
+}
+.lesson-html-body.track-california-licensing-pathway .q {
+    color: var(--text-dark); font-style: italic; margin-bottom: 0.35rem;
+}
+.lesson-html-body.track-california-licensing-pathway .a {
+    color: var(--forest); font-weight: 600;
+}
+.lesson-html-body.track-california-licensing-pathway .tip {
+    color: var(--warn); font-weight: 600;
+}
+
+/* ── Strategy items ────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .strategy-item {
+    display: flex; gap: 1rem; margin: 1.25rem 0; align-items: flex-start;
+}
+.lesson-html-body.track-california-licensing-pathway .strategy-num {
+    flex-shrink: 0; width: 32px; height: 32px;
+    background: var(--seal); color: var(--gold-light);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-family: 'Playfair Display', serif;
+    font-weight: 700; font-size: 1rem;
+}
+.lesson-html-body.track-california-licensing-pathway .strategy-body {
+    font-size: 14.5px; color: var(--text-mid); line-height: 1.7;
+}
+.lesson-html-body.track-california-licensing-pathway .strategy-body strong {
+    color: var(--seal); font-weight: 600;
+}
+
+/* ── Self-check items ──────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .selfcheck-item {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; margin: 0.9rem 0;
+    box-shadow: var(--shadow-card); overflow: hidden;
+}
+.lesson-html-body.track-california-licensing-pathway .sc-q {
+    padding: 1.1rem 1.3rem; font-size: 14.5px; color: var(--text-dark);
+}
+.lesson-html-body.track-california-licensing-pathway .sc-opts {
+    padding: 0 1.3rem 0.5rem; font-size: 13.5px;
+    color: var(--text-mid); line-height: 2;
+}
+.lesson-html-body.track-california-licensing-pathway .sc-answer {
+    padding: 0.9rem 1.3rem 1.1rem; font-size: 13.5px;
+    color: var(--text-mid); background: #FDFCF8;
+    border-top: 1px solid var(--border);
+}
+
+/* ── Resource list ─────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .resource-list {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; margin: 1.75rem 0;
+}
+.lesson-html-body.track-california-licensing-pathway .resource-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.2rem 1.3rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-california-licensing-pathway .resource-card h4 {
+    color: var(--seal); margin-bottom: 0.35rem;
+}
+.lesson-html-body.track-california-licensing-pathway .resource-card a {
+    color: var(--gold); font-weight: 600;
+}
+
+/* ── Simulator box ─────────────────────────────────────────────────── */
+.lesson-html-body.track-california-licensing-pathway .simulator-box {
+    background: linear-gradient(135deg, #12293D, var(--seal));
+    border-radius: 16px; padding: 2.5rem 2rem; margin: 2.5rem 0;
+    text-align: center; position: relative; overflow: hidden;
+}
+.lesson-html-body.track-california-licensing-pathway .sim-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--gold-light);
+    margin-bottom: 0.75rem; position: relative;
+}
+.lesson-html-body.track-california-licensing-pathway .sim-stats {
+    display: flex; gap: 2rem; justify-content: center;
+    flex-wrap: wrap; position: relative;
+}
+.lesson-html-body.track-california-licensing-pathway .sim-stat {
+    text-align: center;
+}
+.lesson-html-body.track-california-licensing-pathway .sim-stat .num {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem;
+    font-weight: 700; color: var(--gold-light);
+}
+.lesson-html-body.track-california-licensing-pathway .sim-stat .lbl {
+    font-size: 10.5px; color: rgba(255,255,255,0.6);
+    letter-spacing: 1px; text-transform: uppercase;
+}
+.lesson-html-body.track-california-licensing-pathway .sim-cta {
+    margin-top: 1.75rem; position: relative;
+}
+.lesson-html-body.track-california-licensing-pathway .sim-cta a {
+    display: inline-block; background: var(--gold);
+    color: var(--seal); font-weight: 700; font-size: 14.5px;
+    padding: 0.8rem 2rem; border-radius: 8px;
+    text-decoration: none; transition: background 0.2s;
+}
+.lesson-html-body.track-california-licensing-pathway .sim-cta a:hover {
+    background: var(--gold-light);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .lesson-html-body.track-california-licensing-pathway .concept-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-california-licensing-pathway .steps-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-california-licensing-pathway .pe-breakdown { grid-template-columns: 1fr 1fr; }
+    .lesson-html-body.track-california-licensing-pathway .status-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-california-licensing-pathway .course-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-california-licensing-pathway .resource-list { grid-template-columns: 1fr; }
+    .lesson-html-body.track-california-licensing-pathway .asymmetry-row { flex-direction: column; gap: 0.5rem; }
+}

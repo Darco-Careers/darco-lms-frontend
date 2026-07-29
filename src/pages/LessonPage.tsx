@@ -495,19 +495,34 @@ export default function LessonPage() {
         }}
       >
         <div className="page-container flex items-center justify-between gap-3 px-4 py-3">
-          {/* Left: Track Overview (always) */}
-          <Link
-            to={`/courses/${slug}/progress`}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
-            style={{
-              background: 'rgba(255,255,255,0.15)',
-              color: '#fff',
-              border: '1px solid rgba(255,255,255,0.25)',
-            }}
-          >
-            <ArrowLeft size={14} />
-            Track Overview
-          </Link>
+          {/* Left: Previous Lesson, or Back to Track on first lesson */}
+          {lesson.prev_lesson_id ? (
+            <Link
+              to={`/courses/${slug}/lesson/${lesson.prev_lesson_id}`}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.25)',
+              }}
+            >
+              <ArrowLeft size={14} />
+              Previous Lesson
+            </Link>
+          ) : (
+            <Link
+              to={`/courses/${slug}/progress`}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.25)',
+              }}
+            >
+              <ArrowLeft size={14} />
+              Back to Track
+            </Link>
+          )}
 
           {/* Right: context-aware forward action */}
           {lesson.next_lesson_id ? (

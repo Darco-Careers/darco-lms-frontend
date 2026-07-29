@@ -495,7 +495,7 @@ export default function LessonPage() {
         }}
       >
         <div className="page-container flex items-center justify-between gap-3 px-4 py-3">
-          {/* Left: Previous Lesson, or Back to Track on first lesson */}
+          {/* Left: Previous Module, or Back to Track on first module */}
           {lesson.prev_lesson_id ? (
             <Link
               to={`/courses/${slug}/lesson/${lesson.prev_lesson_id}`}
@@ -507,7 +507,7 @@ export default function LessonPage() {
               }}
             >
               <ArrowLeft size={14} />
-              Previous Lesson
+              Previous Module
             </Link>
           ) : (
             <Link
@@ -535,7 +535,7 @@ export default function LessonPage() {
                 border: '1px solid rgba(255,255,255,0.35)',
               }}
             >
-              Next Lesson <ArrowRight size={14} />
+              Next Module <ArrowRight size={14} />
             </Link>
           ) : lesson.next_module_lesson_id ? (
             <Link

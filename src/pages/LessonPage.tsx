@@ -477,14 +477,6 @@ export default function LessonPage() {
               >
                 {enrolling ? 'Redirecting...' : <>Enroll to continue <ArrowRight size={14} /></>}
               </button>
-            ) : (
-              <Link
-                to={`/courses/${slug}/progress`}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border bg-white text-sm font-body font-semibold transition-all"
-                style={{ borderColor: `${theme.primary}40`, color: theme.primary }}
-              >
-                Back to course <ArrowRight size={14} />
-              </Link>
             )}
           </div>
 
@@ -538,7 +530,9 @@ export default function LessonPage() {
                 border: '1px solid rgba(255,255,255,0.35)',
               }}
             >
-              Next Module <ArrowRight size={14} />
+              {lesson.next_module_title
+                ? <>Next: {lesson.next_module_title} <ArrowRight size={14} /></>
+                : <>Next Module <ArrowRight size={14} /></>}
             </Link>
           ) : isEndOfFreePreview ? (
             <button
@@ -563,7 +557,7 @@ export default function LessonPage() {
                 border: '1px solid rgba(255,255,255,0.35)',
               }}
             >
-              Track Overview <ArrowRight size={14} />
+              Complete Track <ArrowRight size={14} />
             </Link>
           )}
         </div>

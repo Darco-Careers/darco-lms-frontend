@@ -86,6 +86,7 @@ export interface Lesson {
   next_lesson_id: string | null
   quiz_id: string | null
   next_module_lesson_id: string | null
+  next_module_title: string | null
   lesson_position: number | null
   lesson_total: number | null
 }

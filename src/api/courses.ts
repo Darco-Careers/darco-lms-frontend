@@ -112,6 +112,10 @@ export const coursesApi = {
         const nml = nav.next_module_lesson as Record<string, unknown> | null
         return nml ? (nml.id as string) : null
       })(),
+      next_module_title: (() => {
+        const nml = nav.next_module_lesson as Record<string, unknown> | null
+        return nml ? (nml.module_title as string) : null
+      })(),
       lesson_position: (raw.lesson_position as number | null) ?? null,
       lesson_total: (raw.lesson_total as number | null) ?? null,
     }

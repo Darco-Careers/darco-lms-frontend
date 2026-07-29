@@ -89,6 +89,7 @@ export interface Lesson {
   next_module_title: string | null
   lesson_position: number | null
   lesson_total: number | null
+  enrollment_status: string | null
 }
 
 // ─── Quiz ─────────────────────────────────────────────────────────────────────

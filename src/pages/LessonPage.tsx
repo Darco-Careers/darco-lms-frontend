@@ -240,13 +240,15 @@ export default function LessonPage() {
   // The QuizPage calls /student/modules/<id>/quiz/ so it needs the module UUID
   const quizRouteId = lesson.module_id
 
-  // Fix #4 — detect when next module is locked for free preview students
-  // When next_lesson_id is null AND next_module_lesson_id is null AND quiz_id is null
-  // it means we're at the end of the last free module — show enroll CTA
+  // Detect when the student is at the end of the free preview boundary:
+  // - They are on a free_preview enrollment (not paid/active)
+  // - There is no next lesson within this module
+  // - The backend returned no next_module_lesson (locked for free preview)
+  // quiz_id presence is irrelevant — a free preview module can have a quiz
   const isEndOfFreePreview =
+    lesson.enrollment_status === 'free_preview' &&
     lesson.next_lesson_id === null &&
-    lesson.next_module_lesson_id === null &&
-    lesson.quiz_id === null
+    lesson.next_module_lesson_id === null
 
   return (
     <div className="min-h-screen bg-[#FAF8F5]">

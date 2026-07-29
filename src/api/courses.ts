@@ -118,6 +118,7 @@ export const coursesApi = {
       })(),
       lesson_position: (raw.lesson_position as number | null) ?? null,
       lesson_total: (raw.lesson_total as number | null) ?? null,
+      enrollment_status: (raw.enrollment_status as string | null) ?? null,
     }
   },
 }

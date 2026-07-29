@@ -477,7 +477,7 @@ export default function LessonPage() {
               >
                 {enrolling ? 'Redirecting...' : <>Enroll to continue <ArrowRight size={14} /></>}
               </button>
-            )}
+            ) : <div />}
           </div>
 
         </div>{/* end CTA + nav wrapper */}

@@ -22,6 +22,7 @@ import NotFoundPage from '@/pages/NotFoundPage'
 import AdminPromoCodesPage from '@/pages/AdminPromoCodesPage'
 import ContactPage from '@/pages/ContactPage'
 import FAQPage from '@/pages/FAQPage'
+import CAPathwayBonusPage from '@/pages/CAPathwayBonusPage'
 
 // Admin route wrapper — only accessible to school_admin or platform_admin
 function AdminRoute({ children }: { children: React.ReactNode }) {
@@ -68,6 +69,7 @@ export default function App() {
           <Route path="/courses/:slug/quiz/:moduleId" element={<QuizPage />} />
           <Route path="/courses/:slug/glossary" element={<GlossaryPage />} />
           <Route path="/courses/:slug/progress" element={<ProgressPage />} />
+          <Route path="/courses/:slug/bonus/california-licensing-pathway" element={<CAPathwayBonusPage />} />
           <Route path="/checkout/success" element={<CheckoutSuccessPage />} />
         </Route>
 

@@ -8,6 +8,12 @@ import { COURSE_COLORS } from '@/types'
 import { useTrackThemeStore } from '@/store/trackThemeStore'
 import { useState, useEffect } from 'react'
 
+// Tracks that bundle the CA Pathway — their last lesson routes to the bonus intro page
+const CA_PATHWAY_TRACKS = [
+  'real-estate-mortgage-lending',
+  'real-estate-residential-agent',
+]
+
 export default function LessonPage() {
   const { slug, lessonId } = useParams<{ slug: string; lessonId: string }>()
   const navigate = useNavigate()
@@ -569,6 +575,19 @@ export default function LessonPage() {
             >
               {enrolling ? 'Redirecting...' : <>Enroll to continue <ArrowRight size={14} /></>}
             </button>
+          ) : CA_PATHWAY_TRACKS.includes(slug ?? '') ? (
+            // Tracks that bundle CA Pathway: route to bonus intro page instead of progress
+            <Link
+              to={`/courses/${slug}/bonus/california-licensing-pathway`}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-body font-semibold text-sm transition-all hover:opacity-80"
+              style={{
+                background: '#C9A84C',
+                color: '#0F1B2D',
+                fontWeight: 700,
+              }}
+            >
+              California Bonus <ArrowRight size={14} />
+            </Link>
           ) : (
             <Link
               to={`/courses/${slug}/progress`}

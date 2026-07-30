@@ -6217,15 +6217,15 @@
 
 /* ═══════════════════════════════════════════════════════════════════
    CALIFORNIA LICENSING PATHWAY — track-california-licensing-pathway
-   Deep navy (#1C3D5A) base with gold (#C9A84C) premium accents.
+   Deep indigo (#1C1533) base with gold (#C9A84C) premium accents.
    Scoped to .lesson-html-body.track-california-licensing-pathway
    ═══════════════════════════════════════════════════════════════════ */
 
 .lesson-html-body.track-california-licensing-pathway {
-    --seal: #1C3D5A;
-    --seal-mid: #2A5580;
-    --seal-light: #4A7AA8;
-    --seal-pale: #EBF1F7;
+    --seal: #1C1533;
+    --seal-mid: #2D2050;
+    --seal-light: #4A3A7A;
+    --seal-pale: #EEEAF5;
     --gold: #C9A84C;
     --gold-light: #E8C97A;
     --gold-pale: #FBF5E6;
@@ -6235,8 +6235,8 @@
     --text-mid: #4A4A42;
     --text-light: #8A8A7A;
     --white: #FFFFFF;
-    --border: rgba(28,61,90,0.12);
-    --shadow-card: 0 2px 16px rgba(28,61,90,0.07);
+    --border: rgba(28,21,51,0.12);
+    --shadow-card: 0 2px 16px rgba(28,21,51,0.07);
     --teal: #0D6E6E;
     --warn: #A05A1A;
     --warn-pale: #FBF2E6;
@@ -6253,7 +6253,7 @@
 
 /* ── Module Hero ───────────────────────────────────────────────────── */
 .lesson-html-body.track-california-licensing-pathway .module-hero {
-    background: linear-gradient(135deg, #12293D 0%, var(--seal) 55%, var(--seal-mid) 100%);
+    background: linear-gradient(135deg, #0E0B1E 0%, var(--seal) 55%, var(--seal-mid) 100%);
     padding: 3.5rem 2.5rem; position: relative; overflow: hidden;
 }
 .lesson-html-body.track-california-licensing-pathway .module-hero::before {
@@ -6429,7 +6429,7 @@
 
 /* ── Asymmetry box ─────────────────────────────────────────────────── */
 .lesson-html-body.track-california-licensing-pathway .asymmetry-box {
-    background: linear-gradient(135deg, var(--seal) 0%, #0D3050 100%);
+    background: linear-gradient(135deg, var(--seal) 0%, #0E0B1E 100%);
     border-radius: 16px; padding: 2rem 2.25rem; margin: 2rem 0; color: var(--white);
 }
 .lesson-html-body.track-california-licensing-pathway .asymmetry-box h3 {
@@ -6653,7 +6653,7 @@
 
 /* ── Simulator box ─────────────────────────────────────────────────── */
 .lesson-html-body.track-california-licensing-pathway .simulator-box {
-    background: linear-gradient(135deg, #12293D, var(--seal));
+    background: linear-gradient(135deg, #0E0B1E, var(--seal));
     border-radius: 16px; padding: 2.5rem 2rem; margin: 2.5rem 0;
     text-align: center; position: relative; overflow: hidden;
 }

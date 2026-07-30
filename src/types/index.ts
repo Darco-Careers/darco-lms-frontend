@@ -354,13 +354,13 @@ export const COURSE_COLORS: Record<string, CourseColorTheme> = {
     heroGradient: 'linear-gradient(135deg, #2A1D14 0%, #3D2B1F 55%, #5C4432 100%)',
     label: 'Dark Brown & Gold',
   },
-  // California Licensing Pathway — deep midnight navy + gold (premium bonus identity)
+  // California Licensing Pathway — deep indigo + gold (premium bonus identity)
   'california-licensing-pathway': {
-    primary: '#0F1B2D',
-    mid: '#1A2E45',
+    primary: '#1C1533',
+    mid: '#2D2050',
     light: '#C9A84C',
     pale: '#F5F2E8',
-    heroGradient: 'linear-gradient(135deg, #070E18 0%, #0F1B2D 55%, #1A2E45 100%)',
-    label: 'Midnight Navy & Gold',
+    heroGradient: 'linear-gradient(135deg, #0E0B1E 0%, #1C1533 55%, #2D2050 100%)',
+    label: 'Indigo & Gold',
   },
 }

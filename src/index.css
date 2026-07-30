@@ -872,6 +872,19 @@
    blue-grey shows through between sections */
 .lesson-fullbleed { display: block; background: var(--cream, #FAF8F3); }
 
+/* Constrain reading width for all tracks using .page-body wrapper —
+   targets Photography, CRE, Investing, Leasing, M&R, PM, RED, Wholesaling.
+   760px cap keeps text readable; hero sections are full-bleed above this. */
+.lesson-fullbleed .lesson-html-body .page-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+@media (max-width: 640px) {
+  .lesson-fullbleed .lesson-html-body .page-body { padding: 0 1rem; }
+}
+
 /* Mobile: nothing extra needed — original responsive rules apply */
 /* ===== Residential Agent & Broker Track — content classes ===== */
 /* Ported from agent-module CSS, scoped to .lesson-html-body */

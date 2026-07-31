@@ -885,6 +885,20 @@
   .lesson-fullbleed .lesson-html-body .page-body { padding: 0 1rem; }
 }
 
+/* Constrain orientation sections — orientation seeders use bare <section style="..."> tags
+   with no .page-body wrapper. This rule applies to ALL tracks' orientations globally. */
+.lesson-fullbleed .lesson-html-body > section {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}
+@media (max-width: 640px) {
+  .lesson-fullbleed .lesson-html-body > section { padding-left: 1rem; padding-right: 1rem; }
+}
+
 /* Mobile: nothing extra needed — original responsive rules apply */
 /* ===== Residential Agent & Broker Track — content classes ===== */
 /* Ported from agent-module CSS, scoped to .lesson-html-body */

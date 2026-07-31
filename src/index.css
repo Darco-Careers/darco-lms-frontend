@@ -7050,6 +7050,127 @@
 .lesson-html-body.track-real-estate-photography .breadcrumb { display: none; }
 .lesson-html-body.track-real-estate-photography .progress-bar { display: none; }
 
+/* ── Gear detail blocks (Lesson 3) ────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .gear-detail {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .gear-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    width: 2.5rem;
+    text-align: center;
+    margin-top: 0.1rem;
+}
+.lesson-html-body.track-real-estate-photography .gear-content {
+    flex: 1;
+}
+.lesson-html-body.track-real-estate-photography .gear-sub {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-light); margin-bottom: 0.25rem;
+}
+.lesson-html-body.track-real-estate-photography .gear-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.5rem;
+}
+.lesson-html-body.track-real-estate-photography .gear-content p {
+    font-size: 13.5px; color: var(--text-mid);
+    line-height: 1.7; margin-bottom: 0.5rem;
+}
+.lesson-html-body.track-real-estate-photography .gear-tip {
+    font-size: 13px !important;
+    background: var(--gold-pale);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 0.6rem 1rem !important;
+    color: #7A6030 !important;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* ── Add-on cards (Lesson 4) ───────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .addon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .addon-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+}
+.lesson-html-body.track-real-estate-photography .addon-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.lesson-html-body.track-real-estate-photography .addon-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.5rem;
+}
+.lesson-html-body.track-real-estate-photography .addon-card p {
+    font-size: 13px; color: var(--text-mid);
+    line-height: 1.6; flex: 1;
+}
+.lesson-html-body.track-real-estate-photography .addon-when {
+    margin-top: 0.75rem;
+    font-size: 11.5px; font-weight: 700;
+    color: var(--forest); background: var(--gold-pale);
+    padding: 4px 10px; border-radius: 20px;
+    display: inline-block;
+}
+
+/* ── Comparison table (.comp-table) ────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .comp-table {
+    width: 100%; border-collapse: collapse;
+    margin: 1.5rem 0; font-size: 13.5px;
+    border-radius: 12px; overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .comp-table thead tr {
+    background: var(--forest); color: var(--gold-light);
+}
+.lesson-html-body.track-real-estate-photography .comp-table th {
+    padding: 0.75rem 1rem; text-align: left;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+}
+.lesson-html-body.track-real-estate-photography .comp-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+}
+.lesson-html-body.track-real-estate-photography .comp-table tbody tr:nth-child(even) {
+    background: var(--cream);
+}
+.lesson-html-body.track-real-estate-photography .comp-table td {
+    padding: 0.7rem 1rem; color: var(--text-mid);
+    vertical-align: middle; line-height: 1.5;
+}
+.lesson-html-body.track-real-estate-photography .comp-table .item-name {
+    font-weight: 600; color: var(--text-dark);
+}
+.lesson-html-body.track-real-estate-photography .comp-table .item-yes {
+    color: #2E6B3A; font-weight: 600;
+    background: #EAF5EC;
+}
+.lesson-html-body.track-real-estate-photography .comp-table .item-no {
+    color: var(--text-light);
+}
+
 /* ── Kit tier cards ─────────────────────────────────────────────────── */
 .lesson-html-body.track-real-estate-photography .kit-grid {
     display: grid;

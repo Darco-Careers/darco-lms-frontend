@@ -7050,6 +7050,90 @@
 .lesson-html-body.track-real-estate-photography .breadcrumb { display: none; }
 .lesson-html-body.track-real-estate-photography .progress-bar { display: none; }
 
+/* ── Kit tier cards ─────────────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .kit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin: 1.5rem 0 1.75rem;
+}
+.lesson-html-body.track-real-estate-photography .kit-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+}
+.lesson-html-body.track-real-estate-photography .kit-card.recommended {
+    border-color: var(--gold);
+    box-shadow: 0 4px 24px rgba(200,169,106,0.18);
+}
+.lesson-html-body.track-real-estate-photography .kit-header {
+    padding: 1.1rem 1.25rem;
+}
+.lesson-html-body.track-real-estate-photography .kit-header.budget {
+    background: var(--cream-dark);
+}
+.lesson-html-body.track-real-estate-photography .kit-header.standard {
+    background: var(--forest);
+}
+.lesson-html-body.track-real-estate-photography .kit-header.premium {
+    background: linear-gradient(135deg, #0E0D0C 0%, #1C1A18 100%);
+}
+.lesson-html-body.track-real-estate-photography .kit-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+.lesson-html-body.track-real-estate-photography .kit-label.budget { color: var(--text-light); }
+.lesson-html-body.track-real-estate-photography .kit-label.standard { color: var(--gold-light); }
+.lesson-html-body.track-real-estate-photography .kit-label.premium { color: var(--gold-light); }
+.lesson-html-body.track-real-estate-photography .kit-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+.lesson-html-body.track-real-estate-photography .kit-header.budget .kit-name { color: var(--text-dark); }
+.lesson-html-body.track-real-estate-photography .kit-header.standard .kit-name,
+.lesson-html-body.track-real-estate-photography .kit-header.premium .kit-name { color: var(--white); }
+.lesson-html-body.track-real-estate-photography .kit-price {
+    font-size: 13px; font-weight: 600;
+}
+.lesson-html-body.track-real-estate-photography .kit-header.budget .kit-price { color: var(--text-mid); }
+.lesson-html-body.track-real-estate-photography .kit-header.standard .kit-price,
+.lesson-html-body.track-real-estate-photography .kit-header.premium .kit-price { color: var(--gold-light); }
+.lesson-html-body.track-real-estate-photography .kit-body {
+    padding: 1rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    flex: 1;
+}
+.lesson-html-body.track-real-estate-photography .kit-item {
+    font-size: 13px; color: var(--text-mid);
+    line-height: 1.55;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--border);
+}
+.lesson-html-body.track-real-estate-photography .kit-item strong {
+    color: var(--text-dark);
+}
+.lesson-html-body.track-real-estate-photography .kit-tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px;
+}
+.lesson-html-body.track-real-estate-photography .kit-tag.start {
+    background: var(--cream-dark); color: var(--text-mid);
+}
+.lesson-html-body.track-real-estate-photography .kit-tag.recommended-tag {
+    background: var(--gold-pale); color: #7A6030;
+}
+
 /* ── Responsive ─────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
     .lesson-html-body.track-real-estate-photography .module-hero { padding: 2.5rem 1.5rem; }
@@ -7060,4 +7144,5 @@
     .lesson-html-body.track-real-estate-photography .cl-row { grid-template-columns: 1fr 1fr; }
     .lesson-html-body.track-real-estate-photography .cl-note { grid-column: 1 / -1; }
     .lesson-html-body.track-real-estate-photography .services-table { font-size: 12px; }
+    .lesson-html-body.track-real-estate-photography .kit-grid { grid-template-columns: 1fr; }
 }

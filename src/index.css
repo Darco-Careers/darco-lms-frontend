@@ -6917,8 +6917,147 @@
     color: var(--text-dark); margin: 2rem 0 0.75rem;
 }
 
+/* ── Services table ─────────────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .services-table {
+    width: 100%; border-collapse: collapse;
+    margin: 1.5rem 0; font-size: 14px;
+    border-radius: 12px; overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .services-table thead tr {
+    background: var(--forest); color: var(--gold-light);
+}
+.lesson-html-body.track-real-estate-photography .services-table th {
+    padding: 0.75rem 1rem; text-align: left;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+}
+.lesson-html-body.track-real-estate-photography .services-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+    transition: background 0.15s;
+}
+.lesson-html-body.track-real-estate-photography .services-table tbody tr:nth-child(even) {
+    background: var(--cream);
+}
+.lesson-html-body.track-real-estate-photography .services-table td {
+    padding: 0.75rem 1rem; color: var(--text-mid);
+    vertical-align: top; line-height: 1.55;
+}
+.lesson-html-body.track-real-estate-photography .services-table .svc-name {
+    font-weight: 600; color: var(--text-dark); white-space: nowrap;
+}
+.lesson-html-body.track-real-estate-photography .services-table .svc-rate {
+    font-weight: 700; color: var(--forest); white-space: nowrap;
+}
+
+/* ── Career ladder / income phases ──────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .career-ladder {
+    margin: 1.5rem 0; border-radius: 12px;
+    overflow: hidden; box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .cl-row {
+    display: grid; grid-template-columns: 1fr 1fr 2fr;
+    gap: 0; align-items: stretch;
+    border-bottom: 1px solid var(--border);
+}
+.lesson-html-body.track-real-estate-photography .cl-row.cl-header {
+    background: var(--forest); color: var(--gold-light);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+}
+.lesson-html-body.track-real-estate-photography .cl-row:not(.cl-header) {
+    background: var(--white);
+}
+.lesson-html-body.track-real-estate-photography .cl-row:not(.cl-header):nth-child(even) {
+    background: var(--cream);
+}
+.lesson-html-body.track-real-estate-photography .cl-role,
+.lesson-html-body.track-real-estate-photography .cl-pay,
+.lesson-html-body.track-real-estate-photography .cl-note {
+    padding: 0.75rem 1rem; font-size: 14px; line-height: 1.55;
+}
+.lesson-html-body.track-real-estate-photography .cl-role {
+    font-weight: 600; color: var(--text-dark);
+}
+.lesson-html-body.track-real-estate-photography .cl-pay {
+    font-weight: 700; color: var(--forest);
+}
+.lesson-html-body.track-real-estate-photography .cl-note {
+    color: var(--text-mid);
+}
+
+/* ── Info grid & cards ───────────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .info-grid {
+    display: grid; gap: 1rem;
+    margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .info-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.lesson-html-body.track-real-estate-photography .info-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.lesson-html-body.track-real-estate-photography .info-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.lesson-html-body.track-real-estate-photography .info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .ic-icon {
+    font-size: 1.75rem; margin-bottom: 0.5rem;
+}
+.lesson-html-body.track-real-estate-photography .info-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem; font-weight: 600;
+    color: var(--text-dark); margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-real-estate-photography .info-card p {
+    font-size: 13px; color: var(--text-mid); line-height: 1.6;
+}
+.lesson-html-body.track-real-estate-photography .ic-tag {
+    display: inline-block; margin-top: 0.6rem;
+    font-size: 11px; font-weight: 700;
+    color: var(--forest); background: var(--gold-pale);
+    padding: 3px 10px; border-radius: 20px;
+}
+
+/* ── Lesson divider ─────────────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .lesson-divider,
+.lesson-html-body.track-real-estate-photography hr.lesson-divider {
+    border: none; border-top: 1px solid var(--border);
+    margin: 3rem 0;
+}
+
+/* ── Supplemental section ───────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .supplemental-section {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: 1px solid var(--border);
+}
+.lesson-html-body.track-real-estate-photography .supplemental-section h3 {
+    font-size: 1rem; color: var(--text-dark); margin: 0 0 0.4rem;
+}
+
+/* ── Module glossary (inline) ───────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .module-glossary { display: none; }
+
+/* ── Quiz section (inline) ──────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .quiz-section { display: none; }
+
+/* ── Module nav (static-site nav — hidden in LMS) ───────────────────── */
+.lesson-html-body.track-real-estate-photography .module-nav { display: none; }
+.lesson-html-body.track-real-estate-photography .breadcrumb { display: none; }
+.lesson-html-body.track-real-estate-photography .progress-bar { display: none; }
+
 /* ── Responsive ─────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
     .lesson-html-body.track-real-estate-photography .module-hero { padding: 2.5rem 1.5rem; }
     .lesson-html-body.track-real-estate-photography .page-body { padding: 0 0.25rem; }
+    .lesson-html-body.track-real-estate-photography .info-grid.cols-3,
+    .lesson-html-body.track-real-estate-photography .info-grid.cols-4 { grid-template-columns: 1fr 1fr; }
+    .lesson-html-body.track-real-estate-photography .info-grid.cols-2 { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-photography .cl-row { grid-template-columns: 1fr 1fr; }
+    .lesson-html-body.track-real-estate-photography .cl-note { grid-column: 1 / -1; }
+    .lesson-html-body.track-real-estate-photography .services-table { font-size: 12px; }
 }

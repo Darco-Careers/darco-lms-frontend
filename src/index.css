@@ -878,7 +878,7 @@
 .lesson-fullbleed .lesson-html-body .page-body {
   max-width: 760px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2.5rem;
   box-sizing: border-box;
 }
 @media (max-width: 640px) {

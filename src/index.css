@@ -7050,6 +7050,425 @@
 .lesson-html-body.track-real-estate-photography .breadcrumb { display: none; }
 .lesson-html-body.track-real-estate-photography .progress-bar { display: none; }
 
+/* ── Settings table (Module 3 Lesson 1) ─────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .settings-table {
+    width: 100%; border-collapse: collapse;
+    margin: 1.5rem 0; font-size: 13.5px;
+    border-radius: 12px; overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .settings-table thead tr {
+    background: var(--forest); color: var(--gold-light);
+}
+.lesson-html-body.track-real-estate-photography .settings-table th {
+    padding: 0.75rem 1rem; text-align: left;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+}
+.lesson-html-body.track-real-estate-photography .settings-table tbody tr {
+    border-bottom: 1px solid var(--border); background: var(--white);
+}
+.lesson-html-body.track-real-estate-photography .settings-table tbody tr:nth-child(even) {
+    background: var(--cream);
+}
+.lesson-html-body.track-real-estate-photography .settings-table td {
+    padding: 0.7rem 1rem; color: var(--text-mid); vertical-align: top; line-height: 1.55;
+}
+.lesson-html-body.track-real-estate-photography .settings-table .s-name {
+    font-weight: 700; color: var(--text-dark); white-space: nowrap;
+}
+.lesson-html-body.track-real-estate-photography .settings-table .s-val {
+    font-weight: 600; color: var(--forest);
+}
+
+/* ── Steps sequence (Module 3 Lessons 2 & 5) ────────────────────────── */
+.lesson-html-body.track-real-estate-photography .steps-seq {
+    display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .step-seq {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .step-num {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--forest); color: var(--gold-light);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+}
+.lesson-html-body.track-real-estate-photography .step-seq h4 {
+    font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-real-estate-photography .step-seq p {
+    font-size: 13.5px; color: var(--text-mid); line-height: 1.7;
+}
+
+/* ── Checklist (Module 3 Lesson 3, Module 5 Lesson 2) ───────────────── */
+.lesson-html-body.track-real-estate-photography .checklist {
+    background: var(--cream); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .checklist h4 {
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+}
+.lesson-html-body.track-real-estate-photography .check-item {
+    font-size: 13.5px; color: var(--text-mid); line-height: 1.65;
+    padding: 0.5rem 0 0.5rem 1.5rem; position: relative;
+    border-bottom: 1px solid rgba(28,26,24,0.06);
+}
+.lesson-html-body.track-real-estate-photography .check-item:last-child {
+    border-bottom: none;
+}
+.lesson-html-body.track-real-estate-photography .check-item::before {
+    content: '✓'; position: absolute; left: 0;
+    color: var(--gold); font-weight: 700; font-size: 14px;
+}
+
+/* ── Room grid (Module 3 Lesson 4) ──────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .room-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .room-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.1rem 1.25rem;
+    box-shadow: var(--shadow-card); display: flex; flex-direction: column;
+}
+.lesson-html-body.track-real-estate-photography .room-icon {
+    font-size: 1.5rem; margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-real-estate-photography .room-shots {
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    color: var(--text-light); margin-bottom: 0.3rem;
+}
+.lesson-html-body.track-real-estate-photography .room-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-real-estate-photography .room-card p {
+    font-size: 12.5px; color: var(--text-mid); line-height: 1.6; flex: 1;
+}
+.lesson-html-body.track-real-estate-photography .room-tip {
+    font-size: 12px; color: #7A6030;
+    background: var(--gold-pale); border-left: 2px solid var(--gold);
+    border-radius: 0 6px 6px 0; padding: 0.4rem 0.75rem;
+    margin-top: 0.5rem; line-height: 1.5;
+}
+
+/* ── Method grid (Module 4 Lesson 2) ────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .method-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .method-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    box-shadow: var(--shadow-card); display: flex; flex-direction: column;
+}
+.lesson-html-body.track-real-estate-photography .method-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 4px 24px rgba(200,169,106,0.18);
+}
+.lesson-html-body.track-real-estate-photography .method-header {
+    padding: 1rem 1.25rem;
+}
+.lesson-html-body.track-real-estate-photography .method-header.fast {
+    background: var(--cream-dark);
+}
+.lesson-html-body.track-real-estate-photography .method-header.quality {
+    background: var(--forest);
+}
+.lesson-html-body.track-real-estate-photography .method-header.ai {
+    background: linear-gradient(135deg, #0E0D0C 0%, #1C1A18 100%);
+}
+.lesson-html-body.track-real-estate-photography .method-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+.lesson-html-body.track-real-estate-photography .method-header.fast .method-tag { color: var(--text-light); }
+.lesson-html-body.track-real-estate-photography .method-header.quality .method-tag,
+.lesson-html-body.track-real-estate-photography .method-header.ai .method-tag { color: var(--gold-light); }
+.lesson-html-body.track-real-estate-photography .method-name {
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+.lesson-html-body.track-real-estate-photography .method-header.fast .method-name { color: var(--text-dark); }
+.lesson-html-body.track-real-estate-photography .method-header.quality .method-name,
+.lesson-html-body.track-real-estate-photography .method-header.ai .method-name { color: var(--white); }
+.lesson-html-body.track-real-estate-photography .method-sub {
+    font-size: 12px;
+}
+.lesson-html-body.track-real-estate-photography .method-header.fast .method-sub { color: var(--text-light); }
+.lesson-html-body.track-real-estate-photography .method-header.quality .method-sub,
+.lesson-html-body.track-real-estate-photography .method-header.ai .method-sub { color: rgba(255,255,255,0.55); }
+.lesson-html-body.track-real-estate-photography .method-body {
+    padding: 1rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1;
+}
+.lesson-html-body.track-real-estate-photography .method-item {
+    font-size: 13px; color: var(--text-mid); line-height: 1.55;
+    padding-left: 0.75rem; border-left: 2px solid var(--border);
+}
+.lesson-html-body.track-real-estate-photography .method-verdict {
+    display: inline-block; margin-top: 0.75rem;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px;
+}
+.lesson-html-body.track-real-estate-photography .method-verdict.start {
+    background: var(--cream-dark); color: var(--text-mid);
+}
+.lesson-html-body.track-real-estate-photography .method-verdict.manual {
+    background: var(--gold-pale); color: #7A6030;
+}
+.lesson-html-body.track-real-estate-photography .method-verdict.now {
+    background: var(--forest); color: var(--gold-light);
+}
+
+/* ── Feature grid (Module 4 Lesson 3) ───────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .feature-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .feature-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.1rem;
+    box-shadow: var(--shadow-card); text-align: center;
+}
+.lesson-html-body.track-real-estate-photography .feature-icon {
+    font-size: 1.5rem; margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-real-estate-photography .feature-card h4 {
+    font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.35rem;
+}
+.lesson-html-body.track-real-estate-photography .feature-card p {
+    font-size: 12px; color: var(--text-mid); line-height: 1.55;
+}
+
+/* ── Workflow steps (Module 4 Lesson 4) ─────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .workflow {
+    display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .wf-step {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .wf-num {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--gold); color: var(--forest-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+}
+.lesson-html-body.track-real-estate-photography .wf-step h4 {
+    font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.4rem;
+}
+.lesson-html-body.track-real-estate-photography .wf-step p {
+    font-size: 13.5px; color: var(--text-mid); line-height: 1.7;
+}
+
+/* ── Delivery/comparison table t-name/t-yes/t-no/t-mid ──────────────── */
+.lesson-html-body.track-real-estate-photography .comp-table .t-name {
+    font-weight: 600; color: var(--text-dark);
+}
+.lesson-html-body.track-real-estate-photography .comp-table .t-yes {
+    color: #2E6B3A; font-weight: 600; background: #EAF5EC;
+}
+.lesson-html-body.track-real-estate-photography .comp-table .t-no {
+    color: var(--text-light);
+}
+.lesson-html-body.track-real-estate-photography .comp-table .t-mid {
+    color: #7A6030;
+}
+
+/* ── Warning block (Module 5) ───────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .warning {
+    background: #FBF0EE; border-left: 4px solid #C0392B;
+    border-radius: 0 12px 12px 0; padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+}
+.lesson-html-body.track-real-estate-photography .warning p {
+    font-size: 13.5px; color: #8B2F20; line-height: 1.7; margin: 0;
+}
+
+/* ── Pattern grid (Module 5 Lesson 3) ───────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .pattern-grid {
+    display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .pattern-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+.lesson-html-body.track-real-estate-photography .pattern-header {
+    background: var(--forest); padding: 0.9rem 1.25rem;
+}
+.lesson-html-body.track-real-estate-photography .pattern-num {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 0.2rem;
+}
+.lesson-html-body.track-real-estate-photography .pattern-name {
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.15rem;
+}
+.lesson-html-body.track-real-estate-photography .pattern-sub {
+    font-size: 12px; color: rgba(255,255,255,0.55);
+}
+.lesson-html-body.track-real-estate-photography .pattern-body {
+    padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;
+}
+.lesson-html-body.track-real-estate-photography .pattern-item {
+    font-size: 13.5px; color: var(--text-mid); line-height: 1.6;
+    padding-left: 0.75rem; border-left: 2px solid var(--border);
+}
+.lesson-html-body.track-real-estate-photography .pattern-use {
+    font-size: 12.5px; color: #7A6030;
+    background: var(--gold-pale); border-radius: 8px;
+    padding: 0.5rem 0.85rem; margin-top: 0.25rem;
+}
+
+/* ── Tool grid (Module 6) ───────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .tool-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .tool-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    box-shadow: var(--shadow-card); display: flex; flex-direction: column;
+}
+.lesson-html-body.track-real-estate-photography .tool-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 4px 24px rgba(200,169,106,0.18);
+}
+.lesson-html-body.track-real-estate-photography .tool-header {
+    padding: 1rem 1.25rem;
+}
+.lesson-html-body.track-real-estate-photography .tool-header.staging { background: var(--forest); }
+.lesson-html-body.track-real-estate-photography .tool-header.ai-video { background: linear-gradient(135deg, #0E0D0C 0%, #1C1A18 100%); }
+.lesson-html-body.track-real-estate-photography .tool-header.virtual { background: #2C4A3E; }
+.lesson-html-body.track-real-estate-photography .tool-header.tour { background: #3A3260; }
+.lesson-html-body.track-real-estate-photography .tool-name {
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.2rem;
+}
+.lesson-html-body.track-real-estate-photography .tool-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 0.25rem;
+}
+.lesson-html-body.track-real-estate-photography .tool-url {
+    font-size: 11.5px; color: rgba(255,255,255,0.5);
+}
+.lesson-html-body.track-real-estate-photography .tool-body {
+    padding: 1rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1;
+}
+.lesson-html-body.track-real-estate-photography .tool-item {
+    font-size: 13px; color: var(--text-mid); line-height: 1.55;
+    padding-left: 0.75rem; border-left: 2px solid var(--border);
+}
+.lesson-html-body.track-real-estate-photography .tool-verdict {
+    display: inline-block; margin-top: 0.75rem;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px;
+    background: var(--gold-pale); color: #7A6030;
+}
+
+/* ── App highlight cards (Module 6) ─────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .app-highlight {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.25rem;
+    box-shadow: var(--shadow-card); margin-bottom: 1rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+}
+.lesson-html-body.track-real-estate-photography .app-icon {
+    font-size: 1.75rem; flex-shrink: 0;
+}
+.lesson-html-body.track-real-estate-photography .app-content h4 {
+    font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700;
+    color: var(--text-dark); margin-bottom: 0.3rem;
+}
+.lesson-html-body.track-real-estate-photography .app-content p {
+    font-size: 13px; color: var(--text-mid); line-height: 1.6;
+}
+.lesson-html-body.track-real-estate-photography .app-tag {
+    display: inline-block; margin-top: 0.5rem;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    background: var(--gold-pale); color: #7A6030;
+}
+.lesson-html-body.track-real-estate-photography .app-url {
+    font-size: 11.5px; color: var(--text-light); display: block; margin-top: 0.25rem;
+}
+
+/* ── Math box (Module 7 Lesson 4) ───────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .math-box {
+    background: var(--forest); border-radius: 16px;
+    padding: 1.5rem; margin: 1.5rem 0;
+    box-shadow: var(--shadow-soft);
+}
+.lesson-html-body.track-real-estate-photography .math-box h4 {
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+    color: var(--gold-light); margin-bottom: 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid rgba(200,169,106,0.2);
+}
+.lesson-html-body.track-real-estate-photography .math-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.lesson-html-body.track-real-estate-photography .math-row.total {
+    border-top: 2px solid var(--gold); border-bottom: none;
+    margin-top: 0.5rem; padding-top: 0.75rem;
+}
+.lesson-html-body.track-real-estate-photography .math-label {
+    font-size: 13px; color: rgba(255,255,255,0.65);
+}
+.lesson-html-body.track-real-estate-photography .math-value {
+    font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+    color: var(--gold-light);
+}
+.lesson-html-body.track-real-estate-photography .math-row.total .math-label {
+    color: var(--white); font-weight: 600;
+}
+.lesson-html-body.track-real-estate-photography .math-row.total .math-value {
+    color: var(--gold); font-size: 1.15rem;
+}
+
+/* ── Completion banner (Module 7 end) ───────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .completion-banner {
+    background: linear-gradient(135deg, #0E0D0C 0%, #1C1A18 60%, #2E2B28 100%);
+    border-radius: 16px; padding: 2.5rem; text-align: center;
+    margin: 2rem 0; box-shadow: var(--shadow-soft);
+}
+.lesson-html-body.track-real-estate-photography .completion-banner h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.75rem;
+}
+.lesson-html-body.track-real-estate-photography .completion-banner h3 em {
+    color: var(--gold-light); font-style: italic;
+}
+.lesson-html-body.track-real-estate-photography .completion-banner > p {
+    font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.8;
+    max-width: 600px; margin: 0 auto 1.5rem;
+}
+.lesson-html-body.track-real-estate-photography .completion-stats {
+    display: flex; justify-content: center; gap: 2.5rem; margin: 1.5rem 0;
+}
+.lesson-html-body.track-real-estate-photography .cs-item {
+    text-align: center;
+}
+.lesson-html-body.track-real-estate-photography .cs-num {
+    font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700;
+    color: var(--gold-light); line-height: 1;
+}
+.lesson-html-body.track-real-estate-photography .cs-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); margin-top: 0.3rem;
+}
+
 /* ── Gear detail blocks (Lesson 3) ────────────────────────────────────── */
 .lesson-html-body.track-real-estate-photography .gear-detail {
     display: flex;

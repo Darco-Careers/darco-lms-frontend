@@ -7686,3 +7686,217 @@
     .lesson-html-body.track-real-estate-photography .services-table { font-size: 12px; }
     .lesson-html-body.track-real-estate-photography .kit-grid { grid-template-columns: 1fr; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   REAL ESTATE DEVELOPMENT TRACK — track-real-estate-development
+   Palette: Charcoal (#2A2A2A) + Orange (#D4621A)
+   Scoped to .lesson-html-body.track-real-estate-development
+═══════════════════════════════════════════════════════════════════════ */
+.lesson-html-body.track-real-estate-development {
+    --char:        #2A2A2A;
+    --char-mid:    #383838;
+    --char-dark:   #1A1A1A;
+    --char-pale:   #FDF0E8;
+    --orange:      #D4621A;
+    --orange-mid:  #E07030;
+    --orange-light:#F08C50;
+    --orange-pale: #FDF0E8;
+    --cream:       #FAF8F3;
+    --cream-dark:  #F2EDE4;
+    --text-dark:   #1A1A1A;
+    --text-mid:    #4A4240;
+    --text-light:  #8A7A72;
+    --white:       #FFFFFF;
+    --border:      rgba(42,42,42,0.12);
+    --shadow-soft: 0 4px 24px rgba(42,42,42,0.10);
+    --shadow-card: 0 2px 16px rgba(42,42,42,0.07);
+}
+.lesson-html-body.track-real-estate-development .page-body { max-width: 860px; margin: 0 auto; }
+.lesson-html-body.track-real-estate-development .module-hero { background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 55%, #383838 100%); padding: 3.5rem 2.5rem; border-radius: 16px; margin-bottom: 2.5rem; position: relative; overflow: hidden; }
+.lesson-html-body.track-real-estate-development .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(212,98,26,0.18) 0%, transparent 70%); pointer-events: none; }
+.lesson-html-body.track-real-estate-development .module-hero .track-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange-light); font-family: 'DM Sans', sans-serif; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-development .module-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--white); line-height: 1.25; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-development .module-hero .hero-sub { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 600px; }
+.lesson-html-body.track-real-estate-development .section-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); font-family: 'DM Sans', sans-serif; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .callout, .lesson-html-body.track-real-estate-development .insight-box { background: var(--char-pale); border-left: 4px solid var(--orange); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-development .callout p, .lesson-html-body.track-real-estate-development .insight-box p { font-size: 14px; line-height: 1.75; color: var(--text-mid); margin: 0; }
+.lesson-html-body.track-real-estate-development .insight-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .warning-box { background: #FFF3CD; border-left: 4px solid #D4621A; border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-size: 14px; line-height: 1.7; color: #5A3A10; }
+.lesson-html-body.track-real-estate-development .case-study { background: var(--char); border-radius: 16px; padding: 2rem 2.25rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .case-study .cs-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-light); font-family: 'DM Sans', sans-serif; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .case-study .cs-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .case-study .cs-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.lesson-html-body.track-real-estate-development .case-study .cs-body { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 1.25rem; }
+.lesson-html-body.track-real-estate-development .case-study .cs-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 1rem; }
+.lesson-html-body.track-real-estate-development .case-study .cs-stat { background: rgba(255,255,255,0.07); border-radius: 10px; padding: 0.85rem 1rem; text-align: center; }
+.lesson-html-body.track-real-estate-development .case-study .cs-num { font-size: 1.3rem; font-weight: 700; color: var(--orange-light); line-height: 1.2; }
+.lesson-html-body.track-real-estate-development .case-study .cs-lbl { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 0.2rem; line-height: 1.4; }
+.lesson-html-body.track-real-estate-development .stage-pipeline { display: flex; flex-direction: column; gap: 0; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .stage-step { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 1.5rem; border-left: 3px solid var(--orange); background: var(--white); border-radius: 0 12px 12px 0; margin-bottom: 0.5rem; box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-development .stage-num { width: 36px; height: 36px; border-radius: 50%; background: var(--orange); color: var(--white); font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-development .stage-content { flex: 1; }
+.lesson-html-body.track-real-estate-development .stage-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .stage-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; }
+.lesson-html-body.track-real-estate-development .stage-gate { font-size: 11px; font-weight: 600; color: var(--orange); margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.lesson-html-body.track-real-estate-development .era-stack { display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .era-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-development .era-header { background: var(--char); color: var(--white); padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+.lesson-html-body.track-real-estate-development .era-header.mid { background: var(--char-mid); }
+.lesson-html-body.track-real-estate-development .era-header.orange { background: var(--orange); }
+.lesson-html-body.track-real-estate-development .era-period { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; }
+.lesson-html-body.track-real-estate-development .era-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
+.lesson-html-body.track-real-estate-development .era-tag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); }
+.lesson-html-body.track-real-estate-development .era-body { padding: 1rem 1.25rem; font-size: 13.5px; line-height: 1.75; color: var(--text-mid); }
+.lesson-html-body.track-real-estate-development .cycle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .cycle-card { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-top: 3px solid var(--orange); }
+.lesson-html-body.track-real-estate-development .cycle-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--orange); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .cycle-phase { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .cycle-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; }
+.lesson-html-body.track-real-estate-development .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .team-card { background: var(--white); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); display: flex; gap: 1rem; align-items: flex-start; }
+.lesson-html-body.track-real-estate-development .team-emoji { font-size: 1.75rem; flex-shrink: 0; line-height: 1; }
+.lesson-html-body.track-real-estate-development .team-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .team-role { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+.lesson-html-body.track-real-estate-development .team-title { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 0.2rem; }
+.lesson-html-body.track-real-estate-development .risk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .risk-card { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-left: 4px solid var(--orange); }
+.lesson-html-body.track-real-estate-development .risk-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--orange); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .risk-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .risk-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; }
+.lesson-html-body.track-real-estate-development .capital-stack { display: flex; flex-direction: column; gap: 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-soft); margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .stack-level { padding: 1.1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.lesson-html-body.track-real-estate-development .stack-level.senior { background: var(--char-dark); color: var(--white); }
+.lesson-html-body.track-real-estate-development .stack-level.mezz { background: var(--char); color: var(--white); }
+.lesson-html-body.track-real-estate-development .stack-level.preferred { background: var(--orange); color: var(--white); }
+.lesson-html-body.track-real-estate-development .stack-level.common { background: var(--orange-light); color: var(--white); }
+.lesson-html-body.track-real-estate-development .stack-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; }
+.lesson-html-body.track-real-estate-development .stack-desc { font-size: 12.5px; opacity: 0.8; margin-top: 0.2rem; }
+.lesson-html-body.track-real-estate-development .stack-risk { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; white-space: nowrap; }
+.lesson-html-body.track-real-estate-development .ratio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .ratio-card { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-development .ratio-abbr { font-size: 1.4rem; font-weight: 800; color: var(--orange); margin-bottom: 0.2rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-development .ratio-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-development .ratio-formula { font-size: 12px; font-weight: 600; font-family: monospace; background: var(--char-pale); border-radius: 6px; padding: 0.35rem 0.75rem; margin-bottom: 0.75rem; color: var(--char); display: inline-block; }
+.lesson-html-body.track-real-estate-development .ratio-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .ratio-target { font-size: 11.5px; font-weight: 600; color: var(--orange); border-top: 1px solid var(--border); padding-top: 0.5rem; margin-top: 0.5rem; }
+.lesson-html-body.track-real-estate-development .control-stack { display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .control-card { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-development .control-type { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .control-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-development .control-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: var(--orange); color: var(--white); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .control-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-development .control-pros { font-size: 13px; line-height: 1.6; color: #2A6A3A; }
+.lesson-html-body.track-real-estate-development .control-cons { font-size: 13px; line-height: 1.6; color: #8A2A2A; }
+.lesson-html-body.track-real-estate-development .contract-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .contract-card { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-top: 3px solid var(--char); }
+.lesson-html-body.track-real-estate-development .contract-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--orange); margin-bottom: 0.2rem; }
+.lesson-html-body.track-real-estate-development .contract-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .contract-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .contract-header { font-size: 11px; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin: 0.75rem 0 0.3rem; }
+.lesson-html-body.track-real-estate-development .contract-note { font-size: 12.5px; color: var(--text-mid); line-height: 1.6; }
+.lesson-html-body.track-real-estate-development .dd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .dd-card { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-development .dd-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .dd-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-development .dd-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .dd-risk { font-size: 11.5px; font-weight: 600; color: var(--orange); }
+.lesson-html-body.track-real-estate-development .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .swot-card { border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-development .swot-card.s { background: #EAF4EC; border-top: 3px solid #2A6A3A; }
+.lesson-html-body.track-real-estate-development .swot-card.w { background: #FDF0E8; border-top: 3px solid var(--orange); }
+.lesson-html-body.track-real-estate-development .swot-card.o { background: #EAF0FA; border-top: 3px solid #2A4A8A; }
+.lesson-html-body.track-real-estate-development .swot-card.t { background: #FAF0F0; border-top: 3px solid #8A2A2A; }
+.lesson-html-body.track-real-estate-development .swot-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-development .swot-card.s .swot-label { color: #2A6A3A; }
+.lesson-html-body.track-real-estate-development .swot-card.w .swot-label { color: var(--orange); }
+.lesson-html-body.track-real-estate-development .swot-card.o .swot-label { color: #2A4A8A; }
+.lesson-html-body.track-real-estate-development .swot-card.t .swot-label { color: #8A2A2A; }
+.lesson-html-body.track-real-estate-development .swot-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .swot-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+.lesson-html-body.track-real-estate-development .trends-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .trend-card { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-development .trend-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .trend-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-development .trend-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .trend-implication { font-size: 12px; font-weight: 600; color: var(--orange); border-top: 1px solid var(--border); padding-top: 0.5rem; margin-top: 0.5rem; }
+.lesson-html-body.track-real-estate-development .completion-banner { background: var(--char); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 2.5rem 0; }
+.lesson-html-body.track-real-estate-development .completion-banner .cb-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .completion-banner .cb-sub { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+.lesson-html-body.track-real-estate-development .completion-banner .cb-stats { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.lesson-html-body.track-real-estate-development .completion-banner .cb-stat { text-align: center; }
+.lesson-html-body.track-real-estate-development .completion-banner .cb-num { font-size: 2rem; font-weight: 800; color: var(--orange-light); line-height: 1; }
+.lesson-html-body.track-real-estate-development .completion-banner .cb-lbl { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 1px; }
+.lesson-html-body.track-real-estate-development .component-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-development .comp-item { display: flex; gap: 1rem; align-items: flex-start; background: var(--white); border-radius: 10px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-development .comp-icon { font-size: 1.4rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-development .comp-name { font-weight: 700; color: var(--text-dark); font-size: 0.95rem; }
+.lesson-html-body.track-real-estate-development .comp-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-top: 0.2rem; }
+.lesson-html-body.track-real-estate-development .draw-steps { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-development .draw-step { display: flex; gap: 1rem; align-items: flex-start; background: var(--white); border-radius: 10px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); border-left: 3px solid var(--orange); }
+.lesson-html-body.track-real-estate-development .draw-num { width: 28px; height: 28px; border-radius: 50%; background: var(--orange); color: var(--white); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-development .draw-title { font-weight: 700; color: var(--text-dark); font-size: 0.95rem; }
+.lesson-html-body.track-real-estate-development .draw-desc, .lesson-html-body.track-real-estate-development .draw-body { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-top: 0.2rem; }
+.lesson-html-body.track-real-estate-development .triad-stack { display: flex; flex-direction: column; gap: 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-soft); margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .triad-level { padding: 1.25rem 1.5rem; }
+.lesson-html-body.track-real-estate-development .triad-level.asset { background: var(--char-dark); color: var(--white); }
+.lesson-html-body.track-real-estate-development .triad-level.property { background: var(--char); color: var(--white); }
+.lesson-html-body.track-real-estate-development .triad-level.portfolio { background: var(--orange); color: var(--white); }
+.lesson-html-body.track-real-estate-development .triad-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .triad-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-development .triad-desc, .lesson-html-body.track-real-estate-development .triad-resp, .lesson-html-body.track-real-estate-development .triad-where { font-size: 13px; opacity: 0.8; line-height: 1.65; }
+.lesson-html-body.track-real-estate-development .stakeholder-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .profile-lesson { background: var(--white); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-top: 3px solid var(--orange); }
+.lesson-html-body.track-real-estate-development .profile-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-development .sk-card { background: var(--white); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-development .sk-icon { font-size: 1.5rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-development .sk-name { font-weight: 700; color: var(--text-dark); font-size: 0.95rem; }
+.lesson-html-body.track-real-estate-development .sk-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-top: 0.2rem; }
+.lesson-html-body.track-real-estate-development .sk-risk { font-size: 11.5px; font-weight: 600; color: var(--orange); margin-top: 0.3rem; }
+.lesson-html-body.track-real-estate-development .fin-num { font-size: 1.3rem; font-weight: 800; color: var(--orange); }
+.lesson-html-body.track-real-estate-development .fin-desc, .lesson-html-body.track-real-estate-development .fin-body { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; }
+.lesson-html-body.track-real-estate-development .rules-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-development .rule-item { display: flex; gap: 1rem; align-items: flex-start; background: var(--white); border-radius: 10px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-development .rule-num { width: 28px; height: 28px; border-radius: 50%; background: var(--char); color: var(--white); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-development .rule-body { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; }
+.lesson-html-body.track-real-estate-development .video-card { background: var(--char); border-radius: 16px; overflow: hidden; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.lesson-html-body.track-real-estate-development .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.lesson-html-body.track-real-estate-development .video-info { padding: 1rem 1.25rem; }
+.lesson-html-body.track-real-estate-development .video-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: var(--orange); color: var(--white); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-development .video-badge.supp { background: var(--char-mid); }
+.lesson-html-body.track-real-estate-development .supplemental { background: var(--cream-dark); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-development .affiliate-disclosure { font-size: 11px; color: var(--text-light); text-align: center; margin-top: 0.5rem; }
+.lesson-html-body.track-real-estate-development .quiz-section,
+.lesson-html-body.track-real-estate-development .progress-bar,
+.lesson-html-body.track-real-estate-development .progress-track,
+.lesson-html-body.track-real-estate-development .progress-modules,
+.lesson-html-body.track-real-estate-development .breadcrumb,
+.lesson-html-body.track-real-estate-development .btn-nav,
+.lesson-html-body.track-real-estate-development .complete-badge,
+.lesson-html-body.track-real-estate-development .wrong-review,
+.lesson-html-body.track-real-estate-development .question-block,
+.lesson-html-body.track-real-estate-development .quiz-btn,
+.lesson-html-body.track-real-estate-development .quiz-result,
+.lesson-html-body.track-real-estate-development .retry-btn,
+.lesson-html-body.track-real-estate-development .feedback,
+.lesson-html-body.track-real-estate-development .result-score,
+.lesson-html-body.track-real-estate-development .result-label,
+.lesson-html-body.track-real-estate-development .result-msg,
+.lesson-html-body.track-real-estate-development .prog-dot,
+.lesson-html-body.track-real-estate-development .dot,
+.lesson-html-body.track-real-estate-development .sep,
+.lesson-html-body.track-real-estate-development .current { display: none !important; }
+.lesson-html-body.track-real-estate-development hr.lesson-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+@media (max-width: 640px) {
+    .lesson-html-body.track-real-estate-development .cycle-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .swot-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .team-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .ratio-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .risk-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .contract-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .dd-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .trends-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .profile-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-development .cs-stats { grid-template-columns: repeat(2, 1fr); }
+}

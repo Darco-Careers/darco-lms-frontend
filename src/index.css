@@ -8265,6 +8265,14 @@
 }
 
 /* ── Hero ── */
+.lesson-html-body.track-real-estate-commercial .module-hero,
+.lesson-html-body.track-real-estate-commercial .cta-section {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+}
 .lesson-html-body.track-real-estate-commercial .module-hero {
   background: linear-gradient(135deg, #071828 0%, #0F2340 55%, #1A3A5C 100%);
   padding: 3.5rem 2.5rem;

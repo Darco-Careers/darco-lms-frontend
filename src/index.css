@@ -8457,9 +8457,13 @@
 .lesson-html-body.track-real-estate-commercial .cycle-item { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
 
 /* ── Deep dive banner ── */
-.lesson-html-body.track-real-estate-commercial .deep-dive-banner { background: var(--navy-pale); border: 1px solid rgba(15,35,64,0.15); border-radius: 12px; padding: 1rem 1.5rem; margin: 1.5rem 0; display: flex; align-items: center; gap: 12px; }
-.lesson-html-body.track-real-estate-commercial .banner-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--navy-mid); }
-.lesson-html-body.track-real-estate-commercial .deeper-link { color: var(--navy-mid); font-weight: 600; text-decoration: underline; }
+.lesson-html-body.track-real-estate-commercial .deep-dive-banner { background: linear-gradient(135deg, #071828, #0F2340) !important; border: none; border-radius: 16px; padding: 1.75rem 2rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
+.lesson-html-body.track-real-estate-commercial .deep-dive-banner .banner-label { color: var(--gold-light) !important; }
+.lesson-html-body.track-real-estate-commercial .deep-dive-banner h3 { color: #FFFFFF !important; }
+.lesson-html-body.track-real-estate-commercial .deep-dive-banner p { color: rgba(255,255,255,0.72) !important; }
+.lesson-html-body.track-real-estate-commercial .deeper-link { background: var(--navy-pale); border: 1px solid rgba(15,35,64,0.15); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1rem 0; }
+.lesson-html-body.track-real-estate-commercial .deeper-link p { color: var(--text-dark) !important; }
+.lesson-html-body.track-real-estate-commercial .deeper-link a { background: var(--navy) !important; color: #FFFFFF !important; border: none; }
 
 /* ── Video cards ── */
 .lesson-html-body.track-real-estate-commercial .video-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-card); margin: 1.75rem 0; }

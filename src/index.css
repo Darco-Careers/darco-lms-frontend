@@ -899,6 +899,16 @@
   .lesson-fullbleed .lesson-html-body > section { padding-left: 1rem; padding-right: 1rem; }
 }
 
+/* Hero sections must always be full-bleed — override the 760px section cap */
+.lesson-fullbleed .lesson-html-body > section.module-hero {
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* Mobile: nothing extra needed — original responsive rules apply */
 /* ===== Residential Agent & Broker Track — content classes ===== */
 /* Ported from agent-module CSS, scoped to .lesson-html-body */
@@ -8561,4 +8571,12 @@
   --navy-mid:    #7D2A42;
   --navy-light:  #9E4060;
   --navy-pale:   #F9EEF1;
+}
+
+/* Override module-hero gradient for investing track — removes hardcoded #0D2820 green */
+.lesson-html-body.track-real-estate-investing .module-hero {
+  background: linear-gradient(135deg, #3A0D1C 0%, #5C1A2E 55%, #7D2A42 100%);
+}
+.lesson-html-body.track-real-estate-investing .module-hero::before {
+  background: radial-gradient(ellipse, rgba(201,168,76,0.10) 0%, transparent 70%);
 }

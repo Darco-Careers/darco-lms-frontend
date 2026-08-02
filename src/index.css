@@ -8514,6 +8514,9 @@
 .lesson-html-body.track-real-estate-commercial .btn-gold:hover { background: var(--gold-light); }
 .lesson-html-body.track-real-estate-commercial .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); padding: 9px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; }
 .lesson-html-body.track-real-estate-commercial .btn-outline:hover { background: var(--navy-pale); }
+.lesson-html-body.track-real-estate-commercial .cta-section .btn-outline,
+.lesson-html-body.track-real-estate-commercial .cta-section .btn-outline.btn-lg { background: transparent !important; color: #FFFFFF !important; border: 1.5px solid rgba(255,255,255,0.6) !important; padding: 13px 28px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.lesson-html-body.track-real-estate-commercial .cta-section .btn-outline:hover { border-color: var(--gold-light) !important; color: var(--gold-light) !important; }
 
 /* ── Book items ── */
 .lesson-html-body.track-real-estate-commercial .book-item a { color: #FFFFFF !important; text-decoration: none !important; }

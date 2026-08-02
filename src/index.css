@@ -7900,3 +7900,333 @@
     .lesson-html-body.track-real-estate-development .profile-grid { grid-template-columns: 1fr; }
     .lesson-html-body.track-real-estate-development .cs-stats { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RESIDENTIAL AGENT TRACK — track-real-estate-residential-agent
+   Palette: Teal (#0D6E6E) + Gold (#C9A84C)
+   Scoped to .lesson-html-body.track-real-estate-residential-agent
+═══════════════════════════════════════════════════════════════════════ */
+.lesson-html-body.track-real-estate-residential-agent {
+    --teal:        #0D6E6E;
+    --teal-mid:    #1A8A8A;
+    --teal-light:  #2AACAC;
+    --teal-pale:   #EAF6F6;
+    --gold:        #C9A84C;
+    --gold-light:  #E0C070;
+    --gold-pale:   #FDF8EC;
+    --cream:       #FAF9F6;
+    --cream-dark:  #F2EDE4;
+    --text-dark:   #1A2A2A;
+    --text-mid:    #3A5050;
+    --text-light:  #7A9090;
+    --white:       #FFFFFF;
+    --border:      rgba(13,110,110,0.12);
+    --shadow-soft: 0 4px 24px rgba(13,110,110,0.10);
+    --shadow-card: 0 2px 16px rgba(13,110,110,0.07);
+}
+.lesson-html-body.track-real-estate-residential-agent .container { max-width: 860px; margin: 0 auto; padding: 0 2.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .module-body { max-width: 860px; margin: 0 auto; padding: 2rem 2.5rem 3rem; }
+.lesson-html-body.track-real-estate-residential-agent .page-body { max-width: 860px; margin: 0 auto; padding: 0 2.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .module-hero { background: linear-gradient(135deg, #062F33 0%, #0D6E6E 55%, #1A8A8A 100%); padding: 3.5rem 2.5rem; margin-bottom: 0; position: relative; overflow: hidden; }
+.lesson-html-body.track-real-estate-residential-agent .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(201,168,76,0.18) 0%, transparent 70%); pointer-events: none; }
+.lesson-html-body.track-real-estate-residential-agent .module-hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+.lesson-html-body.track-real-estate-residential-agent .module-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #E0C070; font-family: 'DM Sans', sans-serif; margin-bottom: 1rem; }
+.lesson-html-body.track-real-estate-residential-agent .module-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-residential-agent .module-hero h1 em { color: #E0C070; font-style: italic; }
+.lesson-html-body.track-real-estate-residential-agent .module-hero p { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.75; max-width: 600px; }
+.lesson-html-body.track-real-estate-residential-agent .module-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .meta-item { font-size: 12px; color: rgba(255,255,255,0.65); font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .meta-item span { color: #E0C070; font-weight: 600; }
+.lesson-html-body.track-real-estate-residential-agent section { padding: 3rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .section-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-mid); font-family: 'DM Sans', sans-serif; margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: var(--text-dark); line-height: 1.3; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .section-title em { color: var(--teal); font-style: italic; }
+.lesson-html-body.track-real-estate-residential-agent .gold-divider { width: 48px; height: 3px; background: var(--gold); border-radius: 2px; margin: 0.75rem 0 1.25rem; }
+.lesson-html-body.track-real-estate-residential-agent .lead-text { font-size: 1rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.25rem; }
+.lesson-html-body.track-real-estate-residential-agent .cta-section { background: linear-gradient(135deg, #062F33 0%, #0D6E6E 100%); padding: 3.5rem 2.5rem; text-align: center; }
+.lesson-html-body.track-real-estate-residential-agent .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: #FFFFFF; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-residential-agent .cta-section p { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.75; max-width: 560px; margin: 0 auto 2rem; }
+.lesson-html-body.track-real-estate-residential-agent .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.lesson-html-body.track-real-estate-residential-agent .btn { display: inline-block; font-size: 13px; font-weight: 600; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
+.lesson-html-body.track-real-estate-residential-agent .btn:hover { opacity: 0.88; }
+.lesson-html-body.track-real-estate-residential-agent .btn-forest { background: var(--gold); color: #1A2A2A; }
+.lesson-html-body.track-real-estate-residential-agent .btn-outline { background: transparent; color: #FFFFFF; border: 2px solid rgba(255,255,255,0.5); }
+.lesson-html-body.track-real-estate-residential-agent .btn-lg { font-size: 14px; padding: 0.85rem 2rem; }
+.lesson-html-body.track-real-estate-residential-agent .btn-gold { background: var(--gold); color: #1A2A2A; font-size: 13px; font-weight: 700; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; }
+.lesson-html-body.track-real-estate-residential-agent .btn-outline-white { background: transparent; color: #FFFFFF; border: 2px solid rgba(255,255,255,0.4); font-size: 13px; font-weight: 600; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; }
+.lesson-html-body.track-real-estate-residential-agent .video-card { background: #1A2A2A; border-radius: 14px; overflow: hidden; margin: 1.25rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.lesson-html-body.track-real-estate-residential-agent .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.lesson-html-body.track-real-estate-residential-agent .video-info { padding: 1rem 1.25rem; }
+.lesson-html-body.track-real-estate-residential-agent .video-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 20px; background: var(--teal); color: #FFFFFF; margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .video-info h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-residential-agent .video-info p { font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .credit { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 0.35rem; }
+.lesson-html-body.track-real-estate-residential-agent .lesson-section { margin-bottom: 3rem; }
+.lesson-html-body.track-real-estate-residential-agent .section-label { display: flex; align-items: center; gap: 0.5rem; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-mid); font-family: 'DM Sans', sans-serif; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .section-label .dot { display: flex !important; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent h2.lesson-title { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 700; color: var(--text-dark); line-height: 1.3; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent h2.lesson-title em { color: var(--teal); font-style: italic; }
+.lesson-html-body.track-real-estate-residential-agent h3.sub-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin: 2rem 0 0.75rem; }
+.lesson-html-body.track-real-estate-residential-agent p.lesson-text { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
+.lesson-html-body.track-real-estate-residential-agent .attr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .attr-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-top: 3px solid var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .ac-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .attr-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .attr-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .three-ls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .l-card { background: var(--teal); border-radius: 14px; padding: 1.5rem; color: #FFFFFF; }
+.lesson-html-body.track-real-estate-residential-agent .lc-letter { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: #E0C070; line-height: 1; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-residential-agent .l-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .l-card p { font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .nine-ways { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .way-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-left: 4px solid var(--teal-light); }
+.lesson-html-body.track-real-estate-residential-agent .way-card.foundational { border-left-color: var(--gold); background: var(--gold-pale); }
+.lesson-html-body.track-real-estate-residential-agent .wc-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.3rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .way-card.foundational .wc-label { color: var(--gold); }
+.lesson-html-body.track-real-estate-residential-agent .way-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .way-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .myths-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .myth-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); display: flex; gap: 0.75rem; align-items: flex-start; }
+.lesson-html-body.track-real-estate-residential-agent .mc-x { font-size: 1.1rem; color: #C0392B; flex-shrink: 0; margin-top: 2px; }
+.lesson-html-body.track-real-estate-residential-agent .mc-content h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-residential-agent .mc-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .power-hour { background: var(--teal-pale); border-radius: 14px; overflow: hidden; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .ph-row { display: flex; gap: 0; border-bottom: 1px solid rgba(13,110,110,0.1); }
+.lesson-html-body.track-real-estate-residential-agent .ph-row:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-residential-agent .ph-time { min-width: 130px; padding: 0.85rem 1rem; font-size: 11px; font-weight: 700; color: var(--teal); background: rgba(13,110,110,0.08); font-family: 'DM Sans', sans-serif; display: flex; align-items: flex-start; }
+.lesson-html-body.track-real-estate-residential-agent .ph-activity { padding: 0.85rem 1rem; font-size: 13px; color: var(--text-mid); line-height: 1.65; flex: 1; }
+.lesson-html-body.track-real-estate-residential-agent .daily-schedule { background: #FFFFFF; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border); margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .ds-header { background: var(--teal); padding: 1rem 1.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .ds-header h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #FFFFFF; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .ds-row { display: flex; gap: 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-residential-agent .ds-row:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-residential-agent .ds-row.evening { background: var(--teal-pale); }
+.lesson-html-body.track-real-estate-residential-agent .ds-time { min-width: 120px; padding: 1rem; font-size: 11px; font-weight: 700; color: var(--teal); background: rgba(13,110,110,0.05); font-family: 'DM Sans', sans-serif; display: flex; align-items: flex-start; }
+.lesson-html-body.track-real-estate-residential-agent .ds-content { padding: 1rem; font-size: 13px; color: var(--text-mid); line-height: 1.65; flex: 1; }
+.lesson-html-body.track-real-estate-residential-agent .ds-content strong { color: var(--text-dark); }
+.lesson-html-body.track-real-estate-residential-agent .ds-content p { margin: 0.25rem 0 0; font-size: 12.5px; }
+.lesson-html-body.track-real-estate-residential-agent .callout { border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .callout-insight { background: var(--teal-pale); border-left: 4px solid var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .callout-warning { background: #FFF8EC; border-left: 4px solid var(--gold); }
+.lesson-html-body.track-real-estate-residential-agent .callout-quote { background: #1A2A2A; }
+.lesson-html-body.track-real-estate-residential-agent .callout-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.5rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .callout-insight .callout-label { color: var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .callout-warning .callout-label { color: var(--gold); }
+.lesson-html-body.track-real-estate-residential-agent .callout-quote .callout-label { color: #E0C070; }
+.lesson-html-body.track-real-estate-residential-agent .callout p { font-size: 13.5px; color: var(--text-mid); line-height: 1.75; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .callout-quote p { color: rgba(255,255,255,0.82); }
+.lesson-html-body.track-real-estate-residential-agent .quote-attr { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 0.75rem; font-style: italic; }
+.lesson-html-body.track-real-estate-residential-agent .req-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .req-card { background: #FFFFFF; border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-residential-agent .req-card.universal { border-top: 3px solid var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .req-card.varies { border-top: 3px solid var(--gold); }
+.lesson-html-body.track-real-estate-residential-agent .req-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-residential-agent .req-card ul { padding-left: 1.2rem; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .req-card li { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-residential-agent .hours-table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .hours-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.lesson-html-body.track-real-estate-residential-agent .hours-table th { background: var(--teal); color: #FFFFFF; padding: 0.65rem 1rem; text-align: left; font-weight: 600; font-family: 'DM Sans', sans-serif; font-size: 12px; }
+.lesson-html-body.track-real-estate-residential-agent .hours-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+.lesson-html-body.track-real-estate-residential-agent .hours-table tr.highlight td { background: var(--teal-pale); }
+.lesson-html-body.track-real-estate-residential-agent .license-track { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .license-step { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 1.5rem; border-left: 3px solid var(--teal); background: #FFFFFF; border-radius: 0 12px 12px 0; margin-bottom: 0.5rem; box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-residential-agent .ls-num { width: 36px; height: 36px; border-radius: 50%; background: var(--teal); color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-residential-agent .ls-body { flex: 1; }
+.lesson-html-body.track-real-estate-residential-agent .ls-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.25rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .ls-body h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-residential-agent .ls-body p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .tips-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .tip-item { display: flex; gap: 1rem; align-items: flex-start; background: #FFFFFF; border-radius: 12px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-residential-agent .ti-icon { font-size: 1.25rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-residential-agent .ti-content h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-residential-agent .ti-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .state-table-section { margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .state-search-wrap { display: flex; align-items: center; gap: 0.5rem; background: #FFFFFF; border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 1rem; margin-bottom: 1rem; max-width: 400px; }
+.lesson-html-body.track-real-estate-residential-agent .state-search-icon { font-size: 1rem; }
+.lesson-html-body.track-real-estate-residential-agent .state-search { border: none; outline: none; font-size: 13px; color: var(--text-dark); background: transparent; width: 100%; }
+.lesson-html-body.track-real-estate-residential-agent .state-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .state-item { display: flex; justify-content: space-between; align-items: center; background: #FFFFFF; border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 12.5px; }
+.lesson-html-body.track-real-estate-residential-agent .si-name { color: var(--text-dark); font-weight: 500; }
+.lesson-html-body.track-real-estate-residential-agent .state-item a { color: var(--teal); font-size: 11px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.lesson-html-body.track-real-estate-residential-agent .state-item a:hover { text-decoration: underline; }
+.lesson-html-body.track-real-estate-residential-agent .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .compare-table th { background: var(--teal); color: #FFFFFF; padding: 0.65rem 1rem; text-align: left; font-weight: 600; font-family: 'DM Sans', sans-serif; font-size: 12px; }
+.lesson-html-body.track-real-estate-residential-agent .compare-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+.lesson-html-body.track-real-estate-residential-agent .compare-table tr:nth-child(even) td { background: var(--teal-pale); }
+.lesson-html-body.track-real-estate-residential-agent .goals-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .goals-table th { background: var(--teal); color: #FFFFFF; padding: 0.65rem 1rem; text-align: left; font-weight: 600; font-family: 'DM Sans', sans-serif; font-size: 12px; }
+.lesson-html-body.track-real-estate-residential-agent .goals-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+.lesson-html-body.track-real-estate-residential-agent .goals-table tr:nth-child(even) td { background: var(--teal-pale); }
+.lesson-html-body.track-real-estate-residential-agent .cma-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .cma-table th { background: var(--teal); color: #FFFFFF; padding: 0.65rem 1rem; text-align: left; font-weight: 600; font-family: 'DM Sans', sans-serif; font-size: 12px; }
+.lesson-html-body.track-real-estate-residential-agent .cma-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-mid); }
+.lesson-html-body.track-real-estate-residential-agent .cma-table tr:nth-child(even) td { background: var(--teal-pale); }
+.lesson-html-body.track-real-estate-residential-agent .weight-high { color: var(--teal); font-weight: 700; font-size: 11px; }
+.lesson-html-body.track-real-estate-residential-agent .weight-mid { color: var(--gold); font-weight: 700; font-size: 11px; }
+.lesson-html-body.track-real-estate-residential-agent .weight-low { color: var(--text-light); font-weight: 600; font-size: 11px; }
+.lesson-html-body.track-real-estate-residential-agent .four-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .pillar-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-top: 3px solid var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .pc-num { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.3rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .pillar-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .pillar-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .touch-system { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .touch-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-left: 4px solid var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .tc-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.3rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .touch-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .touch-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .soi-steps { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .soi-step { display: flex; gap: 1rem; align-items: flex-start; background: #FFFFFF; border-radius: 12px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-residential-agent .ss-num { width: 32px; height: 32px; border-radius: 50%; background: var(--teal); color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-residential-agent .ss-content h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-residential-agent .ss-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .broker-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .broker-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-top: 3px solid var(--teal-mid); }
+.lesson-html-body.track-real-estate-residential-agent .broker-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-residential-agent .bc-type { font-size: 11px; color: var(--teal-mid); font-weight: 600; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-residential-agent .bc-best { font-size: 11px; color: var(--gold); font-weight: 600; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-residential-agent .broker-card ul { padding-left: 1.1rem; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .broker-card li { font-size: 12.5px; color: var(--text-mid); line-height: 1.65; margin-bottom: 0.2rem; }
+.lesson-html-body.track-real-estate-residential-agent .interview-q { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .iq-item { background: var(--teal-pale); border-radius: 12px; padding: 1.25rem 1.5rem; border-left: 4px solid var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .iq-q { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--teal); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .iq-item p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .books-section { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .book-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; background: #FFFFFF; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-residential-agent .bi-info { flex: 1; }
+.lesson-html-body.track-real-estate-residential-agent .bi-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.15rem; }
+.lesson-html-body.track-real-estate-residential-agent .bi-author { font-size: 11px; color: var(--teal-mid); font-weight: 600; margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-residential-agent .bi-desc { font-size: 12.5px; color: var(--text-mid); line-height: 1.6; }
+.lesson-html-body.track-real-estate-residential-agent .book-item a { font-size: 12px; font-weight: 700; color: var(--teal); text-decoration: none; white-space: nowrap; padding: 0.4rem 0.85rem; border: 1.5px solid var(--teal); border-radius: 6px; }
+.lesson-html-body.track-real-estate-residential-agent .book-item a:hover { background: var(--teal); color: #FFFFFF; }
+.lesson-html-body.track-real-estate-residential-agent .takeaways { background: var(--teal-pale); border-radius: 14px; padding: 1.5rem 2rem; margin: 2rem 0; border: 1px solid rgba(13,110,110,0.15); }
+.lesson-html-body.track-real-estate-residential-agent .takeaways h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--teal); margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-residential-agent .takeaways ul { padding-left: 1.2rem; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .takeaways li { font-size: 13px; color: var(--text-mid); line-height: 1.75; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .checklist { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .check-item { display: flex; gap: 1rem; align-items: flex-start; background: #FFFFFF; border-radius: 12px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-residential-agent .ci-icon { font-size: 1.25rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-residential-agent .ci-content h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-residential-agent .ci-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .service-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-left: 3px solid var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .sc-num { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.25rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .service-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-residential-agent .service-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .story-block { background: var(--cream-dark); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; border-left: 4px solid var(--gold); }
+.lesson-html-body.track-real-estate-residential-agent .sb-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .story-block p { font-size: 13.5px; color: var(--text-mid); line-height: 1.8; margin: 0 0 0.5rem; font-style: italic; }
+.lesson-html-body.track-real-estate-residential-agent .sb-attr { font-size: 11px; color: var(--text-light); font-style: normal; margin-top: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .offer-grid { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .offer-item { background: #FFFFFF; border-radius: 10px; padding: 0.85rem 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); display: flex; gap: 0.75rem; align-items: flex-start; }
+.lesson-html-body.track-real-estate-residential-agent .oi-label { font-size: 11px; font-weight: 700; color: var(--teal); min-width: 120px; flex-shrink: 0; font-family: 'DM Sans', sans-serif; padding-top: 1px; }
+.lesson-html-body.track-real-estate-residential-agent .oi-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+.lesson-html-body.track-real-estate-residential-agent .four-parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .part-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-top: 3px solid var(--gold); }
+.lesson-html-body.track-real-estate-residential-agent .part-card .pc-num { color: var(--gold); }
+.lesson-html-body.track-real-estate-residential-agent .part-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .part-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .seller-types { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .seller-type { display: flex; gap: 1rem; align-items: flex-start; background: #FFFFFF; border-radius: 12px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-residential-agent .st-icon { font-size: 1.25rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-residential-agent .st-content h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-residential-agent .st-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .st-solution { font-size: 12.5px; color: var(--teal); font-weight: 600; margin-top: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .mkt-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .mkt-item { display: flex; gap: 1rem; align-items: flex-start; background: #FFFFFF; border-radius: 12px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-residential-agent .mi-icon { font-size: 1.25rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-residential-agent .mi-content h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-residential-agent .mi-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .lead-sources { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .lead-source { background: #FFFFFF; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-left: 4px solid var(--teal-light); }
+.lesson-html-body.track-real-estate-residential-agent .lead-source.hot { border-left-color: var(--gold); background: var(--gold-pale); }
+.lesson-html-body.track-real-estate-residential-agent .ls-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.25rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .lead-source.hot .ls-tag { color: var(--gold); }
+.lesson-html-body.track-real-estate-residential-agent .lead-source h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-residential-agent .lead-source p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .four-models { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .model-card { background: #FFFFFF; border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); border-top: 3px solid var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .mc-num { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 0.3rem; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .model-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .model-card ul { padding-left: 1.1rem; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .model-card li { font-size: 12.5px; color: var(--text-mid); line-height: 1.65; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-residential-agent .client-math { background: var(--teal); border-radius: 14px; padding: 1.5rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .client-math h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #FFFFFF; margin-bottom: 1rem; }
+.lesson-html-body.track-real-estate-residential-agent .cm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+.lesson-html-body.track-real-estate-residential-agent .cm-item { text-align: center; }
+.lesson-html-body.track-real-estate-residential-agent .cmi-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #E0C070; line-height: 1; margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-residential-agent .cmi-label { font-size: 11.5px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+.lesson-html-body.track-real-estate-residential-agent .pareto-visual { background: #FFFFFF; border-radius: 14px; padding: 1.5rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .pareto-visual h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1rem; }
+.lesson-html-body.track-real-estate-residential-agent .pareto-bars { display: flex; flex-direction: column; gap: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .pareto-row { display: flex; align-items: center; gap: 0.75rem; }
+.lesson-html-body.track-real-estate-residential-agent .pr-label { font-size: 12px; color: var(--text-mid); min-width: 120px; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .pr-bar-wrap { flex: 1; height: 28px; background: var(--teal-pale); border-radius: 4px; overflow: hidden; }
+.lesson-html-body.track-real-estate-residential-agent .pr-bar { height: 100%; display: flex; align-items: center; padding-left: 0.75rem; font-size: 11px; font-weight: 700; color: #FFFFFF; border-radius: 4px; }
+.lesson-html-body.track-real-estate-residential-agent .pr-bar.high { width: 80%; background: var(--teal); }
+.lesson-html-body.track-real-estate-residential-agent .pr-bar.low { width: 20%; background: var(--teal-light); }
+.lesson-html-body.track-real-estate-residential-agent .pr-value { font-size: 12px; font-weight: 700; color: var(--teal); min-width: 36px; text-align: right; }
+.lesson-html-body.track-real-estate-residential-agent .dipa-list { display: flex; flex-direction: column; gap: 0.4rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .dipa-item { display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; border-radius: 8px; padding: 0.65rem 1rem; border: 1px solid var(--border); font-size: 13.5px; color: var(--text-dark); font-weight: 500; }
+.lesson-html-body.track-real-estate-residential-agent .di-num { width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: #FFFFFF; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-residential-agent .stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-residential-agent .stage-card { background: #FFFFFF; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--border); display: flex; gap: 0; }
+.lesson-html-body.track-real-estate-residential-agent .sc-badge { background: var(--teal); color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 1rem 0.85rem; text-align: center; min-width: 52px; display: flex; align-items: center; justify-content: center; line-height: 1.3; font-family: 'DM Sans', sans-serif; }
+.lesson-html-body.track-real-estate-residential-agent .sc-content { padding: 1rem 1.25rem; flex: 1; }
+.lesson-html-body.track-real-estate-residential-agent .sc-content h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-residential-agent .sc-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .bonus-link-card { background: var(--teal-pale); border-radius: 14px; padding: 1.5rem; margin: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; border: 1px solid rgba(13,110,110,0.2); }
+.lesson-html-body.track-real-estate-residential-agent .blc-content h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-residential-agent .blc-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-residential-agent .bonus-link-card a { font-size: 12px; font-weight: 700; color: var(--teal); text-decoration: none; white-space: nowrap; padding: 0.5rem 1rem; border: 1.5px solid var(--teal); border-radius: 8px; }
+.lesson-html-body.track-real-estate-residential-agent .bonus-link-card a:hover { background: var(--teal); color: #FFFFFF; }
+.lesson-html-body.track-real-estate-residential-agent .completion { background: linear-gradient(135deg, #062F33 0%, #0D6E6E 100%); border-radius: 16px; padding: 2.5rem; margin: 2rem 0; text-align: center; }
+.lesson-html-body.track-real-estate-residential-agent .completion h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 700; color: #FFFFFF; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-residential-agent .completion p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8; max-width: 600px; margin: 0 auto 1.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .comp-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.lesson-html-body.track-real-estate-residential-agent .affiliate-disclosure { font-size: 11px; color: var(--text-light); text-align: center; margin-top: 0.5rem; }
+.lesson-html-body.track-real-estate-residential-agent .quiz-section,
+.lesson-html-body.track-real-estate-residential-agent .progress-bar,
+.lesson-html-body.track-real-estate-residential-agent .progress-track,
+.lesson-html-body.track-real-estate-residential-agent .progress-modules,
+.lesson-html-body.track-real-estate-residential-agent .breadcrumb,
+.lesson-html-body.track-real-estate-residential-agent .btn-nav,
+.lesson-html-body.track-real-estate-residential-agent .complete-badge,
+.lesson-html-body.track-real-estate-residential-agent .wrong-review,
+.lesson-html-body.track-real-estate-residential-agent .question-block,
+.lesson-html-body.track-real-estate-residential-agent .quiz-btn,
+.lesson-html-body.track-real-estate-residential-agent .quiz-result,
+.lesson-html-body.track-real-estate-residential-agent .retry-btn,
+.lesson-html-body.track-real-estate-residential-agent .feedback,
+.lesson-html-body.track-real-estate-residential-agent .result-score,
+.lesson-html-body.track-real-estate-residential-agent .result-label,
+.lesson-html-body.track-real-estate-residential-agent .result-msg,
+.lesson-html-body.track-real-estate-residential-agent .prog-dot,
+.lesson-html-body.track-real-estate-residential-agent .dot,
+.lesson-html-body.track-real-estate-residential-agent .sep,
+.lesson-html-body.track-real-estate-residential-agent .current { display: none !important; }
+.lesson-html-body.track-real-estate-residential-agent .section-label .dot { display: flex !important; }
+@media (max-width: 640px) {
+    .lesson-html-body.track-real-estate-residential-agent .container { padding: 0 1.25rem; }
+    .lesson-html-body.track-real-estate-residential-agent .module-body { padding: 1.5rem 1.25rem 2rem; }
+    .lesson-html-body.track-real-estate-residential-agent .three-ls { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .attr-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .broker-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .four-pillars { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .four-models { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .four-parts { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .stages { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .myths-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .service-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .req-grid { grid-template-columns: 1fr; }
+    .lesson-html-body.track-real-estate-residential-agent .state-grid { grid-template-columns: repeat(2, 1fr); }
+    .lesson-html-body.track-real-estate-residential-agent .cm-grid { grid-template-columns: repeat(2, 1fr); }
+    .lesson-html-body.track-real-estate-residential-agent .bonus-link-card { flex-direction: column; }
+    .lesson-html-body.track-real-estate-residential-agent .offer-item { flex-direction: column; gap: 0.25rem; }
+    .lesson-html-body.track-real-estate-residential-agent .oi-label { min-width: auto; }
+    .lesson-html-body.track-real-estate-residential-agent .book-item { flex-direction: column; }
+    .lesson-html-body.track-real-estate-residential-agent .ph-row { flex-direction: column; }
+    .lesson-html-body.track-real-estate-residential-agent .ph-time { min-width: auto; }
+    .lesson-html-body.track-real-estate-residential-agent .ds-row { flex-direction: column; }
+    .lesson-html-body.track-real-estate-residential-agent .ds-time { min-width: auto; }
+}

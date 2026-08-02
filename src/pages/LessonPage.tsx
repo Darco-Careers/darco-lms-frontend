@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useQuery, useMutation, useQueryClient, keepPreviousData } from '@tanstack/react-query'
 import { ArrowLeft, ArrowRight, BookOpen, ClipboardList, CheckCircle, Lock, Tag } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import { coursesApi } from '@/api/courses'
@@ -37,12 +37,17 @@ export default function LessonPage() {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [lessonId])
 
-  const { data: lesson, isLoading, isError, error } = useQuery({
+  const { data: lesson, isLoading, isFetching, isError, error } = useQuery({
     queryKey: ['lesson', lessonId],
     queryFn: () => coursesApi.lesson(lessonId!),
     enabled: !!lessonId,
+    // Keep previous lesson content visible while new lesson loads — eliminates navigation flash
+    placeholderData: keepPreviousData,
+    // Cache lesson data for 2 minutes to avoid re-fetching on back-navigation
+    staleTime: 2 * 60 * 1000,
     retry: (failureCount, err: any) => {
-      // Don't retry on 403 upgrade_required
+      // Don't retry on 401 or 403
+      if (err?.response?.status === 401) return false
       if (err?.response?.status === 403) return false
       return failureCount < 1
     },
@@ -94,7 +99,18 @@ export default function LessonPage() {
     }
   }
 
-  if (isLoading) {
+  // Handle 401 explicitly — expired/invalid session; redirect to login immediately
+  const lessonErrorStatus = (error as any)?.response?.status
+  if (lessonErrorStatus === 401) {
+    localStorage.removeItem('authToken')
+    localStorage.removeItem('refreshToken')
+    window.location.href = '/login'
+    return null
+  }
+
+  // Only show skeleton on the very first load (no cached data yet)
+  // During navigation between lessons, keepPreviousData keeps old content visible
+  if (isLoading && !lesson) {
     return (
       <div className="page-container py-10 max-w-3xl mx-auto">
         <div className="animate-pulse space-y-4">
@@ -257,7 +273,7 @@ export default function LessonPage() {
     lesson.next_module_lesson_id === null
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className={`min-h-screen bg-[#FAF8F5] transition-opacity duration-150 ${isFetching ? 'opacity-80' : 'opacity-100'}`}>
       {/* Fix #2 — sticky nav bar with lesson progress indicator */}
       <div className="sticky top-16 z-40 bg-white border-b border-[#DDD5C8]">
         <div className="page-container flex items-center justify-between gap-4 px-4 py-3">

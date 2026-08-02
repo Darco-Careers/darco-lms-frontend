@@ -1,0 +1,24 @@
+# pre-commit hook configuration for darco-lms-frontend
+# Install once per developer: pip install pre-commit && pre-commit install
+# Runs automatically on every git commit.
+#
+# Checks:
+#   - gitleaks: blocks commits containing secrets (API keys, tokens, passwords)
+#   - trailing-whitespace, end-of-file-fixer, check-json: basic hygiene
+
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
+        name: Detect secrets with gitleaks
+        description: Blocks commits that contain secrets or API keys
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-json
+      - id: check-merge-conflict
+      - id: detect-private-key

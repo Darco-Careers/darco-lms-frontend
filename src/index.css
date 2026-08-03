@@ -817,7 +817,10 @@
 .lesson-html-body em:not([class]) { font-style: italic; }
 .lesson-html-body a:not([class]) { color: #1B4D3E; text-decoration: underline; }
 .lesson-html-body table:not([class]) { max-width: 760px; margin: 1.5rem auto; width: 100%; border-collapse: collapse; font-size: 14px; }
-.lesson-html-body table:not([class]) th { background: #1B4D3E; color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 600; padding: 0.6rem 0.85rem; text-align: left; }
+.lesson-html-body table:not([class]) th { background: #2C3E50; color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 600; padding: 0.6rem 0.85rem; text-align: left; }
+/* Foundation: restore green th (legitimate track color) */
+.lesson-html-body.track-real-estate-foundation table:not([class]) th,
+.lesson-html-body.track-real-estate-foundation table thead th { background: #1B4D3E; color: #fff; }
 .lesson-html-body table:not([class]) td { padding: 0.55rem 0.85rem; border-bottom: 1px solid #DDE8E4; color: #3A4A5A; vertical-align: top; }
 .lesson-html-body table:not([class]) tr:nth-child(even) td { background: #F4F9F7; }
 .lesson-html-body { padding: 2.5rem 2.75rem; }
@@ -8573,15 +8576,29 @@
   --navy-pale:   #F9EEF1;
 }
 
-/* Force table header backgrounds on investing track — ensures var(--burg) resolves correctly */
-.lesson-html-body.track-real-estate-investing table thead tr {
-  background: #5C1A2E !important;
-  color: #fff !important;
-}
-.lesson-html-body.track-real-estate-investing table thead th {
-  background: #5C1A2E !important;
-  color: #fff !important;
-}
+/* Per-track table th overrides — prevents global neutral slate from bleeding into track-themed tables */
+/* Investing: Burgundy */
+.lesson-html-body.track-real-estate-investing table thead tr,
+.lesson-html-body.track-real-estate-investing table:not([class]) th,
+.lesson-html-body.track-real-estate-investing table thead th { background: #5C1A2E !important; color: #fff !important; }
+/* Commercial: Deep Navy */
+.lesson-html-body.track-real-estate-commercial table:not([class]) th,
+.lesson-html-body.track-real-estate-commercial table thead th { background: #0F2340; color: #fff; }
+/* Mortgage & Lending: Deep Purple */
+.lesson-html-body.track-real-estate-mortgage-lending table:not([class]) th,
+.lesson-html-body.track-real-estate-mortgage-lending table thead th { background: #3D1A6E; color: #fff; }
+/* Photography: Dark Warm */
+.lesson-html-body.track-real-estate-photography table:not([class]) th,
+.lesson-html-body.track-real-estate-photography table thead th { background: #1C1A18; color: #fff; }
+/* Development: Charcoal */
+.lesson-html-body.track-real-estate-development table:not([class]) th,
+.lesson-html-body.track-real-estate-development table thead th { background: #2A2A2A; color: #fff; }
+/* Electrician: Navy & Gold */
+.lesson-html-body.track-electrician table:not([class]) th,
+.lesson-html-body.track-electrician table thead th { background: #1A3A5C; color: #fff; }
+/* Construction Painting: Dark Brown */
+.lesson-html-body.track-construction-painting table:not([class]) th,
+.lesson-html-body.track-construction-painting table thead th { background: #3D2B1F; color: #fff; }
 /* Override module-hero gradient for investing track — removes hardcoded #0D2820 green */
 .lesson-html-body.track-real-estate-investing .module-hero {
   background: linear-gradient(135deg, #3A0D1C 0%, #5C1A2E 55%, #7D2A42 100%);

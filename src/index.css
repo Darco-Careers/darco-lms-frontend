@@ -8925,6 +8925,8 @@
 .lesson-html-body.track-real-estate-investing .deep-dive-banner { background: #F9EEF1; border: 1px solid rgba(92,26,46,0.15); }
 .lesson-html-body.track-real-estate-investing .deep-dive-banner .banner-label { color: #7D2A42; }
 .lesson-html-body.track-real-estate-investing .deep-dive-banner h3 { color: #5C1A2E; }
+.lesson-html-body.track-real-estate-investing .deep-dive-banner p { color: #3A3A32; }
 .lesson-html-body.track-real-estate-investing .deeper-link { background: #fff; border: 1px solid rgba(92,26,46,0.12); }
-.lesson-html-body.track-real-estate-investing .deeper-link a { color: #5C1A2E; border-color: #5C1A2E; }
-.lesson-html-body.track-real-estate-investing .deeper-link a:hover { background: #5C1A2E; color: #fff; }
+.lesson-html-body.track-real-estate-investing .deeper-link p { color: #3A3A32; }
+.lesson-html-body.track-real-estate-investing .deeper-link a { background: #5C1A2E; color: #fff !important; border: none; }
+.lesson-html-body.track-real-estate-investing .deeper-link a:hover { background: #7D2A42; color: #fff !important; }

@@ -131,7 +131,7 @@
 
 /* ========== ported from index.html ========== */
 /* Shared safe defaults for all tracks */
-.lesson-html-body { --text-dark: #1A1A18; --text-mid: #4A4A42; --text-light: #8A8A7A; --white: #FFFFFF; --gold: #C9A84C; --gold-light: #E8C97A; --gold-pale: #FBF5E6; --cream: #FAF8F3; }
+.lesson-html-body { --text-dark: #1A1A18; --text-mid: #4A4A42; --text-light: #8A8A7A; --white: #FFFFFF; --gold: #C9A84C; --gold-light: #E8C97A; --gold-pale: #FBF5E6; --cream: #FAF8F3; /* Fallback values for track-specific vars — overridden by track blocks below */ --burg: #5C1A2E; --burg-mid: #7D2A42; --burg-light: #9E4060; --burg-pale: #F9EEF1; --teal: #0D6E6E; --teal-mid: #1A8A8A; --navy: #0F2340; --navy-mid: #1A3A5C; }
 /* Foundation track variables — scoped to Foundation ONLY to prevent bleed into MLO/other tracks */
 .lesson-html-body.track-real-estate-foundation { --forest: #1B4D3E;
     --forest-light: #2A6B56;
@@ -8573,6 +8573,14 @@
   --navy-pale:   #F9EEF1;
 }
 
+/* Force table header backgrounds on investing track — ensures var(--burg) resolves correctly */
+.lesson-html-body.track-real-estate-investing table thead tr {
+  background: #5C1A2E !important;
+  color: #fff !important;
+}
+.lesson-html-body.track-real-estate-investing table thead th {
+  color: #fff !important;
+}
 /* Override module-hero gradient for investing track — removes hardcoded #0D2820 green */
 .lesson-html-body.track-real-estate-investing .module-hero {
   background: linear-gradient(135deg, #3A0D1C 0%, #5C1A2E 55%, #7D2A42 100%);

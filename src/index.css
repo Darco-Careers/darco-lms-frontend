@@ -8717,7 +8717,7 @@
 .lesson-html-body.track-real-estate-investing .ac-body ul li::before { content: '→'; position: absolute; left: 0; color: #5C1A2E; font-size: 11px; top: 2px; }
 
 /* ── Module 2: Pros-cons ── */
-.lesson-html-body.track-real-estate-investing .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+.lesson-html-body.track-real-estate-investing .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; align-items: start; }
 @media (max-width: 560px) { .lesson-html-body.track-real-estate-investing .pros-cons { grid-template-columns: 1fr; } }
 .lesson-html-body.track-real-estate-investing .pc-col { background: #fff; border: 1px solid rgba(92,26,46,0.12); border-radius: 12px; padding: 1.1rem 1.25rem; }
 .lesson-html-body.track-real-estate-investing .pc-col.pros { border-top: 3px solid #2A7A4A; }
@@ -8918,7 +8918,15 @@
 .lesson-html-body.track-real-estate-investing .hero-stats .stat .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
 
 /* ── Highlight / lead-text ── */
-.lesson-html-body.track-real-estate-investing .highlight { background: #F9EEF1; border-left: 3px solid #5C1A2E; padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 14px; color: #3A3A32; line-height: 1.7; }
+.lesson-html-body.track-real-estate-investing div.highlight { background: #F9EEF1; border-left: 3px solid #5C1A2E; padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 14px; color: #3A3A32; line-height: 1.7; }
+/* compare-table overrides for investing track */
+.lesson-html-body.track-real-estate-investing .compare-table th { background: #5C1A2E !important; color: #fff !important; }
+.lesson-html-body.track-real-estate-investing .compare-table th:first-child { background: #5C1A2E !important; }
+.lesson-html-body.track-real-estate-investing .compare-table th.highlight { background: #7D2A42 !important; }
+.lesson-html-body.track-real-estate-investing .compare-table tr.highlight td { background: #F9EEF1; border-left: none; }
+.lesson-html-body.track-real-estate-investing .compare-table tr:nth-child(even) td { background: #FDF5F7; }
+.lesson-html-body.track-real-estate-investing .compare-table .check { color: #2A7A4A; }
+.lesson-html-body.track-real-estate-investing .compare-table td { border-bottom: 1px solid rgba(92,26,46,0.08); }
 .lesson-html-body.track-real-estate-investing .lead-text { font-size: 1.05rem; color: #4A4A42; line-height: 1.85; margin-bottom: 1.5rem; }
 
 /* ── Deep-dive-banner — investing colors ── */

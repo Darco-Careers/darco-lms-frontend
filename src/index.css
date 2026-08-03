@@ -8409,18 +8409,32 @@
 .lesson-html-body.track-real-estate-commercial .firm-card .firm-type { font-size: 11px; font-weight: 600; color: var(--navy-mid); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
 .lesson-html-body.track-real-estate-commercial .firm-card p { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
 
-/* ── Asset cards ── */
-.lesson-html-body.track-real-estate-commercial .asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin: 2rem 0; }
-.lesson-html-body.track-real-estate-commercial .asset-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: all 0.2s; }
-.lesson-html-body.track-real-estate-commercial .asset-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
-.lesson-html-body.track-real-estate-commercial .asset-header { background: var(--navy); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 10px; }
-.lesson-html-body.track-real-estate-commercial .asset-icon { font-size: 1.4rem; }
-.lesson-html-body.track-real-estate-commercial .asset-header h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin: 0; }
-.lesson-html-body.track-real-estate-commercial .asset-sub { font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 500; }
-.lesson-html-body.track-real-estate-commercial .asset-body { padding: 1rem 1.25rem; }
-.lesson-html-body.track-real-estate-commercial .asset-stats { display: flex; gap: 1rem; margin-bottom: 0.75rem; }
-.lesson-html-body.track-real-estate-commercial .asset-stat .stat-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); }
-.lesson-html-body.track-real-estate-commercial .asset-stat .stat-label { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+/* ── Asset cards — full-width stacked (Module 2 style) ── */
+.lesson-html-body.track-real-estate-commercial .asset-grid { display: flex; flex-direction: column; gap: 1.75rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-commercial .asset-card { background: #fff; border: 1px solid rgba(15,35,64,0.12); border-radius: 14px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; display: flex; flex-direction: column; width: 100%; }
+.lesson-html-body.track-real-estate-commercial .asset-card:hover { box-shadow: 0 4px 24px rgba(15,35,64,0.14); transform: translateY(-2px); }
+/* Header bar — default navy, overridden per asset class */
+.lesson-html-body.track-real-estate-commercial .asset-header { background: #0F2340; padding: 1.1rem 1.5rem; display: flex; align-items: center; gap: 14px; }
+.lesson-html-body.track-real-estate-commercial .asset-header.office     { background: #1C2B3A; }
+.lesson-html-body.track-real-estate-commercial .asset-header.retail      { background: #2B3520; }
+.lesson-html-body.track-real-estate-commercial .asset-header.industrial  { background: #1A3530; }
+.lesson-html-body.track-real-estate-commercial .asset-header.multifamily { background: #2A1F3A; }
+.lesson-html-body.track-real-estate-commercial .asset-header.land        { background: #1E3A1E; }
+.lesson-html-body.track-real-estate-commercial .asset-header.storage     { background: #3A2A18; }
+.lesson-html-body.track-real-estate-commercial .asset-header.flex        { background: #252535; }
+.lesson-html-body.track-real-estate-commercial .asset-icon { font-size: 22px; width: 44px; height: 44px; background: rgba(255,255,255,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-commercial .asset-header h3,
+.lesson-html-body.track-real-estate-commercial .asset-header h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0 0 3px; line-height: 1.3; }
+.lesson-html-body.track-real-estate-commercial .asset-sub { font-size: 11.5px; color: rgba(255,255,255,0.68); font-weight: 400; }
+.lesson-html-body.track-real-estate-commercial .asset-body { padding: 1.25rem 1.5rem; flex: 1; }
+.lesson-html-body.track-real-estate-commercial .asset-body p { font-size: 14px; color: #3A3A32; line-height: 1.7; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-commercial .asset-body p:last-child { margin-bottom: 0; }
+/* Stats row — 4-column grid pinned to bottom of each card */
+.lesson-html-body.track-real-estate-commercial .asset-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(15,35,64,0.1); background: #F7F8FA; }
+.lesson-html-body.track-real-estate-commercial .asset-stat { padding: 0.75rem 1rem; border-right: 1px solid rgba(15,35,64,0.08); }
+.lesson-html-body.track-real-estate-commercial .asset-stat:last-child { border-right: none; }
+.lesson-html-body.track-real-estate-commercial .asset-stat .stat-label { font-size: 10px; color: #7A8090; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600; margin-bottom: 3px; }
+.lesson-html-body.track-real-estate-commercial .asset-stat .stat-value { font-size: 13px; font-weight: 700; color: #1C2B3A; line-height: 1.3; }
 
 /* ── Channel / Scenario / Spec cards ── */
 .lesson-html-body.track-real-estate-commercial .channel-grid,
@@ -8573,12 +8587,15 @@
   .lesson-html-body.track-real-estate-commercial .neg-grid,
   .lesson-html-body.track-real-estate-commercial .side-by-side,
   .lesson-html-body.track-real-estate-commercial .path-grid { grid-template-columns: 1fr; }
-  .lesson-html-body.track-real-estate-commercial .asset-grid,
   .lesson-html-body.track-real-estate-commercial .channel-grid,
   .lesson-html-body.track-real-estate-commercial .scenario-grid,
   .lesson-html-body.track-real-estate-commercial .spec-grid,
   .lesson-html-body.track-real-estate-commercial .opt-grid,
   .lesson-html-body.track-real-estate-commercial .cycle-grid { grid-template-columns: 1fr 1fr; }
+  /* asset-stats: 2-col on mobile */
+  .lesson-html-body.track-real-estate-commercial .asset-stats { grid-template-columns: repeat(2, 1fr); }
+  .lesson-html-body.track-real-estate-commercial .asset-stat:nth-child(2) { border-right: none; }
+  .lesson-html-body.track-real-estate-commercial .asset-stat:nth-child(3) { border-top: 1px solid rgba(15,35,64,0.08); }
 }
 
 /* ── Real Estate Investing track: Burgundy palette ─────────────────── */

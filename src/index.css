@@ -8392,6 +8392,8 @@
 .lesson-html-body.track-real-estate-commercial .path-card ul li::before { color: var(--navy-mid); }
 
 /* ── Firm cards ── */
+.lesson-html-body.track-real-estate-commercial .firms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
+@media (max-width: 600px) { .lesson-html-body.track-real-estate-commercial .firms-grid { grid-template-columns: 1fr 1fr; } }
 .lesson-html-body.track-real-estate-commercial .firm-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; text-align: center; transition: all 0.2s; }
 .lesson-html-body.track-real-estate-commercial .firm-card:hover { box-shadow: var(--shadow-card); }
 .lesson-html-body.track-real-estate-commercial .firm-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }

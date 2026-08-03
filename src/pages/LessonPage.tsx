@@ -43,8 +43,8 @@ export default function LessonPage() {
     enabled: !!lessonId,
     // Keep previous lesson content visible while new lesson loads — eliminates navigation flash
     placeholderData: keepPreviousData,
-    // Cache lesson data for 2 minutes to avoid re-fetching on back-navigation
-    staleTime: 2 * 60 * 1000,
+    // Always fetch fresh lesson content — lesson bodies can be updated by seeders
+    staleTime: 0,
     retry: (failureCount, err: any) => {
       // Don't retry on 401 or 403
       if (err?.response?.status === 401) return false

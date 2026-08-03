@@ -8703,18 +8703,27 @@
 .lesson-html-body.track-real-estate-investing .stage-body p { font-size: 13.5px; color: #4A4A42; line-height: 1.7; margin: 0; }
 
 /* ── Module 2: Asset-grid (property types) ── */
-.lesson-html-body.track-real-estate-investing .asset-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
-.lesson-html-body.track-real-estate-investing .asset-card { background: #fff; border: 1px solid rgba(92,26,46,0.12); border-radius: 14px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+/* ── Asset grid: 2-column compact cards ── */
+.lesson-html-body.track-real-estate-investing .asset-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin: 1.75rem 0; }
+@media (max-width: 640px) { .lesson-html-body.track-real-estate-investing .asset-grid { grid-template-columns: 1fr; } }
+.lesson-html-body.track-real-estate-investing .asset-card { background: #fff; border: 1px solid rgba(92,26,46,0.12); border-radius: 14px; overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; display: flex; flex-direction: column; }
 .lesson-html-body.track-real-estate-investing .asset-card:hover { box-shadow: 0 4px 20px rgba(92,26,46,0.12); transform: translateY(-2px); }
-.lesson-html-body.track-real-estate-investing .ac-header { background: #5C1A2E; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 12px; }
-.lesson-html-body.track-real-estate-investing .ac-icon { font-size: 22px; width: 40px; height: 40px; background: rgba(255,255,255,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.lesson-html-body.track-real-estate-investing .ac-header-text h3 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: #fff; margin: 0 0 2px; }
-.lesson-html-body.track-real-estate-investing .ac-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); }
-.lesson-html-body.track-real-estate-investing .ac-body { padding: 1.1rem 1.25rem; }
-.lesson-html-body.track-real-estate-investing .ac-body p { font-size: 13.5px; color: #4A4A42; line-height: 1.7; margin-bottom: 0.75rem; }
-.lesson-html-body.track-real-estate-investing .ac-body ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
-.lesson-html-body.track-real-estate-investing .ac-body ul li { font-size: 13px; color: #3A3A32; padding-left: 1.1rem; position: relative; line-height: 1.55; }
-.lesson-html-body.track-real-estate-investing .ac-body ul li::before { content: '→'; position: absolute; left: 0; color: #5C1A2E; font-size: 11px; top: 2px; }
+.lesson-html-body.track-real-estate-investing .ac-header { background: #5C1A2E; padding: 0.85rem 1.1rem; display: flex; align-items: center; gap: 10px; }
+.lesson-html-body.track-real-estate-investing .ac-icon { font-size: 20px; width: 36px; height: 36px; background: rgba(255,255,255,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-investing .ac-header-text h3 { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 700; color: #fff; margin: 0 0 2px; line-height: 1.3; }
+.lesson-html-body.track-real-estate-investing .ac-sub { font-size: 11px; color: rgba(255,255,255,0.72); }
+.lesson-html-body.track-real-estate-investing .ac-body { padding: 1rem 1.1rem; flex: 1; }
+/* Collapse long prose paragraphs inside cards — show only first 3 lines */
+.lesson-html-body.track-real-estate-investing .ac-body > p { font-size: 12.5px; color: #4A4A42; line-height: 1.6; margin-bottom: 0.6rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.lesson-html-body.track-real-estate-investing .ac-body > p:last-of-type { -webkit-line-clamp: unset; overflow: visible; }
+.lesson-html-body.track-real-estate-investing .ac-body ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+.lesson-html-body.track-real-estate-investing .ac-body ul li { font-size: 12.5px; color: #3A3A32; padding-left: 1rem; position: relative; line-height: 1.5; }
+.lesson-html-body.track-real-estate-investing .ac-body ul li::before { content: '→'; position: absolute; left: 0; color: #5C1A2E; font-size: 10px; top: 3px; }
+/* pros-cons inside asset card: tight 2-col */
+.lesson-html-body.track-real-estate-investing .ac-body .pros-cons { margin: 0.75rem 0 0; gap: 0.75rem; }
+.lesson-html-body.track-real-estate-investing .ac-body .pc-col { padding: 0.75rem 0.9rem; }
+.lesson-html-body.track-real-estate-investing .ac-body .pc-col h4 { font-size: 10.5px; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-investing .ac-body .pc-col ul li { font-size: 11.5px; }
 
 /* ── Module 2: Pros-cons ── */
 .lesson-html-body.track-real-estate-investing .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; align-items: start; }

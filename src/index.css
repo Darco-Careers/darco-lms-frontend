@@ -8876,14 +8876,15 @@
 /* ── Module 6: Scale-compare ── */
 .lesson-html-body.track-real-estate-investing .scale-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.75rem 0; }
 @media (max-width: 600px) { .lesson-html-body.track-real-estate-investing .scale-compare { grid-template-columns: 1fr; } }
-.lesson-html-body.track-real-estate-investing .scale-card { background: #fff; border: 1px solid rgba(92,26,46,0.15); border-radius: 14px; padding: 1.4rem; }
-.lesson-html-body.track-real-estate-investing .scale-card.primary { border-color: #5C1A2E; background: #F9EEF1; }
-.lesson-html-body.track-real-estate-investing .scale-card.secondary { border-color: rgba(92,26,46,0.2); }
-.lesson-html-body.track-real-estate-investing .sc-sub { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #7D2A42; margin-bottom: 0.5rem; }
-.lesson-html-body.track-real-estate-investing .scale-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: #1A1A18; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-investing .scale-card { border-radius: 14px; padding: 1.5rem 1.6rem; }
+.lesson-html-body.track-real-estate-investing .scale-card.small { background: #1B2D4F; border: none; }
+.lesson-html-body.track-real-estate-investing .scale-card.large { background: #5C1A2E; border: none; }
+/* scale-card.secondary removed — using .small and .large instead */
+.lesson-html-body.track-real-estate-investing .sc-sub { font-size: 12px; font-style: italic; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.lesson-html-body.track-real-estate-investing .scale-card h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
 .lesson-html-body.track-real-estate-investing .scale-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.45rem; }
-.lesson-html-body.track-real-estate-investing .scale-card ul li { font-size: 13px; color: #3A3A32; line-height: 1.55; padding-left: 1.1rem; position: relative; }
-.lesson-html-body.track-real-estate-investing .scale-card ul li::before { content: '→'; position: absolute; left: 0; color: #5C1A2E; font-size: 11px; top: 2px; }
+.lesson-html-body.track-real-estate-investing .scale-card ul li { font-size: 13px; color: rgba(255,255,255,0.88); line-height: 1.6; padding-left: 1.4rem; position: relative; }
+.lesson-html-body.track-real-estate-investing .scale-card ul li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-size: 12px; top: 1px; font-weight: 700; }
 
 /* ── Module 6: Payoff-box ── */
 .lesson-html-body.track-real-estate-investing .payoff-box { background: #fff; border: 1px solid rgba(92,26,46,0.15); border-radius: 14px; overflow: hidden; margin: 1.75rem 0; }
@@ -8892,8 +8893,19 @@
 .lesson-html-body.track-real-estate-investing .payoff-label { font-size: 13.5px; color: #3A3A32; }
 .lesson-html-body.track-real-estate-investing .payoff-value { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #5C1A2E; text-align: right; }
 
+/* ── Module 6: Sell-list (when selling makes strategic sense) ── */
+.lesson-html-body.track-real-estate-investing .sell-list { display: flex; flex-direction: column; gap: 0; margin: 1.25rem 0 1.75rem; border: 1px solid rgba(92,26,46,0.12); border-radius: 12px; overflow: hidden; }
+.lesson-html-body.track-real-estate-investing .sell-item { display: grid; grid-template-columns: 28px 1fr; gap: 0.75rem; align-items: start; padding: 1rem 1.25rem; border-bottom: 1px solid rgba(92,26,46,0.08); background: #fff; }
+.lesson-html-body.track-real-estate-investing .sell-item:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-investing .sell-item:nth-child(even) { background: #FDF5F7; }
+.lesson-html-body.track-real-estate-investing .sell-arrow { font-size: 14px; font-weight: 700; color: #C9A84C; padding-top: 1px; }
+.lesson-html-body.track-real-estate-investing .sell-body { font-size: 13.5px; color: #3A3A32; line-height: 1.65; }
+.lesson-html-body.track-real-estate-investing .sell-term { font-weight: 700; color: #5C1A2E; margin-right: 4px; }
+.lesson-html-body.track-real-estate-investing .sell-desc { color: #4A4A42; }
+
 /* ── Module 6: FI-box (financial independence) ── */
 .lesson-html-body.track-real-estate-investing .fi-box { background: linear-gradient(135deg, #3A0D1C 0%, #5C1A2E 100%); border-radius: 16px; padding: 2rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-investing .fi-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #C9A84C; margin-bottom: 1.25rem; letter-spacing: 0.01em; }
 .lesson-html-body.track-real-estate-investing .fi-step { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; }
 .lesson-html-body.track-real-estate-investing .fi-step:last-child { margin-bottom: 0; }
 .lesson-html-body.track-real-estate-investing .fi-step p { font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.7; margin: 0; }

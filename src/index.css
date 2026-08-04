@@ -9151,15 +9151,15 @@
   --forest-pale: #EBF0F7;
 }
 
-/* ── Content width: match other tracks at 860px ── */
+/* ── Content width: 960px for PM track ── */
 .lesson-fullbleed .lesson-html-body.track-real-estate-property-management .page-body {
-  max-width: 860px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 2.5rem;
   box-sizing: border-box;
 }
 .lesson-fullbleed .lesson-html-body.track-real-estate-property-management > section {
-  max-width: 860px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2.5rem;

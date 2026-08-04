@@ -8647,6 +8647,41 @@
 .lesson-html-body.track-real-estate-commercial .sc-tag.base { background: #EBF0F7 !important; color: #0F2340 !important; }
 .lesson-html-body.track-real-estate-commercial .sc-tag.stress { background: #FBF5E6 !important; color: #8A6820 !important; }
 .lesson-html-body.track-real-estate-commercial .sc-tag.worst { background: #FDECEA !important; color: #8A2020 !important; }
+/* ── Module 7: Formula cards (four-part formula) ── */
+.lesson-html-body.track-real-estate-commercial .formula-grid { display: flex; flex-direction: column; gap: 1.25rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-commercial .formula-card { background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; border-top: 4px solid #0F2340; border-bottom: 2px solid #C9A84C; box-shadow: 0 2px 12px rgba(15,35,64,0.06); overflow: hidden; display: flex; align-items: stretch; transition: box-shadow 0.2s; }
+.lesson-html-body.track-real-estate-commercial .formula-card:hover { box-shadow: 0 6px 24px rgba(15,35,64,0.12); }
+.lesson-html-body.track-real-estate-commercial .fc-num { min-width: 64px; background: linear-gradient(160deg, #0F2340 0%, #1A3560 100%); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #C9A84C; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-commercial .fc-header { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem 0.75rem; }
+.lesson-html-body.track-real-estate-commercial .fc-header h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: #0F2340; margin: 0 0 0.2rem; }
+.lesson-html-body.track-real-estate-commercial .fc-sub { font-size: 11.5px; color: #6B7280; font-style: italic; margin: 0; }
+.lesson-html-body.track-real-estate-commercial .fc-body { padding: 0.5rem 1.5rem 1.25rem; }
+.lesson-html-body.track-real-estate-commercial .fc-body p { font-size: 13.5px; color: #4A4A42; line-height: 1.75; margin: 0 0 0.75rem; }
+.lesson-html-body.track-real-estate-commercial .fc-body p:last-child { margin-bottom: 0; }
+/* ── Module 7: Peter Harris seven steps (lg-step) ── */
+.lesson-html-body.track-real-estate-commercial .longame-track { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-commercial .lg-step { display: flex; align-items: stretch; background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; border-top: 4px solid #0F2340; border-bottom: 2px solid #C9A84C; box-shadow: 0 2px 10px rgba(15,35,64,0.05); overflow: hidden; transition: box-shadow 0.2s; }
+.lesson-html-body.track-real-estate-commercial .lg-step:hover { box-shadow: 0 5px 20px rgba(15,35,64,0.1); }
+.lesson-html-body.track-real-estate-commercial .lg-num { min-width: 56px; background: linear-gradient(160deg, #0F2340 0%, #1A3560 100%); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: #C9A84C; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-commercial .lg-body { padding: 1.1rem 1.4rem; flex: 1; }
+.lesson-html-body.track-real-estate-commercial .lg-tag { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #8A6820; background: #FBF5E6; border-radius: 4px; padding: 2px 8px; margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-commercial .lg-body h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #0F2340; margin: 0 0 0.4rem; }
+.lesson-html-body.track-real-estate-commercial .lg-body p { font-size: 13.5px; color: #4A4A42; line-height: 1.75; margin: 0; }
+/* ── Module 7: Four M's cards (m-card) ── */
+.lesson-html-body.track-real-estate-commercial .four-m { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-commercial .m-card { background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; border-top: 4px solid #0F2340; border-bottom: 2px solid #C9A84C; box-shadow: 0 2px 12px rgba(15,35,64,0.06); overflow: hidden; transition: box-shadow 0.2s; }
+.lesson-html-body.track-real-estate-commercial .m-card:hover { box-shadow: 0 6px 24px rgba(15,35,64,0.12); }
+.lesson-html-body.track-real-estate-commercial .m-letter { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: #C9A84C; background: linear-gradient(135deg, #0F2340 0%, #1A3560 100%); text-align: center; padding: 1rem 0 0.75rem; line-height: 1; }
+.lesson-html-body.track-real-estate-commercial .m-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #0F2340; margin: 0; padding: 0.75rem 1.25rem 0.25rem; }
+.lesson-html-body.track-real-estate-commercial .m-card p { font-size: 13px; color: #4A4A42; line-height: 1.7; margin: 0; padding: 0 1.25rem 1.25rem; }
+/* ── Module 7: Fork in the road cards (pf-card) ── */
+.lesson-html-body.track-real-estate-commercial .path-fork { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-commercial .pf-card { background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; border-top: 4px solid #0F2340; border-bottom: 2px solid #C9A84C; box-shadow: 0 2px 12px rgba(15,35,64,0.06); padding: 1.5rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; transition: box-shadow 0.2s; }
+.lesson-html-body.track-real-estate-commercial .pf-card:hover { box-shadow: 0 6px 24px rgba(15,35,64,0.12); }
+.lesson-html-body.track-real-estate-commercial .pf-icon { font-size: 2rem; line-height: 1; display: block; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-commercial .pf-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #0F2340; margin: 0; }
+.lesson-html-body.track-real-estate-commercial .pf-tag { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #8A6820; background: #FBF5E6; border-radius: 4px; padding: 2px 8px; }
+.lesson-html-body.track-real-estate-commercial .pf-card p { font-size: 13px; color: #4A4A42; line-height: 1.7; margin: 0; flex: 1; }
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .lesson-html-body.track-real-estate-commercial .neg-grid,
@@ -8661,6 +8696,11 @@
   .lesson-html-body.track-real-estate-commercial .asset-stats { grid-template-columns: repeat(2, 1fr); }
   .lesson-html-body.track-real-estate-commercial .asset-stat:nth-child(2) { border-right: none; }
   .lesson-html-body.track-real-estate-commercial .asset-stat:nth-child(3) { border-top: 1px solid rgba(15,35,64,0.08); }
+  /* Module 7: stack on mobile */
+  .lesson-html-body.track-real-estate-commercial .four-m,
+  .lesson-html-body.track-real-estate-commercial .path-fork { grid-template-columns: 1fr; }
+  .lesson-html-body.track-real-estate-commercial .formula-card { flex-direction: column; }
+  .lesson-html-body.track-real-estate-commercial .fc-num { min-width: unset; min-height: 48px; }
 }
 
 /* ── Real Estate Investing track: Burgundy palette ─────────────────── */

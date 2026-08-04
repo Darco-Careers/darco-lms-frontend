@@ -9117,3 +9117,536 @@
 .lesson-html-body.track-real-estate-investing .deeper-link p { color: #3A3A32; }
 .lesson-html-body.track-real-estate-investing .deeper-link a { background: #5C1A2E; color: #fff !important; border: none; }
 .lesson-html-body.track-real-estate-investing .deeper-link a:hover { background: #7D2A42; color: #fff !important; }
+
+
+/* ============================================================
+   PROPERTY MANAGEMENT TRACK
+   track-real-estate-property-management
+   Primary: Navy #0F2340 / #1A3A5C / #2A5380 / #EBF0F7
+   Accent:  Gold #C9A84C / #E8C97A / #FBF5E6
+   ============================================================ */
+
+.lesson-html-body.track-real-estate-property-management {
+  --navy:        #0F2340;
+  --navy-mid:    #1A3A5C;
+  --navy-light:  #2A5380;
+  --navy-pale:   #EBF0F7;
+  --gold:        #C9A84C;
+  --gold-light:  #E8C97A;
+  --gold-pale:   #FBF5E6;
+  --cream:       #FAF8F3;
+  --cream-dark:  #F0EBE0;
+  --text-dark:   #1A1A18;
+  --text-mid:    #4A4A42;
+  --text-light:  #8A8A7A;
+  --white:       #FFFFFF;
+  --border:      rgba(15,35,64,0.1);
+  --shadow-soft: 0 4px 24px rgba(15,35,64,0.1);
+  --shadow-card: 0 2px 16px rgba(15,35,64,0.07);
+  /* Override any teal/forest vars so residual var(--teal) resolves to navy */
+  --teal:        #0F2340;
+  --forest:      #0F2340;
+  --forest-mid:  #1A3A5C;
+  --forest-light:#2A5380;
+  --forest-pale: #EBF0F7;
+}
+
+/* ── Hero: full-bleed navy ── */
+.lesson-html-body.track-real-estate-property-management .module-hero,
+.lesson-html-body.track-real-estate-property-management .cta-section {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+}
+.lesson-html-body.track-real-estate-property-management .module-hero {
+  background: linear-gradient(135deg, #071828 0%, #0F2340 55%, #1A3A5C 100%);
+  padding: 3.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.lesson-html-body.track-real-estate-property-management .module-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -10%;
+  width: 55%; height: 200%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.lesson-html-body.track-real-estate-property-management .module-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.lesson-html-body.track-real-estate-property-management .module-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.lesson-html-body.track-real-estate-property-management .module-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+.lesson-html-body.track-real-estate-property-management .module-hero h1 em { color: var(--gold-light); font-style: italic; }
+.lesson-html-body.track-real-estate-property-management .module-hero p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 600px;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+.lesson-html-body.track-real-estate-property-management .module-meta { display: flex; gap: 2rem; flex-wrap: wrap; }
+.lesson-html-body.track-real-estate-property-management .meta-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,0.6); }
+.lesson-html-body.track-real-estate-property-management .meta-item span { color: var(--gold-light); font-weight: 600; }
+
+/* ── Section labels & dividers ── */
+.lesson-html-body.track-real-estate-property-management .section-label { color: var(--navy-mid); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .section-label .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; }
+.lesson-html-body.track-real-estate-property-management h2.lesson-title { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: var(--text-dark); line-height: 1.25; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management h2.lesson-title em { color: var(--navy); font-style: italic; }
+.lesson-html-body.track-real-estate-property-management h3.sub-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin: 1.75rem 0 0.6rem; }
+.lesson-html-body.track-real-estate-property-management .gold-divider { width: 40px; height: 3px; background: var(--gold); border-radius: 2px; margin: 0.75rem 0 1.5rem; }
+.lesson-html-body.track-real-estate-property-management .lesson-text { font-size: 15px; color: var(--text-mid); line-height: 1.85; margin-bottom: 1.1rem; }
+.lesson-html-body.track-real-estate-property-management .lesson-section { margin-bottom: 3rem; }
+
+/* ── Callouts ── */
+.lesson-html-body.track-real-estate-property-management .callout {
+  border-radius: 0 14px 14px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+  border-left: 4px solid var(--navy-mid);
+  background: var(--navy-pale);
+}
+.lesson-html-body.track-real-estate-property-management .callout-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--navy-mid); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px;
+}
+.lesson-html-body.track-real-estate-property-management .callout p { font-size: 14px; color: var(--text-dark); line-height: 1.75; margin: 0; }
+.lesson-html-body.track-real-estate-property-management .callout-quote {
+  background: var(--navy-pale);
+  border-left: 4px solid var(--navy-mid);
+  border-radius: 0 14px 14px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+}
+.lesson-html-body.track-real-estate-property-management .callout-quote p { font-size: 15px; color: var(--navy); font-style: italic; line-height: 1.8; margin: 0 0 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .quote-attr { font-size: 12px; color: var(--text-light); font-style: normal; }
+.lesson-html-body.track-real-estate-property-management .callout-insight {
+  background: var(--gold-pale);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 14px 14px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+}
+.lesson-html-body.track-real-estate-property-management .callout-insight .callout-label { color: #8A6A20; }
+.lesson-html-body.track-real-estate-property-management .callout-insight p { color: var(--text-dark); font-size: 14px; line-height: 1.75; margin: 0; }
+.lesson-html-body.track-real-estate-property-management .callout-warning {
+  background: #FFF8F0;
+  border-left: 4px solid #E07A20;
+  border-radius: 0 14px 14px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+}
+.lesson-html-body.track-real-estate-property-management .callout-warning .callout-label { color: #C06010; }
+.lesson-html-body.track-real-estate-property-management .callout-warning p { color: var(--text-dark); font-size: 14px; line-height: 1.75; margin: 0; }
+
+/* ── Dual-path intro ── */
+.lesson-html-body.track-real-estate-property-management .dual-path-intro { background: var(--cream); border-radius: 16px; padding: 2rem 2.25rem; margin: 2rem 0; border: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .dual-path-intro h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .dual-path-intro h2 em { color: var(--navy); font-style: italic; }
+.lesson-html-body.track-real-estate-property-management .dual-path-intro > p { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.5rem; }
+
+/* ── Path cards ── */
+.lesson-html-body.track-real-estate-property-management .path-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+@media (max-width: 640px) { .lesson-html-body.track-real-estate-property-management .path-cards { grid-template-columns: 1fr; } }
+.lesson-html-body.track-real-estate-property-management .path-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: all 0.25s; }
+.lesson-html-body.track-real-estate-property-management .path-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.lesson-html-body.track-real-estate-property-management .path-card.path-employee { border-top: 4px solid var(--gold); }
+.lesson-html-body.track-real-estate-property-management .path-card.path-owner { border-top: 4px solid var(--navy); }
+.lesson-html-body.track-real-estate-property-management .path-icon { font-size: 1.75rem; margin-bottom: 0.5rem; display: block; }
+.lesson-html-body.track-real-estate-property-management .path-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--navy-mid); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .path-card h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-property-management .path-applies { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; }
+.lesson-html-body.track-real-estate-property-management .path-applies strong { color: var(--text-dark); }
+.lesson-html-body.track-real-estate-property-management .path-note { display: flex; gap: 10px; align-items: flex-start; background: var(--gold-pale); border-radius: 10px; padding: 0.85rem 1rem; margin-top: 1.25rem; font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+.lesson-html-body.track-real-estate-property-management .path-note-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+.lesson-html-body.track-real-estate-property-management .path-callout { border-radius: 10px; padding: 0.85rem 1rem; margin: 1rem 0 0; font-size: 13px; line-height: 1.65; }
+.lesson-html-body.track-real-estate-property-management .path-callout.ep { background: var(--gold-pale); color: var(--text-mid); }
+.lesson-html-body.track-real-estate-property-management .path-callout.op { background: var(--navy-pale); color: var(--text-mid); }
+.lesson-html-body.track-real-estate-property-management .ep-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 2px 9px; border-radius: 8px; background: var(--gold-pale); color: #8A6A20; margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-property-management .op-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 2px 9px; border-radius: 8px; background: var(--navy-pale); color: var(--navy-mid); margin-bottom: 0.4rem; }
+
+/* ── Task grid ── */
+.lesson-html-body.track-real-estate-property-management .task-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.85rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-property-management .task-item { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--navy-mid); border-radius: 0 10px 10px 0; padding: 0.75rem 1rem; font-size: 13.5px; color: var(--text-mid); line-height: 1.5; display: flex; align-items: flex-start; gap: 8px; }
+.lesson-html-body.track-real-estate-property-management .task-item::before { content: '→'; color: var(--navy-mid); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.lesson-html-body.track-real-estate-property-management .ti-icon { font-size: 1rem; flex-shrink: 0; }
+
+/* ── Takeaways ── */
+.lesson-html-body.track-real-estate-property-management .takeaways {
+  background: linear-gradient(135deg, #071828 0%, #0F2340 55%, #1A3A5C 100%);
+  border-radius: 16px; padding: 2rem 2.25rem; margin: 2rem 0; position: relative; overflow: hidden;
+}
+.lesson-html-body.track-real-estate-property-management .takeaways::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+}
+.lesson-html-body.track-real-estate-property-management .takeaways h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600;
+  color: var(--gold-light); margin-bottom: 1rem; position: relative;
+}
+.lesson-html-body.track-real-estate-property-management .takeaways ul {
+  list-style: none; display: flex; flex-direction: column; gap: 0.75rem; position: relative; padding-left: 0;
+}
+.lesson-html-body.track-real-estate-property-management .takeaways ul li {
+  font-size: 14px; color: rgba(255,255,255,0.85); display: flex; gap: 10px; line-height: 1.65;
+}
+.lesson-html-body.track-real-estate-property-management .takeaways ul li::before {
+  content: '✓'; color: var(--gold-light); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+
+/* ── Video cards ── */
+.lesson-html-body.track-real-estate-property-management .video-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-card); margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.lesson-html-body.track-real-estate-property-management .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.lesson-html-body.track-real-estate-property-management .video-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--navy-pale); color: var(--navy-mid); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .video-info { padding: 1.25rem 1.5rem; }
+.lesson-html-body.track-real-estate-property-management .video-info h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .video-info p { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin: 0; }
+
+/* ── Books section ── */
+.lesson-html-body.track-real-estate-property-management .books-section { margin: 2rem 0; }
+.lesson-html-body.track-real-estate-property-management .book-item { display: flex; gap: 1.25rem; background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--navy); border-bottom: 2px solid var(--gold); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .book-item:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.lesson-html-body.track-real-estate-property-management .bi-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-property-management .bi-author { font-size: 12px; font-weight: 600; color: var(--navy-mid); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .bi-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-property-management .book-item a { color: var(--navy) !important; text-decoration: none !important; font-size: 13px; font-weight: 600; }
+.lesson-html-body.track-real-estate-property-management .book-item a:hover { color: var(--navy-mid) !important; }
+
+/* ── Knowledge check ── */
+.lesson-html-body.track-real-estate-property-management .knowledge-check { background: var(--white); border: 1.5px solid var(--navy-pale); border-radius: 16px; padding: 2rem 2.25rem; margin: 2.5rem 0; }
+.lesson-html-body.track-real-estate-property-management .knowledge-check h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 1.25rem; }
+.lesson-html-body.track-real-estate-property-management .question { margin-bottom: 1.5rem; }
+.lesson-html-body.track-real-estate-property-management .question p { font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-property-management .options { display: flex; flex-direction: column; gap: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .option { display: flex; align-items: center; gap: 10px; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; transition: all 0.2s; font-size: 13.5px; color: var(--text-mid); }
+.lesson-html-body.track-real-estate-property-management .option:hover { border-color: var(--navy-light); background: var(--navy-pale); }
+.lesson-html-body.track-real-estate-property-management .option.selected { border-color: var(--navy); background: var(--navy-pale); }
+.lesson-html-body.track-real-estate-property-management .option.correct { border-color: #2A7A4A; background: #EAF6EE; }
+.lesson-html-body.track-real-estate-property-management .option.incorrect { border-color: #C0392B; background: #FDECEA; }
+.lesson-html-body.track-real-estate-property-management .option-letter { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--navy); color: #FFFFFF; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-property-management .check-btn { background: var(--navy); color: #fff; border: none; padding: 0.75rem 2rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; cursor: pointer; margin-top: 1.25rem; }
+.lesson-html-body.track-real-estate-property-management .check-btn:hover { background: var(--navy-mid); }
+.lesson-html-body.track-real-estate-property-management .kc-sub { font-size: 12px; color: var(--text-light); margin-bottom: 1rem; }
+.lesson-html-body.track-real-estate-property-management .score-result { font-size: 14px; font-weight: 600; color: var(--navy); margin-top: 1rem; }
+.lesson-html-body.track-real-estate-property-management .explanation { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-top: 0.5rem; padding: 0.6rem 0.85rem; background: var(--navy-pale); border-radius: 8px; }
+
+/* ── Progress bar / module nav ── */
+.lesson-html-body.track-real-estate-property-management .progress-bar { background: var(--cream-dark); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-property-management .progress-label { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy-mid); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .progress-track { height: 6px; background: rgba(15,35,64,0.12); border-radius: 3px; overflow: hidden; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-property-management .progress-fill { height: 100%; background: linear-gradient(90deg, var(--navy), var(--navy-light)); border-radius: 3px; transition: width 0.4s ease; }
+.lesson-html-body.track-real-estate-property-management .progress-modules { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.lesson-html-body.track-real-estate-property-management a.prog-dot { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--navy-pale); color: var(--navy-mid); font-size: 12px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management a.prog-dot.active { background: var(--navy); color: var(--gold-light); }
+.lesson-html-body.track-real-estate-property-management a.prog-dot.complete { background: var(--navy-mid); color: #FFFFFF; }
+
+/* ── Buttons ── */
+.lesson-html-body.track-real-estate-property-management .btn-gold { background: var(--gold); color: var(--navy); font-weight: 700; padding: 10px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; }
+.lesson-html-body.track-real-estate-property-management .btn-gold:hover { background: var(--gold-light); }
+.lesson-html-body.track-real-estate-property-management .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); padding: 9px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; }
+.lesson-html-body.track-real-estate-property-management .btn-outline:hover { background: var(--navy-pale); }
+.lesson-html-body.track-real-estate-property-management .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; }
+
+/* ── Next module CTA (hide — LMS has its own nav) ── */
+.lesson-html-body.track-real-estate-property-management .next-module { display: none !important; }
+.lesson-html-body.track-real-estate-property-management .next-module-cta { display: none !important; }
+
+/* ── Completion banner ── */
+.lesson-html-body.track-real-estate-property-management .completion-banner {
+  background: linear-gradient(135deg, #071828, #0F2340 50%, #1A3A5C);
+  border-radius: 20px; padding: 2.5rem; margin: 3rem 0; position: relative; overflow: hidden; text-align: center;
+}
+.lesson-html-body.track-real-estate-property-management .completion-banner::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.15) 0%, transparent 70%);
+}
+.lesson-html-body.track-real-estate-property-management .completion-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem,3vw,2rem); font-weight: 700; color: #FFFFFF; margin-bottom: 0.6rem; position: relative; }
+.lesson-html-body.track-real-estate-property-management .completion-banner h2 em { color: var(--gold-light); }
+.lesson-html-body.track-real-estate-property-management .completion-banner p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.8; position: relative; }
+.lesson-html-body.track-real-estate-property-management .cb-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; position: relative; }
+.lesson-html-body.track-real-estate-property-management .cb-stat .cs-num { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--gold-light); }
+.lesson-html-body.track-real-estate-property-management .cb-stat .cs-label { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+.lesson-html-body.track-real-estate-property-management .cb-cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+.lesson-html-body.track-real-estate-property-management .cb-btn-gold { background: var(--gold); color: var(--navy); padding: 13px 28px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.lesson-html-body.track-real-estate-property-management .cb-btn-gold:hover { background: var(--gold-light); }
+.lesson-html-body.track-real-estate-property-management .cb-btn-outline { background: transparent; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.3); padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.lesson-html-body.track-real-estate-property-management .cb-btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+/* ── CTA section ── */
+.lesson-html-body.track-real-estate-property-management .cta-section {
+  background: linear-gradient(135deg, #071828 0%, #0F2340 55%, #1A3A5C 100%) !important;
+  padding: 3.5rem 2.5rem; text-align: center;
+}
+.lesson-html-body.track-real-estate-property-management .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: #FFFFFF; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-property-management .cta-section h2 em { color: var(--gold-light); font-style: italic; }
+.lesson-html-body.track-real-estate-property-management .cta-section p { font-size: 14px; color: rgba(255,255,255,0.72) !important; line-height: 1.75; max-width: 560px; margin: 0 auto 2rem; }
+.lesson-html-body.track-real-estate-property-management .cta-section .gold-divider { background: var(--gold); margin: 1.25rem auto; }
+
+/* ── Screening steps / eviction steps / process steps ── */
+.lesson-html-body.track-real-estate-property-management .screening-steps,
+.lesson-html-body.track-real-estate-property-management .eviction-steps,
+.lesson-html-body.track-real-estate-property-management .process-steps,
+.lesson-html-body.track-real-estate-property-management .turnover-steps { display: flex; flex-direction: column; gap: 0; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .step { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .step:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .step-num,
+.lesson-html-body.track-real-estate-property-management .ev-num,
+.lesson-html-body.track-real-estate-property-management .ss-item .ps-num,
+.lesson-html-body.track-real-estate-property-management .to-num { width: 36px; height: 36px; background: var(--navy); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
+.lesson-html-body.track-real-estate-property-management .step-content,
+.lesson-html-body.track-real-estate-property-management .ev-step,
+.lesson-html-body.track-real-estate-property-management .ss-content,
+.lesson-html-body.track-real-estate-property-management .to-item { flex: 1; }
+.lesson-html-body.track-real-estate-property-management .step-content h4,
+.lesson-html-body.track-real-estate-property-management .ss-content h4,
+.lesson-html-body.track-real-estate-property-management .to-item h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-property-management .step-content p,
+.lesson-html-body.track-real-estate-property-management .ss-content p,
+.lesson-html-body.track-real-estate-property-management .to-item p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin: 0; }
+.lesson-html-body.track-real-estate-property-management .ps-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .ps-item:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .ps-num { width: 36px; height: 36px; background: var(--navy); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-property-management .ps-content { flex: 1; }
+.lesson-html-body.track-real-estate-property-management .ps-content h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-property-management .ps-content p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin: 0; }
+.lesson-html-body.track-real-estate-property-management .ss-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 4px; }
+.lesson-html-body.track-real-estate-property-management .ss-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .ss-item:last-child { border-bottom: none; }
+
+/* ── Qual cards / condition cards / compare cards ── */
+.lesson-html-body.track-real-estate-property-management .qual-grid,
+.lesson-html-body.track-real-estate-property-management .condition-grid,
+.lesson-html-body.track-real-estate-property-management .compare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .qual-card,
+.lesson-html-body.track-real-estate-property-management .condition-card,
+.lesson-html-body.track-real-estate-property-management .compare-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .qual-card:hover,
+.lesson-html-body.track-real-estate-property-management .condition-card:hover,
+.lesson-html-body.track-real-estate-property-management .compare-card:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-property-management .qc-standard { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy-mid); background: var(--navy-pale); padding: 2px 9px; border-radius: 8px; margin-bottom: 0.5rem; display: inline-block; }
+.lesson-html-body.track-real-estate-property-management .rc-tag,
+.lesson-html-body.track-real-estate-property-management .cc-tag,
+.lesson-html-body.track-real-estate-property-management .mc-tag,
+.lesson-html-body.track-real-estate-property-management .ac-tag,
+.lesson-html-body.track-real-estate-property-management .pc-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 8px; background: var(--navy-pale); color: var(--navy-mid); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .mc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--navy-mid); margin-bottom: 0.25rem; }
+
+/* ── Method cards / referral cards / report cards ── */
+.lesson-html-body.track-real-estate-property-management .method-cards,
+.lesson-html-body.track-real-estate-property-management .referral-grid,
+.lesson-html-body.track-real-estate-property-management .reports-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .method-card,
+.lesson-html-body.track-real-estate-property-management .referral-card,
+.lesson-html-body.track-real-estate-property-management .report-card { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--navy); border-bottom: 2px solid var(--gold); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .method-card:hover,
+.lesson-html-body.track-real-estate-property-management .referral-card:hover,
+.lesson-html-body.track-real-estate-property-management .report-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.lesson-html-body.track-real-estate-property-management .method-card h4,
+.lesson-html-body.track-real-estate-property-management .referral-card h4,
+.lesson-html-body.track-real-estate-property-management .report-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-property-management .ref-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+.lesson-html-body.track-real-estate-property-management .ci-icon { font-size: 1.25rem; flex-shrink: 0; }
+
+/* ── Maintenance cards ── */
+.lesson-html-body.track-real-estate-property-management .maint-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .maint-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .maint-card:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-property-management .maint-card.emergency { border-top: 4px solid #C0392B; }
+.lesson-html-body.track-real-estate-property-management .maint-card.non-emergency { border-top: 4px solid var(--navy-mid); }
+.lesson-html-body.track-real-estate-property-management .maint-card.hire { border-top: 4px solid var(--gold); }
+.lesson-html-body.track-real-estate-property-management .maint-card.self { border-top: 4px solid #2A7A4A; }
+.lesson-html-body.track-real-estate-property-management .emergency { color: #C0392B; }
+.lesson-html-body.track-real-estate-property-management .non-emergency { color: var(--navy-mid); }
+
+/* ── Lm cards (lease management) ── */
+.lesson-html-body.track-real-estate-property-management .lm-grid { display: flex; flex-direction: column; gap: 1.5rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .lm-card { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--navy); border-bottom: 2px solid var(--gold); border-radius: 14px; overflow: hidden; transition: all 0.25s; }
+.lesson-html-body.track-real-estate-property-management .lm-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+
+/* ── Fee table ── */
+.lesson-html-body.track-real-estate-property-management .fee-table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(15,35,64,0.07); }
+.lesson-html-body.track-real-estate-property-management .fee-table th { background: var(--navy) !important; color: #FFFFFF !important; padding: 1rem 1.25rem; text-align: left; font-size: 13px; font-weight: 600; letter-spacing: 0.3px; }
+.lesson-html-body.track-real-estate-property-management .fee-table td { padding: 0.9rem 1.25rem; font-size: 13.5px; color: var(--text-mid); border-bottom: 1px solid var(--border); background: #FFFFFF; }
+.lesson-html-body.track-real-estate-property-management .fee-table tr:last-child td { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .fee-table tbody tr:nth-child(even) td { background: var(--cream) !important; }
+.lesson-html-body.track-real-estate-property-management .fee-table td:first-child { font-weight: 600; color: var(--text-dark); }
+
+/* ── Compare table ── */
+.lesson-html-body.track-real-estate-property-management .compare-table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(15,35,64,0.07); }
+.lesson-html-body.track-real-estate-property-management .compare-table th { background: var(--navy) !important; color: #FFFFFF !important; padding: 1rem 1.25rem; text-align: left; font-size: 13px; font-weight: 600; }
+.lesson-html-body.track-real-estate-property-management .compare-table th.highlight { background: var(--navy-mid) !important; }
+.lesson-html-body.track-real-estate-property-management .compare-table td { padding: 0.9rem 1.25rem; font-size: 13.5px; color: var(--text-mid); border-bottom: 1px solid var(--border); background: #FFFFFF; }
+.lesson-html-body.track-real-estate-property-management .compare-table tr:last-child td { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .compare-table tbody tr:nth-child(even) td { background: var(--cream) !important; }
+.lesson-html-body.track-real-estate-property-management .compare-table td:first-child { font-weight: 600; color: var(--text-dark); }
+
+/* ── Deposit box ── */
+.lesson-html-body.track-real-estate-property-management .deposit-box { background: var(--navy-pale); border: 1px solid var(--border); border-left: 4px solid var(--navy); border-radius: 0 14px 14px 0; padding: 1.5rem 1.75rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .deposit-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
+
+/* ── Checklist ── */
+.lesson-html-body.track-real-estate-property-management .checklist { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .check-item { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--text-mid); line-height: 1.6; }
+.lesson-html-body.track-real-estate-property-management .check-item::before { content: '☐'; color: var(--navy-mid); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+/* ── Principles list ── */
+.lesson-html-body.track-real-estate-property-management .principles-list { list-style: none; padding: 0; margin: 1.25rem 0; display: flex; flex-direction: column; gap: 1rem; }
+.lesson-html-body.track-real-estate-property-management .principle-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 1.25rem; background: var(--white); border: 1px solid var(--border); border-radius: 12px; }
+.lesson-html-body.track-real-estate-property-management .principle-item::before { content: '→'; color: var(--navy-mid); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+/* ── Eight attrs / seven things ── */
+.lesson-html-body.track-real-estate-property-management .eight-attrs,
+.lesson-html-body.track-real-estate-property-management .seven-things { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .thing-item,
+.lesson-html-body.track-real-estate-property-management .attr-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .thing-item:hover,
+.lesson-html-body.track-real-estate-property-management .attr-card:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-property-management .thing-num,
+.lesson-html-body.track-real-estate-property-management .ac-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .thing-content h4,
+.lesson-html-body.track-real-estate-property-management .attr-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .thing-content p,
+.lesson-html-body.track-real-estate-property-management .attr-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+
+/* ── Account cards / cf cards ── */
+.lesson-html-body.track-real-estate-property-management .accounts-grid,
+.lesson-html-body.track-real-estate-property-management .cf-card { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .account-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .account-card:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-property-management .ac-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 8px; background: var(--navy-pale); color: var(--navy-mid); margin-bottom: 0.5rem; }
+.lesson-html-body.track-real-estate-property-management .cf-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.35rem; }
+
+/* ── Career path cards ── */
+.lesson-html-body.track-real-estate-property-management .career-paths { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .career-path { background: var(--white); border: 1px solid var(--border); border-top: 4px solid var(--navy); border-bottom: 2px solid var(--gold); border-radius: 14px; padding: 1.5rem; transition: all 0.25s; }
+.lesson-html-body.track-real-estate-property-management .career-path:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+.lesson-html-body.track-real-estate-property-management .cp-icon { font-size: 1.75rem; margin-bottom: 0.5rem; display: block; }
+.lesson-html-body.track-real-estate-property-management .cp-content h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .cp-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+
+/* ── Violation grid / never-rent ── */
+.lesson-html-body.track-real-estate-property-management .violation-grid { display: flex; flex-direction: column; gap: 0; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .viol-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .viol-item:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .never-rent { background: #FFF0F0; border: 1px solid rgba(192,57,43,0.15); border-radius: 14px; padding: 1.5rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .nr-item { display: flex; gap: 10px; align-items: flex-start; padding: 0.6rem 0; border-bottom: 1px solid rgba(192,57,43,0.1); font-size: 13.5px; color: var(--text-mid); line-height: 1.6; }
+.lesson-html-body.track-real-estate-property-management .nr-item:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .nr-item::before { content: '✗'; color: #C0392B; font-weight: 700; flex-shrink: 0; }
+
+/* ── Research tools ── */
+.lesson-html-body.track-real-estate-property-management .research-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .tool-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .tool-item:hover { box-shadow: var(--shadow-card); }
+
+/* ── Funnel steps ── */
+.lesson-html-body.track-real-estate-property-management .funnel { display: flex; flex-direction: column; gap: 0; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .funnel-step { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .funnel-step:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .fs-num { width: 36px; height: 36px; background: var(--navy); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+.lesson-html-body.track-real-estate-property-management .fs-content { flex: 1; }
+.lesson-html-body.track-real-estate-property-management .fs-content h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-property-management .fs-content p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin: 0; }
+
+/* ── Dp header / title block ── */
+.lesson-html-body.track-real-estate-property-management .dp-header { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; background: linear-gradient(135deg, #0F2340 0%, #1A3A5C 100%); border-radius: 14px 14px 0 0; }
+.lesson-html-body.track-real-estate-property-management .dp-title-block h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: #FFFFFF; margin: 0 0 3px; }
+.lesson-html-body.track-real-estate-property-management .dp-title-block p { font-size: 12px; color: rgba(255,255,255,0.68); margin: 0; }
+
+/* ── Affiliate disclosure ── */
+.lesson-html-body.track-real-estate-property-management .affiliate-disclosure { font-size: 11px; color: var(--text-light); background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.85rem; margin: 1rem 0; }
+
+/* ── Breadcrumb / module nav ── */
+.lesson-html-body.track-real-estate-property-management .breadcrumb { font-size: 12px; color: var(--text-light); margin-bottom: 1rem; }
+.lesson-html-body.track-real-estate-property-management .module-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+.lesson-html-body.track-real-estate-property-management .module-nav-info { font-size: 12px; color: var(--text-light); }
+.lesson-html-body.track-real-estate-property-management .module-body { padding: 2rem 0; }
+
+/* ── Sep (separator) ── */
+.lesson-html-body.track-real-estate-property-management .sep { height: 1px; background: var(--border); margin: 2rem 0; }
+
+/* ── Primary / secondary / must / nice tags ── */
+.lesson-html-body.track-real-estate-property-management .primary { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 8px; background: var(--navy); color: #FFFFFF; }
+.lesson-html-body.track-real-estate-property-management .secondary { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 8px; background: var(--navy-pale); color: var(--navy-mid); }
+.lesson-html-body.track-real-estate-property-management .must { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 8px; background: #FFF0F0; color: #C0392B; }
+.lesson-html-body.track-real-estate-property-management .nice { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 8px; background: #EAF6EE; color: #2A7A4A; }
+.lesson-html-body.track-real-estate-property-management .state { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 8px; background: var(--gold-pale); color: #8A6A20; }
+.lesson-html-body.track-real-estate-property-management .active { border-left: 3px solid var(--gold) !important; }
+.lesson-html-body.track-real-estate-property-management .locked { opacity: 0.5; }
+.lesson-html-body.track-real-estate-property-management .current { background: var(--navy) !important; color: var(--gold-light) !important; }
+.lesson-html-body.track-real-estate-property-management .complete { background: var(--navy-mid) !important; color: #FFFFFF !important; }
+
+/* ── Contractor filter ── */
+.lesson-html-body.track-real-estate-property-management .contractor-filter { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0; }
+
+/* ── Credit ── */
+.lesson-html-body.track-real-estate-property-management .credit { font-size: 11px; color: var(--text-light); font-style: italic; margin-top: 0.5rem; }
+
+/* ── Fade-in ── */
+.lesson-html-body.track-real-estate-property-management .fade-in { animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* ── Pr content / pr num ── */
+.lesson-html-body.track-real-estate-property-management .pr-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .pr-content h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .pr-content p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+
+/* ── Fh grid / fh class ── */
+.lesson-html-body.track-real-estate-property-management .fh-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .fh-class { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .fh-class:hover { box-shadow: var(--shadow-card); }
+
+/* ── Eviction steps ── */
+.lesson-html-body.track-real-estate-property-management .ev-step { flex: 1; }
+.lesson-html-body.track-real-estate-property-management .ev-step h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-property-management .ev-step p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin: 0; }
+
+/* ── Cp content ── */
+.lesson-html-body.track-real-estate-property-management .cp-content { flex: 1; }
+
+/* ── Condition grid items ── */
+.lesson-html-body.track-real-estate-property-management .condition-card.must { border-top: 4px solid #C0392B !important; background: #FFF8F8; }
+.lesson-html-body.track-real-estate-property-management .condition-card.nice { border-top: 4px solid #2A7A4A !important; background: #F8FFF9; }
+.lesson-html-body.track-real-estate-property-management .condition-card.primary { border-top: 4px solid var(--navy) !important; background: var(--white); }
+
+/* ── Screening steps ── */
+.lesson-html-body.track-real-estate-property-management .screening-steps .step { border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .screening-steps .step:last-child { border-bottom: none; }
+
+/* ── Turnover steps ── */
+.lesson-html-body.track-real-estate-property-management .turnover-steps .to-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .turnover-steps .to-item:last-child { border-bottom: none; }
+
+/* ── Qc standard ── */
+.lesson-html-body.track-real-estate-property-management .qc-standard.must { background: #FFF0F0; color: #C0392B; }
+.lesson-html-body.track-real-estate-property-management .qc-standard.nice { background: #EAF6EE; color: #2A7A4A; }
+
+/* ── Cf card ── */
+.lesson-html-body.track-real-estate-property-management .cf-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .cf-card:hover { box-shadow: var(--shadow-card); }

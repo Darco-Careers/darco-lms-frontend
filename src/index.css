@@ -9336,8 +9336,8 @@
 .lesson-html-body.track-real-estate-property-management .bi-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem; }
 .lesson-html-body.track-real-estate-property-management .bi-author { font-size: 12px; font-weight: 600; color: var(--navy-mid); margin-bottom: 0.5rem; }
 .lesson-html-body.track-real-estate-property-management .bi-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.75rem; }
-.lesson-html-body.track-real-estate-property-management .book-item a { color: var(--navy) !important; text-decoration: none !important; font-size: 13px; font-weight: 600; }
-.lesson-html-body.track-real-estate-property-management .book-item a:hover { color: var(--navy-mid) !important; }
+.lesson-html-body.track-real-estate-property-management .book-item a { color: #FFFFFF !important; text-decoration: none !important; font-size: 13px; font-weight: 600; }
+.lesson-html-body.track-real-estate-property-management .book-item a:hover { color: #F0E8D0 !important; }
 
 /* ── Knowledge check ── */
 .lesson-html-body.track-real-estate-property-management .knowledge-check { background: var(--white); border: 1.5px solid var(--navy-pale); border-radius: 16px; padding: 2rem 2.25rem; margin: 2.5rem 0; }

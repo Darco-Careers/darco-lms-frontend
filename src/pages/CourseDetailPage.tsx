@@ -296,7 +296,7 @@ export default function CourseDetailPage() {
                       : { background: '#F5F0EB', color: '#8A8070' }
                     }
                   >
-                    {idx === 0 ? <BookOpen size={15} /> : idx + 1}
+                    {idx === 0 ? <BookOpen size={15} /> : idx}
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-body font-semibold text-[#1A1A18] text-sm truncate">{mod.title}</p>

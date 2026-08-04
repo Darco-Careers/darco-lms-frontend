@@ -348,19 +348,6 @@ export default function LessonPage() {
       {/* Content — full-width for HTML lessons, constrained card for Markdown */}
       <div className={lesson.content_type === 'html' ? '' : 'page-container max-w-3xl mx-auto py-10 px-4'}>
 
-        {/* YouTube embed — only for non-HTML lessons (HTML lessons embed video inside the body) */}
-        {lesson.youtube_url && lesson.content_type !== 'html' && (
-          <div className="mb-8 rounded-xl overflow-hidden shadow-sm aspect-video">
-            <iframe
-              src={lesson.youtube_url}
-              title={lesson.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          </div>
-        )}
-
         {/* Lesson body */}
         <article className={lesson.content_type === 'html'
           ? 'lesson-fullbleed'
@@ -378,6 +365,19 @@ export default function LessonPage() {
             </div>
           )}
         </article>
+
+        {/* YouTube embed — only for non-HTML lessons (HTML lessons embed video inside the body) */}
+        {lesson.youtube_url && lesson.content_type !== 'html' && (
+          <div className="mt-8 mb-4 rounded-xl overflow-hidden shadow-sm aspect-video">
+            <iframe
+              src={lesson.youtube_url}
+              title={lesson.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        )}
 
         {/* CTA + navigation — re-constrained for HTML lessons */}
         <div className={lesson.content_type === 'html' ? 'page-container max-w-3xl mx-auto px-4 pb-10' : ''}>

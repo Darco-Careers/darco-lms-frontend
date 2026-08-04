@@ -9575,9 +9575,21 @@
 .lesson-html-body.track-real-estate-property-management .fs-content p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin: 0; }
 
 /* ── Dp header / title block ── */
-.lesson-html-body.track-real-estate-property-management .dp-header { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 1.5rem; background: linear-gradient(135deg, #0F2340 0%, #1A3A5C 100%); border-radius: 14px 14px 0 0; }
+.lesson-html-body.track-real-estate-property-management .dp-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 1.75rem 1.75rem; background: linear-gradient(135deg, #0F2340 0%, #1A3A5C 100%); border-radius: 14px 14px 0 0; }
 .lesson-html-body.track-real-estate-property-management .dp-title-block h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: #FFFFFF; margin: 0 0 3px; }
 .lesson-html-body.track-real-estate-property-management .dp-title-block p { font-size: 12px; color: rgba(255,255,255,0.68); margin: 0; }
+/* Text inside dp-header must be light — dark navy background */
+.lesson-html-body.track-real-estate-property-management .dp-header .section-label { color: rgba(255,255,255,0.65); }
+.lesson-html-body.track-real-estate-property-management .dp-header .section-label .dot { background: var(--gold); }
+.lesson-html-body.track-real-estate-property-management .dp-header h2.lesson-title { color: #FFFFFF; }
+.lesson-html-body.track-real-estate-property-management .dp-header h2.lesson-title em { color: var(--gold-light); font-style: italic; }
+.lesson-html-body.track-real-estate-property-management .dp-header .gold-divider { background: var(--gold); }
+.lesson-html-body.track-real-estate-property-management .dp-header > p,
+.lesson-html-body.track-real-estate-property-management .dp-header .lesson-text { color: rgba(255,255,255,0.80); }
+.lesson-html-body.track-real-estate-property-management .dp-title-block .section-label { color: rgba(255,255,255,0.65); }
+.lesson-html-body.track-real-estate-property-management .dp-title-block h2.lesson-title { color: #FFFFFF; }
+.lesson-html-body.track-real-estate-property-management .dp-title-block h2.lesson-title em { color: var(--gold-light); font-style: italic; }
+.lesson-html-body.track-real-estate-property-management .dp-title-block .lesson-text { color: rgba(255,255,255,0.80); font-size: 14px; line-height: 1.75; margin-bottom: 0; }
 
 /* ── Affiliate disclosure ── */
 .lesson-html-body.track-real-estate-property-management .affiliate-disclosure { font-size: 11px; color: var(--text-light); background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.85rem; margin: 1rem 0; }

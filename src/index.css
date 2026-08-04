@@ -9459,7 +9459,7 @@
 /* ── Qual cards / condition cards / compare cards ── */
 .lesson-html-body.track-real-estate-property-management .qual-grid,
 .lesson-html-body.track-real-estate-property-management .condition-grid,
-.lesson-html-body.track-real-estate-property-management .compare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.75rem 0; }
 .lesson-html-body.track-real-estate-property-management .qual-card,
 .lesson-html-body.track-real-estate-property-management .condition-card,
 .lesson-html-body.track-real-estate-property-management .compare-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }

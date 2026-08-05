@@ -9539,17 +9539,18 @@
 
 /* ── Eight attrs / seven things ── */
 .lesson-html-body.track-real-estate-property-management .eight-attrs,
-.lesson-html-body.track-real-estate-property-management .seven-things { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
-.lesson-html-body.track-real-estate-property-management .thing-item,
+.lesson-html-body.track-real-estate-property-management .seven-things { display: flex; flex-direction: column; gap: 0; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .thing-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .thing-item:last-child { border-bottom: none; }
 .lesson-html-body.track-real-estate-property-management .attr-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
-.lesson-html-body.track-real-estate-property-management .thing-item:hover,
 .lesson-html-body.track-real-estate-property-management .attr-card:hover { box-shadow: var(--shadow-card); }
-.lesson-html-body.track-real-estate-property-management .thing-num,
+.lesson-html-body.track-real-estate-property-management .thing-num { width: 36px; height: 36px; min-width: 36px; background: var(--navy); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; line-height: 1; margin-top: 2px; flex-shrink: 0; }
 .lesson-html-body.track-real-estate-property-management .ac-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .thing-content { flex: 1; }
 .lesson-html-body.track-real-estate-property-management .thing-content h4,
-.lesson-html-body.track-real-estate-property-management .attr-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-property-management .attr-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin: 0 0 0.35rem; text-transform: uppercase; letter-spacing: 0.4px; }
 .lesson-html-body.track-real-estate-property-management .thing-content p,
-.lesson-html-body.track-real-estate-property-management .attr-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+.lesson-html-body.track-real-estate-property-management .attr-card p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin: 0; }
 
 /* ── Account cards / cf cards ── */
 .lesson-html-body.track-real-estate-property-management .accounts-grid,
@@ -9577,9 +9578,10 @@
 .lesson-html-body.track-real-estate-property-management .nr-item::before { content: '✗'; color: #C0392B; font-weight: 700; flex-shrink: 0; }
 
 /* ── Research tools ── */
-.lesson-html-body.track-real-estate-property-management .research-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
-.lesson-html-body.track-real-estate-property-management .tool-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
-.lesson-html-body.track-real-estate-property-management .tool-item:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-property-management .research-tools { display: flex; flex-direction: column; gap: 0; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .tool-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.lesson-html-body.track-real-estate-property-management .tool-item:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .ti-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 2px; }
 
 /* ── Funnel steps ── */
 .lesson-html-body.track-real-estate-property-management .funnel { display: flex; flex-direction: column; gap: 0; margin: 1.75rem 0; }

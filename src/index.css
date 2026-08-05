@@ -9926,11 +9926,17 @@
 .lesson-html-body.track-real-estate-leasing .takeaways ul {
   list-style: none; display: flex; flex-direction: column; gap: 0.75rem; position: relative; padding-left: 0;
 }
+.lesson-html-body.track-real-estate-leasing .takeaways-header {
+  display: block;
+  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700;
+  color: #E8C97A !important; margin-bottom: 1.1rem;
+  text-transform: uppercase; letter-spacing: 1.5px;
+}
 .lesson-html-body.track-real-estate-leasing .takeaways ul li {
-  font-size: 14px; color: rgba(255,255,255,0.85); display: flex; gap: 10px; line-height: 1.65;
+  font-size: 14px; color: rgba(255,255,255,0.88) !important; display: flex; gap: 10px; line-height: 1.65;
 }
 .lesson-html-body.track-real-estate-leasing .takeaways ul li::before {
-  content: '✓'; color: var(--gold-light); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  content: '✓'; color: var(--gold-light) !important; font-weight: 700; flex-shrink: 0; margin-top: 1px;
 }
 
 /* ── Video cards ── */
@@ -10137,3 +10143,13 @@
 
 /* ── Leasing track: col-card warm accent ── */
 .lesson-html-body.track-real-estate-leasing .col-card h4 { color: var(--olive-mid); border-bottom-color: var(--gold); }
+
+/* ── Leasing track: accom-grid (Reasonable Accommodation / Modification) ── */
+.lesson-html-body.track-real-estate-leasing .accom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+@media (max-width: 600px) { .lesson-html-body.track-real-estate-leasing .accom-grid { grid-template-columns: 1fr; } }
+.lesson-html-body.track-real-estate-leasing .accom-card { border-radius: 12px; overflow: hidden; border: 1px solid #E8E0D0; box-shadow: 0 2px 12px rgba(74,58,10,0.07); }
+.lesson-html-body.track-real-estate-leasing .accom-header { padding: 0.85rem 1.25rem; background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.lesson-html-body.track-real-estate-leasing .accom-body { padding: 1.1rem 1.25rem; background: #fff; }
+.lesson-html-body.track-real-estate-leasing .accom-body p { font-size: 13.5px !important; color: var(--text-mid) !important; line-height: 1.7; margin: 0 0 0.65rem !important; max-width: none !important; }
+.lesson-html-body.track-real-estate-leasing .accom-body p:last-child { margin-bottom: 0 !important; }
+.lesson-html-body.track-real-estate-leasing .accom-body strong { color: var(--olive-mid); }

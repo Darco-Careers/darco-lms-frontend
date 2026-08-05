@@ -9688,10 +9688,10 @@
    ============================================================ */
 
 .lesson-html-body.track-real-estate-leasing {
-  --olive:        #4A4A1A;
-  --olive-mid:    #6B6B2A;
-  --olive-light:  #8B7D3A;
-  --olive-pale:   #EBE8D8;
+  --olive:        #5C4A10;
+  --olive-mid:    #7A6020;
+  --olive-light:  #9A8040;
+  --olive-pale:   #F5F0E0;
   --gold:         #C9A84C;
   --gold-light:   #E8C97A;
   --gold-pale:    #FBF5E6;
@@ -9732,7 +9732,7 @@
   box-sizing: border-box;
 }
 .lesson-html-body.track-real-estate-leasing .module-hero {
-  background: linear-gradient(135deg, #1A1A08 0%, #2E2E0E 55%, #4A4A1A 100%);
+  background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 50%, #5C4A10 100%);
   padding: 3.5rem 2.5rem;
   position: relative;
   overflow: hidden;
@@ -9912,7 +9912,7 @@
 
 /* ── Takeaways ── */
 .lesson-html-body.track-real-estate-leasing .takeaways {
-  background: linear-gradient(135deg, #1A1A08 0%, #2E2E0E 55%, #4A4A1A 100%);
+  background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 50%, #5C4A10 100%);
   border-radius: 16px; padding: 2rem 2.25rem; margin: 2rem 0; position: relative; overflow: hidden;
 }
 .lesson-html-body.track-real-estate-leasing .takeaways::before {
@@ -9959,7 +9959,7 @@
 
 /* ── Completion / CTA section ── */
 .lesson-html-body.track-real-estate-leasing .cta-section {
-  background: linear-gradient(135deg, #1A1A08 0%, #2E2E0E 55%, #4A4A1A 100%) !important;
+  background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 50%, #5C4A10 100%) !important;
   padding: 3.5rem 2.5rem; text-align: center;
 }
 .lesson-html-body.track-real-estate-leasing .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: #FFFFFF; margin-bottom: 0.75rem; }
@@ -9969,7 +9969,7 @@
 
 /* ── Completion banner ── */
 .lesson-html-body.track-real-estate-leasing .completion-banner {
-  background: linear-gradient(135deg, #1A1A08, #2E2E0E 50%, #4A4A1A);
+  background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 50%, #5C4A10 100%);
   border-radius: 20px; padding: 2.5rem; margin: 3rem 0; position: relative; overflow: hidden; text-align: center;
 }
 .lesson-html-body.track-real-estate-leasing .completion-banner::before {
@@ -9981,7 +9981,7 @@
 .lesson-html-body.track-real-estate-leasing .completion-banner p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.8; position: relative; }
 
 /* ── dp-header (dark header inside lesson body) ── */
-.lesson-html-body.track-real-estate-leasing .dp-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 1.75rem 1.75rem; background: linear-gradient(135deg, #1A1A08 0%, #2E2E0E 100%); border-radius: 14px 14px 0 0; }
+.lesson-html-body.track-real-estate-leasing .dp-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 1.75rem 1.75rem; background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); border-radius: 14px 14px 0 0; }
 .lesson-html-body.track-real-estate-leasing .dp-header .section-label { color: rgba(255,255,255,0.65); }
 .lesson-html-body.track-real-estate-leasing .dp-header .section-label .dot { background: var(--gold); }
 .lesson-html-body.track-real-estate-leasing .dp-header h2.lesson-title { color: #FFFFFF; }
@@ -10003,13 +10003,13 @@
 
 /* ── Leasing track: Stat blocks ── */
 .lesson-html-body.track-real-estate-leasing .stat-row { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.25rem 0; }
-.lesson-html-body.track-real-estate-leasing .stat-box { flex: 1; min-width: 120px; background: linear-gradient(135deg, #2E2E0E 0%, #3D3D12 100%); border-radius: 10px; padding: 1rem 1.25rem; text-align: center; }
+.lesson-html-body.track-real-estate-leasing .stat-box { flex: 1; min-width: 120px; background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); border-radius: 10px; padding: 1rem 1.25rem; text-align: center; }
 .lesson-html-body.track-real-estate-leasing .stat-value { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold-light); display: block; }
 .lesson-html-body.track-real-estate-leasing .stat-label { font-size: 11px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.25rem; display: block; }
 
 /* ── Leasing track: Daily schedule ── */
 .lesson-html-body.track-real-estate-leasing .daily-schedule { background: #fff; border: 1px solid #E8E0D0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
-.lesson-html-body.track-real-estate-leasing .ds-header { background: linear-gradient(135deg, #2E2E0E 0%, #3D3D12 100%); padding: 1rem 1.5rem; }
+.lesson-html-body.track-real-estate-leasing .ds-header { background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); padding: 1rem 1.5rem; }
 .lesson-html-body.track-real-estate-leasing .ds-header h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: #fff; margin: 0; }
 .lesson-html-body.track-real-estate-leasing .ds-row { display: flex; gap: 0; border-bottom: 1px solid #F0EBE0; }
 .lesson-html-body.track-real-estate-leasing .ds-row:last-child { border-bottom: none; }
@@ -10017,8 +10017,8 @@
 .lesson-html-body.track-real-estate-leasing .ds-task { padding: 0.75rem 1.25rem; font-size: 14px; color: var(--text-mid); line-height: 1.6; display: flex; align-items: center; }
 
 /* ── Leasing track: Story / quote blocks ── */
-.lesson-html-body.track-real-estate-leasing .story-block { background: linear-gradient(135deg, #F9F6F0 0%, #F4EFE6 100%); border-left: 4px solid var(--olive); border-radius: 0 12px 12px 0; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
-.lesson-html-body.track-real-estate-leasing .story-block p { font-size: 15px; color: var(--olive); font-style: italic; line-height: 1.85; margin: 0 0 0.5rem; }
+.lesson-html-body.track-real-estate-leasing .story-block { background: #F5F0E0; border-left: 4px solid #C9A84C; border-radius: 0 12px 12px 0; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-leasing .story-block p { font-size: 15px; color: #5C4A10; font-style: italic; line-height: 1.85; margin: 0 0 0.5rem; }
 .lesson-html-body.track-real-estate-leasing .story-block .story-attr { font-size: 12px; color: var(--text-light); font-style: normal; font-weight: 600; }
 
 /* ── Leasing track: Tip cards grid ── */
@@ -10035,7 +10035,7 @@
 .lesson-html-body.track-real-estate-leasing .num-step-body strong { color: var(--text-dark); }
 
 /* ── Leasing track: Highlight banner ── */
-.lesson-html-body.track-real-estate-leasing .highlight-banner { background: linear-gradient(135deg, var(--olive) 0%, #4A4A18 100%); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-leasing .highlight-banner { background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
 .lesson-html-body.track-real-estate-leasing .highlight-banner h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; margin: 0 0 0.5rem; }
 .lesson-html-body.track-real-estate-leasing .highlight-banner p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.75; margin: 0; }
 .lesson-html-body.track-real-estate-leasing .highlight-banner em { color: var(--gold-light); font-style: italic; }
@@ -10054,3 +10054,86 @@
 .lesson-html-body.track-real-estate-leasing .employer-card h4 { font-size: 14px; font-weight: 700; color: var(--text-dark); margin: 0 0 0.3rem; }
 .lesson-html-body.track-real-estate-leasing .employer-card p { font-size: 12px; color: var(--text-light); line-height: 1.6; margin: 0 0 0.5rem; }
 .lesson-html-body.track-real-estate-leasing .employer-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: var(--olive-light); color: var(--olive); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ── Leasing track: callout-tip (warm amber) ── */
+.lesson-html-body.track-real-estate-leasing .callout-tip {
+  background: #F5F0E0;
+  border-left: 4px solid #C9A84C;
+  border-radius: 0 14px 14px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+}
+.lesson-html-body.track-real-estate-leasing .callout-tip .callout-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: #8A6A20; margin-bottom: 0.5rem; display: block;
+}
+.lesson-html-body.track-real-estate-leasing .callout-tip p {
+  color: #5C4A10; font-size: 14px; line-height: 1.75; margin: 0;
+}
+
+/* ── Leasing track: callout-warning (warm amber-red) ── */
+.lesson-html-body.track-real-estate-leasing .callout-warning {
+  background: #FDF0E0;
+  border-left: 4px solid #C9844C;
+  border-radius: 0 14px 14px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+}
+.lesson-html-body.track-real-estate-leasing .callout-warning .callout-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: #8A4A20; margin-bottom: 0.5rem; display: block;
+}
+.lesson-html-body.track-real-estate-leasing .callout-warning p {
+  color: #5C3010; font-size: 14px; line-height: 1.75; margin: 0;
+}
+
+/* ── Leasing track: asset-card (CRE-style with colored header) ── */
+.lesson-html-body.track-real-estate-leasing .asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-leasing .asset-card { background: #fff; border: 1px solid #E8E0D0; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 16px rgba(74,58,10,0.07); }
+.lesson-html-body.track-real-estate-leasing .asset-card-header { padding: 1rem 1.25rem; background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); }
+.lesson-html-body.track-real-estate-leasing .asset-card-header h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: #fff; margin: 0 0 0.2rem; }
+.lesson-html-body.track-real-estate-leasing .asset-card-header span { font-size: 11px; color: rgba(255,255,255,0.65); }
+.lesson-html-body.track-real-estate-leasing .asset-card-body { padding: 1rem 1.25rem; }
+.lesson-html-body.track-real-estate-leasing .asset-card-body p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0 0 0.75rem; }
+.lesson-html-body.track-real-estate-leasing .asset-stat { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid #F0EBE0; font-size: 13px; }
+.lesson-html-body.track-real-estate-leasing .asset-stat:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-leasing .asset-stat-label { color: var(--text-light); }
+.lesson-html-body.track-real-estate-leasing .asset-stat-value { font-weight: 700; color: var(--olive-mid); }
+
+/* ── Leasing track: deep-dive-banner (optional resource) ── */
+.lesson-html-body.track-real-estate-leasing .deep-dive-banner {
+  background: #F5F0E0;
+  border: 1px solid #C9A84C;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.lesson-html-body.track-real-estate-leasing .deep-dive-banner .dd-icon { font-size: 2rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-leasing .deep-dive-banner h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: #5C4A10; margin: 0 0 0.35rem; }
+.lesson-html-body.track-real-estate-leasing .deep-dive-banner p { font-size: 13px; color: #7A6020; line-height: 1.65; margin: 0; }
+
+/* ── Leasing track: compare-grid (side-by-side comparison) ── */
+.lesson-html-body.track-real-estate-leasing .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+@media (max-width: 600px) { .lesson-html-body.track-real-estate-leasing .compare-grid { grid-template-columns: 1fr; } }
+.lesson-html-body.track-real-estate-leasing .compare-card { border-radius: 12px; overflow: hidden; border: 1px solid #E8E0D0; }
+.lesson-html-body.track-real-estate-leasing .compare-card-header { padding: 0.75rem 1.25rem; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+.lesson-html-body.track-real-estate-leasing .compare-card-header.amber { background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); color: #fff; }
+.lesson-html-body.track-real-estate-leasing .compare-card-header.cream { background: #F5F0E0; color: #5C4A10; }
+.lesson-html-body.track-real-estate-leasing .compare-card ul { margin: 0; padding: 1rem 1.25rem 1rem 2rem; background: #fff; }
+.lesson-html-body.track-real-estate-leasing .compare-card li { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.3rem; }
+
+/* ── Leasing track: sc-badge warm color variant ── */
+.lesson-html-body.track-real-estate-leasing .sc-badge { background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); }
+
+/* ── Leasing track: num-step-n warm color ── */
+.lesson-html-body.track-real-estate-leasing .num-step-n { background: var(--olive-mid); }
+
+/* ── Leasing track: tip-card top accent ── */
+.lesson-html-body.track-real-estate-leasing .tip-card { border-top: 3px solid var(--gold); }
+.lesson-html-body.track-real-estate-leasing .tip-card h4 { color: var(--olive-mid); }
+
+/* ── Leasing track: col-card warm accent ── */
+.lesson-html-body.track-real-estate-leasing .col-card h4 { color: var(--olive-mid); border-bottom-color: var(--gold); }

@@ -7873,9 +7873,9 @@
 .lesson-html-body.track-real-estate-development .rule-num { width: 28px; height: 28px; border-radius: 50%; background: var(--char); color: var(--white); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .lesson-html-body.track-real-estate-development .rule-body { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; }
 .lesson-html-body.track-real-estate-development .mentor-wrap { max-width: 860px; margin: 0 auto 2.5rem; padding: 0 2rem; box-sizing: border-box; }
-.lesson-html-body.track-real-estate-development .mentor-bubble { display: flex; gap: 1rem; align-items: flex-start; background: rgba(255,255,255,0.06); border: 1px solid rgba(212,98,26,0.3); border-radius: 14px; padding: 1.25rem 1.5rem; }
+.lesson-html-body.track-real-estate-development .mentor-bubble { display: flex; gap: 1rem; align-items: flex-start; background: #FDF5EE; border: 1px solid rgba(212,98,26,0.25); border-radius: 14px; padding: 1.25rem 1.5rem; }
 .lesson-html-body.track-real-estate-development .mentor-avatar { width: 44px; height: 44px; min-width: 44px; border-radius: 50%; background: var(--orange); color: var(--white); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; flex-shrink: 0; }
-.lesson-html-body.track-real-estate-development .mentor-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: rgba(255,255,255,0.82); line-height: 1.75; }
+.lesson-html-body.track-real-estate-development .mentor-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #2A1A0A !important; line-height: 1.75; }
 
 .lesson-html-body.track-real-estate-development .video-card { background: var(--char); border-radius: 16px; overflow: hidden; margin: 2rem 0; }
 .lesson-html-body.track-real-estate-development .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }

@@ -10184,3 +10184,152 @@
 .lesson-html-body.track-real-estate-property-management .ecb-total { border-top: 1px solid rgba(201,168,76,0.3) !important; margin-top: 0.25rem; padding-top: 0.75rem !important; }
 .lesson-html-body.track-real-estate-property-management .ecb-total .ecb-label { color: #fff; font-weight: 700; font-size: 14px; }
 .lesson-html-body.track-real-estate-property-management .ecb-total .ecb-value { font-size: 15px; color: #FFD700; }
+
+/* ============================================================
+   REAL ESTATE DEVELOPMENT — Track Overview / Orientation
+   Classes: red-orient-*
+   ============================================================ */
+
+/* Hero */
+.lesson-html-body .red-orient-hero { background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 55%, #383838 100%); padding: 3.5rem 2.5rem 3rem; position: relative; overflow: hidden; }
+.lesson-html-body .red-orient-hero-glow { position: absolute; top: -40%; right: -10%; width: 55%; height: 200%; background: radial-gradient(ellipse, rgba(212,98,26,0.15) 0%, transparent 70%); pointer-events: none; }
+.lesson-html-body .red-orient-hero-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #D4621A, #F08C50, transparent); }
+.lesson-html-body .red-orient-hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
+.lesson-html-body .red-orient-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,98,26,0.18); border: 1px solid rgba(212,98,26,0.35); color: #F08C50; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 1.25rem; }
+.lesson-html-body .red-orient-h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 0.75rem; }
+.lesson-html-body .red-orient-h1 em { color: #F08C50; font-style: italic; }
+.lesson-html-body .red-orient-sub { font-size: 1rem; color: rgba(255,255,255,0.68); max-width: 580px; line-height: 1.8; font-weight: 300; margin-bottom: 2rem; }
+.lesson-html-body .red-orient-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.lesson-html-body .red-orient-stat-val { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #F08C50; line-height: 1; }
+.lesson-html-body .red-orient-stat-label { font-size: 11.5px; color: rgba(255,255,255,0.45); margin-top: 4px; }
+
+/* Body wrapper */
+.lesson-html-body .red-orient-body { max-width: 860px; margin: 0 auto; padding: 0 2rem; box-sizing: border-box; }
+
+/* Section */
+.lesson-html-body .red-orient-section { margin: 3rem 0; }
+.lesson-html-body .red-orient-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #D4621A; margin-bottom: 0.5rem; }
+.lesson-html-body .red-orient-h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 700; color: #1A1A1A; line-height: 1.25; margin-bottom: 0.5rem; }
+.lesson-html-body .red-orient-h2 em { color: #D4621A; font-style: italic; }
+.lesson-html-body .red-orient-h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #1A1A1A; margin: 2rem 0 1rem; }
+.lesson-html-body .red-orient-rule { width: 50px; height: 3px; background: #D4621A; border-radius: 2px; margin: 0.75rem 0 1.5rem; }
+.lesson-html-body .red-orient-text { font-size: 15px; color: #4A4240; line-height: 1.85; margin-bottom: 1rem; max-width: none !important; }
+.lesson-html-body .red-orient-quote { background: #FDF5EE; border-left: 4px solid #D4621A; border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.75rem 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: #3A2A1A; line-height: 1.75; }
+
+/* Types grid */
+.lesson-html-body .red-orient-types-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; margin: 1.5rem 0; }
+.lesson-html-body .red-orient-type-card { background: #fff; border: 1px solid #E8E0D8; border-top: 3px solid #D4621A; border-radius: 12px; padding: 1.25rem; }
+.lesson-html-body .red-orient-type-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+.lesson-html-body .red-orient-type-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #1A1A1A; margin: 0 0 0.4rem; }
+.lesson-html-body .red-orient-type-card p { font-size: 13px; color: #4A4240; line-height: 1.65; margin: 0; max-width: none !important; }
+
+/* Pipeline */
+.lesson-html-body .red-orient-pipeline { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+.lesson-html-body .red-orient-stage { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid #EDE8E0; }
+.lesson-html-body .red-orient-stage:last-child { border-bottom: none; }
+.lesson-html-body .red-orient-stage-num { width: 36px; height: 36px; min-width: 36px; border-radius: 50%; background: #D4621A; color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.lesson-html-body .red-orient-stage-body { flex: 1; }
+.lesson-html-body .red-orient-stage-time { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #D4621A; margin-bottom: 0.3rem; }
+.lesson-html-body .red-orient-stage-body h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #1A1A1A; margin: 0 0 0.3rem; }
+.lesson-html-body .red-orient-stage-body p { font-size: 13.5px; color: #4A4240; line-height: 1.7; margin: 0; max-width: none !important; }
+
+/* Day in the life */
+.lesson-html-body .red-orient-day { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+.lesson-html-body .red-orient-day-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.1rem 0; border-bottom: 1px solid #EDE8E0; }
+.lesson-html-body .red-orient-day-item:last-child { border-bottom: none; }
+.lesson-html-body .red-orient-day-time { min-width: 48px; font-size: 11px; font-weight: 700; color: #D4621A; text-transform: uppercase; letter-spacing: 0.5px; padding-top: 3px; flex-shrink: 0; }
+.lesson-html-body .red-orient-day-body h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: #1A1A1A; margin: 0 0 0.25rem; }
+.lesson-html-body .red-orient-day-body p { font-size: 13.5px; color: #4A4240; line-height: 1.7; margin: 0; max-width: none !important; }
+
+/* Dark sections */
+.lesson-html-body .red-orient-dark-section { background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); padding: 3.5rem 2rem; margin: 0; }
+.lesson-html-body .red-orient-dark-inner { max-width: 860px; margin: 0 auto; }
+.lesson-html-body .red-orient-eyebrow-light { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #F08C50; margin-bottom: 0.5rem; }
+.lesson-html-body .red-orient-h2-light { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 0.5rem; }
+.lesson-html-body .red-orient-h2-light em { color: #F08C50; font-style: italic; }
+.lesson-html-body .red-orient-rule-orange { width: 50px; height: 3px; background: #D4621A; border-radius: 2px; margin: 0.75rem 0 1.5rem; }
+.lesson-html-body .red-orient-dark-text { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 1.5rem; max-width: none !important; }
+
+/* Video grid */
+.lesson-html-body .red-orient-video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.lesson-html-body .red-orient-video-card { background: #2A2A2A; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+.lesson-html-body .red-orient-video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.lesson-html-body .red-orient-video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.lesson-html-body .red-orient-video-info { padding: 1rem 1.1rem; }
+.lesson-html-body .red-orient-video-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #D4621A; color: #fff; margin-bottom: 0.4rem; letter-spacing: 0.5px; text-transform: uppercase; }
+.lesson-html-body .red-orient-video-info h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: #fff !important; margin: 0 0 0.35rem; }
+.lesson-html-body .red-orient-video-info p { font-size: 12.5px; color: rgba(255,255,255,0.6) !important; line-height: 1.6; margin: 0 0 0.4rem; max-width: none !important; }
+.lesson-html-body .red-orient-video-credit { font-size: 11px; color: rgba(255,255,255,0.3) !important; }
+
+/* Podcasts */
+.lesson-html-body .red-orient-podcast-list { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+.lesson-html-body .red-orient-podcast-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid #EDE8E0; text-decoration: none; color: inherit; transition: background 0.15s; }
+.lesson-html-body .red-orient-podcast-item:last-child { border-bottom: none; }
+.lesson-html-body .red-orient-podcast-item:hover { background: #FDF5EE; border-radius: 8px; padding-left: 0.5rem; padding-right: 0.5rem; }
+.lesson-html-body .red-orient-podcast-icon { font-size: 1.75rem; flex-shrink: 0; margin-top: 2px; }
+.lesson-html-body .red-orient-podcast-body { flex: 1; }
+.lesson-html-body .red-orient-podcast-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #D4621A; margin-bottom: 0.25rem; }
+.lesson-html-body .red-orient-podcast-body h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #1A1A1A; margin: 0 0 0.3rem; }
+.lesson-html-body .red-orient-podcast-body p { font-size: 13px; color: #4A4240; line-height: 1.65; margin: 0; max-width: none !important; }
+.lesson-html-body .red-orient-podcast-arrow { font-size: 1.25rem; color: #D4621A; font-weight: 700; flex-shrink: 0; align-self: center; }
+
+/* Skills grid */
+.lesson-html-body .red-orient-skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.1rem; margin: 1.5rem 0; }
+.lesson-html-body .red-orient-skill-card { background: #fff; border: 1px solid #E8E0D8; border-radius: 12px; padding: 1.25rem; }
+.lesson-html-body .red-orient-skill-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; background: #2A2A2A; color: #fff; margin-bottom: 0.5rem; }
+.lesson-html-body .red-orient-skill-tag.helpful { background: #E8E0D8; color: #4A4240; }
+.lesson-html-body .red-orient-skill-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #1A1A1A; margin: 0 0 0.35rem; }
+.lesson-html-body .red-orient-skill-card p { font-size: 13px; color: #4A4240; line-height: 1.65; margin: 0; max-width: none !important; }
+
+/* Earnings grid */
+.lesson-html-body .red-orient-earnings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body .red-orient-earnings-card { background: rgba(255,255,255,0.07); border-radius: 12px; padding: 1.25rem; text-align: center; border: 1px solid rgba(255,255,255,0.06); }
+.lesson-html-body .red-orient-earnings-card.featured { background: rgba(212,98,26,0.2); border-color: rgba(212,98,26,0.3); }
+.lesson-html-body .red-orient-earnings-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.5rem; }
+.lesson-html-body .red-orient-earnings-val { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: #F08C50; line-height: 1.2; margin-bottom: 0.4rem; }
+.lesson-html-body .red-orient-earnings-desc { font-size: 11.5px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+.lesson-html-body .red-orient-earnings-disclaimer { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 1rem; text-align: center; }
+
+/* Roadmap */
+.lesson-html-body .red-orient-roadmap { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+.lesson-html-body .red-orient-roadmap-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid #EDE8E0; }
+.lesson-html-body .red-orient-roadmap-item:last-child { border-bottom: none; }
+.lesson-html-body .red-orient-roadmap-num { width: 36px; height: 36px; min-width: 36px; border-radius: 50%; background: #D4621A; color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.lesson-html-body .red-orient-roadmap-body h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #1A1A1A; margin: 0 0 0.3rem; }
+.lesson-html-body .red-orient-roadmap-body p { font-size: 13.5px; color: #4A4240; line-height: 1.7; margin: 0; max-width: none !important; }
+
+/* Fit grid */
+.lesson-html-body .red-orient-fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+@media (max-width: 640px) { .lesson-html-body .red-orient-fit-grid { grid-template-columns: 1fr; } }
+.lesson-html-body .red-orient-fit-card { border-radius: 12px; padding: 1.5rem; }
+.lesson-html-body .red-orient-fit-card.yes { background: #EAF4EC; border-top: 3px solid #2A6A3A; }
+.lesson-html-body .red-orient-fit-card.no { background: #FAF0F0; border-top: 3px solid #8A2A2A; }
+.lesson-html-body .red-orient-fit-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.75rem; }
+.lesson-html-body .red-orient-fit-card.yes .red-orient-fit-label { color: #2A6A3A; }
+.lesson-html-body .red-orient-fit-card.no .red-orient-fit-label { color: #8A2A2A; }
+.lesson-html-body .red-orient-fit-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.lesson-html-body .red-orient-fit-card.yes .red-orient-fit-list li { font-size: 13.5px; color: #1A3A22; line-height: 1.6; padding-left: 1.25rem; position: relative; }
+.lesson-html-body .red-orient-fit-card.yes .red-orient-fit-list li::before { content: '✓'; position: absolute; left: 0; color: #2A6A3A; font-weight: 700; }
+.lesson-html-body .red-orient-fit-card.no .red-orient-fit-list li { font-size: 13.5px; color: #3A1A1A; line-height: 1.6; padding-left: 1.25rem; position: relative; }
+.lesson-html-body .red-orient-fit-card.no .red-orient-fit-list li::before { content: '✗'; position: absolute; left: 0; color: #8A2A2A; font-weight: 700; }
+
+/* Glossary */
+.lesson-html-body .red-orient-glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.lesson-html-body .red-orient-gloss-card { background: #fff; border: 1px solid #E8E0D8; border-radius: 12px; padding: 1.25rem; }
+.lesson-html-body .red-orient-gloss-term { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #D4621A; margin-bottom: 0.4rem; }
+.lesson-html-body .red-orient-gloss-card p { font-size: 13px; color: #4A4240; line-height: 1.65; margin: 0; max-width: none !important; }
+
+/* CTA footer */
+.lesson-html-body .red-orient-cta { background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); padding: 3.5rem 2rem; text-align: center; }
+.lesson-html-body .red-orient-cta-inner { max-width: 640px; margin: 0 auto; }
+.lesson-html-body .red-orient-cta-h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; }
+.lesson-html-body .red-orient-cta-h2 em { color: #F08C50; font-style: italic; }
+.lesson-html-body .red-orient-cta-text { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1.75rem; max-width: none !important; }
+.lesson-html-body .red-orient-cta-text strong { color: rgba(255,255,255,0.85); }
+.lesson-html-body .red-orient-cta-buttons { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; }
+.lesson-html-body .red-orient-cta-btn { display: inline-block; padding: 0.85rem 2rem; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+.lesson-html-body .red-orient-cta-btn.primary { background: #D4621A; color: #fff; }
+.lesson-html-body .red-orient-cta-btn.primary:hover { background: #F08C50; }
+.lesson-html-body .red-orient-cta-btn.secondary { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.15); }
+.lesson-html-body .red-orient-cta-btn.secondary:hover { background: rgba(255,255,255,0.14); }
+.lesson-html-body .red-orient-cta-disclaimer { font-size: 11px; color: rgba(255,255,255,0.3); }

@@ -9491,9 +9491,11 @@
 .lesson-html-body.track-real-estate-property-management .ci-icon { font-size: 1.25rem; flex-shrink: 0; }
 
 /* ── Maintenance cards ── */
-.lesson-html-body.track-real-estate-property-management .maint-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
-.lesson-html-body.track-real-estate-property-management .maint-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
+.lesson-html-body.track-real-estate-property-management .maint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.75rem 0; align-items: stretch; }
+@media (max-width: 600px) { .lesson-html-body.track-real-estate-property-management .maint-grid { grid-template-columns: 1fr; } }
+.lesson-html-body.track-real-estate-property-management .maint-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; display: flex; flex-direction: column; }
 .lesson-html-body.track-real-estate-property-management .maint-card:hover { box-shadow: var(--shadow-card); }
+.lesson-html-body.track-real-estate-property-management .maint-card ul { flex: 1; }
 .lesson-html-body.track-real-estate-property-management .maint-card.emergency { border-top: 4px solid #C0392B; }
 .lesson-html-body.track-real-estate-property-management .maint-card.non-emergency { border-top: 4px solid var(--navy-mid); }
 .lesson-html-body.track-real-estate-property-management .maint-card.hire { border-top: 4px solid var(--gold); }
@@ -9552,13 +9554,19 @@
 .lesson-html-body.track-real-estate-property-management .thing-content p,
 .lesson-html-body.track-real-estate-property-management .attr-card p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin: 0; }
 
-/* ── Account cards / cf cards ── */
-.lesson-html-body.track-real-estate-property-management .accounts-grid,
-.lesson-html-body.track-real-estate-property-management .cf-card { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
+/* ── Account cards ── */
+.lesson-html-body.track-real-estate-property-management .accounts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.1rem; margin: 1.75rem 0; }
 .lesson-html-body.track-real-estate-property-management .account-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
 .lesson-html-body.track-real-estate-property-management .account-card:hover { box-shadow: var(--shadow-card); }
 .lesson-html-body.track-real-estate-property-management .ac-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 8px; background: var(--navy-pale); color: var(--navy-mid); margin-bottom: 0.5rem; }
-.lesson-html-body.track-real-estate-property-management .cf-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.35rem; }
+
+/* ── Contractor filter (3-filter test) ── */
+.lesson-html-body.track-real-estate-property-management .contractor-filter { display: flex; flex-direction: column; gap: 0; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .cf-card { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid var(--border); background: none; border-radius: 0; box-shadow: none; }
+.lesson-html-body.track-real-estate-property-management .cf-card:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .cf-num { width: 36px; height: 36px; min-width: 36px; background: var(--navy); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.lesson-html-body.track-real-estate-property-management .cf-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin: 0 0 0.35rem; text-transform: uppercase; letter-spacing: 0.4px; }
+.lesson-html-body.track-real-estate-property-management .cf-card p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin: 0; max-width: none !important; }
 
 /* ── Career path cards ── */
 .lesson-html-body.track-real-estate-property-management .career-paths { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin: 1.75rem 0; }
@@ -9677,9 +9685,7 @@
 .lesson-html-body.track-real-estate-property-management .qc-standard.must { background: #FFF0F0; color: #C0392B; }
 .lesson-html-body.track-real-estate-property-management .qc-standard.nice { background: #EAF6EE; color: #2A7A4A; }
 
-/* ── Cf card ── */
-.lesson-html-body.track-real-estate-property-management .cf-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
-.lesson-html-body.track-real-estate-property-management .cf-card:hover { box-shadow: var(--shadow-card); }
+/* cf-card styles moved to contractor-filter section above */
 
 
 /* ============================================================
@@ -10158,3 +10164,15 @@
 .lesson-html-body.track-real-estate-leasing .accom-body p { font-size: 13.5px !important; color: var(--text-mid) !important; line-height: 1.7; margin: 0 0 0.65rem !important; max-width: none !important; }
 .lesson-html-body.track-real-estate-leasing .accom-body p:last-child { margin-bottom: 0 !important; }
 .lesson-html-body.track-real-estate-leasing .accom-body strong { color: var(--olive-mid); }
+
+/* ── PM track: eviction-cost-box ── */
+.lesson-html-body.track-real-estate-property-management .eviction-cost-box { background: linear-gradient(135deg, #071828 0%, #0F2340 55%, #1A3A5C 100%); border-radius: 14px; overflow: hidden; margin: 1.75rem 0; }
+.lesson-html-body.track-real-estate-property-management .ecb-header { padding: 1rem 1.5rem; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--gold-light); border-bottom: 1px solid rgba(201,168,76,0.2); }
+.lesson-html-body.track-real-estate-property-management .ecb-body { padding: 0.5rem 1.5rem 1rem; }
+.lesson-html-body.track-real-estate-property-management .ecb-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.lesson-html-body.track-real-estate-property-management .ecb-row:last-child { border-bottom: none; }
+.lesson-html-body.track-real-estate-property-management .ecb-label { font-size: 13.5px; color: rgba(255,255,255,0.75); }
+.lesson-html-body.track-real-estate-property-management .ecb-value { font-size: 13.5px; font-weight: 700; color: var(--gold-light); text-align: right; }
+.lesson-html-body.track-real-estate-property-management .ecb-total { border-top: 1px solid rgba(201,168,76,0.3) !important; margin-top: 0.25rem; padding-top: 0.75rem !important; }
+.lesson-html-body.track-real-estate-property-management .ecb-total .ecb-label { color: #fff; font-weight: 700; font-size: 14px; }
+.lesson-html-body.track-real-estate-property-management .ecb-total .ecb-value { font-size: 15px; color: #FFD700; }

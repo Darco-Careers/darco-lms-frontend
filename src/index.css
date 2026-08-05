@@ -10144,12 +10144,15 @@
 /* ── Leasing track: col-card warm accent ── */
 .lesson-html-body.track-real-estate-leasing .col-card h4 { color: var(--olive-mid); border-bottom-color: var(--gold); }
 
+/* ── Leasing track: module-body full width ── */
+.lesson-html-body.track-real-estate-leasing .module-body { max-width: 960px; margin: 0 auto; padding: 2rem 2.5rem 3rem; box-sizing: border-box; }
+
 /* ── Leasing track: accom-grid (Reasonable Accommodation / Modification) ── */
-.lesson-html-body.track-real-estate-leasing .accom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; }
+.lesson-html-body.track-real-estate-leasing .accom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0; width: 100%; }
 @media (max-width: 600px) { .lesson-html-body.track-real-estate-leasing .accom-grid { grid-template-columns: 1fr; } }
-.lesson-html-body.track-real-estate-leasing .accom-card { border-radius: 12px; overflow: hidden; border: 1px solid #E8E0D0; box-shadow: 0 2px 12px rgba(74,58,10,0.07); }
-.lesson-html-body.track-real-estate-leasing .accom-header { padding: 0.85rem 1.25rem; background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-.lesson-html-body.track-real-estate-leasing .accom-body { padding: 1.1rem 1.25rem; background: #fff; }
+.lesson-html-body.track-real-estate-leasing .accom-card { border-radius: 12px; overflow: hidden; border: 1px solid #E8E0D0; box-shadow: 0 2px 12px rgba(74,58,10,0.07); display: flex; flex-direction: column; }
+.lesson-html-body.track-real-estate-leasing .accom-header { padding: 0.85rem 1.25rem; background: linear-gradient(135deg, #4A3A0A 0%, #7A6020 100%) !important; color: #fff !important; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.lesson-html-body.track-real-estate-leasing .accom-body { padding: 1.1rem 1.25rem; background: #fff !important; flex: 1; }
 .lesson-html-body.track-real-estate-leasing .accom-body p { font-size: 13.5px !important; color: var(--text-mid) !important; line-height: 1.7; margin: 0 0 0.65rem !important; max-width: none !important; }
 .lesson-html-body.track-real-estate-leasing .accom-body p:last-child { margin-bottom: 0 !important; }
 .lesson-html-body.track-real-estate-leasing .accom-body strong { color: var(--olive-mid); }

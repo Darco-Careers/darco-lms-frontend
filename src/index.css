@@ -10406,3 +10406,15 @@
 
 /* ── RED track: cs-lesson white text (issues 2 & 5) ── */
 .lesson-html-body.track-real-estate-development .cs-lesson { color: rgba(255,255,255,0.82) !important; font-size: 13px; font-style: italic; padding: 0.75rem 0 0; border-top: 1px solid rgba(255,255,255,0.12); margin-top: 1rem; }
+
+/* ── RED track Module 4: Back-of-envelope pro forma ── */
+.lesson-html-body.track-real-estate-development .math-box { background: #fff; border-radius: 14px; padding: 1.75rem 2rem; box-shadow: 0 2px 16px rgba(42,42,42,0.1); border: 1px solid #E8E0D8; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .math-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #1A1A18; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-development .math-row { display: flex; justify-content: space-between; align-items: baseline; padding: 0.45rem 0; border-bottom: 1px solid #F0EAE2; gap: 1rem; }
+.lesson-html-body.track-real-estate-development .math-row.total { border-bottom: 2px solid #D4621A; padding-bottom: 0.6rem; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-development .math-label { font-size: 13.5px; color: #4A4A42; flex: 1; }
+.lesson-html-body.track-real-estate-development .math-row.total .math-label { font-weight: 700; color: #1A1A18; }
+.lesson-html-body.track-real-estate-development .math-value { font-size: 13.5px; font-weight: 600; color: #1A1A18; white-space: nowrap; }
+.lesson-html-body.track-real-estate-development .math-row.total .math-value { font-size: 1rem; color: #D4621A; font-weight: 700; }
+.lesson-html-body.track-real-estate-development .math-note { font-size: 11px; color: #8A8A7A; margin-left: 0.5rem; white-space: nowrap; }
+.lesson-html-body.track-real-estate-development .math-vs { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #8A8A7A; padding: 0.75rem 0; }

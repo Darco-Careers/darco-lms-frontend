@@ -10478,3 +10478,28 @@
 .lesson-html-body.track-real-estate-development .formula-row.total * { color: #fff !important; }
 .lesson-html-body.track-real-estate-development .formula-row.total .formula-value { color: #F08C50 !important; }
 .lesson-html-body.track-real-estate-development .formula-row.total .formula-operator { color: #F08C50 !important; }
+
+/* ── RED track: cs-body paragraph text force white ── */
+.lesson-html-body.track-real-estate-development .cs-body p { color: rgba(255,255,255,0.88) !important; max-width: none !important; }
+.lesson-html-body.track-real-estate-development .cs-body li { color: rgba(255,255,255,0.82) !important; }
+
+/* ── RED track Module 7: team-grid horizontal rows ── */
+.lesson-html-body.track-real-estate-development .team-grid { display: flex !important; flex-direction: column !important; gap: 0 !important; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 14px rgba(42,42,42,0.1); border: 1px solid #E8E0D8; }
+.lesson-html-body.track-real-estate-development .team-card { display: flex !important; flex-direction: row !important; align-items: flex-start !important; gap: 0 !important; border-radius: 0 !important; box-shadow: none !important; border: none !important; border-bottom: 1px solid #F0EAE2 !important; padding: 0 !important; }
+.lesson-html-body.track-real-estate-development .team-card:last-child { border-bottom: none !important; }
+.lesson-html-body.track-real-estate-development .team-card:nth-child(even) { background: #FBF5EE !important; }
+.lesson-html-body.track-real-estate-development .team-card:nth-child(odd) { background: #fff !important; }
+.lesson-html-body.track-real-estate-development .team-card .team-icon { font-size: 1.4rem !important; min-width: 60px !important; height: 100% !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 1.1rem 0 !important; background: #1A1A1A !important; color: #F08C50 !important; flex-shrink: 0 !important; }
+.lesson-html-body.track-real-estate-development .team-card .team-role { font-size: 10px !important; font-weight: 700 !important; letter-spacing: 1px !important; text-transform: uppercase !important; color: #D4621A !important; margin-bottom: 0.1rem !important; }
+.lesson-html-body.track-real-estate-development .team-card .team-title { font-family: 'Playfair Display', serif !important; font-size: 0.9rem !important; font-weight: 700 !important; color: #1A1A18 !important; margin-bottom: 0.3rem !important; }
+.lesson-html-body.track-real-estate-development .team-card .team-desc { font-size: 13px !important; color: #4A4A42 !important; line-height: 1.65 !important; max-width: none !important; }
+.lesson-html-body.track-real-estate-development .team-card > div:last-child { padding: 1rem 1.25rem !important; flex: 1 !important; }
+
+/* ── RED track Module 7: prob-item cards in problems-box ── */
+.lesson-html-body.track-real-estate-development .problems-box { background: #fff; border-radius: 14px; padding: 1.5rem; box-shadow: 0 2px 14px rgba(42,42,42,0.1); border: 1px solid #E8E0D8; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .problems-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #1A1A18; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-development .prob-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem; border-radius: 10px; background: #FAF5EE; border-left: 3px solid #D4621A; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-development .prob-icon { font-size: 1.4rem; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-development .prob-title { font-weight: 700; color: #1A1A18; font-size: 0.9rem; margin-bottom: 0.2rem; }
+.lesson-html-body.track-real-estate-development .prob-desc { font-size: 13px; color: #4A4A42; line-height: 1.65; max-width: none !important; }
+.lesson-html-body.track-real-estate-development .prob-cost { font-size: 12px; font-weight: 600; color: #D4621A; margin-top: 0.3rem; }

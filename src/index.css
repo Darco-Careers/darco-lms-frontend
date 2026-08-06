@@ -10354,3 +10354,30 @@
 .lesson-html-body.track-real-estate-development .infra-table td { padding: 0.9rem 1.25rem; font-size: 13.5px; color: #4A4240; line-height: 1.6; border-bottom: 1px solid #EDE8E0; vertical-align: top; }
 .lesson-html-body.track-real-estate-development .infra-table tbody tr:last-child td { border-bottom: none; }
 .lesson-html-body.track-real-estate-development .infra-table .t-era { font-weight: 700; color: #D4621A; white-space: nowrap; font-size: 12px; }
+
+/* ── RED track Module 3: Regulatory Hierarchy ── */
+.lesson-html-body.track-real-estate-development .hierarchy { display: flex; flex-direction: column; gap: 0.75rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .h-level { display: flex; gap: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(42,42,42,0.09); border: 1px solid #E8E0D8; }
+.lesson-html-body.track-real-estate-development .h-num { min-width: 52px; background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); color: #F08C50; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.lesson-html-body.track-real-estate-development .h-content { background: #fff; padding: 1rem 1.25rem; flex: 1; }
+.lesson-html-body.track-real-estate-development .h-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #1A1A18; margin-bottom: 0.35rem; }
+.lesson-html-body.track-real-estate-development .h-desc { font-size: 13.5px; color: #4A4A42; line-height: 1.7; margin-bottom: 0.4rem; }
+.lesson-html-body.track-real-estate-development .h-note { font-size: 11.5px; font-weight: 600; color: #D4621A; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ── RED track Module 3: Stakeholder Rows ── */
+.lesson-html-body.track-real-estate-development .stakeholder-grid { display: flex; flex-direction: column; gap: 0.75rem; margin: 2rem 0; }
+.lesson-html-body.track-real-estate-development .sk-card { display: flex; gap: 1.1rem; align-items: flex-start; background: #fff; border-radius: 12px; padding: 1.1rem 1.25rem; box-shadow: 0 2px 10px rgba(42,42,42,0.08); border: 1px solid #E8E0D8; border-left: 4px solid #D4621A; }
+.lesson-html-body.track-real-estate-development .sk-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.lesson-html-body.track-real-estate-development .sk-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #1A1A18; margin-bottom: 0.25rem; }
+.lesson-html-body.track-real-estate-development .sk-desc { font-size: 13.5px; color: #4A4A42; line-height: 1.7; margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .sk-risk { font-size: 11.5px; font-weight: 600; color: #D4621A; }
+
+/* ── RED track Module 3: P3 Case Study Cards ── */
+.lesson-html-body.track-real-estate-development .p3-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin: 2rem 0; }
+@media (max-width: 640px) { .lesson-html-body.track-real-estate-development .p3-grid { grid-template-columns: 1fr; } }
+.lesson-html-body.track-real-estate-development .p3-card { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 14px rgba(42,42,42,0.1); border: 1px solid #E8E0D8; display: flex; flex-direction: column; }
+.lesson-html-body.track-real-estate-development .p3-city { display: none; }
+.lesson-html-body.track-real-estate-development .p3-meta { flex: 1; }
+.lesson-html-body.track-real-estate-development .p3-location { background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); color: #F08C50; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.6rem 1rem 0.5rem; }
+.lesson-html-body.track-real-estate-development .p3-name { background: #2A2A2A; color: #fff; font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; padding: 0.5rem 1rem 0.75rem; line-height: 1.35; }
+.lesson-html-body.track-real-estate-development .p3-desc { background: #fff; font-size: 13px; color: #4A4A42; line-height: 1.7; padding: 0.9rem 1rem; }

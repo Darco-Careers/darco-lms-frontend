@@ -10381,3 +10381,28 @@
 .lesson-html-body.track-real-estate-development .p3-location { background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); color: #F08C50; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.6rem 1rem 0.5rem; }
 .lesson-html-body.track-real-estate-development .p3-name { background: #2A2A2A; color: #fff; font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; padding: 0.5rem 1rem 0.75rem; line-height: 1.35; }
 .lesson-html-body.track-real-estate-development .p3-desc { background: #fff; font-size: 13px; color: #4A4A42; line-height: 1.7; padding: 0.9rem 1rem; }
+
+/* ── RED track Module 4: Idea source cards ── */
+.lesson-html-body.track-real-estate-development .idea-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0 2rem; }
+@media (max-width: 640px) { .lesson-html-body.track-real-estate-development .idea-grid { grid-template-columns: 1fr; } }
+.lesson-html-body.track-real-estate-development .idea-card { background: #fff; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 12px rgba(42,42,42,0.09); border: 1px solid #E8E0D8; border-top: 3px solid #D4621A; display: flex; flex-direction: column; gap: 0.4rem; }
+.lesson-html-body.track-real-estate-development .idea-icon { font-size: 1.6rem; }
+.lesson-html-body.track-real-estate-development .idea-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #1A1A18; }
+.lesson-html-body.track-real-estate-development .idea-desc { font-size: 13px; color: #4A4A42; line-height: 1.65; flex: 1; }
+.lesson-html-body.track-real-estate-development .idea-example { font-size: 12px; color: #D4621A; font-style: italic; margin-top: 0.3rem; }
+
+/* ── RED track Module 4: Technique cards ── */
+.lesson-html-body.track-real-estate-development .technique-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.9rem; margin: 1.25rem 0 2rem; }
+.lesson-html-body.track-real-estate-development .tech-card { background: #2A2A2A; border-radius: 10px; padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.lesson-html-body.track-real-estate-development .tech-icon { font-size: 1.3rem; }
+.lesson-html-body.track-real-estate-development .tech-name { font-weight: 700; color: #F08C50; font-size: 0.88rem; }
+.lesson-html-body.track-real-estate-development .tech-desc { font-size: 12.5px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+/* ── RED track Module 4: Graaskamp definition cards ── */
+.lesson-html-body.track-real-estate-development .def-grid { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.25rem 0 2rem; }
+.lesson-html-body.track-real-estate-development .def-card { background: #fff; border-radius: 10px; padding: 1rem 1.25rem 1rem 1.5rem; border-left: 4px solid #D4621A; box-shadow: 0 2px 10px rgba(42,42,42,0.07); }
+.lesson-html-body.track-real-estate-development .def-term { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: #D4621A; margin-bottom: 0.3rem; }
+.lesson-html-body.track-real-estate-development .def-body { font-size: 13.5px; color: #4A4A42; line-height: 1.7; max-width: none !important; }
+
+/* ── RED track: cs-lesson white text (issues 2 & 5) ── */
+.lesson-html-body.track-real-estate-development .cs-lesson { color: rgba(255,255,255,0.82) !important; font-size: 13px; font-style: italic; padding: 0.75rem 0 0; border-top: 1px solid rgba(255,255,255,0.12); margin-top: 1rem; }

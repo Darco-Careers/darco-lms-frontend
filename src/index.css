@@ -7731,6 +7731,7 @@
 .lesson-html-body.track-real-estate-development .module-hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(212,98,26,0.18) 0%, transparent 70%); pointer-events: none; }
 .lesson-html-body.track-real-estate-development .module-hero .track-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange-light); font-family: 'DM Sans', sans-serif; margin-bottom: 0.75rem; }
 .lesson-html-body.track-real-estate-development .module-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--white); line-height: 1.25; margin-bottom: 0.75rem; }
+.lesson-html-body.track-real-estate-development .module-hero h1 em { color: #F08C50; font-style: italic; }
 .lesson-html-body.track-real-estate-development .module-hero .hero-sub { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 600px; }
 .lesson-html-body.track-real-estate-development .section-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); font-family: 'DM Sans', sans-serif; margin-bottom: 0.5rem; }
 .lesson-html-body.track-real-estate-development .callout, .lesson-html-body.track-real-estate-development .insight-box { background: var(--char-pale); border-left: 4px solid var(--orange); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; text-align: left; }

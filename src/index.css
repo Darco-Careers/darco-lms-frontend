@@ -10648,8 +10648,12 @@
 /* ── Formula box ── */
 .lesson-html-body.track-real-estate-wholesaling .formula-box { background: #1A1A0A; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid rgba(212,160,32,0.3); }
 .lesson-html-body.track-real-estate-wholesaling .formula-line { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 13.5px; }
-.lesson-html-body.track-real-estate-wholesaling .formula-line .fc-label { color: rgba(255,255,255,0.75); }
-.lesson-html-body.track-real-estate-wholesaling .formula-line .val { color: #E8C060; font-weight: 700; }
+.lesson-html-body.track-real-estate-wholesaling .formula-line .fc-label { color: rgba(255,255,255,0.75) !important; }
+.lesson-html-body.track-real-estate-wholesaling .formula-line .val { color: #E8C060 !important; font-weight: 700; }
+.lesson-html-body.track-real-estate-wholesaling .formula-line .op { color: rgba(255,255,255,0.4) !important; font-size: 1rem; }
+.lesson-html-body.track-real-estate-wholesaling .formula-line span { color: rgba(255,255,255,0.75) !important; }
+.lesson-html-body.track-real-estate-wholesaling .formula-note { color: rgba(255,255,255,0.5) !important; }
+.lesson-html-body.track-real-estate-wholesaling .formula-box p { color: rgba(255,255,255,0.72) !important; font-size: 12.5px; }
 .lesson-html-body.track-real-estate-wholesaling .formula-divider { height: 1px; background: rgba(212,160,32,0.4); margin: 0.5rem 0; }
 .lesson-html-body.track-real-estate-wholesaling .formula-result { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0 0; font-size: 14px; font-weight: 700; }
 .lesson-html-body.track-real-estate-wholesaling .formula-result .fc-label { color: #fff; }

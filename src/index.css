@@ -10727,6 +10727,11 @@
 .lesson-html-body.track-real-estate-wholesaling .wr-val { color: rgba(255,255,255,0.85); font-weight: 600; }
 .lesson-html-body.track-real-estate-wholesaling .wr-val.orange { color: #E8C060; font-size: 1rem; }
 .lesson-html-body.track-real-estate-wholesaling .we-row.result { border-top: 1px solid rgba(212,160,32,0.4); padding-top: 0.6rem; margin-top: 0.25rem; }
+.lesson-html-body.track-real-estate-wholesaling .wr-label { color: rgba(255,255,255,0.75) !important; font-size: 13px; }
+.lesson-html-body.track-real-estate-wholesaling .wr-val { color: rgba(255,255,255,0.88) !important; font-size: 13px; font-weight: 600; }
+.lesson-html-body.track-real-estate-wholesaling .wr-val.orange { color: #E8C060 !important; }
+.lesson-html-body.track-real-estate-wholesaling .we-row.result .wr-label { color: #fff !important; font-weight: 700; }
+.lesson-html-body.track-real-estate-wholesaling .we-row.result .wr-val { color: #E8C060 !important; font-size: 1rem; }
 
 /* ── Finder grid / Channel grid ── */
 .lesson-html-body.track-real-estate-wholesaling .finder-grid,

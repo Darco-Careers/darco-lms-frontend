@@ -6935,10 +6935,14 @@
 /* ── Services table ─────────────────────────────────────────────────── */
 .lesson-html-body.track-real-estate-photography .services-table {
     width: 100%; border-collapse: collapse;
-    margin: 1.5rem 0; font-size: 14px;
+    margin: 1.5rem 0; font-size: 13.5px;
     border-radius: 12px; overflow: hidden;
     box-shadow: var(--shadow-card);
+    table-layout: fixed;
 }
+.lesson-html-body.track-real-estate-photography .services-table col.col-service { width: 28%; }
+.lesson-html-body.track-real-estate-photography .services-table col.col-rate { width: 22%; }
+.lesson-html-body.track-real-estate-photography .services-table col.col-notes { width: 50%; }
 .lesson-html-body.track-real-estate-photography .services-table thead tr {
     background: var(--forest); color: var(--gold-light);
 }
@@ -6956,14 +6960,53 @@
     background: var(--cream);
 }
 .lesson-html-body.track-real-estate-photography .services-table td {
-    padding: 0.75rem 1rem; color: var(--text-mid);
-    vertical-align: top; line-height: 1.55;
+    padding: 0.9rem 1rem; color: var(--text-mid);
+    vertical-align: middle; line-height: 1.6;
 }
 .lesson-html-body.track-real-estate-photography .services-table .svc-name {
     font-weight: 600; color: var(--text-dark); white-space: nowrap;
 }
 .lesson-html-body.track-real-estate-photography .services-table .svc-rate {
-    font-weight: 700; color: var(--forest); white-space: nowrap;
+    font-weight: 700; color: var(--forest); white-space: nowrap; font-size: 13px;
+}
+.lesson-html-body.track-real-estate-photography .services-table .svc-notes {
+    font-size: 13px; color: var(--text-mid); line-height: 1.6;
+}
+/* ── Pricing table (Module 7) ────────────────────────────────────────── */
+.lesson-html-body.track-real-estate-photography .pricing-table {
+    width: 100%; border-collapse: collapse;
+    margin: 1.5rem 0; font-size: 13.5px;
+    border-radius: 12px; overflow: hidden;
+    box-shadow: var(--shadow-card);
+    table-layout: fixed;
+}
+.lesson-html-body.track-real-estate-photography .pricing-table thead tr {
+    background: var(--forest); color: var(--gold-light);
+}
+.lesson-html-body.track-real-estate-photography .pricing-table th {
+    padding: 0.75rem 1rem; text-align: left;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+}
+.lesson-html-body.track-real-estate-photography .pricing-table th:nth-child(1) { width: 30%; }
+.lesson-html-body.track-real-estate-photography .pricing-table th:nth-child(2) { width: 22%; }
+.lesson-html-body.track-real-estate-photography .pricing-table th:nth-child(3) { width: 48%; }
+.lesson-html-body.track-real-estate-photography .pricing-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+}
+.lesson-html-body.track-real-estate-photography .pricing-table tbody tr:nth-child(even) {
+    background: var(--cream);
+}
+.lesson-html-body.track-real-estate-photography .pricing-table td {
+    padding: 0.85rem 1rem; color: var(--text-mid);
+    vertical-align: middle; line-height: 1.55;
+}
+.lesson-html-body.track-real-estate-photography .pricing-table .svc {
+    font-weight: 600; color: var(--text-dark);
+}
+.lesson-html-body.track-real-estate-photography .pricing-table .price {
+    font-weight: 700; color: var(--forest); white-space: nowrap; font-size: 13px;
 }
 
 /* ── Career ladder / income phases ──────────────────────────────────── */

@@ -11124,37 +11124,52 @@
     margin: 1.5rem 0; border-radius: 12px; overflow: hidden;
     box-shadow: var(--shadow-card);
 }
-.lesson-html-body.track-real-estate-maintenance-repair .ladder-header {
-    background: var(--rust); color: var(--white);
-    padding: 0.75rem 1.25rem; font-size: 11px; font-weight: 700;
-    letter-spacing: 1.5px; text-transform: uppercase;
-}
-.lesson-html-body.track-real-estate-maintenance-repair .ladder-rung {
-    display: flex; align-items: stretch;
+/* ladder-step = the full horizontal row */
+.lesson-html-body.track-real-estate-maintenance-repair .ladder-step {
+    display: flex !important; flex-direction: row !important;
+    align-items: stretch !important; width: 100% !important;
     border-bottom: 1px solid var(--border);
     background: var(--white);
+    min-height: 0 !important; position: static !important;
 }
-.lesson-html-body.track-real-estate-maintenance-repair .ladder-rung:nth-child(even) {
+.lesson-html-body.track-real-estate-maintenance-repair .ladder-step:nth-child(even) {
     background: var(--cream);
 }
-.lesson-html-body.track-real-estate-maintenance-repair .ladder-step {
-    background: var(--rust); color: var(--white);
-    width: 48px; min-width: 48px; display: flex;
-    align-items: center; justify-content: center;
-    font-size: 16px; font-weight: 700;
-}
-.lesson-html-body.track-real-estate-maintenance-repair .ladder-content {
-    padding: 0.85rem 1.25rem; flex: 1;
+/* ladder-connector = left dark number column */
+.lesson-html-body.track-real-estate-maintenance-repair .ladder-connector {
+    display: flex !important; flex-direction: column !important;
+    align-items: center !important; justify-content: center !important;
+    background: var(--rust) !important; color: var(--white) !important;
+    min-width: 52px !important; width: 52px !important;
+    padding: 1rem 0 !important; flex-shrink: 0 !important;
+    position: static !important;
 }
 .lesson-html-body.track-real-estate-maintenance-repair .ladder-node {
-    font-weight: 700; color: var(--text-dark); font-size: 14px;
+    font-weight: 800 !important; color: var(--white) !important;
+    font-size: 18px !important; line-height: 1 !important;
 }
 .lesson-html-body.track-real-estate-maintenance-repair .ladder-line {
-    font-size: 13px; color: var(--text-mid); margin-top: 2px;
+    display: none !important;
 }
-.lesson-html-body.track-real-estate-maintenance-repair .ladder-connector {
-    color: var(--rust-mid); font-size: 20px; padding: 0 0.75rem;
-    display: flex; align-items: center;
+/* ladder-content = right text area */
+.lesson-html-body.track-real-estate-maintenance-repair .ladder-content {
+    padding: 1rem 1.25rem !important; flex: 1 !important;
+    display: flex !important; flex-direction: column !important;
+    justify-content: center !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .ladder-content h4 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1rem !important; font-weight: 700 !important;
+    color: var(--text-dark) !important; margin: 0 0 0.35rem !important;
+    text-align: left !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .ladder-content p {
+    font-size: 13px !important; color: var(--text-mid) !important;
+    line-height: 1.65 !important; margin: 0 0 0.35rem !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .ladder-content .pay {
+    font-size: 12px !important; font-weight: 700 !important;
+    color: var(--rust-mid) !important; margin: 0 !important;
 }
 
 /* ── Cert grid ───────────────────────────────────────────────────────────── */

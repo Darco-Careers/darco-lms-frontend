@@ -11796,3 +11796,25 @@
     background: none !important; padding: 0.75rem 1rem !important;
     border-radius: 0 !important; font-size: 13px !important;
 }
+
+/* ── MR books-section width constraint ──────────────────────────────────── */
+.lesson-html-body.track-real-estate-maintenance-repair .books-section {
+    max-width: 100% !important; overflow: hidden !important;
+    word-wrap: break-word !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .book-item {
+    max-width: 100% !important; overflow: hidden !important;
+    word-wrap: break-word !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .bi-desc {
+    max-width: 100% !important; word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+/* ── MR door/window/floor section sub-headers ───────────────────────────── */
+.lesson-html-body.track-real-estate-maintenance-repair .sub-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.1rem !important; font-weight: 700 !important;
+    color: var(--rust-mid) !important; margin: 2rem 0 0.5rem !important;
+    padding-bottom: 0.35rem !important;
+    border-bottom: 2px solid var(--rust-pale) !important;
+}

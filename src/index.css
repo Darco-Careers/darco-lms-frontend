@@ -11209,10 +11209,14 @@
     box-shadow: var(--shadow-card);
 }
 .lesson-html-body.track-real-estate-maintenance-repair .pay-table thead tr,
-.lesson-html-body.track-real-estate-maintenance-repair .scope-table .scope-header,
-.lesson-html-body.track-real-estate-maintenance-repair .swap-table .swap-header {
+.lesson-html-body.track-real-estate-maintenance-repair .scope-table .scope-header {
     display: grid !important;
     grid-template-columns: 2fr 1fr 3fr !important;
+    background: var(--rust) !important; color: var(--white) !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .swap-table .swap-header {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 4fr !important;
     background: var(--rust) !important; color: var(--white) !important;
 }
 .lesson-html-body.track-real-estate-maintenance-repair .scope-header > div,
@@ -11755,4 +11759,40 @@
 }
 .lesson-html-body.track-real-estate-maintenance-repair .plumb-def-body p {
     font-size: 13px; color: var(--text-mid); line-height: 1.7; margin: 0;
+}
+
+/* ── MR swap-row 4-col grid fix (Module 5 appliance repair table) ────────── */
+.lesson-html-body.track-real-estate-maintenance-repair .swap-row {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 4fr !important;
+    align-items: start !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .swap-row:nth-child(even) {
+    background: var(--cream) !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .swap-row > div {
+    padding: 0.75rem 1rem !important;
+    font-size: 13px !important;
+    color: var(--text-mid) !important;
+    border-right: 1px solid var(--border) !important;
+    line-height: 1.6 !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .swap-row > div:last-child {
+    border-right: none !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .swap-row .repair {
+    font-weight: 700 !important; color: var(--text-dark) !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .swap-row .cost-part {
+    font-weight: 700 !important; color: var(--rust-mid) !important;
+    background: none !important; padding: 0.75rem 1rem !important;
+    border-radius: 0 !important; font-size: 13px !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .swap-row .cost-call {
+    font-weight: 700 !important; color: var(--text-mid) !important;
+    background: none !important; padding: 0.75rem 1rem !important;
+    border-radius: 0 !important; font-size: 13px !important;
 }

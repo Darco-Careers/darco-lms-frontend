@@ -11818,3 +11818,40 @@
     padding-bottom: 0.35rem !important;
     border-bottom: 2px solid var(--rust-pale) !important;
 }
+
+/* ── MR pay-table div-based 4-col grid (Module 8 cert pay table) ─────────── */
+.lesson-html-body.track-real-estate-maintenance-repair .pay-header {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 2fr !important;
+    background: var(--rust) !important; color: var(--white) !important;
+    border-radius: 10px 10px 0 0 !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .pay-header > div {
+    padding: 0.75rem 1rem !important;
+    font-size: 11px !important; font-weight: 700 !important;
+    letter-spacing: 1px !important; text-transform: uppercase !important;
+    color: var(--white) !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .pay-row {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 2fr !important;
+    border-bottom: 1px solid var(--border) !important;
+    align-items: center !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .pay-row:nth-child(even) {
+    background: var(--cream) !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .pay-row > div {
+    padding: 0.75rem 1rem !important;
+    font-size: 13px !important; color: var(--text-mid) !important;
+    border-right: 1px solid var(--border) !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .pay-row > div:last-child {
+    border-right: none !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .pay-row .cert {
+    font-weight: 700 !important; color: var(--text-dark) !important;
+}
+.lesson-html-body.track-real-estate-maintenance-repair .pay-row .pay-bump {
+    font-weight: 700 !important; color: var(--rust-mid) !important;
+}

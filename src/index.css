@@ -11465,8 +11465,11 @@
     border: 1px solid var(--border);
 }
 .lesson-html-body.track-real-estate-maintenance-repair .tool-cat {
-    display: flex !important; flex-direction: row !important;
-    align-items: stretch !important; border-bottom: 1px solid var(--border);
+    display: grid !important;
+    grid-template-columns: 160px 1fr !important;
+    grid-template-rows: auto auto !important;
+    grid-template-areas: "header list" "header note" !important;
+    border-bottom: 1px solid var(--border);
     background: var(--white);
 }
 .lesson-html-body.track-real-estate-maintenance-repair .tool-cat:nth-child(even) {
@@ -11476,24 +11479,25 @@
     border-bottom: none;
 }
 .lesson-html-body.track-real-estate-maintenance-repair .tool-cat h4 {
+    grid-area: header !important;
     display: flex !important; align-items: center !important;
     background: var(--rust) !important; color: var(--white) !important;
     font-weight: 700 !important; font-size: 0.8rem !important;
-    min-width: 160px !important; width: 160px !important;
     padding: 1rem !important; margin: 0 !important;
     text-transform: uppercase !important; letter-spacing: 0.5px !important;
-    flex-shrink: 0 !important; line-height: 1.4 !important;
+    line-height: 1.4 !important;
 }
 .lesson-html-body.track-real-estate-maintenance-repair .tool-cat ul {
-    flex: 1 !important; padding: 0.85rem 1.25rem !important; margin: 0 !important;
+    grid-area: list !important; padding: 0.85rem 1.25rem 0.5rem !important; margin: 0 !important;
 }
 .lesson-html-body.track-real-estate-maintenance-repair .tool-cat li {
     font-size: 13px !important; color: var(--text-mid) !important; line-height: 1.65 !important;
 }
 .lesson-html-body.track-real-estate-maintenance-repair .tc-note {
+    grid-area: note !important;
     font-size: 12px !important; font-weight: 600 !important;
     color: var(--rust-mid) !important; font-style: italic !important;
-    padding: 0.5rem 1.25rem 0.85rem !important; margin: 0 !important;
+    padding: 0.35rem 1.25rem 0.85rem !important; margin: 0 !important;
     border-top: 1px dashed var(--border) !important;
 }
 
